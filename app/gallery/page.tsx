@@ -6,6 +6,7 @@ import Footer from '@/components/footer'
 import WhatsAppButton from '@/components/whatsapp-button'
 import Pagination from '@/components/pagination'
 import Image from 'next/image'
+import { TextGradient } from '@/components/ui/effects'
 
 const ITEMS_PER_PAGE = 10
 
@@ -56,10 +57,16 @@ export default function Gallery() {
       <Header />
       <main className="min-h-screen">
         {/* Hero */}
-        <section className="py-12 md:py-20 bg-gradient-to-b from-primary/10 to-background">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Safari Gallery</h1>
-            <p className="text-lg text-muted-foreground max-w-3xl">
+        <section className="py-12 md:py-20 bg-gradient-to-b from-primary/10 via-background to-background relative overflow-hidden">
+          <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(circle at 80% 50%, #D4A574 0%, transparent 60%)',
+          }} />
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="animate-fade-in-up mb-4">
+              <TextGradient className="text-sm font-semibold tracking-wider uppercase">Visual Journey</TextGradient>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>Safari Gallery</h1>
+            <p className="text-lg text-muted-foreground max-w-3xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               Experience the raw beauty of African wildlife through our curated collection
             </p>
           </div>

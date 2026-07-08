@@ -7,8 +7,12 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-primary text-primary-foreground mt-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-gradient-safari text-primary-foreground mt-16 relative overflow-hidden">
+      {/* Watermark-style background effect */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+        backgroundImage: 'radial-gradient(circle at 20% 80%, rgba(212, 165, 116, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(245, 176, 65, 0.3) 0%, transparent 50%)',
+      }} />
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* About */}
           <div>

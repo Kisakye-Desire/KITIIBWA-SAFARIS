@@ -8,6 +8,7 @@ import Pagination from '@/components/pagination'
 import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
 import { Calendar, User } from 'lucide-react'
+import { TextGradient, AnimatedCard } from '@/components/ui/effects'
 
 const ITEMS_PER_PAGE = 6
 

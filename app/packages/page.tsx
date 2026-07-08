@@ -4,6 +4,7 @@ import WhatsAppButton from '@/components/whatsapp-button'
 import Image from 'next/image'
 import { Check } from 'lucide-react'
 import Link from 'next/link'
+import { TextGradient, AnimatedCard } from '@/components/ui/effects'
 
 export const metadata = {
   title: 'Safari Packages | KITIIBWA SAFARIS',

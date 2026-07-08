@@ -3,6 +3,7 @@ import Footer from '@/components/footer'
 import WhatsAppButton from '@/components/whatsapp-button'
 import SocialIcons from '@/components/social-icons'
 import Image from 'next/image'
+import { SectionHeading, AnimatedCard, TextGradient } from '@/components/ui/effects'
 
 export const metadata = {
   title: 'About Us | KITIIBWA SAFARIS',
@@ -81,10 +82,18 @@ export default function About() {
       <Header />
       <main className="min-h-screen">
         {/* Hero */}
-        <section className="py-12 md:py-20 bg-gradient-to-b from-primary/10 to-background">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-balance">About KITIIBWA SAFARIS</h1>
-            <p className="text-lg text-muted-foreground max-w-3xl">
+        <section className="py-12 md:py-20 bg-gradient-to-b from-primary/10 via-background to-background relative overflow-hidden">
+          <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(circle at 100% 0%, #2D5F3F 0%, transparent 50%)',
+          }} />
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="animate-fade-in-up">
+              <div className="mb-4">
+                <TextGradient className="text-sm font-semibold tracking-wider uppercase">Our Journey</TextGradient>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-balance">About KITIIBWA SAFARIS</h1>
+            </div>
+            <p className="text-lg text-muted-foreground max-w-3xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               Pioneering premium African safari experiences with a commitment to conservation and community empowerment
             </p>
           </div>
@@ -175,9 +184,9 @@ export default function About() {
         </section>
 
         {/* Our Values */}
-        <section className="py-16 md:py-24 bg-card">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-card to-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">Our Core Values</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center animate-fade-in-up">Our Core Values</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-background p-6 rounded-lg hover:shadow-lg transition-shadow">
                 <div className="h-12 w-12 bg-accent rounded mb-4 flex items-center justify-center">
@@ -285,25 +294,28 @@ export default function About() {
         </section>
 
         {/* By The Numbers */}
-        <section className="py-16 md:py-24 bg-primary text-primary-foreground">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">By The Numbers</h2>
+        <section className="py-16 md:py-24 bg-gradient-safari text-primary-foreground relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(circle at 50% 50%, #D4A574 0%, transparent 70%)',
+          }} />
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center animate-fade-in-up">By The Numbers</h2>
             <div className="grid md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold mb-2">2,000+</div>
-                <p className="opacity-90">Happy Guests</p>
+              <div className="text-center animate-scale-in" style={{ animationDelay: '0.2s' }}>
+                <div className="text-5xl md:text-6xl font-bold mb-2 text-accent">2,000+</div>
+                <p className="opacity-95">Happy Guests</p>
               </div>
-              <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold mb-2">15+</div>
-                <p className="opacity-90">Years of Experience</p>
+              <div className="text-center animate-scale-in" style={{ animationDelay: '0.3s' }}>
+                <div className="text-5xl md:text-6xl font-bold mb-2 text-accent">15+</div>
+                <p className="opacity-95">Years of Experience</p>
               </div>
-              <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold mb-2">50+</div>
-                <p className="opacity-90">Professional Staff</p>
+              <div className="text-center animate-scale-in" style={{ animationDelay: '0.4s' }}>
+                <div className="text-5xl md:text-6xl font-bold mb-2 text-accent">50+</div>
+                <p className="opacity-95">Professional Staff</p>
               </div>
-              <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold mb-2">5</div>
-                <p className="opacity-90">Prime Destinations</p>
+              <div className="text-center animate-scale-in" style={{ animationDelay: '0.5s' }}>
+                <div className="text-5xl md:text-6xl font-bold mb-2 text-accent">5</div>
+                <p className="opacity-95">Prime Destinations</p>
               </div>
             </div>
           </div>
