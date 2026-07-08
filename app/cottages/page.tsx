@@ -8,6 +8,7 @@ import Pagination from '@/components/pagination'
 import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
 import { Star } from 'lucide-react'
+import { TextGradient } from '@/components/ui/effects'
 
 const ITEMS_PER_PAGE = 6
 
@@ -139,21 +140,60 @@ function CottagesContent() {
       <Header />
       <main className="min-h-screen">
         {/* Hero */}
-        <section className="py-12 md:py-20 bg-gradient-to-b from-primary/10 to-background">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Safari Cottages & Lodges</h1>
-            <p className="text-lg text-muted-foreground">
+        <section className="py-12 md:py-20 bg-gradient-to-b from-primary/10 via-background to-background relative overflow-hidden">
+          <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(circle at 80% 50%, #D4A574 0%, transparent 60%)',
+          }} />
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="animate-fade-in-up mb-4">
+              <TextGradient className="text-sm font-semibold tracking-wider uppercase">Your Sanctuary Awaits</TextGradient>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>Safari Cottages & Lodges</h1>
+            <p className="text-lg text-muted-foreground animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               Luxury accommodations across Uganda&apos;s most pristine safari destinations
             </p>
           </div>
         </section>
 
+        {/* Cottages Intro */}
+        <section className="py-12 md:py-16 bg-secondary/5">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">Experience Luxury in the Heart of Nature</h2>
+              <p className="text-muted-foreground mb-4 leading-relaxed">
+                Our carefully curated collection of safari cottages and lodges combines luxury comfort with authentic African experiences. Each property is strategically located in Uganda&apos;s most spectacular destinations, offering stunning views, world-class amenities, and warm hospitality that make your stay unforgettable.
+              </p>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                From the misty forests of Bwindi to the expansive savannas of Queen Elizabeth National Park, our accommodations provide the perfect base for your safari adventures. Whether you seek romance, adventure, or relaxation, we have the perfect cottage for your journey.
+              </p>
+              <div className="grid sm:grid-cols-4 gap-4">
+                <div className="bg-primary/10 p-4 rounded-lg">
+                  <p className="text-sm font-semibold text-primary">Cottages</p>
+                  <p className="text-2xl font-bold text-accent">8+</p>
+                </div>
+                <div className="bg-primary/10 p-4 rounded-lg">
+                  <p className="text-sm font-semibold text-primary">Locations</p>
+                  <p className="text-2xl font-bold text-accent">5</p>
+                </div>
+                <div className="bg-primary/10 p-4 rounded-lg">
+                  <p className="text-sm font-semibold text-primary">Avg Rating</p>
+                  <p className="text-2xl font-bold text-accent">4.7/5</p>
+                </div>
+                <div className="bg-primary/10 p-4 rounded-lg">
+                  <p className="text-sm font-semibold text-primary">Guests</p>
+                  <p className="text-2xl font-bold text-accent">700+</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Cottages Grid */}
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/5">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {paginatedCottages.map((cottage) => (
-                <div key={cottage.id} className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow group">
+              {paginatedCottages.map((cottage, idx) => (
+                <div key={cottage.id} className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:scale-105 hover:-translate-y-2 animate-fade-in-up" style={{ animationDelay: `${idx * 0.1}s` }}>
                   {/* Image */}
                   <div className="relative h-56 overflow-hidden">
                     <Image

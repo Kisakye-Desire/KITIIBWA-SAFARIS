@@ -128,21 +128,39 @@ function BlogContent() {
       <Header />
       <main className="min-h-screen">
         {/* Hero */}
-        <section className="py-12 md:py-20 bg-gradient-to-b from-primary/10 to-background">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">KITIIBWA Safari Blog</h1>
-            <p className="text-lg text-muted-foreground">
+        <section className="py-12 md:py-20 bg-gradient-to-b from-primary/10 via-background to-background relative overflow-hidden">
+          <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(circle at 80% 50%, #D4A574 0%, transparent 60%)',
+          }} />
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="animate-fade-in-up mb-4">
+              <TextGradient className="text-sm font-semibold tracking-wider uppercase">Stories & Insights</TextGradient>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>KITIIBWA Safari Blog</h1>
+            <p className="text-lg text-muted-foreground animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               Insights, tips, and stories from Africa&apos;s premier safari destination
             </p>
           </div>
         </section>
 
+        {/* Blog Intro */}
+        <section className="py-12 md:py-16 bg-secondary/5">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">Discover African Safari Knowledge</h2>
+              <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                From expert guides sharing wildlife insights to conservation stories, our blog offers practical tips, fascinating discoveries, and inspiration for your next African adventure.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Blog Posts */}
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/5">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="space-y-8">
-              {paginatedPosts.map((post) => (
-                <article key={post.id} className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              {paginatedPosts.map((post, idx) => (
+                <article key={post.id} className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 animate-fade-in-up" style={{ animationDelay: `${idx * 0.1}s` }}>
                   <div className="grid md:grid-cols-3 gap-0">
                     {/* Image */}
                     <div className="relative h-48 md:h-auto md:col-span-1 overflow-hidden">

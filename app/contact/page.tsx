@@ -5,6 +5,7 @@ import Footer from '@/components/footer'
 import WhatsAppButton from '@/components/whatsapp-button'
 import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 import { useState } from 'react'
+import { TextGradient } from '@/components/ui/effects'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -52,21 +53,27 @@ export default function Contact() {
       <Header />
       <main className="min-h-screen">
         {/* Hero */}
-        <section className="py-12 md:py-20 bg-gradient-to-b from-primary/10 to-background">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Get in Touch</h1>
-            <p className="text-lg text-muted-foreground">
+        <section className="py-12 md:py-20 bg-gradient-to-b from-primary/10 via-background to-background relative overflow-hidden">
+          <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(circle at 80% 50%, #D4A574 0%, transparent 60%)',
+          }} />
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="animate-fade-in-up mb-4">
+              <TextGradient className="text-sm font-semibold tracking-wider uppercase">Let's Connect</TextGradient>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>Get in Touch</h1>
+            <p className="text-lg text-muted-foreground animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               Have questions? Our team is ready to help plan your perfect safari adventure
             </p>
           </div>
         </section>
 
         {/* Contact Section */}
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/5">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12">
               {/* Contact Info */}
-              <div>
+              <div className="animate-fade-in-up">
                 <h2 className="text-3xl font-bold text-primary mb-8">Contact Information</h2>
 
                 <div className="space-y-6 mb-8">

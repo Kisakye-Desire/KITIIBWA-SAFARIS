@@ -128,15 +128,16 @@ export default function Packages() {
         </section>
 
         {/* Packages Grid */}
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/5">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {packages.map((pkg) => (
+              {packages.map((pkg, idx) => (
                 <div
                   key={pkg.name}
-                  className={`rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all relative ${
-                    pkg.bestseller ? 'ring-2 ring-accent md:scale-105' : 'bg-card'
+                  className={`rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all relative transform hover:scale-105 hover:-translate-y-2 duration-300 animate-fade-in-up ${
+                    pkg.bestseller ? 'ring-2 ring-accent' : 'bg-card'
                   }`}
+                  style={{ animationDelay: `${idx * 0.1}s` }}
                 >
                   {pkg.bestseller && (
                     <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-bold">

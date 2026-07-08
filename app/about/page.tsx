@@ -100,21 +100,25 @@ export default function About() {
         </section>
 
         {/* Founder Story */}
-        <section className="py-16 md:py-24 bg-card">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">Meet The Founder</h2>
+        <section className="py-16 md:py-24 bg-gradient-to-b from-card to-background relative">
+          <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(circle at 0% 100%, #D4A574 0%, transparent 60%)',
+          }} />
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center animate-fade-in-up">Meet The Founder</h2>
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
+              <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl animate-fade-in-up card-hover">
                 <Image
-                  src="/images/team-member-1.png"
+                  src="/images/founder-profile.png"
                   alt="Alizeyuna Henry - Founder"
                   fill
-                  className="object-cover"
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                  priority
                 />
               </div>
-              <div>
-                <h3 className="text-2xl font-bold text-primary mb-4">Alizeyuna Henry</h3>
-                <p className="text-accent font-semibold mb-6">Founder & Managing Director</p>
+              <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                <h3 className="text-2xl font-bold text-primary mb-2">Alizeyuna Henry</h3>
+                <p className="text-accent font-semibold mb-6 text-lg">Founder & Managing Director</p>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
                   Alizeyuna Henry is the visionary founder and Managing Director of Kitiibwa Safaris, a Uganda-based tour company headquartered in Mukono District. Inspired by Uganda&apos;s breathtaking landscapes, diverse wildlife, and vibrant cultures, Henry established Kitiibwa Safaris with a vision of sharing authentic African adventures with travellers from around the world.
                 </p>
@@ -124,19 +128,36 @@ export default function About() {
                 <p className="text-muted-foreground mb-4 leading-relaxed">
                   Under his leadership, Kitiibwa Safaris continues to promote responsible tourism by connecting visitors with Uganda&apos;s incredible wildlife, scenic landscapes, and rich cultural heritage while supporting sustainable travel practices.
                 </p>
-                <p className="text-primary italic font-semibold">
+                <p className="text-primary italic font-semibold mb-6 p-4 bg-accent/10 rounded-lg border-l-4 border-accent">
                   &quot;Every safari is more than a journey—it&apos;s an opportunity to experience the wild, connect with nature, and create memories that last a lifetime.&quot;
                 </p>
+                <div className="flex gap-4">
+                  <a href="https://facebook.com/alizeyunahenry" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white hover:bg-accent transition-colors">
+                    <span className="text-lg">f</span>
+                  </a>
+                  <a href="https://instagram.com/alizeyunahenry" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white hover:bg-accent transition-colors">
+                    <span className="text-lg">📷</span>
+                  </a>
+                  <a href="https://linkedin.com/in/alizeyunahenry" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white hover:bg-accent transition-colors">
+                    <span className="text-lg">in</span>
+                  </a>
+                  <a href="https://twitter.com/alizeyunahenry" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white hover:bg-accent transition-colors">
+                    <span className="text-lg">𝕏</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Our Story */}
-        <section className="py-16 md:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-background via-secondary/5 to-background relative overflow-hidden">
+          <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(circle at 100% 50%, #2D5F3F 0%, transparent 60%)',
+          }} />
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
+              <div className="animate-fade-in-up">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Our Story</h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
                   KITIIBWA SAFARIS was born from a passion to share Uganda's untamed beauty responsibly. Our mission has always been to create transformative safari experiences that leave guests awestruck while supporting local communities and conservation efforts.
@@ -151,12 +172,13 @@ export default function About() {
                   to excellence.
                 </p>
               </div>
-              <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
+              <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl animate-fade-in-up card-hover" style={{ animationDelay: '0.2s' }}>
                 <Image
-                  src="/images/real-giraffe.jpg"
+                  src="/images/gallery-6.png"
                   alt="Uganda Wildlife"
                   fill
-                  className="object-cover"
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                  priority
                 />
               </div>
             </div>
