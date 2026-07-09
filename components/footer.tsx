@@ -15,9 +15,9 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* About */}
-          <div>
+          <div className="animate-fade-in-up" style={{ animationDelay: '0ms' }}>
             <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
-              <div className="h-6 w-6 bg-secondary rounded" />
+              <div className="h-6 w-6 bg-secondary rounded animate-scale-pulse" />
               KITIIBWA
             </h3>
             <p className="text-sm opacity-90">
@@ -26,26 +26,26 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="animate-fade-in-up" style={{ animationDelay: '100ms' }}>
             <h4 className="font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/about" className="hover:opacity-75 transition">
+                <Link href="/about" className="hover:opacity-75 transition hover:translate-x-1 inline-block">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/packages" className="hover:opacity-75 transition">
+                <Link href="/packages" className="hover:opacity-75 transition hover:translate-x-1 inline-block">
                   Safari Packages
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:opacity-75 transition">
+                <Link href="/blog" className="hover:opacity-75 transition hover:translate-x-1 inline-block">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:opacity-75 transition">
+                <Link href="/contact" className="hover:opacity-75 transition hover:translate-x-1 inline-block">
                   Contact
                 </Link>
               </li>
@@ -53,26 +53,26 @@ export default function Footer() {
           </div>
 
           {/* Experiences */}
-          <div>
+          <div className="animate-fade-in-up" style={{ animationDelay: '200ms' }}>
             <h4 className="font-bold mb-4">Experiences</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/cottages" className="hover:opacity-75 transition">
+                <Link href="/cottages" className="hover:opacity-75 transition hover:translate-x-1 inline-block">
                   Safari Cottages
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="hover:opacity-75 transition">
+                <Link href="/gallery" className="hover:opacity-75 transition hover:translate-x-1 inline-block">
                   Gallery
                 </Link>
               </li>
               <li>
-                <Link href="/uganda" className="hover:opacity-75 transition">
+                <Link href="/uganda" className="hover:opacity-75 transition hover:translate-x-1 inline-block">
                   Uganda Info
                 </Link>
               </li>
               <li>
-                <Link href="/community" className="hover:opacity-75 transition">
+                <Link href="/community" className="hover:opacity-75 transition hover:translate-x-1 inline-block">
                   Community
                 </Link>
               </li>
@@ -80,21 +80,21 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="animate-fade-in-up" style={{ animationDelay: '300ms' }}>
             <h4 className="font-bold mb-4">Contact</h4>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
+              <li className="flex items-start gap-2 hover:translate-x-1 transition">
                 <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" />
                 <div className="flex flex-col gap-1">
                   <span>Uganda: +256 708898424</span>
                   <span>UK: +44 7498605656</span>
                 </div>
               </li>
-              <li className="flex items-start gap-2">
+              <li className="flex items-start gap-2 hover:translate-x-1 transition">
                 <Mail className="h-4 w-4 mt-0.5 flex-shrink-0" />
                 <span>dynamicyoo@gmail.com</span>
               </li>
-              <li className="flex items-start gap-2">
+              <li className="flex items-start gap-2 hover:translate-x-1 transition">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
                 <span>Mukono District, Uganda</span>
               </li>

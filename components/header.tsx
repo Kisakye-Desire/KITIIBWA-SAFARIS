@@ -26,24 +26,40 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2 hover:scale-110 transition-transform duration-300">
             <Image
               src="/logo.png"
               alt="KITIIBWA SAFARIS"
               width={50}
               height={50}
-              className="h-12 w-auto"
+              className="h-12 w-auto animate-fade-in-down"
             />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex gap-1 items-center">
-            {navLinks.map((link) => (
+            {navLinks.map((link, idx) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded transition-colors"
+                className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded transition-all duration-300 hover:-translate-y-0.5"
+                style={{
+                  animation: `slideInDown 0.5s ease-out ${idx * 30}ms forwards`,
+                  opacity: 0,
+                }}
               >
+                <style>{`
+                  @keyframes slideInDown {
+                    from {
+                      opacity: 0;
+                      transform: translateY(-10px);
+                    }
+                    to {
+                      opacity: 1;
+                      transform: translateY(0);
+                    }
+                  }
+                `}</style>
                 {link.name}
               </Link>
             ))}

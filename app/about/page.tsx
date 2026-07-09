@@ -4,6 +4,10 @@ import WhatsAppButton from '@/components/whatsapp-button'
 import SocialIcons from '@/components/social-icons'
 import Image from 'next/image'
 import { SectionHeading, AnimatedCard, TextGradient } from '@/components/ui/effects'
+import ScrollReveal from '@/components/scroll-reveal'
+import TextReveal from '@/components/text-reveal'
+import InteractiveImage from '@/components/interactive-image'
+import FeatureCard from '@/components/feature-card'
 
 export const metadata = {
   title: 'About Us | KITIIBWA SAFARIS',
@@ -105,47 +109,55 @@ export default function About() {
             backgroundImage: 'radial-gradient(circle at 0% 100%, #D4A574 0%, transparent 60%)',
           }} />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center animate-fade-in-up">Meet The Founder</h2>
+            <ScrollReveal className="mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center">Meet The Founder</h2>
+            </ScrollReveal>
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl animate-fade-in-up card-hover">
-                <Image
+              <ScrollReveal direction="left">
+                <InteractiveImage
                   src="/images/founder-profile.png"
                   alt="Alizeyuna Henry - Founder"
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-500"
-                  priority
+                  width={400}
+                  height={500}
+                  className="h-96 rounded-lg overflow-hidden shadow-2xl"
                 />
-              </div>
-              <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                <h3 className="text-2xl font-bold text-primary mb-2">Alizeyuna Henry</h3>
-                <p className="text-accent font-semibold mb-6 text-lg">Founder & Managing Director</p>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  Alizeyuna Henry is the visionary founder and Managing Director of Kitiibwa Safaris, a Uganda-based tour company headquartered in Mukono District. Inspired by Uganda&apos;s breathtaking landscapes, diverse wildlife, and vibrant cultures, Henry established Kitiibwa Safaris with a vision of sharing authentic African adventures with travellers from around the world.
-                </p>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  With hands-on experience exploring Uganda&apos;s national parks and natural attractions, Henry is passionate about creating memorable safari experiences that combine adventure, conservation, and genuine local hospitality. His commitment to quality service and personalized travel ensures that every journey reflects the beauty and spirit of the Pearl of Africa.
-                </p>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  Under his leadership, Kitiibwa Safaris continues to promote responsible tourism by connecting visitors with Uganda&apos;s incredible wildlife, scenic landscapes, and rich cultural heritage while supporting sustainable travel practices.
-                </p>
-                <p className="text-primary italic font-semibold mb-6 p-4 bg-accent/10 rounded-lg border-l-4 border-accent">
-                  &quot;Every safari is more than a journey—it&apos;s an opportunity to experience the wild, connect with nature, and create memories that last a lifetime.&quot;
-                </p>
-                <div className="flex gap-4">
-                  <a href="https://facebook.com/alizeyunahenry" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white hover:bg-accent transition-colors">
-                    <span className="text-lg">f</span>
-                  </a>
-                  <a href="https://instagram.com/alizeyunahenry" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white hover:bg-accent transition-colors">
-                    <span className="text-lg">📷</span>
-                  </a>
-                  <a href="https://linkedin.com/in/alizeyunahenry" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white hover:bg-accent transition-colors">
-                    <span className="text-lg">in</span>
-                  </a>
-                  <a href="https://twitter.com/alizeyunahenry" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white hover:bg-accent transition-colors">
-                    <span className="text-lg">𝕏</span>
-                  </a>
+              </ScrollReveal>
+              <ScrollReveal direction="right" delay={0.2}>
+                <div className="space-y-6">
+                  <div>
+                    <TextReveal className="text-2xl font-bold text-primary mb-2">Alizeyuna Henry</TextReveal>
+                    <p className="text-accent font-semibold text-lg">Founder & Managing Director</p>
+                  </div>
+                  <TextReveal delay={0.1} stagger>
+                    Alizeyuna Henry is the visionary founder and Managing Director of Kitiibwa Safaris, a Uganda-based tour company headquartered in Mukono District. Inspired by Uganda's breathtaking landscapes, diverse wildlife, and vibrant cultures, Henry established Kitiibwa Safaris with a vision of sharing authentic African adventures with travellers from around the world.
+                  </TextReveal>
+                  <TextReveal delay={0.2} stagger>
+                    With hands-on experience exploring Uganda's national parks and natural attractions, Henry is passionate about creating memorable safari experiences that combine adventure, conservation, and genuine local hospitality. His commitment to quality service and personalized travel ensures that every journey reflects the beauty and spirit of the Pearl of Africa.
+                  </TextReveal>
+                  <TextReveal delay={0.3} stagger>
+                    Under his leadership, Kitiibwa Safaris continues to promote responsible tourism by connecting visitors with Uganda's incredible wildlife, scenic landscapes, and rich cultural heritage while supporting sustainable travel practices.
+                  </TextReveal>
+                  <div className="p-6 bg-gradient-to-r from-accent/10 to-secondary/5 rounded-lg border-l-4 border-accent hover:shadow-lg transition-shadow duration-300">
+                    <p className="text-primary italic font-semibold">
+                      &quot;Every safari is more than a journey—it&apos;s an opportunity to experience the wild, connect with nature, and create memories that last a lifetime.&quot;
+                    </p>
+                  </div>
+                  <div className="flex gap-4">
+                    <a href="https://facebook.com/alizeyunahenry" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white hover:bg-accent hover:scale-110 transition-all duration-300 shadow-lg">
+                      <span className="text-lg">f</span>
+                    </a>
+                    <a href="https://instagram.com/alizeyunahenry" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white hover:bg-accent hover:scale-110 transition-all duration-300 shadow-lg">
+                      <span className="text-lg">📷</span>
+                    </a>
+                    <a href="https://linkedin.com/in/alizeyunahenry" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white hover:bg-accent hover:scale-110 transition-all duration-300 shadow-lg">
+                      <span className="text-lg">in</span>
+                    </a>
+                    <a href="https://twitter.com/alizeyunahenry" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white hover:bg-accent hover:scale-110 transition-all duration-300 shadow-lg">
+                      <span className="text-lg">𝕏</span>
+                    </a>
+                  </div>
                 </div>
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -208,67 +220,48 @@ export default function About() {
         {/* Our Values */}
         <section className="py-16 md:py-24 bg-gradient-to-b from-card to-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center animate-fade-in-up">Our Core Values</h2>
+            <ScrollReveal className="mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center">Our Core Values</h2>
+            </ScrollReveal>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-background p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <div className="h-12 w-12 bg-accent rounded mb-4 flex items-center justify-center">
-                  <span className="text-xl">🌿</span>
-                </div>
-                <h3 className="text-xl font-bold text-primary mb-2">Conservation</h3>
-                <p className="text-muted-foreground text-sm">
-                  We are committed to protecting Uganda's wildlife and ecosystems for future generations through sustainable practices.
-                </p>
-              </div>
-
-              <div className="bg-background p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <div className="h-12 w-12 bg-accent rounded mb-4 flex items-center justify-center">
-                  <span className="text-xl">🤝</span>
-                </div>
-                <h3 className="text-xl font-bold text-primary mb-2">Community</h3>
-                <p className="text-muted-foreground text-sm">
-                  We invest in local communities, creating opportunities and supporting development through authentic engagement.
-                </p>
-              </div>
-
-              <div className="bg-background p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <div className="h-12 w-12 bg-accent rounded mb-4 flex items-center justify-center">
-                  <span className="text-xl">⭐</span>
-                </div>
-                <h3 className="text-xl font-bold text-primary mb-2">Excellence</h3>
-                <p className="text-muted-foreground text-sm">
-                  We maintain the highest standards in service, safety, and professionalism across all our operations.
-                </p>
-              </div>
-
-              <div className="bg-background p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <div className="h-12 w-12 bg-accent rounded mb-4 flex items-center justify-center">
-                  <span className="text-xl">🌍</span>
-                </div>
-                <h3 className="text-xl font-bold text-primary mb-2">Authenticity</h3>
-                <p className="text-muted-foreground text-sm">
-                  We provide genuine connections with local cultures and authentic African experiences, not staged performances.
-                </p>
-              </div>
-
-              <div className="bg-background p-6 rounded-lg hover:shadow-lg transition-shadow card-hover animate-fade-in-up-float" style={{ animationDelay: '0.2s' }}>
-                <div className="h-12 w-12 bg-accent rounded mb-4 flex items-center justify-center">
-                  <span className="text-xl">🗺️</span>
-                </div>
-                <h3 className="text-xl font-bold text-primary mb-2">Adventure</h3>
-                <p className="text-muted-foreground text-sm">
-                  We believe in the transformative power of exploration and discovery in pristine natural environments.
-                </p>
-              </div>
-
-              <div className="bg-background p-6 rounded-lg hover:shadow-lg transition-shadow card-hover animate-fade-in-up-float" style={{ animationDelay: '0.3s' }}>
-                <div className="h-12 w-12 bg-accent rounded mb-4 flex items-center justify-center">
-                  <span className="text-xl">💡</span>
-                </div>
-                <h3 className="text-xl font-bold text-primary mb-2">Innovation</h3>
-                <p className="text-muted-foreground text-sm">
-                  We continuously improve our offerings while respecting traditional ways of life and cultural heritage.
-                </p>
-              </div>
+              <FeatureCard
+                icon="🌿"
+                title="Conservation"
+                description="We are committed to protecting Uganda's wildlife and ecosystems for future generations through sustainable practices."
+                delay={0}
+              />
+              <FeatureCard
+                icon="🤝"
+                title="Community"
+                description="We invest in local communities, creating opportunities and supporting development through authentic engagement."
+                delay={50}
+              />
+              <FeatureCard
+                icon="⭐"
+                title="Excellence"
+                description="We maintain the highest standards in service, safety, and professionalism across all our operations."
+                delay={100}
+              />
+              <FeatureCard
+                icon="🌍"
+                title="Authenticity"
+                description="We provide genuine connections with local cultures and authentic African experiences, not staged performances."
+                delay={150}
+              />
+              <FeatureCard
+                icon="🗺️"
+                title="Adventure"
+                description="We believe in the transformative power of exploration and discovery in pristine natural environments."
+                delay={200}
+                highlight
+              />
+              <FeatureCard
+                icon="💡"
+                title="Innovation"
+                description="We continuously improve our offerings while respecting traditional ways of life and cultural heritage."
+                delay={250}
+                highlight
+              />
             </div>
           </div>
         </section>
@@ -277,39 +270,45 @@ export default function About() {
         <section className="py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 text-center">Our Expert Team</h2>
-              <p className="text-center text-muted-foreground max-w-2xl mx-auto">
-                Meet the passionate professionals dedicated to creating unforgettable safari experiences and protecting Uganda's natural heritage.
-              </p>
+              <ScrollReveal>
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 text-center">Our Expert Team</h2>
+              </ScrollReveal>
+              <ScrollReveal delay={0.15}>
+                <p className="text-center text-muted-foreground max-w-2xl mx-auto">
+                  Meet the passionate professionals dedicated to creating unforgettable safari experiences and protecting Uganda's natural heritage.
+                </p>
+              </ScrollReveal>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {teamMembers.map((member, idx) => (
-                <div key={member.name} className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow card-hover animate-fade-in-up-float" style={{ animationDelay: `${idx * 0.1}s` }}>
-                  <div className="relative h-48 overflow-hidden">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover hover:scale-105 transition-transform duration-300"
-                    />
+                <ScrollReveal key={member.name} delay={idx * 0.1} direction={idx % 2 === 0 ? 'up' : 'down'}>
+                  <div className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 card-hover group">
+                    <div className="relative h-48 overflow-hidden">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-lg font-bold text-primary mb-1">{member.name}</h3>
+                      <p className="text-accent font-semibold text-sm mb-3">{member.role}</p>
+                      <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{member.bio}</p>
+                      {(member.facebook || member.instagram || member.linkedin || member.twitter) && (
+                        <div className="pt-3 border-t border-border">
+                          <SocialIcons
+                            facebook={member.facebook}
+                            instagram={member.instagram}
+                            linkedin={member.linkedin}
+                            twitter={member.twitter}
+                            size="sm"
+                          />
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-primary mb-1">{member.name}</h3>
-                    <p className="text-accent font-semibold text-sm mb-3">{member.role}</p>
-                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{member.bio}</p>
-                    {(member.facebook || member.instagram || member.linkedin || member.twitter) && (
-                      <div className="pt-3 border-t border-border">
-                        <SocialIcons
-                          facebook={member.facebook}
-                          instagram={member.instagram}
-                          linkedin={member.linkedin}
-                          twitter={member.twitter}
-                          size="sm"
-                        />
-                      </div>
-                    )}
-                  </div>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>

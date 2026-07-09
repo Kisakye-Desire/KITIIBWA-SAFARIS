@@ -2,6 +2,9 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 import WhatsAppButton from '@/components/whatsapp-button'
 import Image from 'next/image'
+import ScrollReveal from '@/components/scroll-reveal'
+import InteractiveImage from '@/components/interactive-image'
+import FeatureCard from '@/components/feature-card'
 
 export const metadata = {
   title: 'Uganda | Destination Guide | KITIIBWA SAFARIS',
@@ -64,12 +67,16 @@ export default function Uganda() {
         {/* Hero */}
         <section className="py-12 md:py-20 bg-gradient-to-b from-primary/10 to-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-balance">
-              Uganda: The Pearl of Africa
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl">
-              Discover a land of incredible biodiversity, ancient forests, dramatic mountains, and unmatched wildlife experiences
-            </p>
+            <ScrollReveal>
+              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-balance">
+                Uganda: The Pearl of Africa
+              </h1>
+            </ScrollReveal>
+            <ScrollReveal delay={0.15}>
+              <p className="text-lg text-muted-foreground max-w-3xl">
+                Discover a land of incredible biodiversity, ancient forests, dramatic mountains, and unmatched wildlife experiences
+              </p>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -77,31 +84,34 @@ export default function Uganda() {
         <section className="py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
-              <div>
-                <h2 className="text-3xl font-bold text-primary mb-4">Welcome to Uganda</h2>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  Uganda is often called the "Pearl of Africa" for its remarkable beauty, incredible wildlife, and warm people.
-                  Straddling the equator in East-Central Africa, Uganda offers diverse landscapes from tropical forests to volcanic
-                  mountains and vast savannas.
-                </p>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  With over 1,000 bird species and home to nearly 50% of Africa's remaining forest elephants, Uganda is a
-                  biodiversity hotspot. The country is particularly renowned for mountain gorilla trekking in Bwindi, one of the
-                  world's most coveted wildlife experiences.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  The country boasts a fascinating culture, hospitable people, and a rich history of conservation efforts that make
-                  it an ideal destination for conscious travelers seeking authentic African experiences.
-                </p>
-              </div>
-              <div className="relative h-80 rounded-lg overflow-hidden shadow-lg">
-                <Image
+              <ScrollReveal direction="left">
+                <div>
+                  <h2 className="text-3xl font-bold text-primary mb-4">Welcome to Uganda</h2>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    Uganda is often called the "Pearl of Africa" for its remarkable beauty, incredible wildlife, and warm people.
+                    Straddling the equator in East-Central Africa, Uganda offers diverse landscapes from tropical forests to volcanic
+                    mountains and vast savannas.
+                  </p>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    With over 1,000 bird species and home to nearly 50% of Africa's remaining forest elephants, Uganda is a
+                    biodiversity hotspot. The country is particularly renowned for mountain gorilla trekking in Bwindi, one of the
+                    world's most coveted wildlife experiences.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    The country boasts a fascinating culture, hospitable people, and a rich history of conservation efforts that make
+                    it an ideal destination for conscious travelers seeking authentic African experiences.
+                  </p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal direction="right">
+                <InteractiveImage
                   src="/images/safari-landscape.png"
                   alt="Uganda Landscape"
-                  fill
-                  className="object-cover"
+                  width={400}
+                  height={320}
+                  className="h-80 rounded-lg overflow-hidden shadow-lg"
                 />
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -109,13 +119,17 @@ export default function Uganda() {
         {/* Key Facts */}
         <section className="py-16 md:py-24 bg-card">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-primary mb-12 text-center">Uganda At A Glance</h2>
+            <ScrollReveal className="mb-12">
+              <h2 className="text-3xl font-bold text-primary text-center">Uganda At A Glance</h2>
+            </ScrollReveal>
             <div className="grid md:grid-cols-3 gap-8">
-              {facts.map((fact) => (
-                <div key={fact.label} className="bg-background p-6 rounded-lg text-center">
-                  <p className="text-muted-foreground text-sm mb-2">{fact.label}</p>
-                  <p className="text-3xl font-bold text-primary">{fact.value}</p>
-                </div>
+              {facts.map((fact, idx) => (
+                <ScrollReveal key={fact.label} delay={idx * 0.1} direction={idx % 2 === 0 ? 'up' : 'down'}>
+                  <div className="bg-background p-6 rounded-lg text-center hover:shadow-lg transition-shadow duration-300 border border-border hover:border-accent/50">
+                    <p className="text-muted-foreground text-sm mb-2 font-semibold uppercase tracking-wide">{fact.label}</p>
+                    <p className="text-4xl font-bold text-primary">{fact.value}</p>
+                  </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -124,11 +138,14 @@ export default function Uganda() {
         {/* Attractions */}
         <section className="py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">Premier Destinations</h2>
+            <ScrollReveal className="mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center">Premier Destinations</h2>
+            </ScrollReveal>
 
             <div className="space-y-12">
               {attractions.map((attraction, idx) => (
-                <div key={attraction.name} className="grid md:grid-cols-2 gap-8 items-center">
+                <ScrollReveal key={attraction.name} delay={idx * 0.1} direction={idx % 2 === 0 ? 'left' : 'right'}>
+                  <div className="grid md:grid-cols-2 gap-8 items-center">
                   {idx % 2 === 0 ? (
                     <>
                       <div>
@@ -150,25 +167,23 @@ export default function Uganda() {
                           </div>
                         </div>
                       </div>
-                      <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
-                        <Image
-                          src={attraction.image}
-                          alt={attraction.name}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
+                      <InteractiveImage
+                        src={attraction.image}
+                        alt={attraction.name}
+                        width={400}
+                        height={320}
+                        className="h-64 md:h-80 rounded-lg overflow-hidden shadow-lg"
+                      />
                     </>
                   ) : (
                     <>
-                      <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
-                        <Image
-                          src={attraction.image}
-                          alt={attraction.name}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
+                      <InteractiveImage
+                        src={attraction.image}
+                        alt={attraction.name}
+                        width={400}
+                        height={320}
+                        className="h-64 md:h-80 rounded-lg overflow-hidden shadow-lg"
+                      />
                       <div>
                         <h3 className="text-2xl font-bold text-primary mb-3">{attraction.name}</h3>
                         <p className="text-muted-foreground mb-4 leading-relaxed">{attraction.description}</p>
@@ -191,37 +206,46 @@ export default function Uganda() {
                     </>
                   )}
                 </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
         </section>
 
         {/* Visitor Info */}
-        <section className="py-16 md:py-24 bg-primary text-primary-foreground">
+        <section className="py-16 md:py-24 bg-gradient-safari text-primary-foreground">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold mb-8 text-center">Practical Information</h2>
+            <ScrollReveal className="mb-8">
+              <h2 className="text-3xl font-bold text-center">Practical Information</h2>
+            </ScrollReveal>
             <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <h3 className="text-xl font-bold mb-4">Getting There</h3>
-                <p className="opacity-90">
-                  Entebbe International Airport is the main gateway. Most flights connect through Addis Ababa, Dubai, or
-                  Amsterdam. KITIIBWA can arrange airport transfers and visas assistance.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-4">Best Time to Visit</h3>
-                <p className="opacity-90">
-                  June-August and December-February offer the best weather. However, Uganda is beautiful year-round. Rainy
-                  seasons bring lush landscapes and fewer tourists.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-4">What to Pack</h3>
-                <p className="opacity-90">
-                  Binoculars, camera, insect repellent, sun protection, and layers for mountain regions. Our packing guide will
-                  be provided upon booking.
-                </p>
-              </div>
+              <ScrollReveal delay={0} direction="up">
+                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  <h3 className="text-xl font-bold mb-4">✈️ Getting There</h3>
+                  <p className="opacity-90">
+                    Entebbe International Airport is the main gateway. Most flights connect through Addis Ababa, Dubai, or
+                    Amsterdam. KITIIBWA can arrange airport transfers and visas assistance.
+                  </p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={100} direction="up">
+                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  <h3 className="text-xl font-bold mb-4">🌞 Best Time to Visit</h3>
+                  <p className="opacity-90">
+                    June-August and December-February offer the best weather. However, Uganda is beautiful year-round. Rainy
+                    seasons bring lush landscapes and fewer tourists.
+                  </p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={200} direction="up">
+                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  <h3 className="text-xl font-bold mb-4">🎒 What to Pack</h3>
+                  <p className="opacity-90">
+                    Binoculars, camera, insect repellent, sun protection, and layers for mountain regions. Our packing guide will
+                    be provided upon booking.
+                  </p>
+                </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>

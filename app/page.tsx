@@ -5,6 +5,8 @@ import HeroCarousel from '@/components/hero-carousel'
 import Link from 'next/link'
 import Image from 'next/image'
 import { SectionHeading, AnimatedCard, InteractiveImage, TextGradient } from '@/components/ui/effects'
+import ScrollReveal from '@/components/scroll-reveal'
+import Marquee from '@/components/marquee'
 
 export const metadata = {
   title: 'Home | KITIIBWA SAFARIS',
@@ -60,17 +62,78 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Tourism Destinations Marquee */}
+        <section className="py-12 md:py-16 bg-gradient-safari text-primary-foreground overflow-hidden">
+          <div className="space-y-4">
+            <ScrollReveal>
+              <h3 className="text-2xl font-bold text-center mb-8">Explore Our Destinations</h3>
+            </ScrollReveal>
+            <Marquee speed="normal" pauseOnHover className="mb-6">
+              <div className="flex gap-8 px-8">
+                <div className="flex items-center gap-3 whitespace-nowrap">
+                  <span className="text-2xl">🦁</span>
+                  <span className="font-semibold">Queen Elizabeth National Park</span>
+                </div>
+                <div className="flex items-center gap-3 whitespace-nowrap">
+                  <span className="text-2xl">🦍</span>
+                  <span className="font-semibold">Bwindi Impenetrable Forest</span>
+                </div>
+                <div className="flex items-center gap-3 whitespace-nowrap">
+                  <span className="text-2xl">🐘</span>
+                  <span className="font-semibold">Murchison Falls National Park</span>
+                </div>
+                <div className="flex items-center gap-3 whitespace-nowrap">
+                  <span className="text-2xl">🦓</span>
+                  <span className="font-semibold">Lake Victoria Region</span>
+                </div>
+                <div className="flex items-center gap-3 whitespace-nowrap">
+                  <span className="text-2xl">🏔️</span>
+                  <span className="font-semibold">Rwenzori Mountains</span>
+                </div>
+              </div>
+            </Marquee>
+            <Marquee speed="normal" direction="right" pauseOnHover>
+              <div className="flex gap-8 px-8">
+                <div className="flex items-center gap-3 whitespace-nowrap">
+                  <span className="text-2xl">✨</span>
+                  <span className="font-semibold">Mountain Gorilla Trekking</span>
+                </div>
+                <div className="flex items-center gap-3 whitespace-nowrap">
+                  <span className="text-2xl">🌅</span>
+                  <span className="font-semibold">Sunrise Game Drives</span>
+                </div>
+                <div className="flex items-center gap-3 whitespace-nowrap">
+                  <span className="text-2xl">🚤</span>
+                  <span className="font-semibold">Kazinga Channel Cruises</span>
+                </div>
+                <div className="flex items-center gap-3 whitespace-nowrap">
+                  <span className="text-2xl">🌿</span>
+                  <span className="font-semibold">Conservation Experiences</span>
+                </div>
+                <div className="flex items-center gap-3 whitespace-nowrap">
+                  <span className="text-2xl">🏨</span>
+                  <span className="font-semibold">Luxury Safari Cottages</span>
+                </div>
+              </div>
+            </Marquee>
+          </div>
+        </section>
+
         {/* Featured Experiences */}
         <section className="py-16 md:py-24 bg-gradient-to-b from-card to-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 animate-fade-in-up">
-              <div className="mb-4">
-                <TextGradient className="text-sm font-semibold tracking-wider uppercase">Our Signature Journeys</TextGradient>
-              </div>
-              <SectionHeading animated>Unforgettable Experiences</SectionHeading>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                Discover our most sought-after safari adventures and premium accommodations tailored for the discerning traveler
-              </p>
+            <div className="text-center mb-12">
+              <ScrollReveal>
+                <div className="mb-4">
+                  <TextGradient className="text-sm font-semibold tracking-wider uppercase">Our Signature Journeys</TextGradient>
+                </div>
+                <SectionHeading animated>Unforgettable Experiences</SectionHeading>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                  Discover our most sought-after safari adventures and premium accommodations tailored for the discerning traveler
+                </p>
+              </ScrollReveal>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -143,14 +206,18 @@ export default function Home() {
             backgroundImage: 'radial-gradient(circle at 50% 50%, #D4A574 0%, transparent 70%)',
           }} />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-12 animate-fade-in-up">
-              <div className="mb-4">
-                <TextGradient className="text-sm font-semibold tracking-wider uppercase">What Sets Us Apart</TextGradient>
-              </div>
-              <SectionHeading animated>Why Choose KITIIBWA</SectionHeading>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                We&apos;re not just another safari company. We&apos;re conservation partners, community advocates, and curators of transformative experiences.
-              </p>
+            <div className="text-center mb-12">
+              <ScrollReveal>
+                <div className="mb-4">
+                  <TextGradient className="text-sm font-semibold tracking-wider uppercase">What Sets Us Apart</TextGradient>
+                </div>
+                <SectionHeading animated>Why Choose KITIIBWA</SectionHeading>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                  We&apos;re not just another safari company. We&apos;re conservation partners, community advocates, and curators of transformative experiences.
+                </p>
+              </ScrollReveal>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -202,29 +269,35 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-safari opacity-95" />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-transparent" />
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div className="animate-fade-in-up">
+            <ScrollReveal>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance text-white">Ready for Your African Adventure?</h2>
-            </div>
-            <p className="text-lg opacity-95 mb-8 leading-relaxed text-white animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              Your dream safari awaits. From intimate wildlife encounters to transformative cultural experiences, KITIIBWA SAFARIS brings Uganda&apos;s wonders to life. Every journey is personalized, every moment is precious—let us craft your unforgettable story.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-              <Link
-                href="/packages"
-                className="bg-white text-primary hover:bg-accent hover:text-white px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
-              >
-                Explore Packages
-              </Link>
-              <Link
-                href="/contact"
-                className="bg-accent text-white hover:bg-white hover:text-primary px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
-              >
-                Plan Your Journey
-              </Link>
-            </div>
-            <p className="text-sm opacity-90 mt-6 text-white animate-pulse-subtle">
-              💬 Need help? Chat with us on WhatsApp or call +256 708898424
-            </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <p className="text-lg opacity-95 mb-8 leading-relaxed text-white">
+                Your dream safari awaits. From intimate wildlife encounters to transformative cultural experiences, KITIIBWA SAFARIS brings Uganda's wonders to life. Every journey is personalized, every moment is precious—let us craft your unforgettable story.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/packages"
+                  className="bg-white text-primary hover:bg-accent hover:text-white px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 hover:shadow-xl shadow-lg duration-300"
+                >
+                  Explore Packages
+                </Link>
+                <Link
+                  href="/contact"
+                  className="bg-accent text-white hover:bg-white hover:text-primary px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 hover:shadow-xl shadow-lg duration-300"
+                >
+                  Plan Your Journey
+                </Link>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.3}>
+              <p className="text-sm opacity-90 mt-6 text-white animate-pulse-subtle">
+                💬 Need help? Chat with us on WhatsApp or call +256 708898424
+              </p>
+            </ScrollReveal>
           </div>
         </section>
       </main>
