@@ -9,7 +9,6 @@ import { Heart } from 'lucide-react'
 import ScrollReveal from '@/components/scroll-reveal'
 import { TextGradient } from '@/components/ui/effects'
 import FeatureCard from '@/components/feature-card'
-import ImpactGallery from '@/components/impact-gallery'
 
 export default function Outreach() {
   const programs = [
@@ -154,9 +153,6 @@ export default function Outreach() {
             </div>
           </div>
         </section>
-
-        {/* Impact Gallery */}
-        <ImpactGallery />
 
         {/* Impact Stats */}
         <section className="py-16 md:py-24 bg-gradient-safari text-primary-foreground relative overflow-hidden">
