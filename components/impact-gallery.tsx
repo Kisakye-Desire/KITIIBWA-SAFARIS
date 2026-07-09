@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ScrollReveal from '@/components/scroll-reveal'
 
 interface GalleryImage {
@@ -9,8 +9,10 @@ interface GalleryImage {
   alt: string
   activity: string
   description?: string
+  isPlaceholder?: boolean
 }
 
+const IMAGES_PER_PAGE = 9
 const galleryImages: GalleryImage[] = [
   {
     src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-09%20at%2012.48.08%20PM%20%285%29-BAIwpxuR2yaXUyWK21gq8AejquKAzp.jpeg',
@@ -78,10 +80,33 @@ const galleryImages: GalleryImage[] = [
     activity: 'Community Children Program',
     description: 'Celebrating and supporting local children'
   },
+  // Placeholder images for future content (12-51)
+  ...Array.from({ length: 40 }, (_, idx) => ({
+    src: `https://images.unsplash.com/photo-${1590080876402 + idx}?w=800&h=600&fit=crop&crop=faces&q=80`,
+    alt: `Community Activity ${idx + 12}`,
+    activity: `Community Initiative ${idx + 12}`,
+    description: `Upcoming community outreach activity - Image ${idx + 12}`,
+    isPlaceholder: true
+  }))
 ]
 
 export default function ImpactGallery() {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
+  const [displayedCount, setDisplayedCount] = useState(IMAGES_PER_PAGE)
+  const [isLoading, setIsLoading] = useState(false)
+
+  const displayedImages = galleryImages.slice(0, displayedCount)
+  const hasMore = displayedCount < galleryImages.length
+  const totalCount = galleryImages.length
+
+  const handleLoadMore = () => {
+    setIsLoading(true)
+    // Simulate loading delay for better UX
+    setTimeout(() => {
+      setDisplayedCount(prev => Math.min(prev + IMAGES_PER_PAGE, totalCount))
+      setIsLoading(false)
+    }, 300)
+  }
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-background via-card/30 to-background relative overflow-hidden">
@@ -102,8 +127,8 @@ export default function ImpactGallery() {
         </ScrollReveal>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {galleryImages.map((image, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in-up">
+          {displayedImages.map((image, idx) => (
             <ScrollReveal
               key={idx}
               delay={idx * 0.08}
@@ -120,7 +145,16 @@ export default function ImpactGallery() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  loading="lazy"
+                  quality={75}
                 />
+
+                {/* Placeholder Badge */}
+                {image.isPlaceholder && (
+                  <div className="absolute top-4 left-4 z-10 bg-accent/90 text-accent-foreground px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm">
+                    Coming Soon
+                  </div>
+                )}
 
                 {/* Gradient Overlay - Dark on Hover */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -141,6 +175,51 @@ export default function ImpactGallery() {
             </ScrollReveal>
           ))}
         </div>
+
+        {/* Load More Section */}
+        {hasMore && (
+          <div className="flex flex-col items-center mt-16 gap-4">
+            <button
+              onClick={handleLoadMore}
+              disabled={isLoading}
+              className="group relative px-8 py-3 bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary text-primary-foreground font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-lg"
+            >
+              <span className="flex items-center gap-2">
+                {isLoading ? (
+                  <>
+                    <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                    </svg>
+                    Loading...
+                  </>
+                ) : (
+                  <>
+                    Load More Moments
+                    <svg className="w-5 h-5 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                  </>
+                )}
+              </span>
+            </button>
+
+            {/* Counter Text */}
+            <p className="text-sm text-muted-foreground">
+              Showing {displayedCount} of {totalCount} moments
+            </p>
+          </div>
+        )}
+
+        {/* All Loaded Message */}
+        {!hasMore && displayedCount > IMAGES_PER_PAGE && (
+          <div className="flex flex-col items-center mt-16">
+            <div className="text-center">
+              <p className="text-lg text-muted-foreground mb-2">You're viewing all {totalCount} moments</p>
+              <p className="text-sm text-muted-foreground/70">More stories coming soon...</p>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Lightbox Modal */}
