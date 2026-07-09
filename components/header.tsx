@@ -22,17 +22,17 @@ export default function Header() {
   ]
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-card shadow-sm">
+    <header className="sticky top-0 z-40 border-b border-border bg-card shadow-lg">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 hover:scale-110 transition-transform duration-300">
             <Image
               src="/logo.png"
               alt="KITIIBWA SAFARIS"
-              width={50}
-              height={50}
-              className="h-12 w-auto animate-fade-in-down"
+              width={80}
+              height={80}
+              className="h-16 w-auto animate-fade-in-down"
             />
           </Link>
 

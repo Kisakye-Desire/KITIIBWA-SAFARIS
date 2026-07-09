@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
+import BackToTop from '@/components/back-to-top'
 
 export const metadata: Metadata = {
   title: 'KITIIBWA SAFARIS | Premium African Safari Experiences',
@@ -43,6 +44,7 @@ export default function RootLayout({
     <html lang="en" className="bg-background">
       <body className="antialiased bg-background text-foreground">
         {children}
+        <BackToTop />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
