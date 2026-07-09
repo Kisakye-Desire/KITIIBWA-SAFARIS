@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Check } from 'lucide-react'
 import Link from 'next/link'
 import { TextGradient, AnimatedCard } from '@/components/ui/effects'
+import ScrollReveal from '@/components/scroll-reveal'
 
 export const metadata = {
   title: 'Safari Packages | KITIIBWA SAFARIS',
@@ -118,12 +119,22 @@ export default function Packages() {
       <Header />
       <main className="min-h-screen">
         {/* Hero */}
-        <section className="py-12 md:py-20 bg-gradient-to-b from-primary/10 to-background">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-balance">Safari Packages</h1>
-            <p className="text-lg text-muted-foreground max-w-3xl">
-              Choose from our curated packages or work with us to customize your perfect African safari adventure
-            </p>
+        <section className="py-16 md:py-24 bg-gradient-to-b from-primary/10 via-background to-background relative overflow-hidden">
+          <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(circle at 100% 0%, #2D5F3F 0%, transparent 50%)',
+          }} />
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <ScrollReveal>
+              <div className="mb-4">
+                <TextGradient className="text-sm font-semibold tracking-wider uppercase">Safari Experiences</TextGradient>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-balance">Safari Packages</h1>
+            </ScrollReveal>
+            <ScrollReveal delay={0.15}>
+              <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
+                Choose from our carefully curated packages or work with us to customize your perfect African safari adventure tailored to your dreams and interests.
+              </p>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -132,111 +143,120 @@ export default function Packages() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {packages.map((pkg, idx) => (
-                <div
-                  key={pkg.name}
-                  className={`rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all relative transform hover:scale-105 hover:-translate-y-2 duration-300 animate-fade-in-up ${
-                    pkg.bestseller ? 'ring-2 ring-accent' : 'bg-card'
-                  }`}
-                  style={{ animationDelay: `${idx * 0.1}s` }}
-                >
-                  {pkg.bestseller && (
-                    <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-bold">
-                      BESTSELLER
-                    </div>
-                  )}
-
-                  {/* Image */}
-                  <div className="relative h-48 overflow-hidden">
-                    <Image
-                      src={pkg.image}
-                      alt={pkg.name}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-6 bg-card flex flex-col h-full">
-                    <div className="mb-4">
-                      <h3 className="text-2xl font-bold text-primary mb-1">{pkg.name}</h3>
-                      <p className="text-accent font-semibold text-sm mb-2">{pkg.duration}</p>
-                      <p className="text-muted-foreground text-sm mb-4">{pkg.description}</p>
-                    </div>
-
-                    {/* Price */}
-                    <div className="mb-6">
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-3xl font-bold text-primary">${pkg.price}</span>
-                        <span className="text-muted-foreground">per person</span>
+                <ScrollReveal key={pkg.name} delay={idx * 0.08} direction={idx % 3 === 0 ? 'up' : idx % 3 === 1 ? 'left' : 'right'}>
+                  <div
+                    className={`rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all relative transform hover:scale-105 hover:-translate-y-2 duration-300 card-hover group border ${
+                      pkg.bestseller ? 'border-accent ring-2 ring-accent/50' : 'border-border hover:border-accent/50'
+                    }`}
+                  >
+                    {pkg.bestseller && (
+                      <div className="absolute top-4 right-4 bg-gradient-to-r from-accent to-secondary text-accent-foreground px-3 py-1 rounded-full text-xs font-bold z-10 shadow-lg">
+                        BESTSELLER
                       </div>
+                    )}
+
+                    {/* Image */}
+                    <div className="relative h-48 overflow-hidden">
+                      <Image
+                        src={pkg.image}
+                        alt={pkg.name}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
 
-                    {/* Included */}
-                    <div className="mb-6 flex-grow">
-                      <p className="font-semibold text-primary text-sm mb-3">Includes:</p>
-                      <ul className="space-y-2">
-                        {pkg.included.slice(0, 4).map((item) => (
-                          <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                            {item}
-                          </li>
-                        ))}
-                        {pkg.included.length > 4 && (
-                          <li className="text-xs text-accent font-semibold">+{pkg.included.length - 4} more</li>
-                        )}
-                      </ul>
-                    </div>
+                    {/* Content */}
+                    <div className="p-6 bg-card flex flex-col h-full">
+                      <div className="mb-4">
+                        <h3 className="text-xl font-bold text-primary mb-1 group-hover:text-accent transition-colors">{pkg.name}</h3>
+                        <p className="text-accent font-semibold text-sm mb-2">{pkg.duration}</p>
+                        <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{pkg.description}</p>
+                      </div>
 
-                    {/* Button */}
-                    <Link
-                      href="/contact"
-                      className="w-full bg-primary hover:bg-accent text-primary-foreground py-2 rounded-lg font-semibold transition-colors text-center"
-                    >
-                      Book Now
-                    </Link>
+                      {/* Price */}
+                      <div className="mb-6 pb-6 border-b border-border">
+                        <div className="flex items-baseline gap-1">
+                          <span className="text-4xl font-bold text-gradient">${pkg.price}</span>
+                          <span className="text-muted-foreground text-sm">per person</span>
+                        </div>
+                      </div>
+
+                      {/* Included */}
+                      <div className="mb-6 flex-grow">
+                        <p className="font-semibold text-primary text-xs mb-3 uppercase tracking-wider">Includes:</p>
+                        <ul className="space-y-2">
+                          {pkg.included.slice(0, 4).map((item) => (
+                            <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                              <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
+                              <span className="line-clamp-1">{item}</span>
+                            </li>
+                          ))}
+                          {pkg.included.length > 4 && (
+                            <li className="text-xs text-accent font-semibold">+{pkg.included.length - 4} more included</li>
+                          )}
+                        </ul>
+                      </div>
+
+                      {/* Button */}
+                      <Link
+                        href="/contact"
+                        className="w-full bg-gradient-to-r from-primary to-primary/80 hover:to-accent hover:from-accent text-primary-foreground py-3 rounded-lg font-semibold transition-all transform hover:scale-105 duration-300 text-center shadow-md hover:shadow-lg"
+                      >
+                        Book Now
+                      </Link>
+                    </div>
                   </div>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
         </section>
 
         {/* Custom Packages */}
-        <section className="py-16 md:py-24 bg-card">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-card to-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">Customize Your Package</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-background p-8 rounded-lg text-center">
-                <div className="h-12 w-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-xl text-accent-foreground font-bold">1</span>
+            <ScrollReveal className="mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center">Customize Your Perfect Safari</h2>
+            </ScrollReveal>
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <ScrollReveal delay={0} direction="up">
+                <div className="bg-gradient-to-br from-accent/10 to-transparent p-8 rounded-xl text-center border border-border hover:border-accent/50 transition-all card-hover group">
+                  <div className="h-14 w-14 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <span className="text-2xl text-white font-bold">1</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-primary mb-2 group-hover:text-accent transition-colors">Tell Us Your Dreams</h3>
+                  <p className="text-muted-foreground">Share your travel dates, interests, and budget with our expert team</p>
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-2">Tell Us Your Dreams</h3>
-                <p className="text-muted-foreground">Share your travel dates, interests, and budget with our team</p>
-              </div>
-              <div className="bg-background p-8 rounded-lg text-center">
-                <div className="h-12 w-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-xl text-accent-foreground font-bold">2</span>
+              </ScrollReveal>
+              <ScrollReveal delay={0.1} direction="up">
+                <div className="bg-gradient-to-br from-primary/10 to-transparent p-8 rounded-xl text-center border border-border hover:border-primary/50 transition-all card-hover group">
+                  <div className="h-14 w-14 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <span className="text-2xl text-white font-bold">2</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-primary mb-2 group-hover:text-accent transition-colors">We Design Your Adventure</h3>
+                  <p className="text-muted-foreground">Our experts craft a personalized itinerary matching your every interest</p>
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-2">We Design Your Adventure</h3>
-                <p className="text-muted-foreground">Our experts craft a personalized itinerary matching your interests</p>
-              </div>
-              <div className="bg-background p-8 rounded-lg text-center">
-                <div className="h-12 w-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-xl text-accent-foreground font-bold">3</span>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2} direction="up">
+                <div className="bg-gradient-to-br from-secondary/10 to-transparent p-8 rounded-xl text-center border border-border hover:border-secondary/50 transition-all card-hover group">
+                  <div className="h-14 w-14 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <span className="text-2xl text-white font-bold">3</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-primary mb-2 group-hover:text-accent transition-colors">Live Your Dream</h3>
+                  <p className="text-muted-foreground">Depart knowing every detail is perfect and handled with care</p>
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-2">Live Your Dream</h3>
-                <p className="text-muted-foreground">Depart knowing every detail is perfect and handled with care</p>
-              </div>
+              </ScrollReveal>
             </div>
 
-            <div className="text-center mt-12">
+            <ScrollReveal className="text-center">
               <Link
                 href="/contact"
-                className="inline-block bg-primary hover:bg-accent text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-colors"
+                className="inline-block bg-gradient-to-r from-primary to-primary/80 hover:to-accent hover:from-accent text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 hover:shadow-lg duration-300 shadow-lg"
               >
                 Start Planning Your Custom Safari
               </Link>
-            </div>
+            </ScrollReveal>
           </div>
         </section>
       </main>

@@ -86,20 +86,22 @@ export default function About() {
       <Header />
       <main className="min-h-screen">
         {/* Hero */}
-        <section className="py-12 md:py-20 bg-gradient-to-b from-primary/10 via-background to-background relative overflow-hidden">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-primary/10 via-background to-background relative overflow-hidden">
           <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
             backgroundImage: 'radial-gradient(circle at 100% 0%, #2D5F3F 0%, transparent 50%)',
           }} />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="animate-fade-in-up">
+            <ScrollReveal>
               <div className="mb-4">
                 <TextGradient className="text-sm font-semibold tracking-wider uppercase">Our Journey</TextGradient>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-balance">About KITIIBWA SAFARIS</h1>
-            </div>
-            <p className="text-lg text-muted-foreground max-w-3xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              Pioneering premium African safari experiences with a commitment to conservation and community empowerment
-            </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.15}>
+              <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
+                Pioneering premium African safari experiences with a commitment to conservation, community empowerment, and authentic cultural connections that transform lives and protect our planet.
+              </p>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -282,19 +284,23 @@ export default function About() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {teamMembers.map((member, idx) => (
                 <ScrollReveal key={member.name} delay={idx * 0.1} direction={idx % 2 === 0 ? 'up' : 'down'}>
-                  <div className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 card-hover group">
+                  <div className="bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 card-hover group border border-border hover:border-accent/50">
+                    {/* Gradient accent bar at top */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    
                     <div className="relative h-48 overflow-hidden">
                       <Image
                         src={member.image}
                         alt={member.name}
                         fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
                     <div className="p-6">
-                      <h3 className="text-lg font-bold text-primary mb-1">{member.name}</h3>
+                      <h3 className="text-lg font-bold text-primary mb-1 group-hover:text-accent transition-colors">{member.name}</h3>
                       <p className="text-accent font-semibold text-sm mb-3">{member.role}</p>
-                      <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{member.bio}</p>
+                      <p className="text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-3">{member.bio}</p>
                       {(member.facebook || member.instagram || member.linkedin || member.twitter) && (
                         <div className="pt-3 border-t border-border">
                           <SocialIcons
@@ -320,24 +326,34 @@ export default function About() {
             backgroundImage: 'radial-gradient(circle at 50% 50%, #D4A574 0%, transparent 70%)',
           }} />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center animate-fade-in-up">By The Numbers</h2>
-            <div className="grid md:grid-cols-4 gap-8">
-              <div className="text-center animate-scale-in" style={{ animationDelay: '0.2s' }}>
-                <div className="text-5xl md:text-6xl font-bold mb-2 text-accent">2,000+</div>
-                <p className="opacity-95">Happy Guests</p>
-              </div>
-              <div className="text-center animate-scale-in" style={{ animationDelay: '0.3s' }}>
-                <div className="text-5xl md:text-6xl font-bold mb-2 text-accent">15+</div>
-                <p className="opacity-95">Years of Experience</p>
-              </div>
-              <div className="text-center animate-scale-in" style={{ animationDelay: '0.4s' }}>
-                <div className="text-5xl md:text-6xl font-bold mb-2 text-accent">50+</div>
-                <p className="opacity-95">Professional Staff</p>
-              </div>
-              <div className="text-center animate-scale-in" style={{ animationDelay: '0.5s' }}>
-                <div className="text-5xl md:text-6xl font-bold mb-2 text-accent">5</div>
-                <p className="opacity-95">Prime Destinations</p>
-              </div>
+            <ScrollReveal>
+              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center animate-fade-in-up">By The Numbers</h2>
+            </ScrollReveal>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <ScrollReveal delay={0} direction="up">
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 text-center card-hover">
+                  <div className="text-6xl md:text-7xl font-bold mb-3 text-accent animate-fade-in-up">2,000+</div>
+                  <p className="opacity-95 font-medium">Happy Guests</p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={0.1} direction="up">
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 text-center card-hover">
+                  <div className="text-6xl md:text-7xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.1s' }}>15+</div>
+                  <p className="opacity-95 font-medium">Years of Experience</p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2} direction="up">
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 text-center card-hover">
+                  <div className="text-6xl md:text-7xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.2s' }}>50+</div>
+                  <p className="opacity-95 font-medium">Professional Staff</p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={0.3} direction="up">
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 text-center card-hover">
+                  <div className="text-6xl md:text-7xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.3s' }}>10</div>
+                  <p className="opacity-95 font-medium">Destinations</p>
+                </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>

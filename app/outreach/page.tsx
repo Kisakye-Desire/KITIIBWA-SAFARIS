@@ -6,6 +6,9 @@ import WhatsAppButton from '@/components/whatsapp-button'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Heart } from 'lucide-react'
+import ScrollReveal from '@/components/scroll-reveal'
+import { TextGradient } from '@/components/ui/effects'
+import FeatureCard from '@/components/feature-card'
 
 export default function Outreach() {
   const programs = [
@@ -58,176 +61,235 @@ export default function Outreach() {
       <Header />
       <main className="min-h-screen">
         {/* Hero */}
-        <section className="py-12 md:py-20 bg-gradient-to-b from-primary/10 to-background">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">KITIIBWA Outreach</h1>
-            <p className="text-lg text-muted-foreground max-w-3xl">
-              Creating positive impact through conservation, education, and community empowerment
-            </p>
+        <section className="py-16 md:py-24 bg-gradient-to-b from-primary/10 via-background to-background relative overflow-hidden">
+          <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(circle at 100% 0%, #2D5F3F 0%, transparent 50%)',
+          }} />
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <ScrollReveal>
+              <div className="mb-4">
+                <TextGradient className="text-sm font-semibold tracking-wider uppercase">Social Impact</TextGradient>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-balance">KITIIBWA Initiatives</h1>
+            </ScrollReveal>
+            <ScrollReveal delay={0.15}>
+              <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
+                Creating positive impact through wildlife conservation, education, community empowerment, and sustainable development across Uganda's communities and ecosystems.
+              </p>
+            </ScrollReveal>
           </div>
         </section>
 
         {/* Our Mission */}
-        <section className="py-16 md:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-background via-card/50 to-background relative">
+          <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(circle at 0% 100%, #D4A574 0%, transparent 60%)',
+          }} />
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Our Mission</h2>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  At KITIIBWA SAFARIS, we believe responsible tourism goes beyond wildlife viewing. It means actively giving back to the communities and ecosystems that make these experiences possible.
-                </p>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  Our outreach initiatives focus on three pillars: protecting Uganda's natural heritage, empowering local communities, and preserving cultural traditions. Every safari booking contributes a portion of revenue toward these vital programs.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  We partner with local NGOs, government agencies, and community leaders to ensure sustainable impact and transparent resource allocation.
-                </p>
-              </div>
-              <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src="/images/real-buffalo.jpg"
-                  alt="Community Conservation Efforts"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+              <ScrollReveal direction="left">
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Our Mission</h2>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    At KITIIBWA SAFARIS, we believe responsible tourism goes beyond wildlife viewing. It means actively giving back to the communities and ecosystems that make these experiences possible.
+                  </p>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    Our initiatives focus on three pillars: protecting Uganda's natural heritage, empowering local communities, and preserving cultural traditions. Every safari booking contributes a portion of revenue toward these vital programs.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    We partner with local NGOs, government agencies, and community leaders to ensure sustainable impact and transparent resource allocation.
+                  </p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal direction="right" delay={0.2}>
+                <div className="relative h-96 rounded-xl overflow-hidden shadow-2xl card-hover">
+                  <Image
+                    src="/images/gallery-6.png"
+                    alt="Community Conservation Efforts"
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>
 
         {/* Our Programs */}
-        <section className="py-16 md:py-24 bg-card">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-card to-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Our Programs</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Making a difference across conservation, education, health, and community development
-              </p>
+              <ScrollReveal>
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Our Programs</h2>
+              </ScrollReveal>
+              <ScrollReveal delay={0.15}>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                  Making a tangible difference across conservation, education, health, and community development across Uganda
+                </p>
+              </ScrollReveal>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {programs.map((program, idx) => (
-                <div key={idx} className="bg-background p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-l-4 border-accent">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="text-4xl">{program.icon}</div>
-                    <span className="text-xs font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full">{program.yearsActive}</span>
+                <ScrollReveal key={idx} delay={idx * 0.1} direction={idx % 2 === 0 ? 'up' : 'down'}>
+                  <div className="bg-background rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-border hover:border-accent/50 group overflow-hidden relative card-hover">
+                    {/* Gradient accent bar */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="text-5xl group-hover:scale-110 transition-transform duration-300">{program.icon}</div>
+                      <span className="text-xs font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full whitespace-nowrap">{program.yearsActive}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">{program.title}</h3>
+                    <p className="text-muted-foreground mb-4 leading-relaxed text-sm">{program.description}</p>
+                    <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-4 rounded-lg border border-primary/10 group-hover:border-accent/30 transition-all duration-300">
+                      <p className="text-primary font-semibold text-xs mb-2 uppercase tracking-wider">Impact to date</p>
+                      <p className="text-muted-foreground text-sm font-medium">{program.detailedImpact}</p>
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-primary mb-3">{program.title}</h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">{program.description}</p>
-                  <div className="bg-gradient-to-r from-primary/10 to-accent/10 p-4 rounded">
-                    <p className="text-primary font-semibold text-sm mb-2">Impact to date:</p>
-                    <p className="text-muted-foreground text-sm font-medium">{program.detailedImpact}</p>
-                  </div>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
         </section>
 
         {/* Impact Stats */}
-        <section className="py-16 md:py-24 bg-primary text-primary-foreground">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Our Impact</h2>
-            <div className="grid md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-4xl md:text-5xl font-bold mb-2">1,000+</div>
-                <p className="opacity-90 text-sm">People Directly Helped</p>
-              </div>
-              <div>
-                <div className="text-4xl md:text-5xl font-bold mb-2">5,000+</div>
-                <p className="opacity-90 text-sm">Lives Reached Through Programs</p>
-              </div>
-              <div>
-                <div className="text-4xl md:text-5xl font-bold mb-2">500+</div>
-                <p className="opacity-90 text-sm">Hectares Protected</p>
-              </div>
-              <div>
-                <div className="text-4xl md:text-5xl font-bold mb-2">$500K+</div>
-                <p className="opacity-90 text-sm">Funds Allocated to Outreach</p>
-              </div>
+        <section className="py-16 md:py-24 bg-gradient-safari text-primary-foreground relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(circle at 50% 50%, #D4A574 0%, transparent 70%)',
+          }} />
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <ScrollReveal>
+              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center animate-fade-in-up">Our Impact</h2>
+            </ScrollReveal>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+              <ScrollReveal delay={0} direction="up">
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover">
+                  <div className="text-5xl md:text-6xl font-bold mb-3 text-accent animate-fade-in-up">1,000+</div>
+                  <p className="opacity-95 text-sm font-medium">People Directly Helped</p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={0.1} direction="up">
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover">
+                  <div className="text-5xl md:text-6xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.1s' }}>5,000+</div>
+                  <p className="opacity-95 text-sm font-medium">Lives Reached Through Programs</p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2} direction="up">
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover">
+                  <div className="text-5xl md:text-6xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.2s' }}>500+</div>
+                  <p className="opacity-95 text-sm font-medium">Hectares Protected</p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={0.3} direction="up">
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover">
+                  <div className="text-5xl md:text-6xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.3s' }}>$500K+</div>
+                  <p className="opacity-95 text-sm font-medium">Funds Allocated to Outreach</p>
+                </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>
 
         {/* Make a Difference CTA */}
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24 relative overflow-hidden">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg p-8 md:p-12 text-center">
-              <Heart className="h-12 w-12 text-accent mx-auto mb-4" />
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Make a Difference</h2>
-              <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Your donation directly supports wildlife conservation, community education, healthcare, and sustainable livelihoods in Uganda. Every contribution matters and creates lasting positive change.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/donations"
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-3 rounded-lg font-semibold transition-colors"
-                >
-                  Donate Now
-                </Link>
-                <Link
-                  href="/contact"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-colors"
-                >
-                  Contact Us
-                </Link>
+            <ScrollReveal>
+              <div className="bg-gradient-to-br from-accent/20 via-primary/10 to-secondary/20 rounded-2xl p-8 md:p-12 text-center border border-accent/30 backdrop-blur-sm hover:shadow-2xl transition-all duration-300 card-hover">
+                <div className="mb-4 inline-flex items-center justify-center">
+                  <Heart className="h-12 w-12 text-accent animate-pulse-subtle" />
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Make a Difference</h2>
+                <p className="text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed text-lg">
+                  Your donation directly supports wildlife conservation, community education, healthcare initiatives, and sustainable livelihoods across Uganda. Every contribution creates lasting, measurable positive change.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link
+                    href="/donations"
+                    className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 hover:shadow-lg duration-300 shadow-lg"
+                  >
+                    Donate Now
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 hover:shadow-lg duration-300 shadow-lg"
+                  >
+                    Contact Us
+                  </Link>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 md:py-24 bg-card">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-background via-card/50 to-background">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-bold text-primary mb-3">How are funds utilized?</h3>
-                <p className="text-muted-foreground">
-                  All donations are transparently allocated toward direct community programs, conservation efforts, educational initiatives, and healthcare support. We maintain detailed records and share annual impact reports.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-primary mb-3">Can I visit the outreach programs?</h3>
-                <p className="text-muted-foreground">
-                  Yes! Many of our safaris include community visits and conservation site tours. Contact us to arrange specific outreach experiences during your safari.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-primary mb-3">Do donations receive tax benefits?</h3>
-                <p className="text-muted-foreground">
-                  We are registered as a legitimate charitable organization. Donors can inquire about tax deductibility status for their country of residence.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-primary mb-3">How can I volunteer?</h3>
-                <p className="text-muted-foreground">
-                  We welcome passionate volunteers! Contact our outreach coordinator at dynamicyoo@gmail.com or call +256 708898424 to discuss volunteer opportunities.
-                </p>
-              </div>
+            <ScrollReveal>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">Frequently Asked Questions</h2>
+            </ScrollReveal>
+            <div className="space-y-4">
+              {[
+                {
+                  q: 'How are funds utilized?',
+                  a: 'All donations are transparently allocated toward direct community programs, conservation efforts, educational initiatives, and healthcare support. We maintain detailed records and share annual impact reports.'
+                },
+                {
+                  q: 'Can I visit the outreach programs?',
+                  a: 'Yes! Many of our safaris include community visits and conservation site tours. Contact us to arrange specific outreach experiences during your safari.'
+                },
+                {
+                  q: 'Do donations receive tax benefits?',
+                  a: 'We are registered as a legitimate charitable organization. Donors can inquire about tax deductibility status for their country of residence.'
+                },
+                {
+                  q: 'How can I volunteer?',
+                  a: 'We welcome passionate volunteers! Contact our outreach coordinator at dynamicyoo@gmail.com or call +256 708898424 to discuss volunteer opportunities.'
+                }
+              ].map((item, idx) => (
+                <ScrollReveal key={idx} delay={idx * 0.1}>
+                  <div className="bg-card rounded-lg p-6 border border-border hover:border-accent/50 transition-all duration-300 hover:shadow-lg card-hover">
+                    <h3 className="text-lg font-bold text-primary mb-3 group-hover:text-accent transition-colors">{item.q}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{item.a}</p>
+                  </div>
+                </ScrollReveal>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Success Stories */}
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-card to-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">Success Stories</h2>
+            <ScrollReveal>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">Success Stories</h2>
+            </ScrollReveal>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-card rounded-lg p-6 shadow-lg">
-                <h3 className="text-xl font-bold text-primary mb-3">Kasuni Women's Cooperative</h3>
-                <p className="text-muted-foreground mb-4">
-                  Through our women empowerment program, Kasuni and 49 other women learned tourism hospitality skills. Today, they run a successful cooperative providing services to lodges and earning sustainable income.
-                </p>
-                <p className="text-accent font-semibold text-sm">Average income: 4x increase in 2 years</p>
-              </div>
-              <div className="bg-card rounded-lg p-6 shadow-lg">
-                <h3 className="text-xl font-bold text-primary mb-3">Bwindi School Scholarship Fund</h3>
-                <p className="text-muted-foreground mb-4">
-                  We've sponsored 200+ students through primary and secondary education in Bwindi communities. 85% of scholarship recipients complete secondary school and pursue higher education.
-                </p>
-                <p className="text-accent font-semibold text-sm">Next goal: 500 students by 2028</p>
-              </div>
+              <ScrollReveal delay={0} direction="left">
+                <div className="bg-gradient-to-br from-accent/10 to-secondary/5 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-border hover:border-accent/50 card-hover">
+                  <div className="h-12 w-12 bg-accent text-accent-foreground rounded-lg flex items-center justify-center mb-4 text-xl font-bold">
+                    👩‍💼
+                  </div>
+                  <h3 className="text-xl font-bold text-primary mb-3">Kasuni Women's Cooperative</h3>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    Through our women empowerment program, Kasuni and 49 other women learned tourism hospitality skills. Today, they run a successful cooperative providing services to lodges and earning sustainable income.
+                  </p>
+                  <p className="text-accent font-semibold text-sm">📈 Average income: 4x increase in 2 years</p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={0.15} direction="right">
+                <div className="bg-gradient-to-br from-primary/10 to-accent/5 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-border hover:border-primary/50 card-hover">
+                  <div className="h-12 w-12 bg-primary text-primary-foreground rounded-lg flex items-center justify-center mb-4 text-xl font-bold">
+                    🎓
+                  </div>
+                  <h3 className="text-xl font-bold text-primary mb-3">Bwindi School Scholarship Fund</h3>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    We've sponsored 200+ students through primary and secondary education in Bwindi communities. 85% of scholarship recipients complete secondary school and pursue higher education.
+                  </p>
+                  <p className="text-primary font-semibold text-sm">🎯 Next goal: 500 students by 2028</p>
+                </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>
