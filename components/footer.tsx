@@ -72,8 +72,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/community" className="hover:opacity-75 transition hover:translate-x-1 inline-block">
-                  Community
+                <Link href="/initiative" className="hover:opacity-75 transition hover:translate-x-1 inline-block">
+                  KITIIBWA Initiative
                 </Link>
               </li>
             </ul>

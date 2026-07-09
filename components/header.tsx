@@ -15,7 +15,7 @@ export default function Header() {
     { name: 'Safari Cottages', href: '/cottages' },
     { name: 'Uganda', href: '/uganda' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Outreach', href: '/outreach' },
+    { name: 'KITIIBWA Initiative', href: '/initiative' },
     { name: 'Best Of', href: '/best-of' },
     { name: 'Packages', href: '/packages' },
     { name: 'Contact', href: '/contact' },

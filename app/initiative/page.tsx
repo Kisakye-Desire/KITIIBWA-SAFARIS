@@ -9,8 +9,9 @@ import { Heart } from 'lucide-react'
 import ScrollReveal from '@/components/scroll-reveal'
 import { TextGradient } from '@/components/ui/effects'
 import FeatureCard from '@/components/feature-card'
+import ImpactGallery from '@/components/impact-gallery'
 
-export default function Outreach() {
+export default function Initiative() {
   const programs = [
     {
       title: 'Wildlife Conservation',
@@ -222,6 +223,9 @@ export default function Outreach() {
             </ScrollReveal>
           </div>
         </section>
+
+        {/* Impact Gallery */}
+        <ImpactGallery />
 
         {/* FAQ */}
         <section className="py-16 md:py-24 bg-gradient-to-b from-background via-card/50 to-background">
