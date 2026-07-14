@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { currentAnnouncement } from '@/lib/announcements'
 import Marquee from '@/components/marquee'
 import ScrollReveal from '@/components/scroll-reveal'
@@ -75,8 +76,11 @@ export default function EventAnnouncement() {
             <p className="text-sm md:text-base text-muted-foreground">
               Stay tuned for <span className="text-accent font-bold">official dates, venue, and booking details</span>
             </p>
-            <div className="mt-4 inline-block">
-              <div className="px-6 py-2 bg-accent/20 border border-accent/30 rounded-full">
+            <div className="mt-6 flex justify-center gap-4">
+              <Link href="/safari-chill-experience" className="px-8 py-3 bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-lg transition-all duration-300 transform hover:scale-105">
+                Learn More
+              </Link>
+              <div className="px-6 py-2 bg-accent/20 border border-accent/30 rounded-full self-center">
                 <p className="text-sm font-semibold text-accent">Coming to Uganda • 2026</p>
               </div>
             </div>

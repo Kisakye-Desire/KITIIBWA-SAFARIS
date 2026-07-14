@@ -13,6 +13,7 @@ export default function Header() {
     { name: 'About Us', href: '/about' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Safari Cottages', href: '/cottages' },
+    { name: 'Safari & Chill', href: '/safari-chill-experience' },
     { name: 'Uganda', href: '/uganda' },
     { name: 'Blog', href: '/blog' },
     { name: 'KITIIBWA Initiative', href: '/initiative' },
