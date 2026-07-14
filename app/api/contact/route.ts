@@ -3,6 +3,7 @@ import { db } from '@/lib/db'
 import { contact_message } from '@/lib/db/schema'
 import { sendEmail, getContactEmailHTML } from '@/lib/email'
 import { validateEmail, sanitizeInput, checkSpam } from '@/lib/validation'
+import { CONFIG } from '@/lib/config'
 
 export async function POST(request: NextRequest) {
   try {
@@ -20,7 +21,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Check spam
-    const isSpam = await checkSpam(email)
+    const isSpam = await checkSpam(email, 'contact')
     if (isSpam) {
       return NextResponse.json({ error: 'Too many requests. Please try again later.' }, { status: 429 })
     }
@@ -32,7 +33,9 @@ export async function POST(request: NextRequest) {
     phone = phone ? sanitizeInput(phone) : null
 
     // Get client IP
-    const ip = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown'
+    const ip = CONFIG.SECURITY.logIpAddresses 
+      ? request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown'
+      : 'logged'
 
     // Insert into database
     const result = await db
@@ -50,13 +53,11 @@ export async function POST(request: NextRequest) {
 
     // Send email to admin
     const adminEmailResult = await sendEmail({
-      to: process.env.ADMIN_EMAIL || 'dynamicyoo@gmail.com',
+      to: CONFIG.EMAIL_CONFIG.contactFormEmail,
       subject: `New Contact Form: ${subject}`,
       html: getContactEmailHTML({ name, email, subject, message, phone: phone || undefined }),
       replyTo: email,
     })
-
-    console.log('[CONTACT] New message from:', email, '- Status:', adminEmailResult.success)
 
     return NextResponse.json(
       { 

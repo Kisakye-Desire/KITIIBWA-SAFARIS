@@ -1,13 +1,5 @@
 import nodemailer from 'nodemailer'
-
-// Email service configuration
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER || 'dynamicyoo@gmail.com',
-    pass: process.env.EMAIL_PASSWORD || '',
-  },
-})
+import { CONFIG } from '@/lib/config'
 
 export interface EmailOptions {
   to: string
@@ -16,20 +8,110 @@ export interface EmailOptions {
   replyTo?: string
 }
 
-export async function sendEmail(options: EmailOptions) {
+export interface EmailResult {
+  success: boolean
+  messageId?: string
+  error?: string
+}
+
+// Initialize email provider based on configuration
+let emailProvider: 'resend' | 'nodemailer' | 'sendgrid' = (CONFIG.EMAIL_CONFIG.provider as any) || 'nodemailer'
+let resendClient: any = null
+let nodemailerTransporter: any = null
+
+// Initialize Resend if configured
+if (emailProvider === 'resend' && CONFIG.EMAIL_CONFIG.resend.apiKey) {
   try {
-    const result = await transporter.sendMail({
-      from: `KITIIBWA SAFARIS <${process.env.EMAIL_USER || 'dynamicyoo@gmail.com'}>`,
+    const { Resend } = require('resend')
+    resendClient = new Resend(CONFIG.EMAIL_CONFIG.resend.apiKey)
+  } catch (error) {
+    console.warn('[EMAIL] Resend not installed, falling back to nodemailer')
+    emailProvider = 'nodemailer'
+  }
+}
+
+// Initialize Nodemailer
+if (emailProvider === 'nodemailer' || !resendClient) {
+  nodemailerTransporter = nodemailer.createTransport({
+    service: CONFIG.EMAIL_CONFIG.nodemailer.service || 'gmail',
+    auth: {
+      user: CONFIG.EMAIL_CONFIG.nodemailer.user,
+      pass: CONFIG.EMAIL_CONFIG.nodemailer.password,
+    },
+  })
+}
+
+export async function sendEmail(options: EmailOptions): Promise<EmailResult> {
+  try {
+    // Send via appropriate provider
+    if (emailProvider === 'resend' && resendClient) {
+      return await sendViaResend(options)
+    } else if (emailProvider === 'sendgrid' && CONFIG.EMAIL_CONFIG.sendgrid.apiKey) {
+      return await sendViaSendGrid(options)
+    } else {
+      return await sendViaNodemailer(options)
+    }
+  } catch (error) {
+    console.error('[EMAIL ERROR]', error)
+    return { success: false, error: String(error) }
+  }
+}
+
+async function sendViaResend(options: EmailOptions): Promise<EmailResult> {
+  try {
+    const result = await resendClient.emails.send({
+      from: `KITIIBWA SAFARIS <${CONFIG.EMAIL_CONFIG.resend.apiKey ? 'noreply@resend.dev' : 'contact@kitiibwasafaris.com'}>`,
       to: options.to,
       subject: options.subject,
       html: options.html,
       replyTo: options.replyTo,
     })
 
-    console.log('[EMAIL] Sent successfully:', result.messageId)
+    return { success: true, messageId: result.id }
+  } catch (error) {
+    console.error('[EMAIL - RESEND ERROR]', error)
+    return { success: false, error: String(error) }
+  }
+}
+
+async function sendViaNodemailer(options: EmailOptions): Promise<EmailResult> {
+  try {
+    if (!nodemailerTransporter) {
+      throw new Error('Nodemailer not configured')
+    }
+
+    const result = await nodemailerTransporter.sendMail({
+      from: `KITIIBWA SAFARIS <${CONFIG.EMAIL_CONFIG.nodemailer.user}>`,
+      to: options.to,
+      subject: options.subject,
+      html: options.html,
+      replyTo: options.replyTo,
+    })
+
     return { success: true, messageId: result.messageId }
   } catch (error) {
-    console.error('[EMAIL ERROR]', error)
+    console.error('[EMAIL - NODEMAILER ERROR]', error)
+    return { success: false, error: String(error) }
+  }
+}
+
+async function sendViaSendGrid(options: EmailOptions): Promise<EmailResult> {
+  try {
+    const sgMail = require('@sendgrid/mail')
+    sgMail.setApiKey(CONFIG.EMAIL_CONFIG.sendgrid.apiKey)
+
+    const msg = {
+      to: options.to,
+      from: CONFIG.EMAIL_CONFIG.sendgrid.fromEmail,
+      subject: options.subject,
+      html: options.html,
+      replyTo: options.replyTo,
+    }
+
+    const result = await sgMail.send(msg)
+    return { success: true, messageId: result[0].headers['x-message-id'] }
+  } catch (error) {
+    console.error('[EMAIL - SENDGRID ERROR]', error)
     return { success: false, error: String(error) }
   }
 }
