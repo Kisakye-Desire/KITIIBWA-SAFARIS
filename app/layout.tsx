@@ -2,12 +2,10 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import BackToTop from '@/components/back-to-top'
+import { generateMetadata, pageMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: 'KITIIBWA SAFARIS | Premium African Safari Experiences',
-  description: 'Experience unforgettable wildlife adventures with KITIIBWA SAFARIS. Gorilla trekking, luxury accommodations, and guided tours in Uganda\'s most pristine destinations.',
-  keywords: 'safari, Uganda, gorilla trekking, wildlife, adventure, African safari, luxury travel',
-  generator: 'v0.app',
+  ...generateMetadata(pageMetadata.home),
   icons: {
     icon: [
       {
@@ -25,6 +23,7 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-icon.png',
   },
+  generator: 'Next.js',
 }
 
 export const viewport: Viewport = {

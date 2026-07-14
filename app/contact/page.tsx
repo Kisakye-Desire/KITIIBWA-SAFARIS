@@ -29,20 +29,32 @@ export default function Contact() {
     setSubmitMessage('')
 
     try {
+      // Basic validation
+      if (!formData.name.trim() || !formData.email.trim() || !formData.subject.trim() || !formData.message.trim()) {
+        setSubmitMessage('Please fill in all required fields.')
+        setIsSubmitting(false)
+        return
+      }
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       })
 
+      const data = await response.json()
+
       if (response.ok) {
-        setSubmitMessage('Thank you! We\'ll get back to you soon.')
+        setSubmitMessage('Thank you! We\'ll contact you within 24 hours.')
         setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+        // Keep message visible for 5 seconds
+        setTimeout(() => setSubmitMessage(''), 5000)
       } else {
-        setSubmitMessage('Error sending message. Please try again.')
+        setSubmitMessage(data.error || 'Error sending message. Please try again.')
       }
     } catch (error) {
-      setSubmitMessage('Error sending message. Please try again.')
+      console.error('[Contact Form Error]', error)
+      setSubmitMessage('Connection error. Please check your internet and try again.')
     }
 
     setIsSubmitting(false)

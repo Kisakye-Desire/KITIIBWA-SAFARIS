@@ -134,7 +134,9 @@ export const contact_message = pgTable('contact_message', {
   subject: text('subject').notNull(),
   message: text('message').notNull(),
   status: text('status').default('new'),
+  ip_address: text('ip_address'),
   createdAt: timestamp('createdAt', { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp('updatedAt', { withTimezone: true }).notNull().defaultNow(),
 });
 
 export const donation = pgTable('donation', {
@@ -146,7 +148,57 @@ export const donation = pgTable('donation', {
   stripe_payment_id: text('stripe_payment_id'),
   status: text('status').default('pending'),
   message: text('message'),
+  anonymous: boolean('anonymous').default(false),
+  ip_address: text('ip_address'),
   createdAt: timestamp('createdAt', { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp('updatedAt', { withTimezone: true }).notNull().defaultNow(),
+});
+
+export const newsletter_subscriber = pgTable('newsletter_subscriber', {
+  id: serial('id').primaryKey(),
+  email: text('email').unique().notNull(),
+  name: text('name'),
+  subscribed: boolean('subscribed').default(true),
+  verified: boolean('verified').default(false),
+  unsubscribe_token: text('unsubscribe_token').unique(),
+  ip_address: text('ip_address'),
+  createdAt: timestamp('createdAt', { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp('updatedAt', { withTimezone: true }).notNull().defaultNow(),
+});
+
+export const safari_inquiry = pgTable('safari_inquiry', {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull(),
+  email: text('email').notNull(),
+  phone: text('phone'),
+  package_id: integer('package_id'),
+  package_name: text('package_name'),
+  travel_dates: text('travel_dates'),
+  number_of_guests: integer('number_of_guests'),
+  special_requests: text('special_requests'),
+  status: text('status').default('new'),
+  assigned_to: text('assigned_to'),
+  notes: text('notes'),
+  ip_address: text('ip_address'),
+  createdAt: timestamp('createdAt', { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp('updatedAt', { withTimezone: true }).notNull().defaultNow(),
+});
+
+export const event_registration = pgTable('event_registration', {
+  id: serial('id').primaryKey(),
+  event_id: text('event_id').notNull().default('safari-chill-2026'),
+  name: text('name').notNull(),
+  email: text('email').notNull(),
+  phone: text('phone'),
+  number_of_guests: integer('number_of_guests').default(1),
+  dietary_restrictions: text('dietary_restrictions'),
+  special_needs: text('special_needs'),
+  heard_about_us: text('heard_about_us'),
+  status: text('status').default('registered'),
+  confirmation_sent: boolean('confirmation_sent').default(false),
+  ip_address: text('ip_address'),
+  createdAt: timestamp('createdAt', { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp('updatedAt', { withTimezone: true }).notNull().defaultNow(),
 });
 
 // Relations

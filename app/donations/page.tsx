@@ -14,18 +14,65 @@ export default function Donations() {
   const [donorName, setDonorName] = useState('')
   const [donorEmail, setDonorEmail] = useState('')
   const [message, setMessage] = useState('')
+  const [isProcessing, setIsProcessing] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
 
   const presetAmounts = [25, 50, 100, 250, 500, 1000]
   const finalAmount = customAmount ? parseFloat(customAmount) : selectedAmount
 
-  const handleDonate = () => {
-    if (!donorName || !donorEmail) {
-      alert('Please fill in your name and email')
+  const handleDonate = async () => {
+    setErrorMessage('')
+
+    // Validation
+    if (!donorName.trim()) {
+      setErrorMessage('Please enter your name')
       return
     }
-    alert(
-      `Thank you ${donorName}! Redirecting to payment... This would process a donation of ${currency} ${finalAmount}`
-    )
+    if (!donorEmail.trim()) {
+      setErrorMessage('Please enter your email')
+      return
+    }
+    if (!finalAmount || finalAmount <= 0) {
+      setErrorMessage('Please select a valid donation amount')
+      return
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(donorEmail)) {
+      setErrorMessage('Please enter a valid email address')
+      return
+    }
+
+    setIsProcessing(true)
+
+    try {
+      const response = await fetch('/api/donations/create', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          donorName,
+          donorEmail,
+          amount: finalAmount,
+          currency,
+          message: message || null,
+        }),
+      })
+
+      const data = await response.json()
+
+      if (response.ok && data.url) {
+        // Redirect to Stripe checkout
+        window.location.href = data.url
+      } else {
+        setErrorMessage(data.error || 'Failed to process donation. Please try again.')
+      }
+    } catch (error) {
+      console.error('[Donation Error]', error)
+      setErrorMessage('Connection error. Please check your internet and try again.')
+    }
+
+    setIsProcessing(false)
   }
 
   return (
@@ -169,6 +216,13 @@ export default function Donations() {
                 </div>
               </div>
 
+              {/* Error Message */}
+              {errorMessage && (
+                <div className="mb-6 p-4 bg-red-500/10 border border-red-500/30 rounded-lg">
+                  <p className="text-red-600 text-sm">{errorMessage}</p>
+                </div>
+              )}
+
               {/* Total */}
               <div className="mb-8 p-4 bg-primary/10 rounded-lg">
                 <p className="text-muted-foreground text-sm mb-2">Total Donation</p>
@@ -181,9 +235,14 @@ export default function Donations() {
               {/* Button */}
               <button
                 onClick={handleDonate}
-                className="w-full bg-accent hover:bg-primary text-accent-foreground py-3 rounded-lg font-bold text-lg transition-colors"
+                disabled={isProcessing}
+                className={`w-full ${
+                  isProcessing
+                    ? 'bg-muted text-muted-foreground cursor-not-allowed'
+                    : 'bg-accent hover:bg-primary text-accent-foreground'
+                } py-3 rounded-lg font-bold text-lg transition-colors`}
               >
-                Donate {currency} {finalAmount}
+                {isProcessing ? 'Processing...' : `Donate ${currency} ${finalAmount}`}
               </button>
 
               <p className="text-center text-xs text-muted-foreground mt-4">
