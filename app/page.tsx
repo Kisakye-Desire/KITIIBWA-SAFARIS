@@ -6,7 +6,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { SectionHeading, AnimatedCard, InteractiveImage, TextGradient } from '@/components/ui/effects'
 import ScrollReveal from '@/components/scroll-reveal'
-import Marquee from '@/components/marquee'
+import EventAnnouncement from '@/components/event-announcement'
 
 export const metadata = {
   title: 'Home | KITIIBWA SAFARIS',
@@ -62,62 +62,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Tourism Destinations Marquee */}
-        <section className="py-12 md:py-16 bg-gradient-safari text-primary-foreground overflow-hidden">
-          <div className="space-y-4">
-            <ScrollReveal>
-              <h3 className="text-2xl font-bold text-center mb-8">Explore Our Destinations</h3>
-            </ScrollReveal>
-            <Marquee speed="normal" pauseOnHover className="mb-6">
-              <div className="flex gap-8 px-8">
-                <div className="flex items-center gap-3 whitespace-nowrap">
-                  <span className="text-2xl">🦁</span>
-                  <span className="font-semibold">Queen Elizabeth National Park</span>
-                </div>
-                <div className="flex items-center gap-3 whitespace-nowrap">
-                  <span className="text-2xl">🦍</span>
-                  <span className="font-semibold">Bwindi Impenetrable Forest</span>
-                </div>
-                <div className="flex items-center gap-3 whitespace-nowrap">
-                  <span className="text-2xl">🐘</span>
-                  <span className="font-semibold">Murchison Falls National Park</span>
-                </div>
-                <div className="flex items-center gap-3 whitespace-nowrap">
-                  <span className="text-2xl">🦓</span>
-                  <span className="font-semibold">Lake Victoria Region</span>
-                </div>
-                <div className="flex items-center gap-3 whitespace-nowrap">
-                  <span className="text-2xl">🏔️</span>
-                  <span className="font-semibold">Rwenzori Mountains</span>
-                </div>
-              </div>
-            </Marquee>
-            <Marquee speed="normal" direction="right" pauseOnHover>
-              <div className="flex gap-8 px-8">
-                <div className="flex items-center gap-3 whitespace-nowrap">
-                  <span className="text-2xl">✨</span>
-                  <span className="font-semibold">Mountain Gorilla Trekking</span>
-                </div>
-                <div className="flex items-center gap-3 whitespace-nowrap">
-                  <span className="text-2xl">🌅</span>
-                  <span className="font-semibold">Sunrise Game Drives</span>
-                </div>
-                <div className="flex items-center gap-3 whitespace-nowrap">
-                  <span className="text-2xl">🚤</span>
-                  <span className="font-semibold">Kazinga Channel Cruises</span>
-                </div>
-                <div className="flex items-center gap-3 whitespace-nowrap">
-                  <span className="text-2xl">🌿</span>
-                  <span className="font-semibold">Conservation Experiences</span>
-                </div>
-                <div className="flex items-center gap-3 whitespace-nowrap">
-                  <span className="text-2xl">🏨</span>
-                  <span className="font-semibold">Luxury Safari Cottages</span>
-                </div>
-              </div>
-            </Marquee>
-          </div>
-        </section>
+        {/* Event Announcement Section */}
+        <EventAnnouncement />
 
         {/* Featured Experiences */}
         <section className="py-16 md:py-24 bg-gradient-to-b from-card to-background">
