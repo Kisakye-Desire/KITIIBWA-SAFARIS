@@ -8,7 +8,7 @@ import Pagination from '@/components/pagination'
 import Image from 'next/image'
 import { TextGradient } from '@/components/ui/effects'
 
-const ITEMS_PER_PAGE = 8
+const ITEMS_PER_PAGE = 26
 
 const galleryItems = [
   { id: 1, image: '/images/gallery-1.jpg', label: 'Safari Vehicle Adventure', category: 'Safari Experiences' },
