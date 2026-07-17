@@ -117,7 +117,7 @@ export default function About() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <ScrollReveal direction="left">
                 <InteractiveImage
-                  src="/images/founder-profile.png"
+                  src="/images/founder-profile.jpg"
                   alt="Alizeyuna Henry - Founder"
                   width={400}
                   height={500}

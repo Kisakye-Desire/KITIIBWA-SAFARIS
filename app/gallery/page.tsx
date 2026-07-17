@@ -8,39 +8,22 @@ import Pagination from '@/components/pagination'
 import Image from 'next/image'
 import { TextGradient } from '@/components/ui/effects'
 
-const ITEMS_PER_PAGE = 10
+const ITEMS_PER_PAGE = 8
 
 const galleryItems = [
-  { id: 1, image: '/images/hero-safari.png', label: 'Mountain Gorilla', category: 'Primates' },
-  { id: 2, image: '/images/gallery-2.png', label: 'Savanna Sunset', category: 'Landscapes' },
-  { id: 3, image: '/images/gallery-3.png', label: 'Elephant Family', category: 'Mammals' },
-  { id: 4, image: '/images/gallery-4.png', label: 'Zebra Herd', category: 'Mammals' },
-  { id: 5, image: '/images/gallery-5.png', label: 'Mountain Views', category: 'Landscapes' },
-  { id: 6, image: '/images/gallery-6.png', label: 'Giraffe Close-up', category: 'Mammals' },
-  { id: 7, image: '/images/gallery-7.png', label: 'African Bird', category: 'Birds' },
-  { id: 8, image: '/images/gallery-8.png', label: 'Safari Lodge', category: 'Accommodations' },
-  { id: 9, image: '/images/gallery-9.png', label: 'Waterfall', category: 'Landscapes' },
-  { id: 10, image: '/images/gallery-10.png', label: 'Leopard', category: 'Predators' },
-  { id: 11, image: '/images/gallery-11.png', label: 'Hippopotamus', category: 'Mammals' },
-  { id: 12, image: '/images/gallery-12.png', label: 'Rhinoceros', category: 'Mammals' },
-  { id: 13, image: '/images/gallery-13.png', label: 'Cheetah Running', category: 'Predators' },
-  { id: 14, image: '/images/gallery-14.png', label: 'Buffalo Herd', category: 'Mammals' },
-  { id: 15, image: '/images/gallery-15.png', label: 'Antelope Herd', category: 'Mammals' },
-  { id: 16, image: '/images/gallery-16.png', label: 'Sunset Scene', category: 'Landscapes' },
-  { id: 17, image: '/images/gallery-17.png', label: 'Safari Cottage', category: 'Accommodations' },
-  { id: 18, image: '/images/gallery-18.png', label: 'Community Outreach', category: 'Conservation' },
-  { id: 19, image: '/images/gallery-19.png', label: 'Wildlife Conservation', category: 'Conservation' },
-  { id: 20, image: '/images/gallery-20.png', label: 'Game Drive', category: 'Experiences' },
-  { id: 21, image: '/images/gallery-21.png', label: 'Wild Dog Pack', category: 'Predators' },
-  { id: 22, image: '/images/gallery-22.png', label: 'Chimpanzee', category: 'Primates' },
-  { id: 23, image: '/images/gallery-23.png', label: 'Fish Eagle', category: 'Birds' },
-  { id: 24, image: '/images/gallery-24.png', label: 'Forest Canopy', category: 'Landscapes' },
-  { id: 25, image: '/images/hero-safari.png', label: 'Gorilla Encounter', category: 'Primates' },
-  { id: 26, image: '/images/gallery-2.png', label: 'Acacia Tree Sunset', category: 'Landscapes' },
-  { id: 27, image: '/images/gallery-6.png', label: 'Giraffe Feeding', category: 'Mammals' },
-  { id: 28, image: '/images/gallery-13.png', label: 'Cheetah Portrait', category: 'Predators' },
-  { id: 29, image: '/images/gallery-16.png', label: 'Golden Hour Safari', category: 'Landscapes' },
-  { id: 30, image: '/images/gallery-8.png', label: 'Luxury Lodge', category: 'Accommodations' },
+  { id: 1, image: '/images/gallery-1.jpg', label: 'Safari Vehicle Adventure', category: 'Safari Experiences' },
+  { id: 2, image: '/images/gallery-2.jpg', label: 'Lions on the Road', category: 'Predators' },
+  { id: 3, image: '/images/gallery-3.jpg', label: 'Giraffes in Their Natural Habitat', category: 'Mammals' },
+  { id: 4, image: '/images/gallery-4.jpg', label: 'Chimpanzees in the Forest', category: 'Primates' },
+  { id: 5, image: '/images/gallery-5.jpg', label: 'Sunset Over Murchison Falls', category: 'Landscapes' },
+  { id: 6, image: '/images/gallery-6.jpg', label: 'Gorilla Trekking Adventure', category: 'Cultural Experiences' },
+  { id: 7, image: '/images/gallery-7.jpg', label: 'Buffalo Herd at Sunrise', category: 'Mammals' },
+  { id: 8, image: '/images/gallery-8.jpg', label: 'Elephant at the Waterside', category: 'Mammals' },
+  { id: 9, image: '/images/gallery-9.jpg', label: 'Safari & Chill Experience', category: 'Safari Experiences' },
+  { id: 10, image: '/images/gallery-10.jpg', label: 'Lion Pride in Tall Grass', category: 'Predators' },
+  { id: 11, image: '/images/gallery-11.jpg', label: 'Forest Trail with Guide', category: 'Gorilla Trekking' },
+  { id: 12, image: '/images/gallery-12.jpg', label: 'Community Outreach Program', category: 'Conservation' },
+  { id: 13, image: '/images/gallery-13.jpg', label: 'Chimpanzee Close Encounter', category: 'Primates' },
 ]
 
 export default function Gallery() {

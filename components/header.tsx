@@ -29,11 +29,12 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 hover:scale-110 transition-transform duration-300">
             <Image
-              src="/logo.png"
+              src="/logo.jpg"
               alt="KITIIBWA SAFARIS"
-              width={80}
-              height={80}
+              width={120}
+              height={120}
               className="h-16 w-auto animate-fade-in-down"
+              priority
             />
           </Link>
 

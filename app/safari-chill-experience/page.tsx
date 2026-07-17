@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import WhatsAppButton from '@/components/whatsapp-button'
@@ -8,6 +9,7 @@ import Image from 'next/image'
 import { Calendar, MapPin, Users, Music, Zap, Award } from 'lucide-react'
 import { TextGradient } from '@/components/ui/effects'
 import ScrollReveal from '@/components/scroll-reveal'
+import Link from 'next/link'
 
 const IMAGES_PER_PAGE = 9
 
@@ -172,15 +174,15 @@ export default function SafariChillExperience() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.3}>
-              <button className="px-8 py-4 bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-xl">
+              <Link href="#about-event" className="inline-block px-8 py-4 bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-xl">
                 Learn More
-              </button>
+              </Link>
             </ScrollReveal>
           </div>
         </section>
 
         {/* About Event Section */}
-        <section className="py-16 md:py-24 bg-secondary/5">
+        <section id="about-event" className="py-16 md:py-24 bg-secondary/5">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <ScrollReveal>
               <div className="text-center mb-12">
@@ -357,9 +359,9 @@ export default function SafariChillExperience() {
                     ))}
                   </div>
 
-                  <button className="px-8 py-3 bg-primary hover:bg-accent text-primary-foreground font-semibold rounded-lg transition-all duration-300 transform hover:scale-105">
+                  <Link href="/cottages" className="inline-block px-8 py-3 bg-primary hover:bg-accent text-primary-foreground font-semibold rounded-lg transition-all duration-300 transform hover:scale-105">
                     Explore Singura
-                  </button>
+                  </Link>
                 </div>
               </ScrollReveal>
 
@@ -450,12 +452,12 @@ export default function SafariChillExperience() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-3 bg-primary hover:bg-accent text-primary-foreground font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  Stay Tuned
-                </button>
-                <button className="px-8 py-3 border-2 border-primary hover:border-accent text-primary hover:text-accent font-semibold rounded-lg transition-all duration-300">
-                  Learn More
-                </button>
+                <Link href="/contact" className="inline-block px-8 py-3 bg-primary hover:bg-accent text-primary-foreground font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
+                  Get Interested
+                </Link>
+                <Link href="/contact" className="inline-block px-8 py-3 border-2 border-primary hover:border-accent text-primary hover:text-accent font-semibold rounded-lg transition-all duration-300 text-center">
+                  Contact Us
+                </Link>
               </div>
             </ScrollReveal>
           </div>
