@@ -24,6 +24,19 @@ const galleryItems = [
   { id: 11, image: '/images/gallery-11.jpg', label: 'Forest Trail with Guide', category: 'Gorilla Trekking' },
   { id: 12, image: '/images/gallery-12.jpg', label: 'Community Outreach Program', category: 'Conservation' },
   { id: 13, image: '/images/gallery-13.jpg', label: 'Chimpanzee Close Encounter', category: 'Primates' },
+  { id: 14, image: '/images/gallery-14.jpg', label: 'Acacia Trees at Golden Hour', category: 'Landscapes' },
+  { id: 15, image: '/images/gallery-15.jpg', label: 'Forest Trek Through Banana Plantations', category: 'Gorilla Trekking' },
+  { id: 16, image: '/images/gallery-16.jpg', label: 'Safari Vehicle on Field Game Drive', category: 'Safari Experiences' },
+  { id: 17, image: '/images/gallery-17.jpg', label: 'Traditional Community Dwelling', category: 'Cultural Experiences' },
+  { id: 18, image: '/images/gallery-18.jpg', label: 'Crater Lakes Volcanic Landscape', category: 'Landscapes' },
+  { id: 19, image: '/images/gallery-19.jpg', label: 'Wildlife Conservation Documentation', category: 'Conservation' },
+  { id: 20, image: '/images/gallery-20.jpg', label: 'Safari Vehicle at Sunset Point', category: 'Safari Experiences' },
+  { id: 21, image: '/images/gallery-21.jpg', label: 'Wildlife Monitoring in the Field', category: 'Conservation' },
+  { id: 22, image: '/images/gallery-22.jpg', label: 'Expert Wildlife Guide Documentation', category: 'Conservation' },
+  { id: 23, image: '/images/gallery-23.jpg', label: 'Safari Vehicle on Scenic Route', category: 'Safari Experiences' },
+  { id: 24, image: '/images/gallery-24.jpg', label: 'Mountain Crater Lake View', category: 'Landscapes' },
+  { id: 25, image: '/images/gallery-25.jpg', label: 'Crater Lake with Forest Panorama', category: 'Landscapes' },
+  { id: 26, image: '/images/gallery-26.jpg', label: 'Safari Explorer at Valley Overlook', category: 'Safari Experiences' },
 ]
 
 export default function Gallery() {
