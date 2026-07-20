@@ -8,6 +8,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 export default function Donations() {
+  const [donationType, setDonationType] = useState('general')
   const [selectedAmount, setSelectedAmount] = useState(50)
   const [customAmount, setCustomAmount] = useState('')
   const [currency, setCurrency] = useState('USD')
@@ -16,9 +17,23 @@ export default function Donations() {
   const [message, setMessage] = useState('')
   const [isProcessing, setIsProcessing] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
+  
+  // School fees calculation
+  const [numberOfChildren, setNumberOfChildren] = useState('1')
+  const [numberOfTerms, setNumberOfTerms] = useState('1')
+  const termFee = 40
 
   const presetAmounts = [25, 50, 100, 250, 500, 1000]
-  const finalAmount = customAmount ? parseFloat(customAmount) : selectedAmount
+  
+  const calculateSchoolFees = () => {
+    const children = parseInt(numberOfChildren) || 0
+    const terms = parseInt(numberOfTerms) || 0
+    return children * terms * termFee
+  }
+  
+  const finalAmount = donationType === 'schoolFees' 
+    ? calculateSchoolFees() 
+    : customAmount ? parseFloat(customAmount) : selectedAmount
 
   const handleDonate = async () => {
     setErrorMessage('')
@@ -56,6 +71,11 @@ export default function Donations() {
           amount: finalAmount,
           currency,
           message: message || null,
+          donationType,
+          ...(donationType === 'schoolFees' && {
+            numberOfChildren: parseInt(numberOfChildren),
+            numberOfTerms: parseInt(numberOfTerms),
+          }),
         }),
       })
 
@@ -127,58 +147,130 @@ export default function Donations() {
 
         {/* Donation Form */}
         <section className="py-16 md:py-24">
-          <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <div className="bg-card p-8 md:p-12 rounded-lg shadow-lg">
               <h2 className="text-3xl font-bold text-primary mb-8">Make Your Donation</h2>
 
-              {/* Amount Selection */}
+              {/* Donation Type Selection */}
               <div className="mb-8">
-                <p className="font-semibold text-primary mb-4">Select Amount</p>
-                <div className="grid grid-cols-3 md:grid-cols-6 gap-2 mb-4">
-                  {presetAmounts.map((amount) => (
-                    <button
-                      key={amount}
-                      onClick={() => {
-                        setSelectedAmount(amount)
-                        setCustomAmount('')
-                      }}
-                      className={`py-2 px-3 rounded-lg font-semibold transition-colors ${
-                        selectedAmount === amount && !customAmount
-                          ? 'bg-primary text-primary-foreground'
-                          : 'bg-muted text-foreground hover:bg-muted/80'
-                      }`}
-                    >
-                      ${amount}
-                    </button>
-                  ))}
-                </div>
-
-                {/* Custom Amount */}
-                <div className="flex gap-2 mb-4">
-                  <div className="flex-1">
-                    <input
-                      type="number"
-                      value={customAmount}
-                      onChange={(e) => {
-                        setCustomAmount(e.target.value)
-                        if (e.target.value) setSelectedAmount(0)
-                      }}
-                      placeholder="Custom amount"
-                      className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                    />
-                  </div>
-                  <select
-                    value={currency}
-                    onChange={(e) => setCurrency(e.target.value)}
-                    className="px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                <p className="font-semibold text-primary mb-4">Choose How You'd Like to Support</p>
+                <div className="grid md:grid-cols-2 gap-4 mb-6">
+                  <button
+                    onClick={() => {
+                      setDonationType('general')
+                      setCustomAmount('')
+                      setSelectedAmount(50)
+                    }}
+                    className={`p-4 rounded-lg border-2 transition-all ${
+                      donationType === 'general'
+                        ? 'border-accent bg-accent/10'
+                        : 'border-border hover:border-accent/50'
+                    }`}
                   >
-                    <option value="USD">USD</option>
-                    <option value="EUR">EUR</option>
-                    <option value="GBP">GBP</option>
-                    <option value="UGX">UGX</option>
-                  </select>
+                    <p className="font-bold text-primary">General Donation</p>
+                    <p className="text-xs text-muted-foreground mt-1">Support any amount for our programs</p>
+                  </button>
+
+                  <button
+                    onClick={() => setDonationType('schoolFees')}
+                    className={`p-4 rounded-lg border-2 transition-all ${
+                      donationType === 'schoolFees'
+                        ? 'border-accent bg-accent/10'
+                        : 'border-border hover:border-accent/50'
+                    }`}
+                  >
+                    <p className="font-bold text-primary">Support School Fees</p>
+                    <p className="text-xs text-muted-foreground mt-1">Help children with educational support</p>
+                  </button>
                 </div>
               </div>
+
+              {/* General Donation Section */}
+              {donationType === 'general' && (
+                <div className="mb-8">
+                  <p className="font-semibold text-primary mb-4">Select Amount</p>
+                  <div className="grid grid-cols-3 md:grid-cols-6 gap-2 mb-4">
+                    {presetAmounts.map((amount) => (
+                      <button
+                        key={amount}
+                        onClick={() => {
+                          setSelectedAmount(amount)
+                          setCustomAmount('')
+                        }}
+                        className={`py-2 px-3 rounded-lg font-semibold transition-colors ${
+                          selectedAmount === amount && !customAmount
+                            ? 'bg-primary text-primary-foreground'
+                            : 'bg-muted text-foreground hover:bg-muted/80'
+                        }`}
+                      >
+                        ${amount}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Custom Amount */}
+                  <div className="flex gap-2 mb-4">
+                    <div className="flex-1">
+                      <input
+                        type="number"
+                        value={customAmount}
+                        onChange={(e) => {
+                          setCustomAmount(e.target.value)
+                          if (e.target.value) setSelectedAmount(0)
+                        }}
+                        placeholder="Custom amount"
+                        className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                      />
+                    </div>
+                    <select
+                      value={currency}
+                      onChange={(e) => setCurrency(e.target.value)}
+                      className="px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                    >
+                      <option value="USD">USD</option>
+                      <option value="EUR">EUR</option>
+                      <option value="GBP">GBP</option>
+                      <option value="UGX">UGX</option>
+                    </select>
+                  </div>
+                </div>
+              )}
+
+              {/* School Fees Section */}
+              {donationType === 'schoolFees' && (
+                <div className="mb-8 bg-accent/5 p-6 rounded-lg border border-accent/20">
+                  <p className="font-semibold text-primary mb-4">Calculate School Fees Support</p>
+                  <div className="grid md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <label className="block text-sm font-semibold text-primary mb-2">Number of Children</label>
+                      <input
+                        type="number"
+                        value={numberOfChildren}
+                        onChange={(e) => setNumberOfChildren(e.target.value)}
+                        min="1"
+                        className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-primary mb-2">Number of Terms (per year: 3)</label>
+                      <input
+                        type="number"
+                        value={numberOfTerms}
+                        onChange={(e) => setNumberOfTerms(e.target.value)}
+                        min="1"
+                        max="3"
+                        className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                      />
+                    </div>
+                  </div>
+                  <div className="bg-background p-4 rounded-lg mb-4">
+                    <p className="text-xs text-muted-foreground mb-1">Fee Breakdown:</p>
+                    <p className="text-sm text-primary">
+                      {numberOfChildren} child(ren) × {numberOfTerms} term(s) × $40/term = <span className="font-bold text-accent">${calculateSchoolFees()}</span>
+                    </p>
+                  </div>
+                </div>
+              )}
 
               {/* Donor Info */}
               <div className="space-y-4 mb-8">
