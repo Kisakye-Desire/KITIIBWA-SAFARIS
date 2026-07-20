@@ -177,9 +177,9 @@ export default function Packages() {
         {/* Packages Grid */}
         <section className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/5">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {packages.map((pkg, idx) => (
-                <ScrollReveal key={pkg.name} delay={idx * 0.08} direction={idx % 3 === 0 ? 'up' : idx % 3 === 1 ? 'left' : 'right'}>
+                <ScrollReveal key={pkg.name} delay={idx * 0.08} direction={idx % 4 === 0 ? 'up' : idx % 4 === 1 ? 'left' : 'right'}>
                   <div
                     className={`rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all relative transform hover:scale-105 hover:-translate-y-2 duration-300 card-hover group border ${
                       pkg.bestseller ? 'border-accent ring-2 ring-accent/50' : 'border-border hover:border-accent/50'

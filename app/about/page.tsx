@@ -23,7 +23,6 @@ export default function About() {
       image: '/images/team-member-1.png',
       facebook: 'https://facebook.com',
       instagram: 'https://www.instagram.com/kitiibwa_safaris_?utm_source=qr',
-      linkedin: 'https://linkedin.com',
     },
     {
       name: 'Dr. Sarah Kamwesiga',
@@ -32,7 +31,6 @@ export default function About() {
       image: '/images/team-member-2.png',
       facebook: 'https://facebook.com',
       instagram: 'https://instagram.com',
-      linkedin: 'https://linkedin.com',
     },
     {
       name: 'Michael Okello',
@@ -50,7 +48,6 @@ export default function About() {
       image: '/images/team-member-2.png',
       facebook: 'https://facebook.com',
       instagram: 'https://instagram.com',
-      linkedin: 'https://linkedin.com',
     },
   ]
 
@@ -332,19 +329,19 @@ export default function About() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <ScrollReveal delay={0} direction="up">
                 <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 text-center card-hover">
-                  <div className="text-6xl md:text-7xl font-bold mb-3 text-accent animate-fade-in-up">2,000+</div>
+                  <div className="text-6xl md:text-7xl font-bold mb-3 text-accent animate-fade-in-up">100</div>
                   <p className="opacity-95 font-medium">Happy Guests</p>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={0.1} direction="up">
                 <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 text-center card-hover">
-                  <div className="text-6xl md:text-7xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.1s' }}>15+</div>
+                  <div className="text-6xl md:text-7xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.1s' }}>5</div>
                   <p className="opacity-95 font-medium">Years of Experience</p>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={0.2} direction="up">
                 <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 text-center card-hover">
-                  <div className="text-6xl md:text-7xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.2s' }}>50+</div>
+                  <div className="text-6xl md:text-7xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.2s' }}>10</div>
                   <p className="opacity-95 font-medium">Professional Staff</p>
                 </div>
               </ScrollReveal>

@@ -442,13 +442,13 @@ export default function SafariChillExperience() {
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
             <ScrollReveal>
               <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-                The 2026 Edition is Coming Soon
+                The 2027 Edition is Coming Soon
               </h2>
               <p className="text-xl text-muted-foreground mb-4">
                 Official dates and early-bird registrations will be announced soon. Stay tuned for one of Uganda&apos;s most anticipated annual events.
               </p>
               <p className="text-muted-foreground mb-8">
-                Mark your calendars and get ready for an unforgettable experience at Safari & Chill 2026!
+                Mark your calendars and get ready for an unforgettable experience at Safari & Chill 2027!
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

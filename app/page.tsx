@@ -74,7 +74,7 @@ export default function Home() {
                 <div className="mb-4">
                   <TextGradient className="text-sm font-semibold tracking-wider uppercase">Our Signature Journeys</TextGradient>
                 </div>
-                <SectionHeading animated>Unforgettable Experiences</SectionHeading>
+                <SectionHeading animated>Kittibwa Safaris</SectionHeading>
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -245,7 +245,7 @@ export default function Home() {
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
               <p className="text-sm opacity-90 mt-6 text-white animate-pulse-subtle">
-                💬 Need help? Chat with us on WhatsApp or call +256 702 345273
+                💬 Need help? Chat with us on WhatsApp +44 7884 181149
               </p>
             </ScrollReveal>
           </div>

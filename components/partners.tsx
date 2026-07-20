@@ -45,18 +45,9 @@ export default function PartnersSection() {
                 <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">
                   {partner.name}
                 </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed">
                   {partner.description}
                 </p>
-                <a
-                  href={partner.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-primary font-semibold hover:text-accent transition-colors group/link"
-                >
-                  Learn More
-                  <span className="ml-2 transform group-hover/link:translate-x-1 transition-transform">→</span>
-                </a>
               </div>
             </ScrollReveal>
           ))}

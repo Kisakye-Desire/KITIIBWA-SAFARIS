@@ -67,7 +67,7 @@ export default function Gallery() {
               <div className="text-center mb-12">
                 <TextGradient className="text-sm font-semibold tracking-wider uppercase mb-2">Visual Journey</TextGradient>
                 <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-                  KITIIBWA SAFARIS Gallery
+                  KITIIBWA SAFARIS GALLERY
                 </h1>
                 <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
                   Experience the raw beauty of African wildlife and authentic safari adventures through our curated collection of 26 stunning photographs

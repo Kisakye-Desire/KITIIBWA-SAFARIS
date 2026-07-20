@@ -12,13 +12,15 @@ export default function Contact() {
     name: '',
     email: '',
     phone: '',
+    country: 'uganda',
+    contactPerson: 'general',
     subject: '',
     message: '',
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState('')
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
@@ -46,7 +48,7 @@ export default function Contact() {
 
       if (response.ok) {
         setSubmitMessage('Thank you! We\'ll contact you within 24 hours.')
-        setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+        setFormData({ name: '', email: '', phone: '', country: 'uganda', contactPerson: 'general', subject: '', message: '' })
         // Keep message visible for 5 seconds
         setTimeout(() => setSubmitMessage(''), 5000)
       } else {
@@ -88,56 +90,48 @@ export default function Contact() {
               <div className="animate-fade-in-up">
                 <h2 className="text-3xl font-bold text-primary mb-8">Contact Information</h2>
 
-                <div className="space-y-6 mb-8">
-                  <div className="flex gap-4">
-                    <Phone className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold text-primary">Phone</p>
-                      <p className="text-muted-foreground">Uganda: +256 702 345273</p>
-                      <p className="text-muted-foreground">UK: +44 7884 181149</p>
+                <div className="grid md:grid-cols-2 gap-6 mb-8">
+                  {/* Uganda Office */}
+                  <div className="bg-card p-6 rounded-lg border border-border hover:border-accent/50 transition-all">
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="h-3 w-3 bg-accent rounded-full"></div>
+                      <h3 className="font-bold text-primary text-lg">Uganda Office</h3>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex gap-3">
+                        <Phone className="h-5 w-5 text-accent flex-shrink-0" />
+                        <p className="text-muted-foreground">+256 702 345273</p>
+                      </div>
+                      <div className="flex gap-3">
+                        <MapPin className="h-5 w-5 text-accent flex-shrink-0" />
+                        <p className="text-muted-foreground">Mukono Access Clinic, Mukono District</p>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="flex gap-4">
-                    <Mail className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold text-primary">Email</p>
-                      <p className="text-muted-foreground">kisakyedhisayar@gmail.com</p>
+                  {/* UK Office */}
+                  <div className="bg-card p-6 rounded-lg border border-border hover:border-accent/50 transition-all">
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="h-3 w-3 bg-secondary rounded-full"></div>
+                      <h3 className="font-bold text-primary text-lg">UK Office</h3>
                     </div>
-                  </div>
-
-                  <div className="flex gap-4">
-                    <MapPin className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold text-primary">Address</p>
-                      <p className="text-muted-foreground">Mukono Access Clinic, Mukono District, Uganda</p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-4">
-                    <Clock className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold text-primary">Operating Hours</p>
-                      <p className="text-muted-foreground">Monday - Friday: 8:00 AM - 6:00 PM EAT</p>
-                      <p className="text-muted-foreground">Saturday: 9:00 AM - 4:00 PM EAT</p>
-                      <p className="text-muted-foreground">Sunday: Closed (Emergency line available)</p>
+                    <div className="space-y-3">
+                      <div className="flex gap-3">
+                        <Phone className="h-5 w-5 text-secondary flex-shrink-0" />
+                        <p className="text-muted-foreground">+44 7884 181149</p>
+                      </div>
+                      <div className="flex gap-3">
+                        <Mail className="h-5 w-5 text-secondary flex-shrink-0" />
+                        <p className="text-muted-foreground">WhatsApp & Calls Available</p>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-card p-6 rounded-lg">
-                  <h3 className="font-bold text-primary mb-2">Quick Response</h3>
-                  <p className="text-muted-foreground text-sm mb-3">
-                    Need immediate assistance? Chat with us on WhatsApp or call our emergency line
-                  </p>
-                  <a
-                    href="https://wa.me/447884181149"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary font-semibold hover:text-accent transition-colors"
-                  >
-                    Message on WhatsApp →
-                  </a>
+                <div className="bg-gradient-to-r from-primary/10 to-accent/10 p-6 rounded-lg border border-primary/20">
+                  <h3 className="font-bold text-primary mb-2">Email for Messages</h3>
+                  <p className="text-muted-foreground mb-3">All messages will be sent to:</p>
+                  <p className="text-primary font-semibold text-lg">kisakyedhisayar@gmail.com</p>
                 </div>
               </div>
 
@@ -148,7 +142,7 @@ export default function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-primary mb-2">
-                      Full Name
+                      Full Name *
                     </label>
                     <input
                       type="text"
@@ -164,7 +158,7 @@ export default function Contact() {
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-semibold text-primary mb-2">
-                      Email Address
+                      Email Address *
                     </label>
                     <input
                       type="email"
@@ -194,8 +188,42 @@ export default function Contact() {
                   </div>
 
                   <div>
+                    <label htmlFor="country" className="block text-sm font-semibold text-primary mb-2">
+                      Which Location? *
+                    </label>
+                    <select
+                      id="country"
+                      name="country"
+                      value={formData.country}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                    >
+                      <option value="uganda">Uganda Office</option>
+                      <option value="uk">UK Office</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="contactPerson" className="block text-sm font-semibold text-primary mb-2">
+                      Subject/Inquiry Type *
+                    </label>
+                    <select
+                      id="contactPerson"
+                      name="contactPerson"
+                      value={formData.contactPerson}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                    >
+                      <option value="general">General Inquiry</option>
+                      <option value="safari">Safari Booking</option>
+                      <option value="donation">Donation/Support</option>
+                      <option value="partnership">Partnership Opportunity</option>
+                    </select>
+                  </div>
+
+                  <div>
                     <label htmlFor="subject" className="block text-sm font-semibold text-primary mb-2">
-                      Subject
+                      Subject *
                     </label>
                     <input
                       type="text"
@@ -205,13 +233,13 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                      placeholder="Safari inquiry"
+                      placeholder="What is this regarding?"
                     />
                   </div>
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-semibold text-primary mb-2">
-                      Message
+                      Message *
                     </label>
                     <textarea
                       id="message"
@@ -221,7 +249,7 @@ export default function Contact() {
                       required
                       rows={5}
                       className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-                      placeholder="Tell us about your safari dreams..."
+                      placeholder="Tell us about your inquiry..."
                     />
                   </div>
 

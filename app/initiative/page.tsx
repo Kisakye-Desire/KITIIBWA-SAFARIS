@@ -140,7 +140,6 @@ export default function Initiative() {
                     
                     <div className="flex items-start justify-between mb-4">
                       <div className="text-5xl group-hover:scale-110 transition-transform duration-300">{program.icon}</div>
-                      <span className="text-xs font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full whitespace-nowrap">{program.yearsActive}</span>
                     </div>
                     <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">{program.title}</h3>
                     <p className="text-muted-foreground mb-4 leading-relaxed text-sm">{program.description}</p>
