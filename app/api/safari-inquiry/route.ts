@@ -64,7 +64,7 @@ export async function POST(request: NextRequest) {
 
     // Send email to admin
     const adminEmailResult = await sendEmail({
-      to: process.env.ADMIN_EMAIL || 'dynamicyoo@gmail.com',
+      to: process.env.ADMIN_EMAIL || 'kisakyedhisayar@gmail.com',
       subject: `New Safari Inquiry: ${packageName || 'General'}`,
       html: getSafariInquiryEmailHTML({
         name,

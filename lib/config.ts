@@ -11,9 +11,9 @@ export const BUSINESS_INFO = {
   description: 'Experience unforgettable wildlife adventures with KITIIBWA SAFARIS. Gorilla trekking, luxury accommodations, and guided tours in Uganda\'s most pristine destinations.',
   
   // Contact Information - UPDATE THESE
-  email: process.env.BUSINESS_EMAIL || 'contact@kitiibwasafaris.com', // PLACEHOLDER - Update in .env
-  phone: process.env.BUSINESS_PHONE || '+256 (0) 708 898 424', // PLACEHOLDER
-  whatsapp: process.env.BUSINESS_WHATSAPP || '+256 708 898 424', // PLACEHOLDER
+  email: process.env.BUSINESS_EMAIL || 'kisakyedhisayar@gmail.com', // PLACEHOLDER - Update in .env
+  phone: process.env.BUSINESS_PHONE || '+256 702 345273', // PLACEHOLDER
+  whatsapp: process.env.BUSINESS_WHATSAPP || '+256 702 345273', // PLACEHOLDER
   
   // Addresses
   headquarters: {
@@ -34,20 +34,19 @@ export const BUSINESS_INFO = {
 export const SOCIAL_LINKS = {
   facebook: 'https://www.facebook.com/kitiibwasafaris', // PLACEHOLDER
   instagram: 'https://www.instagram.com/kitiibwasafaris', // PLACEHOLDER
-  twitter: 'https://twitter.com/kitiibwasafaris', // PLACEHOLDER
-  whatsapp: 'https://wa.me/256708898424', // PLACEHOLDER
-  youtube: 'https://www.youtube.com/@kitiibwasafaris', // PLACEHOLDER
-  linkedin: 'https://linkedin.com/company/kitiibwa-safaris', // PLACEHOLDER
+  tiktok: 'https://www.tiktok.com/@kitiibwasafaris', // PLACEHOLDER
+  x: 'https://x.com/kitiibwasafaris', // PLACEHOLDER
+  whatsapp: 'https://wa.me/447884181149', // PLACEHOLDER
 }
 
 // EMAIL CONFIGURATION
 export const EMAIL_CONFIG = {
   // Admin emails
-  adminEmail: process.env.ADMIN_EMAIL || 'admin@kitiibwasafaris.com', // PLACEHOLDER
-  contactFormEmail: process.env.CONTACT_FORM_EMAIL || 'contact@kitiibwasafaris.com', // PLACEHOLDER
-  bookingsEmail: process.env.BOOKINGS_EMAIL || 'bookings@kitiibwasafaris.com', // PLACEHOLDER
-  donationsEmail: process.env.DONATIONS_EMAIL || 'donations@kitiibwasafaris.com', // PLACEHOLDER
-  eventsEmail: process.env.EVENTS_EMAIL || 'events@kitiibwasafaris.com', // PLACEHOLDER
+  adminEmail: process.env.ADMIN_EMAIL || 'kisakyedhisayar@gmail.com', // PLACEHOLDER
+  contactFormEmail: process.env.CONTACT_FORM_EMAIL || 'kisakyedhisayar@gmail.com', // PLACEHOLDER
+  bookingsEmail: process.env.BOOKINGS_EMAIL || 'kisakyedhisayar@gmail.com', // PLACEHOLDER
+  donationsEmail: process.env.DONATIONS_EMAIL || 'kisakyedhisayar@gmail.com', // PLACEHOLDER
+  eventsEmail: process.env.EVENTS_EMAIL || 'kisakyedhisayar@gmail.com', // PLACEHOLDER
   
   // Email provider configuration
   provider: process.env.EMAIL_PROVIDER || 'resend', // 'resend' | 'nodemailer' | 'sendgrid'
@@ -88,9 +87,9 @@ export const PAYMENT_CONFIG = {
   mobileMoney: {
     enabled: true,
     methods: {
-      mtn: '+256 708 898 424',
-      airtel: '+256 708 898 424',
-      africell: '+256 708 898 424',
+      mtn: '+256 702 345273',
+      airtel: '+256 702 345273',
+      africell: '+256 702 345273',
     },
   },
 }

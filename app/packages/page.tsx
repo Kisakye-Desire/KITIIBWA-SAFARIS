@@ -112,6 +112,38 @@ export default function Packages() {
       ],
       bestseller: false,
     },
+    {
+      name: 'Source of the Nile Explorer',
+      duration: '5 Days / 4 Nights',
+      price: 1250,
+      image: '/images/nature/crater-lake-view.jpg',
+      description: 'Journey to the mystical source of the Nile in Jinja with water sports and adventure activities',
+      included: [
+        'Guided tour to Nile source',
+        'Kayaking on Lake Victoria',
+        'Bungee jumping experience',
+        'Guided cultural village tours',
+        'Comfortable lodge accommodation',
+        'All meals and refreshments',
+      ],
+      bestseller: false,
+    },
+    {
+      name: 'Uganda Birding Circuit',
+      duration: '6 Days / 5 Nights',
+      price: 2200,
+      image: '/images/experiences/golden-hour-safari.jpg',
+      description: 'Comprehensive birding expedition through Uganda\'s premier birding destinations with expert ornithologists',
+      included: [
+        'Expert birding guides',
+        'Birding in Kibale, Queen Elizabeth & Fort Portal',
+        'Over 650 bird species opportunity',
+        'Dawn and dusk birding expeditions',
+        'Comfortable eco-lodge stays',
+        'All meals and field supplies',
+      ],
+      bestseller: false,
+    },
   ]
 
   return (

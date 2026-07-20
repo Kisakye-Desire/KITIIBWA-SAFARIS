@@ -17,7 +17,7 @@ export default function Donations() {
   const [isProcessing, setIsProcessing] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
 
-  const presetAmounts = [25, 50, 100, 250, 500, 1000]
+  const presetAmounts = [40, 120, 250, 500, 1000, 2500]
   const finalAmount = customAmount ? parseFloat(customAmount) : selectedAmount
 
   const handleDonate = async () => {
@@ -99,27 +99,27 @@ export default function Donations() {
 
             <div className="grid md:grid-cols-4 gap-6 mb-12">
               <div className="bg-background p-6 rounded-lg text-center">
-                <Users className="h-8 w-8 text-accent mx-auto mb-3" />
-                <p className="text-sm font-semibold text-primary mb-2">$25</p>
-                <p className="text-xs text-muted-foreground">Feeds a conservation ranger for one day</p>
+                <BookOpen className="h-8 w-8 text-accent mx-auto mb-3" />
+                <p className="text-sm font-semibold text-primary mb-2">$40</p>
+                <p className="text-xs text-muted-foreground">One Term School Fees for a Child</p>
               </div>
 
               <div className="bg-background p-6 rounded-lg text-center">
-                <BookOpen className="h-8 w-8 text-accent mx-auto mb-3" />
-                <p className="text-sm font-semibold text-primary mb-2">$100</p>
-                <p className="text-xs text-muted-foreground">Provides school supplies for 5 children</p>
+                <Users className="h-8 w-8 text-accent mx-auto mb-3" />
+                <p className="text-sm font-semibold text-primary mb-2">$120</p>
+                <p className="text-xs text-muted-foreground">Full Year Sponsorship for One Student</p>
               </div>
 
               <div className="bg-background p-6 rounded-lg text-center">
                 <Leaf className="h-8 w-8 text-accent mx-auto mb-3" />
                 <p className="text-sm font-semibold text-primary mb-2">$500</p>
-                <p className="text-xs text-muted-foreground">Plants 100 trees for forest restoration</p>
+                <p className="text-xs text-muted-foreground">Community Healthcare & Conservation Programs</p>
               </div>
 
               <div className="bg-background p-6 rounded-lg text-center">
                 <Heart className="h-8 w-8 text-accent mx-auto mb-3" />
                 <p className="text-sm font-semibold text-primary mb-2">$1,000</p>
-                <p className="text-xs text-muted-foreground">Provides medical care for 50 community members</p>
+                <p className="text-xs text-muted-foreground">Full Scholarship + Life Skills Training</p>
               </div>
             </div>
           </div>

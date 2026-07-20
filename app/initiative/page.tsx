@@ -142,7 +142,7 @@ export default function Initiative() {
                       <div className="text-5xl group-hover:scale-110 transition-transform duration-300">{program.icon}</div>
                       <span className="text-xs font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full whitespace-nowrap">{program.yearsActive}</span>
                     </div>
-                    <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">{program.title}</h3>
+                    <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors capitalize">{program.title}</h3>
                     <p className="text-muted-foreground mb-4 leading-relaxed text-sm">{program.description}</p>
                     <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-4 rounded-lg border border-primary/10 group-hover:border-accent/30 transition-all duration-300">
                       <p className="text-primary font-semibold text-xs mb-2 uppercase tracking-wider">Impact to date</p>
@@ -249,7 +249,7 @@ export default function Initiative() {
                 },
                 {
                   q: 'How can I volunteer?',
-                  a: 'We welcome passionate volunteers! Contact our outreach coordinator at dynamicyoo@gmail.com or call +256 708898424 to discuss volunteer opportunities.'
+                  a: 'We welcome passionate volunteers! Contact our outreach coordinator at kisakyedhisayar@gmail.com or call +256 702 345273 to discuss volunteer opportunities.'
                 }
               ].map((item, idx) => (
                 <ScrollReveal key={idx} delay={idx * 0.1}>

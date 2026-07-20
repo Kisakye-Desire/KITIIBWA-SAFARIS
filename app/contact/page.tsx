@@ -93,8 +93,8 @@ export default function Contact() {
                     <Phone className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold text-primary">Phone</p>
-                      <p className="text-muted-foreground">Uganda: +256 708898424</p>
-                      <p className="text-muted-foreground">UK: +44 7498605656</p>
+                      <p className="text-muted-foreground">Uganda: +256 702 345273</p>
+                      <p className="text-muted-foreground">UK: +44 7884 181149</p>
                     </div>
                   </div>
 
@@ -102,7 +102,7 @@ export default function Contact() {
                     <Mail className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold text-primary">Email</p>
-                      <p className="text-muted-foreground">dynamicyoo@gmail.com</p>
+                      <p className="text-muted-foreground">kisakyedhisayar@gmail.com</p>
                     </div>
                   </div>
 
@@ -131,7 +131,7 @@ export default function Contact() {
                     Need immediate assistance? Chat with us on WhatsApp or call our emergency line
                   </p>
                   <a
-                    href="https://wa.me/256763705967"
+                    href="https://wa.me/447884181149"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary font-semibold hover:text-accent transition-colors"

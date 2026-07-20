@@ -87,7 +87,7 @@ export default function Home() {
               <AnimatedCard delay={0} className="bg-background overflow-hidden hover:border-accent/50">
                 <div className="relative h-56 overflow-hidden rounded-lg mb-4">
                   <Image
-                    src="/images/hero-safari.png"
+                    src="/images/community/traditional-hut.jpg"
                     alt="Mountain Gorilla Trekking"
                     fill
                     className="object-cover hover:scale-110 transition-transform duration-500"
@@ -107,7 +107,7 @@ export default function Home() {
               <AnimatedCard delay={1} className="bg-background overflow-hidden hover:border-accent/50">
                 <div className="relative h-56 overflow-hidden rounded-lg mb-4">
                   <Image
-                    src="/images/safari-landscape.png"
+                    src="/images/safari/sunset-acacia.jpg"
                     alt="Wildlife Safari"
                     fill
                     className="object-cover hover:scale-110 transition-transform duration-500"
@@ -127,7 +127,7 @@ export default function Home() {
               <AnimatedCard delay={2} className="bg-background overflow-hidden hover:border-accent/50">
                 <div className="relative h-56 overflow-hidden rounded-lg mb-4">
                   <Image
-                    src="/images/safari-cottage.png"
+                    src="/images/nature/crater-lake-view.jpg"
                     alt="Luxury Accommodations"
                     fill
                     className="object-cover hover:scale-110 transition-transform duration-500"
@@ -241,7 +241,7 @@ export default function Home() {
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
               <p className="text-sm opacity-90 mt-6 text-white animate-pulse-subtle">
-                💬 Need help? Chat with us on WhatsApp or call +256 708898424
+                Need help? Chat with us on WhatsApp or call +256 702 345273
               </p>
             </ScrollReveal>
           </div>
