@@ -198,13 +198,14 @@ export function generateStructuredData(type: string, data: any) {
         contactPoint: {
           '@type': 'ContactPoint',
           contactType: 'Customer Service',
-          telephone: '+256 708898424',
-          email: 'dynamicyoo@gmail.com',
+          telephone: '+256 702 345273',
+          email: 'kisakyedhisayar@gmail.com',
         },
         sameAs: [
           'https://facebook.com/kitiibwasafaris',
           'https://instagram.com/kitiibwasafaris',
-          'https://twitter.com/kitiibwasafaris',
+          'https://tiktok.com/@kitiibwasafaris',
+          'https://x.com/kitiibwasafaris',
         ],
       }
 
@@ -272,6 +273,7 @@ export function generateSitemapURLs() {
     { url: '/contact', changefreq: 'monthly', priority: 0.7 },
     { url: '/uganda', changefreq: 'monthly', priority: 0.7 },
     { url: '/initiative', changefreq: 'monthly', priority: 0.7 },
+    { url: '/partners', changefreq: 'monthly', priority: 0.7 },
     { url: '/best-of', changefreq: 'quarterly', priority: 0.6 },
   ]
 

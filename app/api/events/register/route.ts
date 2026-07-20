@@ -97,7 +97,7 @@ export async function POST(request: NextRequest) {
 
           <p>We will send you more details about the event schedule, accommodation options, and payment information soon.</p>
 
-          <p>If you have any questions, please don't hesitate to contact us at <strong>dynamicyoo@gmail.com</strong> or call us on <strong>+256 708898424</strong>.</p>
+          <p>If you have any questions, please don't hesitate to contact us at <strong>kisakyedhisayar@gmail.com</strong> or call us on <strong>+256 702 345273</strong>.</p>
 
           <p>We look forward to seeing you at the Safari & Chill Experience!</p>
 
@@ -109,8 +109,8 @@ export async function POST(request: NextRequest) {
     })
 
     // Send admin notification
-    await sendEmail({
-      to: process.env.ADMIN_EMAIL || 'dynamicyoo@gmail.com',
+    const adminEmailResult = await sendEmail({
+      to: process.env.ADMIN_EMAIL || 'kisakyedhisayar@gmail.com',
       subject: `New Registration: Safari & Chill Experience 2026`,
       html: `
         <div style="font-family: Arial, sans-serif;">

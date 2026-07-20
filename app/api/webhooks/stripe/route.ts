@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
 
             // Send admin notification
             await sendEmail({
-              to: process.env.ADMIN_EMAIL || 'dynamicyoo@gmail.com',
+              to: process.env.ADMIN_EMAIL || 'kisakyedhisayar@gmail.com',
               subject: `New Donation Received: ${donorRecord.currency} ${donorRecord.amount}`,
               html: `
                 <div style="font-family: Arial, sans-serif;">

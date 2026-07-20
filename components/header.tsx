@@ -17,6 +17,7 @@ export default function Header() {
     { name: 'Uganda', href: '/uganda' },
     { name: 'Blog', href: '/blog' },
     { name: 'KITIIBWA Initiative', href: '/initiative' },
+    { name: 'Partners', href: '/partners' },
     { name: 'Best Of', href: '/best-of' },
     { name: 'Packages', href: '/packages' },
     { name: 'Contact', href: '/contact' },

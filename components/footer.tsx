@@ -86,13 +86,13 @@ export default function Footer() {
               <li className="flex items-start gap-2 hover:translate-x-1 transition">
                 <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" />
                 <div className="flex flex-col gap-1">
-                  <span>Uganda: +256 708898424</span>
-                  <span>UK: +44 7498605656</span>
+                  <span>Uganda: +256 702 345273</span>
+                  <span>UK: +44 7884 181149</span>
                 </div>
               </li>
               <li className="flex items-start gap-2 hover:translate-x-1 transition">
                 <Mail className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>dynamicyoo@gmail.com</span>
+                <span>kisakyedhisayar@gmail.com</span>
               </li>
               <li className="flex items-start gap-2 hover:translate-x-1 transition">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
@@ -112,10 +112,10 @@ export default function Footer() {
               <a href="https://instagram.com/kitiibwasafaris" target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition text-lg">
                 📷
               </a>
-              <a href="https://linkedin.com/company/kitiibwasafaris" target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition text-lg">
-                in
+              <a href="https://tiktok.com/@kitiibwasafaris" target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition text-lg">
+                TT
               </a>
-              <a href="https://twitter.com/kitiibwasafaris" target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition text-lg">
+              <a href="https://x.com/kitiibwasafaris" target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition text-lg">
                 𝕏
               </a>
             </div>
