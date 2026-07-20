@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { SectionHeading, AnimatedCard, InteractiveImage, TextGradient } from '@/components/ui/effects'
 import ScrollReveal from '@/components/scroll-reveal'
 import EventAnnouncement from '@/components/event-announcement'
+import PartnersSection from '@/components/partners'
 
 export const metadata = {
   title: 'Home | KITIIBWA SAFARIS',
@@ -31,7 +32,7 @@ export default function Home() {
               <div className="animate-fade-in-up mb-4">
                 <TextGradient className="text-sm font-semibold tracking-wider uppercase">Welcome Aboard</TextGradient>
               </div>
-              <SectionHeading animated>Welcome to KITIIBWA SAFARIS</SectionHeading>
+              <SectionHeading animated>Kittibwa Safaris - Adventure. Nature. Relaxation. All in One.</SectionHeading>
               <p className="text-lg text-muted-foreground mb-4 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                 Embark on the journey of a lifetime in the Pearl of Africa. KITIIBWA SAFARIS delivers authentic, transformative safari experiences that connect you with Uganda&apos;s breathtaking wildlife, stunning landscapes, and vibrant cultures. Since our founding, we have been committed to creating not just memorable holidays, but meaningful encounters with nature and genuine human connections.
               </p>
@@ -43,16 +44,16 @@ export default function Home() {
             {/* Stats Bar */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 bg-gradient-safari text-primary-foreground p-8 rounded-xl shadow-xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <div className="text-center animate-scale-in" style={{ animationDelay: '0.4s' }}>
-                <div className="text-2xl md:text-4xl font-bold mb-1 text-accent">2,000+</div>
-                <p className="text-sm opacity-95">Happy Guests</p>
+                <div className="text-2xl md:text-4xl font-bold mb-1 text-accent">5+</div>
+                <p className="text-sm opacity-95">Years of Service</p>
               </div>
               <div className="text-center animate-scale-in" style={{ animationDelay: '0.5s' }}>
-                <div className="text-2xl md:text-4xl font-bold mb-1 text-accent">15+</div>
-                <p className="text-sm opacity-95">Years Serving</p>
+                <div className="text-2xl md:text-4xl font-bold mb-1 text-accent">10+</div>
+                <p className="text-sm opacity-95">Expert Staff</p>
               </div>
               <div className="text-center animate-scale-in" style={{ animationDelay: '0.6s' }}>
-                <div className="text-2xl md:text-4xl font-bold mb-1 text-accent">50+</div>
-                <p className="text-sm opacity-95">Expert Staff</p>
+                <div className="text-2xl md:text-4xl font-bold mb-1 text-accent">2,000+</div>
+                <p className="text-sm opacity-95">Happy Guests</p>
               </div>
               <div className="text-center animate-scale-in" style={{ animationDelay: '0.7s' }}>
                 <div className="text-2xl md:text-4xl font-bold mb-1 text-accent">5</div>
@@ -210,6 +211,9 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Partners Section */}
+        <PartnersSection />
+
         {/* CTA Section */}
         <section className="py-16 md:py-24 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-safari opacity-95" />
@@ -241,7 +245,7 @@ export default function Home() {
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
               <p className="text-sm opacity-90 mt-6 text-white animate-pulse-subtle">
-                💬 Need help? Chat with us on WhatsApp or call +256 708898424
+                💬 Need help? Chat with us on WhatsApp or call +256 702 345273
               </p>
             </ScrollReveal>
           </div>

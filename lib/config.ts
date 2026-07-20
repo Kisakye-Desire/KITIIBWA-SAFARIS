@@ -43,11 +43,11 @@ export const SOCIAL_LINKS = {
 // EMAIL CONFIGURATION
 export const EMAIL_CONFIG = {
   // Admin emails
-  adminEmail: process.env.ADMIN_EMAIL || 'admin@kitiibwasafaris.com', // PLACEHOLDER
-  contactFormEmail: process.env.CONTACT_FORM_EMAIL || 'contact@kitiibwasafaris.com', // PLACEHOLDER
-  bookingsEmail: process.env.BOOKINGS_EMAIL || 'bookings@kitiibwasafaris.com', // PLACEHOLDER
-  donationsEmail: process.env.DONATIONS_EMAIL || 'donations@kitiibwasafaris.com', // PLACEHOLDER
-  eventsEmail: process.env.EVENTS_EMAIL || 'events@kitiibwasafaris.com', // PLACEHOLDER
+  adminEmail: process.env.ADMIN_EMAIL || 'kisakyedhisayar@gmail.com',
+  contactFormEmail: process.env.CONTACT_FORM_EMAIL || 'kisakyedhisayar@gmail.com',
+  bookingsEmail: process.env.BOOKINGS_EMAIL || 'kisakyedhisayar@gmail.com',
+  donationsEmail: process.env.DONATIONS_EMAIL || 'kisakyedhisayar@gmail.com',
+  eventsEmail: process.env.EVENTS_EMAIL || 'kisakyedhisayar@gmail.com',
   
   // Email provider configuration
   provider: process.env.EMAIL_PROVIDER || 'resend', // 'resend' | 'nodemailer' | 'sendgrid'

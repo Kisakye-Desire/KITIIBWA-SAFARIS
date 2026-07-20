@@ -144,26 +144,26 @@ export default function SafariChillExperience() {
         <section className="relative h-screen min-h-96 flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-09%20at%208.48.20%20PM%20%289%29-Gbl8pg03QAyqQndfjssEn4urcN87s5.jpeg"
-              alt="Safari & Chill Experience"
+              src="/images/safari-chill-poster.jpg"
+              alt="Safari & Chill Experience 2027"
               fill
               className="object-cover"
               priority
               quality={90}
             />
-            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-black/30" />
           </div>
 
           <div className="relative z-10 text-center text-white px-4">
             <ScrollReveal>
               <div className="inline-block mb-6 px-4 py-2 bg-accent/80 backdrop-blur-sm rounded-full">
-                <span className="text-sm font-bold">Coming Soon</span>
+                <span className="text-sm font-bold">2027 Edition Coming Soon</span>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
               <h1 className="text-5xl md:text-7xl font-bold mb-4 text-balance">
-                Safari & Chill Experience 2026
+                Safari & Chill Experience 2027
               </h1>
             </ScrollReveal>
 

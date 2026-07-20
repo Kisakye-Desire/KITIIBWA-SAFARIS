@@ -93,8 +93,8 @@ export default function Contact() {
                     <Phone className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold text-primary">Phone</p>
-                      <p className="text-muted-foreground">Uganda: +256 708898424</p>
-                      <p className="text-muted-foreground">UK: +44 7498605656</p>
+                      <p className="text-muted-foreground">Uganda: +256 702 345273</p>
+                      <p className="text-muted-foreground">UK: +44 7884 181149</p>
                     </div>
                   </div>
 
@@ -102,7 +102,7 @@ export default function Contact() {
                     <Mail className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold text-primary">Email</p>
-                      <p className="text-muted-foreground">dynamicyoo@gmail.com</p>
+                      <p className="text-muted-foreground">kisakyedhisayar@gmail.com</p>
                     </div>
                   </div>
 
@@ -110,7 +110,7 @@ export default function Contact() {
                     <MapPin className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold text-primary">Address</p>
-                      <p className="text-muted-foreground">Mukono District, Uganda</p>
+                      <p className="text-muted-foreground">Mukono Access Clinic, Mukono District, Uganda</p>
                     </div>
                   </div>
 
@@ -131,7 +131,7 @@ export default function Contact() {
                     Need immediate assistance? Chat with us on WhatsApp or call our emergency line
                   </p>
                   <a
-                    href="https://wa.me/256763705967"
+                    href="https://wa.me/447884181149"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary font-semibold hover:text-accent transition-colors"
@@ -254,11 +254,19 @@ export default function Contact() {
         <section className="py-12 bg-card">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl font-bold text-primary mb-6">Our Location</h2>
-            <div className="w-full h-96 bg-muted rounded-lg flex items-center justify-center">
-              <p className="text-muted-foreground">
-                Map placeholder - Bwindi Impenetrable National Park, Uganda. Contact us for exact coordinates and directions.
-              </p>
+            <div className="w-full h-96 bg-muted rounded-lg overflow-hidden">
+              <iframe
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8215387865253!2d32.5500359!3d0.3334357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177db8a5d1234567%3A0x1234567890abcdef!2sMukono%20Access%20Clinic!5e0!3m2!1sen!2sug!4v1234567890123"
+              ></iframe>
             </div>
+            <p className="text-muted-foreground mt-4 text-sm">
+              Mukono Access Clinic, Mukono District, Uganda. For exact directions and turn-by-turn navigation, contact us on WhatsApp.
+            </p>
           </div>
         </section>
       </main>

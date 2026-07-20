@@ -112,6 +112,42 @@ export default function Packages() {
       ],
       bestseller: false,
     },
+    {
+      name: 'Source of the Nile Explorer: Raft, Fly & Discover',
+      duration: '6 Days / 5 Nights',
+      price: 1250,
+      image: '/images/safari-landscape.png',
+      description: 'Experience the thrill of Uganda\'s adventure capital with white-water rafting and bungee jumping at the legendary Source of the Nile',
+      included: [
+        'Visit the Source of the Nile',
+        'Grade V white-water rafting or scenic Nile boat cruise',
+        'Ziplining in Mabira Forest',
+        'Guided Jinja town and cultural tour',
+        'Birdwatching and nature walks',
+        'Mid-range accommodation',
+        'Professional English-speaking guide',
+        'Breakfast, selected lunches, and drinking water',
+      ],
+      bestseller: false,
+    },
+    {
+      name: 'Uganda Birding Circuit: Shoebill to Bwindi',
+      duration: '7 Days / 6 Nights',
+      price: 2200,
+      image: '/images/bird-watching.png',
+      description: 'Discover Uganda\'s incredible birdlife with over 1,060 species including the iconic Shoebill and Albertine Rift endemics',
+      included: [
+        'Shoebill tracking in Mabamba Swamp',
+        'Birding in Kibale Forest & Bigodi Wetland',
+        'Queen Elizabeth National Park birding',
+        'Albertine Rift endemic species in Bwindi',
+        'Expert certified local birding guide',
+        'Eco-lodge accommodation',
+        'All meals included',
+        'Park entrance fees',
+      ],
+      bestseller: true,
+    },
   ]
 
   return (
@@ -199,12 +235,14 @@ export default function Packages() {
                       </div>
 
                       {/* Button */}
-                      <Link
-                        href="/contact"
+                      <a
+                        href="https://wa.me/447884181149"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="w-full bg-gradient-to-r from-primary to-primary/80 hover:to-accent hover:from-accent text-primary-foreground py-3 rounded-lg font-semibold transition-all transform hover:scale-105 duration-300 text-center shadow-md hover:shadow-lg"
                       >
                         Book Now
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </ScrollReveal>

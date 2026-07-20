@@ -71,7 +71,7 @@ export default function Initiative() {
               <div className="mb-4">
                 <TextGradient className="text-sm font-semibold tracking-wider uppercase">Social Impact</TextGradient>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-balance">KITIIBWA Initiatives</h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-balance">Kittibwa Children Initiative</h1>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
@@ -164,29 +164,17 @@ export default function Initiative() {
             <ScrollReveal>
               <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center animate-fade-in-up">Our Impact</h2>
             </ScrollReveal>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
               <ScrollReveal delay={0} direction="up">
                 <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover">
-                  <div className="text-5xl md:text-6xl font-bold mb-3 text-accent animate-fade-in-up">1,000+</div>
+                  <div className="text-5xl md:text-6xl font-bold mb-3 text-accent animate-fade-in-up">100</div>
                   <p className="opacity-95 text-sm font-medium">People Directly Helped</p>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={0.1} direction="up">
                 <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover">
-                  <div className="text-5xl md:text-6xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.1s' }}>5,000+</div>
+                  <div className="text-5xl md:text-6xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.1s' }}>200</div>
                   <p className="opacity-95 text-sm font-medium">Lives Reached Through Programs</p>
-                </div>
-              </ScrollReveal>
-              <ScrollReveal delay={0.2} direction="up">
-                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover">
-                  <div className="text-5xl md:text-6xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.2s' }}>500+</div>
-                  <p className="opacity-95 text-sm font-medium">Hectares Protected</p>
-                </div>
-              </ScrollReveal>
-              <ScrollReveal delay={0.3} direction="up">
-                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover">
-                  <div className="text-5xl md:text-6xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.3s' }}>$500K+</div>
-                  <p className="opacity-95 text-sm font-medium">Funds Allocated to Outreach</p>
                 </div>
               </ScrollReveal>
             </div>

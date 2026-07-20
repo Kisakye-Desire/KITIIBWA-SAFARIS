@@ -40,30 +40,25 @@ export const socialLinks: SocialLink[] = [
     icon: 'instagram',
   },
   {
+    name: 'TikTok',
+    url: 'https://tiktok.com/@kitiibwasafaris',
+    icon: 'tiktok',
+  },
+  {
     name: 'Twitter',
     url: 'https://twitter.com/kitiibwasafaris',
     icon: 'twitter',
   },
-  {
-    name: 'LinkedIn',
-    url: 'https://linkedin.com/company/kitiibwa-safaris',
-    icon: 'linkedin',
-  },
-  {
-    name: 'YouTube',
-    url: 'https://youtube.com/kitiibwasafaris',
-    icon: 'youtube',
-  },
 ]
 
 export const contactInfo: ContactInfo = {
-  email: 'dynamicyoo@gmail.com',
+  email: 'kisakyedhisayar@gmail.com',
   phone: {
-    uganda: '+256 708898424',
-    uk: '+44 7498605656',
+    uganda: '+256 702 345273',
+    uk: '+44 7884 181149',
   },
-  address: 'Mukono District, Uganda',
-  whatsapp: 'https://wa.me/256708898424',
+  address: 'Mukono Access Clinic, Mukono District, Uganda',
+  whatsapp: 'https://wa.me/447884181149',
   operatingHours: {
     weekday: 'Monday - Friday: 8:00 AM - 6:00 PM EAT',
     saturday: 'Saturday: 9:00 AM - 4:00 PM EAT',

@@ -158,9 +158,14 @@ export default function SinguraCottages() {
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     Stay in comfortable cottages surrounded by thriving organic farms, banana plantations, and natural gardens. Participate in workshops, meet local artisans, enjoy farm-fresh meals, and connect with the vibrant community that makes Singura special.
                   </p>
-                  <button className="bg-primary hover:bg-accent text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  <a
+                    href="https://wa.me/447884181149"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-primary hover:bg-accent text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
                     Book Your Stay
-                  </button>
+                  </a>
                 </div>
               </ScrollReveal>
 
@@ -368,12 +373,14 @@ export default function SinguraCottages() {
                 Book your stay at Singura Homesteads and discover the beauty of rural Uganda combined with modern comfort
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-3 bg-primary hover:bg-accent text-primary-foreground font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  Book Now
-                </button>
-                <button className="px-8 py-3 border-2 border-primary hover:border-accent text-primary hover:text-accent font-semibold rounded-lg transition-all duration-300">
-                  Learn More
-                </button>
+                <a
+                  href="https://wa.me/447884181149"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-8 py-3 bg-primary hover:bg-accent text-primary-foreground font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                  Book Your Stay
+                </a>
               </div>
             </ScrollReveal>
           </div>
