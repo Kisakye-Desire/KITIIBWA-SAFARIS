@@ -11,18 +11,18 @@ import ScrollReveal from '@/components/scroll-reveal'
 const IMAGES_PER_PAGE = 9
 
 const galleryImages = [
-  { src: '/images/safari/vehicle-sunset.jpg', alt: 'Safari Vehicle Adventure', title: 'Safari Vehicle Adventure' },
   { src: '/images/safari/sunset-acacia.jpg', alt: 'Sunset Over Acacia Trees', title: 'Acacia Sunset' },
-  { src: '/images/safari/wildlife-encounter.jpg', alt: 'Wildlife Encounter', title: 'Wildlife Encounter' },
-  { src: '/images/experiences/wildlife-photography.jpg', alt: 'Wildlife Photography', title: 'Wildlife Photography' },
   { src: '/images/experiences/golden-hour-safari.jpg', alt: 'Golden Hour Safari', title: 'Golden Hour' },
+  { src: '/images/safari/wildlife-encounter.jpg', alt: 'Wildlife Encounter', title: 'Wildlife Encounter' },
   { src: '/images/experiences/scenic-overlook.jpg', alt: 'Scenic Overlook', title: 'Scenic Overlook' },
   { src: '/images/nature/crater-lake-view.jpg', alt: 'Crater Lake View', title: 'Crater Lake' },
+  { src: '/images/safari/vehicle-sunset.jpg', alt: 'Safari Vehicle Adventure', title: 'Safari Vehicle Adventure' },
+  { src: '/images/experiences/wildlife-photography.jpg', alt: 'Wildlife Photography', title: 'Wildlife Photography' },
+  { src: '/images/experiences/guide-elephant.jpg', alt: 'Guide with Elephant', title: 'Elephant Encounter' },
   { src: '/images/nature/twin-crater-lakes.jpg', alt: 'Twin Crater Lakes', title: 'Twin Lakes' },
   { src: '/images/nature/forest-landscape.jpg', alt: 'Forest Landscape', title: 'Forest Landscape' },
-  { src: '/images/experiences/guide-elephant.jpg', alt: 'Guide with Elephant', title: 'Elephant Encounter' },
-  { src: '/images/community/farming-trail.jpg', alt: 'Farming Trail', title: 'Farming Trail' },
   { src: '/images/community/traditional-hut.jpg', alt: 'Traditional Hut', title: 'Traditional Architecture' },
+  { src: '/images/community/farming-trail.jpg', alt: 'Farming Trail', title: 'Farming Trail' },
   { src: '/images/safari/vehicle-sunset.jpg', alt: 'Safari at Sunset', title: 'Safari Sunset' },
   { src: '/images/experiences/scenic-overlook.jpg', alt: 'Valley Overlook', title: 'Valley View' },
   { src: '/images/nature/crater-lake-view.jpg', alt: 'Lake Panorama', title: 'Lake Panorama' },
@@ -67,7 +67,7 @@ export default function Gallery() {
               <div className="text-center mb-12">
                 <TextGradient className="text-sm font-semibold tracking-wider uppercase mb-2">Visual Journey</TextGradient>
                 <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-                  KITIIBWA SAFARIS Gallery
+                  Kittibwa Safari Gallery
                 </h1>
                 <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
                   Experience the raw beauty of African wildlife and authentic safari adventures through our curated collection of 26 stunning photographs

@@ -3,11 +3,12 @@
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import WhatsAppButton from '@/components/whatsapp-button'
-import { Mail, Phone, MapPin, Clock } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, Globe } from 'lucide-react'
 import { useState } from 'react'
 import { TextGradient } from '@/components/ui/effects'
 
 export default function Contact() {
+  const [selectedCountry, setSelectedCountry] = useState('uganda')
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -88,13 +89,49 @@ export default function Contact() {
               <div className="animate-fade-in-up">
                 <h2 className="text-3xl font-bold text-primary mb-8">Contact Information</h2>
 
+                {/* Country Selector */}
+                <div className="mb-8 flex gap-4">
+                  <button
+                    onClick={() => setSelectedCountry('uganda')}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition ${
+                      selectedCountry === 'uganda'
+                        ? 'bg-accent text-accent-foreground'
+                        : 'bg-card text-primary hover:bg-card/80'
+                    }`}
+                  >
+                    <Globe className="h-4 w-4" />
+                    Uganda
+                  </button>
+                  <button
+                    onClick={() => setSelectedCountry('uk')}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition ${
+                      selectedCountry === 'uk'
+                        ? 'bg-accent text-accent-foreground'
+                        : 'bg-card text-primary hover:bg-card/80'
+                    }`}
+                  >
+                    <Globe className="h-4 w-4" />
+                    United Kingdom
+                  </button>
+                </div>
+
                 <div className="space-y-6 mb-8">
                   <div className="flex gap-4">
                     <Phone className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold text-primary">Phone</p>
-                      <p className="text-muted-foreground">Uganda: +256 702 345273</p>
-                      <p className="text-muted-foreground">UK: +44 7884 181149</p>
+                      {selectedCountry === 'uganda' ? (
+                        <>
+                          <p className="text-muted-foreground">+256 702 345273</p>
+                          <p className="text-muted-foreground text-sm opacity-75">(WhatsApp & Calls)</p>
+                        </>
+                      ) : (
+                        <>
+                          <p className="text-muted-foreground">+44 7884 181149</p>
+                          <p className="text-muted-foreground text-sm opacity-75">(+44 7498605656 - Alternative)</p>
+                          <p className="text-muted-foreground text-sm opacity-75">(WhatsApp & Calls)</p>
+                        </>
+                      )}
                     </div>
                   </div>
 

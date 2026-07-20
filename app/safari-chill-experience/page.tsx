@@ -144,7 +144,7 @@ export default function SafariChillExperience() {
         <section className="relative h-screen min-h-96 flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-09%20at%208.48.20%20PM%20%289%29-Gbl8pg03QAyqQndfjssEn4urcN87s5.jpeg"
+              src="/images/safari/safari-chill-poster.jpg"
               alt="Safari & Chill Experience"
               fill
               className="object-cover"
@@ -163,7 +163,7 @@ export default function SafariChillExperience() {
 
             <ScrollReveal delay={0.1}>
               <h1 className="text-5xl md:text-7xl font-bold mb-4 text-balance">
-                Safari & Chill Experience 2026
+                Safari & Chill Experience 2027
               </h1>
             </ScrollReveal>
 

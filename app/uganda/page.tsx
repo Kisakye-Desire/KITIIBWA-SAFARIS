@@ -22,7 +22,7 @@ export default function Uganda() {
       location: 'Southwestern Uganda',
       bestSeason: 'June-August, December-February',
       highlights: 'Mountain gorilla trekking, forest walks, bird watching',
-      image: '/images/hero-safari.png',
+      image: '/images/safari/mountain-gorilla.png',
     },
     {
       name: 'Queen Elizabeth National Park',

@@ -18,7 +18,7 @@ export default function Packages() {
       name: 'Bwindi Gorilla Encounter',
       duration: '4 Days / 3 Nights',
       price: 1900,
-      image: '/images/community/traditional-hut.jpg',
+      image: '/images/safari/chimpanzee-kibale.png',
       description: 'Unforgettable 4-day gorilla trekking adventure in Bwindi Impenetrable Forest with expert guides',
       included: [
         'Gorilla trekking in Bwindi',
@@ -82,7 +82,7 @@ export default function Packages() {
       name: 'Chimpanzee Connection',
       duration: '3 Days / 2 Nights',
       price: 1900,
-      image: '/images/experiences/wildlife-photography.jpg',
+      image: '/images/safari/chimpanzee-kibale.png',
       description: 'Track wild chimpanzees in Kibale Forest and experience forest ecosystem',
       included: [
         'Chimp habituation experience',
@@ -231,12 +231,14 @@ export default function Packages() {
                       </div>
 
                       {/* Button */}
-                      <Link
-                        href="/contact"
-                        className="w-full bg-gradient-to-r from-primary to-primary/80 hover:to-accent hover:from-accent text-primary-foreground py-3 rounded-lg font-semibold transition-all transform hover:scale-105 duration-300 text-center shadow-md hover:shadow-lg"
+                      <a
+                        href="https://wa.me/447884181149"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full bg-gradient-to-r from-primary to-primary/80 hover:to-accent hover:from-accent text-primary-foreground py-3 rounded-lg font-semibold transition-all transform hover:scale-105 duration-300 text-center shadow-md hover:shadow-lg block"
                       >
                         Book Now
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </ScrollReveal>

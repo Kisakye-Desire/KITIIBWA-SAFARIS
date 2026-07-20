@@ -344,7 +344,7 @@ export default function About() {
               </ScrollReveal>
               <ScrollReveal delay={0.2} direction="up">
                 <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 text-center card-hover">
-                  <div className="text-6xl md:text-7xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.2s' }}>50+</div>
+                  <div className="text-6xl md:text-7xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.2s' }}>10</div>
                   <p className="opacity-95 font-medium">Professional Staff</p>
                 </div>
               </ScrollReveal>

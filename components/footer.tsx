@@ -13,7 +13,7 @@ export default function Footer() {
         backgroundImage: 'radial-gradient(circle at 20% 80%, rgba(212, 165, 116, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(245, 176, 65, 0.3) 0%, transparent 50%)',
       }} />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div className="grid md:grid-cols-5 gap-8 mb-8">
           {/* About */}
           <div className="animate-fade-in-up" style={{ animationDelay: '0ms' }}>
             <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
@@ -79,8 +79,18 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Partners */}
           <div className="animate-fade-in-up" style={{ animationDelay: '300ms' }}>
+            <h4 className="font-bold mb-4">Our Partners</h4>
+            <ul className="space-y-2 text-sm">
+              <li className="opacity-90">Vision for Trauma Care in Africa</li>
+              <li className="opacity-90">Mukono Access Clinic</li>
+              <li className="opacity-90">Ssinza Safaris</li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="animate-fade-in-up" style={{ animationDelay: '400ms' }}>
             <h4 className="font-bold mb-4">Contact</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2 hover:translate-x-1 transition">

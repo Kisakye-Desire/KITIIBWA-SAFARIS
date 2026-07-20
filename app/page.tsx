@@ -31,7 +31,7 @@ export default function Home() {
               <div className="animate-fade-in-up mb-4">
                 <TextGradient className="text-sm font-semibold tracking-wider uppercase">Welcome Aboard</TextGradient>
               </div>
-              <SectionHeading animated>Welcome to KITIIBWA SAFARIS</SectionHeading>
+              <SectionHeading animated>Welcome to Kittibwa Safaris</SectionHeading>
               <p className="text-lg text-muted-foreground mb-4 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                 Embark on the journey of a lifetime in the Pearl of Africa. KITIIBWA SAFARIS delivers authentic, transformative safari experiences that connect you with Uganda&apos;s breathtaking wildlife, stunning landscapes, and vibrant cultures. Since our founding, we have been committed to creating not just memorable holidays, but meaningful encounters with nature and genuine human connections.
               </p>
@@ -51,7 +51,7 @@ export default function Home() {
                 <p className="text-sm opacity-95">Years Serving</p>
               </div>
               <div className="text-center animate-scale-in" style={{ animationDelay: '0.6s' }}>
-                <div className="text-2xl md:text-4xl font-bold mb-1 text-accent">50+</div>
+                <div className="text-2xl md:text-4xl font-bold mb-1 text-accent">10</div>
                 <p className="text-sm opacity-95">Expert Staff</p>
               </div>
               <div className="text-center animate-scale-in" style={{ animationDelay: '0.7s' }}>
@@ -91,7 +91,7 @@ export default function Home() {
               <AnimatedCard delay={0} className="bg-background overflow-hidden hover:border-accent/50">
                 <div className="relative h-56 overflow-hidden rounded-lg mb-4">
                   <Image
-                    src="/images/community/traditional-hut.jpg"
+                    src="/images/safari/mountain-gorilla.png"
                     alt="Mountain Gorilla Trekking"
                     fill
                     className="object-cover hover:scale-110 transition-transform duration-500"
