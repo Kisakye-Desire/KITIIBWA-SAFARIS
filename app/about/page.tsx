@@ -117,7 +117,7 @@ export default function About() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <ScrollReveal direction="left">
                 <InteractiveImage
-                  src="/images/founder-profile.jpg"
+                  src="/images/experiences/guide-elephant.jpg"
                   alt="Alizeyuna Henry - Founder"
                   width={400}
                   height={500}
@@ -188,7 +188,7 @@ export default function About() {
               </div>
               <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl animate-fade-in-up card-hover" style={{ animationDelay: '0.2s' }}>
                 <Image
-                  src="/images/gallery-6.png"
+                  src="/images/safari/wildlife-encounter.jpg"
                   alt="Uganda Wildlife"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"

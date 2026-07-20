@@ -18,7 +18,7 @@ export default function Packages() {
       name: 'Bwindi Gorilla Encounter',
       duration: '4 Days / 3 Nights',
       price: 1900,
-      image: '/images/hero-safari.png',
+      image: '/images/community/traditional-hut.jpg',
       description: 'Unforgettable 4-day gorilla trekking adventure in Bwindi Impenetrable Forest with expert guides',
       included: [
         'Gorilla trekking in Bwindi',
@@ -34,7 +34,7 @@ export default function Packages() {
       name: '2-Day Queen Elizabeth Safari',
       duration: '2 Days / 1 Night',
       price: 650,
-      image: '/images/safari-landscape.png',
+      image: '/images/safari/sunset-acacia.jpg',
       description: 'Game drive and scenic Kazinga Channel boat cruise in Uganda\'s most iconic park',
       included: [
         'Private 4x4 safari vehicle',
@@ -50,7 +50,7 @@ export default function Packages() {
       name: 'Murchison Falls & Rhino Tracking',
       duration: '4 Days / 3 Nights',
       price: 1200,
-      image: '/images/safari-cottage.png',
+      image: '/images/nature/crater-lake-view.jpg',
       description: 'Experience rhino tracking, game drives, and the spectacular Murchison Falls waterfall',
       included: [
         'Guided rhino tracking at Ziwa',
@@ -66,7 +66,7 @@ export default function Packages() {
       name: 'Mountain Adventure',
       duration: '5 Days / 4 Nights',
       price: 2950,
-      image: '/images/gallery-3.png',
+      image: '/images/experiences/golden-hour-safari.jpg',
       description: 'Rwenzori Mountains trekking and alpine ecosystem exploration',
       included: [
         'Mountain guide & porters',
@@ -82,7 +82,7 @@ export default function Packages() {
       name: 'Chimpanzee Connection',
       duration: '3 Days / 2 Nights',
       price: 1900,
-      image: '/images/bird-watching.png',
+      image: '/images/experiences/wildlife-photography.jpg',
       description: 'Track wild chimpanzees in Kibale Forest and experience forest ecosystem',
       included: [
         'Chimp habituation experience',
@@ -98,7 +98,7 @@ export default function Packages() {
       name: 'Grand Uganda Safari',
       duration: '10 Days / 9 Nights',
       price: 6500,
-      image: '/images/safari-landscape.png',
+      image: '/images/safari/vehicle-sunset.jpg',
       description: 'The ultimate safari combining gorillas, wildlife, mountains, and culture',
       included: [
         'All transportation & transfers',
@@ -173,7 +173,7 @@ export default function Packages() {
         {/* Packages Grid */}
         <section className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/5">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {packages.map((pkg, idx) => (
                 <ScrollReveal key={pkg.name} delay={idx * 0.08} direction={idx % 3 === 0 ? 'up' : idx % 3 === 1 ? 'left' : 'right'}>
                   <div

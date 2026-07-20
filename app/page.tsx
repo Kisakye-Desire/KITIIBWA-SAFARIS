@@ -41,7 +41,7 @@ export default function Home() {
             </div>
 
             {/* Stats Bar */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 bg-gradient-safari text-primary-foreground p-8 rounded-xl shadow-xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6 bg-gradient-safari text-primary-foreground p-8 rounded-xl shadow-xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <div className="text-center animate-scale-in" style={{ animationDelay: '0.4s' }}>
                 <div className="text-2xl md:text-4xl font-bold mb-1 text-accent">2,000+</div>
                 <p className="text-sm opacity-95">Happy Guests</p>
@@ -55,8 +55,12 @@ export default function Home() {
                 <p className="text-sm opacity-95">Expert Staff</p>
               </div>
               <div className="text-center animate-scale-in" style={{ animationDelay: '0.7s' }}>
-                <div className="text-2xl md:text-4xl font-bold mb-1 text-accent">5</div>
-                <p className="text-sm opacity-95">Prime Parks</p>
+                <div className="text-2xl md:text-4xl font-bold mb-1 text-accent">10</div>
+                <p className="text-sm opacity-95">Amazing Parks</p>
+              </div>
+              <div className="text-center animate-scale-in" style={{ animationDelay: '0.8s' }}>
+                <div className="text-2xl md:text-4xl font-bold mb-1 text-accent">5★</div>
+                <p className="text-sm opacity-95">Top Rated</p>
               </div>
             </div>
           </div>
