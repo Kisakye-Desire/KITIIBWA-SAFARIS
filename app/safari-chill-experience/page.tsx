@@ -455,9 +455,14 @@ export default function SafariChillExperience() {
                 <Link href="/contact" className="inline-block px-8 py-3 bg-primary hover:bg-accent text-primary-foreground font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
                   Get Interested
                 </Link>
-                <Link href="/contact" className="inline-block px-8 py-3 border-2 border-primary hover:border-accent text-primary hover:text-accent font-semibold rounded-lg transition-all duration-300 text-center">
+                <a
+                  href="https://wa.me/447884181149?text=Hello%20KITIIBWA%20SAFARIS%2C%20I%20am%20interested%20in%20the%20Safari%20%26%20Chill%20Experience%202027.%20Please%20share%20more%20details."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-8 py-3 border-2 border-primary hover:border-accent text-primary hover:text-accent font-semibold rounded-lg transition-all duration-300 text-center"
+                >
                   Contact Us
-                </Link>
+                </a>
               </div>
             </ScrollReveal>
           </div>

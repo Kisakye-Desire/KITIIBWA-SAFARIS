@@ -81,7 +81,7 @@ export default function EventAnnouncement() {
                 Learn More
               </Link>
               <div className="px-6 py-2 bg-accent/20 border border-accent/30 rounded-full self-center">
-                <p className="text-sm font-semibold text-accent">Coming to Uganda • 2026</p>
+                <p className="text-sm font-semibold text-accent">Coming to Uganda • 2027</p>
               </div>
             </div>
           </div>

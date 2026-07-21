@@ -82,7 +82,7 @@ export default function Packages() {
       name: 'Chimpanzee Connection',
       duration: '3 Days / 2 Nights',
       price: 1900,
-      image: '/images/bird-watching.png',
+      image: '/images/chimp-1.jpg',
       description: 'Track wild chimpanzees in Kibale Forest and experience forest ecosystem',
       included: [
         'Chimp habituation experience',
@@ -134,7 +134,7 @@ export default function Packages() {
       name: 'Uganda Birding Circuit: Shoebill to Bwindi',
       duration: '7 Days / 6 Nights',
       price: 2200,
-      image: '/images/bird-watching.png',
+      image: '/images/gallery-11.jpg',
       description: 'Discover Uganda\'s incredible birdlife with over 1,060 species including the iconic Shoebill and Albertine Rift endemics',
       included: [
         'Shoebill tracking in Mabamba Swamp',
@@ -177,11 +177,11 @@ export default function Packages() {
         {/* Packages Grid */}
         <section className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/5">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
               {packages.map((pkg, idx) => (
                 <ScrollReveal key={pkg.name} delay={idx * 0.08} direction={idx % 4 === 0 ? 'up' : idx % 4 === 1 ? 'left' : 'right'}>
                   <div
-                    className={`rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all relative transform hover:scale-105 hover:-translate-y-2 duration-300 card-hover group border ${
+                    className={`rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all relative transform hover:scale-105 hover:-translate-y-2 duration-300 card-hover group border h-full flex flex-col ${
                       pkg.bestseller ? 'border-accent ring-2 ring-accent/50' : 'border-border hover:border-accent/50'
                     }`}
                   >
@@ -203,7 +203,7 @@ export default function Packages() {
                     </div>
 
                     {/* Content */}
-                    <div className="p-6 bg-card flex flex-col h-full">
+                    <div className="p-6 bg-card flex flex-col flex-1">
                       <div className="mb-4">
                         <h3 className="text-xl font-bold text-primary mb-1 group-hover:text-accent transition-colors">{pkg.name}</h3>
                         <p className="text-accent font-semibold text-sm mb-2">{pkg.duration}</p>

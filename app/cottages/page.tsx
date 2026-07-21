@@ -326,17 +326,17 @@ export default function SinguraCottages() {
               </div>
             </ScrollReveal>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <ScrollReveal>
-                <div>
+                <div className="bg-card rounded-xl p-8 shadow-lg border border-border text-center">
                   <h3 className="text-2xl font-bold text-primary mb-6">Included Amenities</h3>
                   <ul className="space-y-3">
                     {['Comfortable cottage accommodation', 'All meals (breakfast, lunch, dinner)', 'Guided farm tours', 'Art & craft workshops', 'Community activities', 'WiFi & electricity', 'Hot shower facilities', 'Natural garden access'].map((item, idx) => (
-                      <li key={idx} className="flex items-center gap-3">
+                      <li key={idx} className="flex items-center justify-center gap-3">
                         <span className="w-5 h-5 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
-                          <span className="text-sm font-bold text-primary-foreground">✓</span>
+                          <span className="text-xs font-bold text-primary-foreground">✓</span>
                         </span>
-                        <span className="text-muted-foreground">{item}</span>
+                        <span className="text-muted-foreground text-sm">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -344,15 +344,15 @@ export default function SinguraCottages() {
               </ScrollReveal>
 
               <ScrollReveal>
-                <div>
+                <div className="bg-card rounded-xl p-8 shadow-lg border border-border text-center">
                   <h3 className="text-2xl font-bold text-primary mb-6">Optional Add-ons</h3>
                   <ul className="space-y-3">
                     {['Photography workshops', 'Extended farm programs', 'Cooking classes', 'Transportation services', 'Wellness sessions', 'Team building events', 'Educational tours', 'Group accommodations'].map((item, idx) => (
-                      <li key={idx} className="flex items-center gap-3">
+                      <li key={idx} className="flex items-center justify-center gap-3">
                         <span className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                          <span className="text-sm text-accent">+</span>
+                          <span className="text-xs text-accent font-bold">+</span>
                         </span>
-                        <span className="text-muted-foreground">{item}</span>
+                        <span className="text-muted-foreground text-sm">{item}</span>
                       </li>
                     ))}
                   </ul>

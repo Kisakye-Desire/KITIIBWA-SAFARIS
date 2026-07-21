@@ -3,23 +3,27 @@
 import ScrollReveal from '@/components/scroll-reveal'
 import { TextGradient } from '@/components/ui/effects'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function PartnersSection() {
   const partners = [
     {
       name: 'Vision for Trauma Care in Africa',
-      description: 'Supporting mental health and trauma recovery in East African communities',
+      description: 'Supporting mental health and trauma recovery in East African communities — Every Life Counts.',
       url: 'https://visionfstraumacare.org',
+      logo: '/images/partner-vision-trauma.jpg',
     },
     {
       name: 'Mukono Access Clinic',
-      description: 'Providing accessible healthcare services to rural communities in Uganda',
+      description: 'Providing accessible, high-quality healthcare services to rural communities in Uganda — Your health matters.',
       url: '#',
+      logo: '/images/partner-mukono-clinic.jpg',
     },
     {
       name: 'Ssinza Safaris',
-      description: 'Community-focused safari experiences and conservation partnerships',
+      description: 'Community-focused safari experiences and conservation partnerships across Uganda.',
       url: '#',
+      logo: null,
     },
   ]
 
@@ -33,7 +37,7 @@ export default function PartnersSection() {
               Strategic Partners
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We're proud to collaborate with organizations that share our commitment to conservation, community development, and positive impact in Uganda.
+              We&apos;re proud to collaborate with organizations that share our commitment to conservation, community development, and positive impact in Uganda.
             </p>
           </div>
         </ScrollReveal>
@@ -41,14 +45,35 @@ export default function PartnersSection() {
         <div className="grid md:grid-cols-3 gap-8">
           {partners.map((partner, idx) => (
             <ScrollReveal key={idx} delay={idx * 0.1}>
-              <div className="bg-card rounded-lg p-8 shadow-lg hover:shadow-xl border border-border hover:border-accent/50 transition-all duration-300 group">
-                <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">
-                  {partner.name}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {partner.description}
-                </p>
-              </div>
+              <a
+                href={partner.url}
+                target={partner.url !== '#' ? '_blank' : '_self'}
+                rel="noopener noreferrer"
+                className="block bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl border border-border hover:border-accent/50 transition-all duration-300 group"
+              >
+                {partner.logo ? (
+                  <div className="relative h-40 bg-white flex items-center justify-center p-4 overflow-hidden">
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      fill
+                      className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                ) : (
+                  <div className="h-40 bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+                    <span className="text-5xl font-bold text-primary/20">{partner.name[0]}</span>
+                  </div>
+                )}
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-primary mb-2 group-hover:text-accent transition-colors">
+                    {partner.name}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {partner.description}
+                  </p>
+                </div>
+              </a>
             </ScrollReveal>
           ))}
         </div>
@@ -56,7 +81,7 @@ export default function PartnersSection() {
         <ScrollReveal delay={0.3}>
           <div className="mt-12 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg p-8 text-center border border-primary/20">
             <p className="text-muted-foreground mb-4">
-              Interested in partnering with Kittibwa Safaris?
+              Interested in partnering with Kitiibwa Safaris?
             </p>
             <a
               href="https://wa.me/447884181149"

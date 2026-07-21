@@ -71,7 +71,7 @@ export default function Initiative() {
               <div className="mb-4">
                 <TextGradient className="text-sm font-semibold tracking-wider uppercase">Social Impact</TextGradient>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-balance">Kittibwa Children Initiative</h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-balance">Kitiibwa Children Initiative</h1>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
@@ -131,21 +131,28 @@ export default function Initiative() {
               </ScrollReveal>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
               {programs.map((program, idx) => (
                 <ScrollReveal key={idx} delay={idx * 0.1} direction={idx % 2 === 0 ? 'up' : 'down'}>
-                  <div className="bg-background rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-border hover:border-accent/50 group overflow-hidden relative card-hover">
+                  <div className="bg-background rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-border hover:border-accent/50 group overflow-hidden relative card-hover flex flex-col h-full">
                     {/* Gradient accent bar */}
                     <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="text-5xl group-hover:scale-110 transition-transform duration-300">{program.icon}</div>
+                    {/* Program icon header */}
+                    <div className="bg-gradient-to-br from-primary/10 to-accent/5 p-6 flex items-center gap-4 border-b border-border">
+                      <div className="text-5xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0">{program.icon}</div>
+                      <div>
+                        <h3 className="text-xl font-bold text-primary group-hover:text-accent transition-colors">{program.title}</h3>
+                        <p className="text-xs text-accent font-semibold">{program.yearsActive} active</p>
+                      </div>
                     </div>
-                    <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">{program.title}</h3>
-                    <p className="text-muted-foreground mb-4 leading-relaxed text-sm">{program.description}</p>
-                    <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-4 rounded-lg border border-primary/10 group-hover:border-accent/30 transition-all duration-300">
-                      <p className="text-primary font-semibold text-xs mb-2 uppercase tracking-wider">Impact to date</p>
-                      <p className="text-muted-foreground text-sm font-medium">{program.detailedImpact}</p>
+
+                    <div className="p-6 flex flex-col flex-1">
+                      <p className="text-muted-foreground mb-4 leading-relaxed text-sm flex-1">{program.description}</p>
+                      <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-4 rounded-lg border border-primary/10 group-hover:border-accent/30 transition-all duration-300 mt-auto">
+                        <p className="text-primary font-semibold text-xs mb-2 uppercase tracking-wider">Impact to date</p>
+                        <p className="text-muted-foreground text-sm font-medium">{program.detailedImpact}</p>
+                      </div>
                     </div>
                   </div>
                 </ScrollReveal>
@@ -163,17 +170,17 @@ export default function Initiative() {
             <ScrollReveal>
               <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center animate-fade-in-up">Our Impact</h2>
             </ScrollReveal>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center max-w-4xl mx-auto">
               <ScrollReveal delay={0} direction="up">
-                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover">
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover text-center w-full">
                   <div className="text-5xl md:text-6xl font-bold mb-3 text-accent animate-fade-in-up">100</div>
-                  <p className="opacity-95 text-sm font-medium">People Directly Helped</p>
+                  <p className="opacity-95 text-sm font-medium text-center">People Directly Helped</p>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={0.1} direction="up">
-                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover">
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover text-center w-full">
                   <div className="text-5xl md:text-6xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.1s' }}>200</div>
-                  <p className="opacity-95 text-sm font-medium">Lives Reached Through Programs</p>
+                  <p className="opacity-95 text-sm font-medium text-center">Lives Reached Through Programs</p>
                 </div>
               </ScrollReveal>
             </div>

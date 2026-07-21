@@ -47,7 +47,7 @@ export default function BestOf() {
     {
       name: 'Kibale Chimpanzee Trek',
       description: 'Track habituated chimp families through ancient rainforest',
-      image: '/images/bird-watching.png',
+      image: '/images/chimp-3.jpg',
       rating: 4.7,
     },
     {
@@ -65,7 +65,7 @@ export default function BestOf() {
         {/* Hero */}
         <section className="py-12 md:py-20 bg-gradient-to-b from-primary/10 to-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-balance">Best of Kittibwa Safaris</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-balance">Best of Kitiibwa Safaris</h1>
             <p className="text-lg text-muted-foreground">
               Curated highlights and must-experience moments from Uganda&apos;s premier safari operator
             </p>

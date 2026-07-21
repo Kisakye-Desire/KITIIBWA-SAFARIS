@@ -9,6 +9,7 @@ import TextReveal from '@/components/text-reveal'
 import InteractiveImage from '@/components/interactive-image'
 import FeatureCard from '@/components/feature-card'
 
+
 export const metadata = {
   title: 'About Us | KITIIBWA SAFARIS',
   description: 'Learn about KITIIBWA SAFARIS - Our mission, values, and expert team',
@@ -19,7 +20,8 @@ export default function About() {
     {
       name: 'Alizeyuna Henry',
       role: 'Founder & Managing Director',
-      bio: 'Alizeyuna Henry is the visionary founder and Managing Director of Kitiibwa Safaris. Headquartered in Mukono District, Alizeyuna established the company with a passion for sharing Uganda\'s breathtaking landscapes, diverse wildlife, and vibrant cultures with travelers worldwide. With hands-on experience exploring Uganda\'s national parks, Alizeyuna is committed to creating memorable safari experiences that combine adventure, conservation, and genuine local hospitality.',
+              bio: 'Alizeyuna Henry is the visionary founder and Managing Director of Kitiibwa Safaris. Headquartered in Mukono District, Alizeyuna established the company with a passion for sharing Uganda\'s breathtaking landscapes, diverse wildlife, and vibrant cultures with travelers worldwide. With hands-on experience exploring Uganda\'s national parks, Alizeyuna is committed to creating memorable safari experiences that combine adventure, conservation, and genuine local hospitality.',
+
       image: '/images/team-member-1.png',
       facebook: 'https://facebook.com',
       instagram: 'https://www.instagram.com/kitiibwa_safaris_?utm_source=qr',
@@ -141,20 +143,13 @@ export default function About() {
                       &quot;Every safari is more than a journey—it&apos;s an opportunity to experience the wild, connect with nature, and create memories that last a lifetime.&quot;
                     </p>
                   </div>
-                  <div className="flex gap-4">
-                    <a href="https://facebook.com/alizeyunahenry" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white hover:bg-accent hover:scale-110 transition-all duration-300 shadow-lg">
-                      <span className="text-lg">f</span>
-                    </a>
-                    <a href="https://instagram.com/alizeyunahenry" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white hover:bg-accent hover:scale-110 transition-all duration-300 shadow-lg">
-                      <span className="text-lg">📷</span>
-                    </a>
-                    <a href="https://linkedin.com/in/alizeyunahenry" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white hover:bg-accent hover:scale-110 transition-all duration-300 shadow-lg">
-                      <span className="text-lg">in</span>
-                    </a>
-                    <a href="https://twitter.com/alizeyunahenry" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white hover:bg-accent hover:scale-110 transition-all duration-300 shadow-lg">
-                      <span className="text-lg">𝕏</span>
-                    </a>
-                  </div>
+                  <SocialIcons
+                    facebook="https://facebook.com/alizeyunahenry"
+                    instagram="https://www.instagram.com/kitiibwa_safaris_?utm_source=qr"
+                    linkedin="https://linkedin.com/company/kitiibwa-safaris"
+                    twitter="https://twitter.com/kitiibwasafaris"
+                    size="lg"
+                  />
                 </div>
               </ScrollReveal>
             </div>

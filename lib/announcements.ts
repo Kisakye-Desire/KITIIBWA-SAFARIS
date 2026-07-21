@@ -16,7 +16,7 @@ export interface Announcement {
 
 export const currentAnnouncement: Announcement = {
   title: 'Coming Soon!',
-  eventName: 'Safari & Chill Experience 2026',
+  eventName: 'Safari & Chill Experience 2027',
   host: 'KITIIBWA SAFARIS',
   description: 'Join KITIIBWA SAFARIS for an unforgettable adventure combining wildlife, nature, entertainment, networking, and relaxation.',
   highlights: [

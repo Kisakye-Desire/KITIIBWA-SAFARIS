@@ -49,7 +49,7 @@ export default function Uganda() {
       location: 'Western Uganda',
       bestSeason: 'June-August, December-February',
       highlights: 'Chimpanzee tracking, forest walks, bird watching',
-      image: '/images/bird-watching.png',
+      image: '/images/chimp-2.jpg',
     },
   ]
 
