@@ -2,7 +2,6 @@
 
 import ScrollReveal from '@/components/scroll-reveal'
 import { TextGradient } from '@/components/ui/effects'
-import Link from 'next/link'
 import Image from 'next/image'
 
 export default function PartnersSection() {
@@ -23,7 +22,7 @@ export default function PartnersSection() {
       name: 'Ssinza Safaris',
       description: 'Community-focused safari experiences and conservation partnerships across Uganda.',
       url: '#',
-      logo: null,
+      logo: '/images/partner-sinza-safaris.png',
     },
   ]
 
@@ -42,34 +41,31 @@ export default function PartnersSection() {
           </div>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 items-stretch">
           {partners.map((partner, idx) => (
             <ScrollReveal key={idx} delay={idx * 0.1}>
               <a
                 href={partner.url}
                 target={partner.url !== '#' ? '_blank' : '_self'}
                 rel="noopener noreferrer"
-                className="block bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl border border-border hover:border-accent/50 transition-all duration-300 group"
+                className="flex flex-col h-full bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl border border-border hover:border-accent/50 transition-all duration-300 group"
               >
-                {partner.logo ? (
-                  <div className="relative h-40 bg-white flex items-center justify-center p-4 overflow-hidden">
-                    <Image
-                      src={partner.logo}
-                      alt={partner.name}
-                      fill
-                      className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                ) : (
-                  <div className="h-40 bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-                    <span className="text-5xl font-bold text-primary/20">{partner.name[0]}</span>
-                  </div>
-                )}
-                <div className="p-6">
-                  <h3 className="text-lg font-bold text-primary mb-2 group-hover:text-accent transition-colors">
+                {/* Logo area — fixed height, consistent for all cards */}
+                <div className="relative h-44 bg-white flex items-center justify-center p-6 flex-shrink-0">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    fill
+                    className="object-contain p-6 group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+
+                {/* Text area — flex-1 so all cards stretch to same height */}
+                <div className="flex flex-col flex-1 p-6">
+                  <h3 className="text-base font-bold text-primary mb-2 group-hover:text-accent transition-colors leading-snug">
                     {partner.name}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed flex-1">
                     {partner.description}
                   </p>
                 </div>

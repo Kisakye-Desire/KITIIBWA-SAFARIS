@@ -213,7 +213,7 @@ export default function SinguraCottages() {
               {[
                 { icon: '🏡', title: 'Rustic Cottages', desc: 'Cozy rooms with traditional architecture and modern comforts' },
                 { icon: '🌿', title: 'Garden Views', desc: 'Surrounded by lush plantations and organic gardens' },
-                { icon: '🍽️', title: 'Farm Meals', desc: 'Delicious cuisine prepared from fresh farm produce' },
+                { icon: '🍽��', title: 'Farm Meals', desc: 'Delicious cuisine prepared from fresh farm produce' },
                 { icon: '🎨', title: 'Art Workshops', desc: 'Hands-on creative sessions with local artists' },
                 { icon: '🚶', title: 'Walking Tours', desc: 'Guided tours through farms and natural trails' },
                 { icon: '👥', title: 'Community Time', desc: 'Authentic interactions and cultural exchanges' },
@@ -326,15 +326,26 @@ export default function SinguraCottages() {
               </div>
             </ScrollReveal>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
               <ScrollReveal>
-                <div className="bg-card rounded-xl p-8 shadow-lg border border-border text-center">
-                  <h3 className="text-2xl font-bold text-primary mb-6">Included Amenities</h3>
-                  <ul className="space-y-3">
-                    {['Comfortable cottage accommodation', 'All meals (breakfast, lunch, dinner)', 'Guided farm tours', 'Art & craft workshops', 'Community activities', 'WiFi & electricity', 'Hot shower facilities', 'Natural garden access'].map((item, idx) => (
-                      <li key={idx} className="flex items-center justify-center gap-3">
+                <div className="bg-card rounded-xl shadow-lg border border-border h-full flex flex-col">
+                  <div className="px-8 pt-8 pb-4 border-b border-border text-center">
+                    <h3 className="text-2xl font-bold text-primary">Included Amenities</h3>
+                  </div>
+                  <ul className="px-8 py-6 space-y-3 flex-1">
+                    {[
+                      'Comfortable cottage accommodation',
+                      'All meals (breakfast, lunch, dinner)',
+                      'Guided farm tours',
+                      'Art & craft workshops',
+                      'Community activities',
+                      'WiFi & electricity',
+                      'Hot shower facilities',
+                      'Natural garden access',
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-center gap-3">
                         <span className="w-5 h-5 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
-                          <span className="text-xs font-bold text-primary-foreground">✓</span>
+                          <span className="text-xs font-bold text-primary-foreground">&#10003;</span>
                         </span>
                         <span className="text-muted-foreground text-sm">{item}</span>
                       </li>
@@ -344,11 +355,22 @@ export default function SinguraCottages() {
               </ScrollReveal>
 
               <ScrollReveal>
-                <div className="bg-card rounded-xl p-8 shadow-lg border border-border text-center">
-                  <h3 className="text-2xl font-bold text-primary mb-6">Optional Add-ons</h3>
-                  <ul className="space-y-3">
-                    {['Photography workshops', 'Extended farm programs', 'Cooking classes', 'Transportation services', 'Wellness sessions', 'Team building events', 'Educational tours', 'Group accommodations'].map((item, idx) => (
-                      <li key={idx} className="flex items-center justify-center gap-3">
+                <div className="bg-card rounded-xl shadow-lg border border-border h-full flex flex-col">
+                  <div className="px-8 pt-8 pb-4 border-b border-border text-center">
+                    <h3 className="text-2xl font-bold text-primary">Optional Add-ons</h3>
+                  </div>
+                  <ul className="px-8 py-6 space-y-3 flex-1">
+                    {[
+                      'Photography workshops',
+                      'Extended farm programs',
+                      'Cooking classes',
+                      'Transportation services',
+                      'Wellness sessions',
+                      'Team building events',
+                      'Educational tours',
+                      'Group accommodations',
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-center gap-3">
                         <span className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
                           <span className="text-xs text-accent font-bold">+</span>
                         </span>

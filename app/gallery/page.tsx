@@ -125,12 +125,11 @@ export default function Gallery() {
         {/* Gallery Grid */}
         <section className="py-12 md:py-16 bg-secondary/5">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
               {displayedImages.map((image, idx) => (
                 <ScrollReveal key={`${image.src}-${idx}`}>
                   <div
-                    className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-2xl transition-all duration-400 cursor-pointer bg-card"
-                    style={{ aspectRatio: idx % 7 === 0 ? '1/1.3' : idx % 5 === 0 ? '1/0.75' : '1/1' }}
+                    className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer bg-card aspect-square"
                     onClick={() => openLightbox(idx)}
                   >
                     <Image

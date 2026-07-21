@@ -146,7 +146,6 @@ export default function About() {
                   <SocialIcons
                     facebook="https://facebook.com/alizeyunahenry"
                     instagram="https://www.instagram.com/kitiibwa_safaris_?utm_source=qr"
-                    linkedin="https://linkedin.com/company/kitiibwa-safaris"
                     twitter="https://twitter.com/kitiibwasafaris"
                     size="lg"
                   />

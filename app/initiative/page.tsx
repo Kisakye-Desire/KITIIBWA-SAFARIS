@@ -170,17 +170,17 @@ export default function Initiative() {
             <ScrollReveal>
               <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center animate-fade-in-up">Our Impact</h2>
             </ScrollReveal>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center max-w-4xl mx-auto">
+            <div className="flex flex-col sm:flex-row gap-8 justify-center items-stretch max-w-2xl mx-auto">
               <ScrollReveal delay={0} direction="up">
-                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover text-center w-full">
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-10 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover text-center flex-1 min-w-[200px]">
                   <div className="text-5xl md:text-6xl font-bold mb-3 text-accent animate-fade-in-up">100</div>
-                  <p className="opacity-95 text-sm font-medium text-center">People Directly Helped</p>
+                  <p className="opacity-95 text-sm font-medium">People Directly Helped</p>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={0.1} direction="up">
-                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover text-center w-full">
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-10 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover text-center flex-1 min-w-[200px]">
                   <div className="text-5xl md:text-6xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.1s' }}>200</div>
-                  <p className="opacity-95 text-sm font-medium text-center">Lives Reached Through Programs</p>
+                  <p className="opacity-95 text-sm font-medium">Lives Reached Through Programs</p>
                 </div>
               </ScrollReveal>
             </div>
