@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
     dietaryRestrictions = dietaryRestrictions ? sanitizeInput(dietaryRestrictions) : null
     specialNeeds = specialNeeds ? sanitizeInput(specialNeeds) : null
     heardAboutUs = heardAboutUs ? sanitizeInput(heardAboutUs) : null
-    eventId = eventId || 'safari-chill-2026'
+    eventId = eventId || 'safari-chill-2027'
 
     // Get client IP
     const ip = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown'
@@ -76,7 +76,7 @@ export async function POST(request: NextRequest) {
     // Send confirmation email to registrant
     const confirmationEmail = await sendEmail({
       to: email,
-      subject: 'Safari & Chill Experience 2026 - Registration Confirmed',
+      subject: 'Safari & Chill Experience 2027 - Registration Confirmed',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #D4A574; border-bottom: 2px solid #D4A574; padding-bottom: 10px;">
@@ -85,7 +85,7 @@ export async function POST(request: NextRequest) {
           
           <p>Dear ${sanitizeInput(name)},</p>
 
-          <p>Thank you for registering for the <strong>Safari & Chill Experience 2026</strong>!</p>
+          <p>Thank you for registering for the <strong>Safari & Chill Experience 2027</strong>!</p>
 
           <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin: 20px 0;">
             <h3>Your Registration Details:</h3>
@@ -97,7 +97,7 @@ export async function POST(request: NextRequest) {
 
           <p>We will send you more details about the event schedule, accommodation options, and payment information soon.</p>
 
-          <p>If you have any questions, please don't hesitate to contact us at <strong>dynamicyoo@gmail.com</strong> or call us on <strong>+256 708898424</strong>.</p>
+          <p>If you have any questions, please don't hesitate to contact us at <strong>kisakyedhisayar@gmail.com</strong> or WhatsApp us on <strong>+44 7884 181149</strong>.</p>
 
           <p>We look forward to seeing you at the Safari & Chill Experience!</p>
 
@@ -110,12 +110,12 @@ export async function POST(request: NextRequest) {
 
     // Send admin notification
     await sendEmail({
-      to: process.env.ADMIN_EMAIL || 'dynamicyoo@gmail.com',
-      subject: `New Registration: Safari & Chill Experience 2026`,
+      to: process.env.ADMIN_EMAIL || 'kisakyedhisayar@gmail.com',
+      subject: `New Registration: Safari & Chill Experience 2027`,
       html: `
         <div style="font-family: Arial, sans-serif;">
           <h2>New Event Registration</h2>
-          <p><strong>Event:</strong> Safari & Chill Experience 2026</p>
+          <p><strong>Event:</strong> Safari & Chill Experience 2027</p>
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
           ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}

@@ -122,13 +122,13 @@ export const SAFARI_PACKAGES = {
 
 // EVENT CONFIGURATION
 export const EVENT_CONFIG = {
-  safariChill2026: {
-    id: 'safari-chill-2026',
-    name: 'Safari & Chill Experience 2026',
+  safariChill2027: {
+    id: 'safari-chill-2027',
+    name: 'Safari & Chill Experience 2027',
     status: 'coming-soon', // 'coming-soon' | 'registration-open' | 'sold-out' | 'completed'
     description: 'The ultimate African adventure combining wildlife, entertainment, and relaxation',
-    startDate: '2026-12-15', // PLACEHOLDER - Update with actual dates
-    endDate: '2026-12-18',
+    startDate: '2027-12-15', // PLACEHOLDER - Update with actual dates
+    endDate: '2027-12-18',
     venue: 'Singura Cottages, Uganda',
     capacity: 150,
     pricePerPerson: 2500,

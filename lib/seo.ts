@@ -111,10 +111,10 @@ export const pageMetadata: Record<string, SEOMetadata> = {
     url: `${baseUrl}/blog`,
   },
   safariChill: {
-    title: 'Safari & Chill Experience 2026 | KITIIBWA SAFARIS',
-    description: 'Join us for the premiere Safari & Chill Experience in 2026. Immersive wildlife encounters, relaxation, entertainment, and networking in Uganda.',
+    title: 'Safari & Chill Experience 2027 | KITIIBWA SAFARIS',
+    description: 'Join us for the premiere Safari & Chill Experience in 2027. Immersive wildlife encounters, relaxation, entertainment, and networking in Uganda.',
     keywords: [
-      'Safari & Chill 2026',
+      'Safari & Chill 2027',
       'Uganda event',
       'safari experience',
       'wildlife immersion',

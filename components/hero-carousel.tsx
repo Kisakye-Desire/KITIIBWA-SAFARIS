@@ -74,7 +74,7 @@ export default function HeroCarousel() {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-3xl">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 text-balance animate-in fade-in">
-          Unforgettable African Safari Adventures
+          Kitiibwa Safaris
         </h1>
         <p className="text-lg md:text-xl mb-8 opacity-90 animate-in fade-in">
           Experience the magic of Uganda&apos;s pristine wilderness with expert guides and luxury accommodations
