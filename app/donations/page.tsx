@@ -27,6 +27,7 @@ export default function Donations() {
 
   // General donation custom amount
   const [customAmount, setCustomAmount] = useState<string>('')
+  const [currency, setCurrency] = useState<'USD' | 'UGX' | 'GBP' | 'EUR'>('USD')
 
   // Payment state
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('mobileMoney')
@@ -44,11 +45,12 @@ export default function Donations() {
   const termsCount = feesPackage === 'yearly' ? TERMS_PER_YEAR : Math.min(numTerms, TERMS_PER_YEAR)
   const totalFees = numChildren * termsCount * TERM_FEE
   const displayAmount = donationType === 'general' && customAmount ? parseFloat(customAmount) : (donationType === 'school-fees' ? totalFees : 0)
+  const currencySymbol = { USD: '$', UGX: 'USH', GBP: '£', EUR: '€' }[currency]
   const amountLabel =
     donationType === 'school-fees'
-      ? `$${totalFees} USD (${numChildren} child${numChildren > 1 ? 'ren' : ''} × ${termsCount} term${termsCount > 1 ? 's' : ''} × $${TERM_FEE})`
+      ? `${currencySymbol}${totalFees} ${currency} (${numChildren} child${numChildren > 1 ? 'ren' : ''} × ${termsCount} term${termsCount > 1 ? 's' : ''} × ${currencySymbol}${TERM_FEE})`
       : donationType === 'general' && customAmount
-      ? `$${displayAmount} USD`
+      ? `${currencySymbol}${displayAmount} ${currency}`
       : 'Enter your desired amount'
 
   const mobileMoneyDetails = {
@@ -317,11 +319,28 @@ export default function Donations() {
                             Support our conservation efforts, medical programs, or community development. Any amount — large or small — makes a real difference.
                           </p>
                           
-                          {/* Custom amount input */}
+                          {/* Currency & Amount Input */}
                           <div className="mb-6">
-                            <label className="block text-sm font-semibold text-primary mb-3">Amount (USD)</label>
+                            <label className="block text-sm font-semibold text-primary mb-3">Select Currency</label>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+                              {(['USD', 'UGX', 'GBP', 'EUR'] as const).map((curr) => (
+                                <button
+                                  key={curr}
+                                  onClick={() => setCurrency(curr)}
+                                  className={`p-3 rounded-lg border-2 font-semibold transition-all ${
+                                    currency === curr
+                                      ? 'border-accent bg-accent/10 text-accent'
+                                      : 'border-border hover:border-accent/50 text-foreground'
+                                  }`}
+                                >
+                                  {curr}
+                                </button>
+                              ))}
+                            </div>
+
+                            <label className="block text-sm font-semibold text-primary mb-3">Enter Amount</label>
                             <div className="flex items-center gap-3">
-                              <span className="text-lg font-semibold text-primary">$</span>
+                              <span className="text-lg font-semibold text-primary">{currencySymbol}</span>
                               <input
                                 type="number"
                                 value={customAmount}

@@ -134,11 +134,12 @@ export default function Contact() {
                   WhatsApp Us
                 </a>
                 <a
-                  href="mailto:info@kitiibwasafaris.com"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-card border border-border hover:border-accent/50 text-foreground rounded-full font-semibold text-sm transition-all hover:scale-105 shadow-sm"
+                  href="mailto:info@kitiibwasafaris.com?subject=KITIIBWA%20SAFARIS%20Inquiry"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-accent to-accent/90 hover:from-accent/90 hover:to-accent text-accent-foreground rounded-full font-bold text-sm transition-all duration-300 transform hover:scale-110 shadow-lg active:scale-95"
+                  title="Click to open your email client and send to info@kitiibwasafaris.com"
                 >
-                  <Mail className="h-4 w-4 text-accent" />
-                  Email Us
+                  <Mail className="h-5 w-5" />
+                  Email Us Directly
                 </a>
               </div>
             </ScrollReveal>

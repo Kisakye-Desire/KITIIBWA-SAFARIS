@@ -15,70 +15,82 @@ interface GalleryImage {
 const IMAGES_PER_PAGE = 9
 const galleryImages: GalleryImage[] = [
   {
-    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-09%20at%2012.48.08%20PM%20%285%29-BAIwpxuR2yaXUyWK21gq8AejquKAzp.jpeg',
-    alt: 'Community Clothing Distribution',
-    activity: 'Clothing Distribution Drive',
-    description: 'Providing essential clothing to local families in rural communities'
+    src: '/images/impact-1.jpg',
+    alt: 'Community Outreach at Vehicle',
+    activity: 'Community Outreach & Distribution',
+    description: 'Team members engaging with local families and distributing aid'
   },
   {
-    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-09%20at%2012.48.08%20PM%20%287%29-E24v2jbTABOsC5DPEyHxNLtjmnC733.jpeg',
-    alt: 'Supply Distribution',
-    activity: 'Charity Supply Distribution',
-    description: 'Team members delivering vital supplies to underserved communities'
+    src: '/images/impact-2.jpg',
+    alt: 'Community Support Program',
+    activity: 'Community Support Initiative',
+    description: 'Supporting families with essential resources and care'
   },
   {
-    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-09%20at%2012.48.08%20PM%20%281%29-boaI4SZPL5Bb8S2bDjjiNrmpdZNrBZ.jpeg',
-    alt: 'Home Improvement Program',
-    activity: 'Home Improvement Program',
-    description: 'Restoring and renovating homes in partnership with local communities'
+    src: '/images/impact-3.jpg',
+    alt: 'Vehicle Distribution Drive',
+    activity: 'Relief Distribution Drive',
+    description: 'Delivering support to families in underserved areas'
   },
   {
-    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-09%20at%2012.48.08%20PM%20%289%29-MALtPz668dAOnaJ1Hw2Z1BJuMzvZ3u.jpeg',
-    alt: 'Footwear Distribution',
-    activity: 'Footwear & Clothing Support',
-    description: 'Providing shoes and clothing to children in need'
-  },
-  {
-    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-09%20at%2012.48.08%20PM%20%286%29-UkVuwzu81LfB0GJXdXnOsb9thBHhcq.jpeg',
-    alt: 'Community Engagement',
-    activity: 'Community Engagement Program',
-    description: 'Direct interaction and mentorship with local children and families'
-  },
-  {
-    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-09%20at%2012.48.09%20PM%20%281%29-mRLS4jZy7SaozbWqYICoUOz1zYGcSP.jpeg',
-    alt: 'Community Photo',
-    activity: 'Community Visit',
-    description: 'Group gathering with families and community members'
-  },
-  {
-    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-09%20at%2012.48.08%20PM%20-PaG3s6RmDzEUc003m96D08BfC6vgtd.jpeg',
+    src: '/images/impact-4.jpg',
     alt: 'Children Smiling',
-    activity: 'Children Happiness & Bonding',
-    description: 'Joyful moments with children from local communities'
+    activity: 'Children Happiness & Joy',
+    description: 'Capturing moments of joy with children from our programs'
   },
   {
-    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-09%20at%2012.48.08%20PM%20%282%29-FSMMcq5RZNIiOQo21DU27J0U4MEfKl.jpeg',
-    alt: 'Team Member with Children',
-    activity: 'Youth Mentorship Program',
-    description: 'Building relationships and mentoring young minds'
+    src: '/images/impact-5.jpg',
+    alt: 'Group Children Photo',
+    activity: 'Community Children Gathering',
+    description: 'Bringing communities together through our initiatives'
   },
   {
-    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-09%20at%2012.48.08%20PM%20%283%29-Ad7G1wEJj17MPHp9FitOMxmZtPOGmo.jpeg',
-    alt: 'School Supplies Distribution',
-    activity: 'School Supplies & Support',
-    description: 'Distributing educational materials and resources to schools'
+    src: '/images/impact-6.jpg',
+    alt: 'Community Group Photo',
+    activity: 'Community Engagement',
+    description: 'Building lasting relationships with local communities'
   },
   {
-    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-09%20at%2012.48.09%20PM-snhQ6GzTJTbrZDRrWqI9b3T2FyGnuj.jpeg',
-    alt: 'School Children',
-    activity: 'Educational Initiative',
-    description: 'Supporting children in their educational journey'
+    src: '/images/impact-7.jpg',
+    alt: 'Home Improvement Work',
+    activity: 'Home & Infrastructure Support',
+    description: 'Improving living conditions for families in need'
   },
   {
-    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-09%20at%2012.48.07%20PM-tFxQ6fE76qpU6pYa7w1KqZo4fKhXlv.jpeg',
-    alt: 'Community Children',
-    activity: 'Community Children Program',
-    description: 'Celebrating and supporting local children'
+    src: '/images/impact-8.jpg',
+    alt: 'Community Supply Distribution',
+    activity: 'Supply Distribution Program',
+    description: 'Distributing essential supplies to support families'
+  },
+  {
+    src: '/images/impact-9.jpg',
+    alt: 'Mentorship & Support',
+    activity: 'Youth Mentorship & Support',
+    description: 'Building relationships and empowering young people'
+  },
+  {
+    src: '/images/impact-10.jpg',
+    alt: 'Community Center Work',
+    activity: 'Community Center Initiative',
+    description: 'Creating safe spaces for community development'
+  },
+  {
+    src: '/images/impact-11.jpg',
+    alt: 'Family Gathering',
+    activity: 'Family Support Program',
+    description: 'Strengthening bonds within local communities'
+  },
+  {
+    src: '/images/impact-12.jpg',
+    alt: 'Community Assembly',
+    activity: 'Large Community Gathering',
+    description: 'United communities working together for positive change'
+  },
+  {
+    src: '/images/impact-13.jpg',
+    alt: 'Children Together',
+    activity: 'Children Bonding Moment',
+    description: 'Joyful moments capturing the impact of our work'
   },
   // Placeholder images for future content (12-51)
   ...Array.from({ length: 40 }, (_, idx) => ({

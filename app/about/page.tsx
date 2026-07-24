@@ -233,57 +233,7 @@ export default function About() {
           </div>
         </section>
 
-        {/* Our Team */}
-        <section className="py-16 md:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-12">
-              <ScrollReveal>
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 text-center">Our Expert Team</h2>
-              </ScrollReveal>
-              <ScrollReveal delay={0.15}>
-                <p className="text-center text-muted-foreground max-w-2xl mx-auto">
-                  Meet the passionate professionals dedicated to creating unforgettable safari experiences and protecting Uganda's natural heritage.
-                </p>
-              </ScrollReveal>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {teamMembers.map((member, idx) => (
-                <ScrollReveal key={member.name} delay={idx * 0.1} direction={idx % 2 === 0 ? 'up' : 'down'}>
-                  <div className="bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 card-hover group border border-border hover:border-accent/50">
-                    {/* Gradient accent bar at top */}
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    
-                    <div className="relative h-48 overflow-hidden">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-lg font-bold text-primary mb-1 group-hover:text-accent transition-colors">{member.name}</h3>
-                      <p className="text-accent font-semibold text-sm mb-3">{member.role}</p>
-                      <p className="text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-3">{member.bio}</p>
-                      {(member.facebook || member.instagram || member.linkedin || member.twitter) && (
-                        <div className="pt-3 border-t border-border">
-                          <SocialIcons
-                            facebook={member.facebook}
-                            instagram={member.instagram}
-                            linkedin={member.linkedin}
-                            twitter={member.twitter}
-                            size="sm"
-                          />
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-        </section>
+
 
 
       </main>

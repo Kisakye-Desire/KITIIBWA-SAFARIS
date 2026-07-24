@@ -229,10 +229,10 @@ export default function SafariChillExperience() {
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
               {eventHighlights.map((highlight, idx) => (
                 <ScrollReveal key={idx}>
-                  <div className="bg-gradient-to-br from-primary/10 to-accent/10 p-6 rounded-lg border border-border hover:border-primary hover:shadow-lg transition-all duration-300 group">
+                  <div className="bg-gradient-to-br from-primary/10 to-accent/10 p-6 rounded-lg border border-border hover:border-primary hover:shadow-lg transition-all duration-300 group h-full flex flex-col">
                     <div className="text-5xl mb-3 group-hover:scale-110 transition-transform">{highlight.icon}</div>
                     <h3 className="text-lg font-bold text-primary mb-2">{highlight.title}</h3>
-                    <p className="text-sm text-muted-foreground">{highlight.description}</p>
+                    <p className="text-sm text-muted-foreground flex-1">{highlight.description}</p>
                   </div>
                 </ScrollReveal>
               ))}
