@@ -73,7 +73,7 @@ export default function Contact() {
       flag: '🇺🇬',
       phone: '+256 702 345273',
       whatsapp: '+256 702 345273',
-      email: 'kisakyedhisayar@gmail.com',
+      email: 'info@kitiibwasafaris.com',
       address: 'Mukono Access Clinic, Mukono District, Uganda',
       hours: 'Mon–Fri: 8:00 AM – 6:00 PM EAT',
       color: 'from-yellow-500/20 to-red-500/10',
@@ -84,7 +84,7 @@ export default function Contact() {
       flag: '🇬🇧',
       phone: '+44 7884 181149',
       whatsapp: '+44 7884 181149',
-      email: 'kisakyedhisayar@gmail.com',
+      email: 'info@kitiibwasafaris.com',
       address: 'United Kingdom',
       hours: 'Mon–Fri: 9:00 AM – 5:00 PM GMT',
       color: 'from-blue-500/20 to-red-500/10',
@@ -134,7 +134,7 @@ export default function Contact() {
                   WhatsApp Us
                 </a>
                 <a
-                  href="mailto:kisakyedhisayar@gmail.com"
+                  href="mailto:info@kitiibwasafaris.com"
                   className="inline-flex items-center gap-2 px-5 py-2.5 bg-card border border-border hover:border-accent/50 text-foreground rounded-full font-semibold text-sm transition-all hover:scale-105 shadow-sm"
                 >
                   <Mail className="h-4 w-4 text-accent" />
@@ -155,7 +155,7 @@ export default function Contact() {
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {/* Uganda Office */}
               <ScrollReveal delay={0}>
-                <div className="bg-gradient-to-br from-yellow-500/10 to-red-500/5 border border-yellow-500/25 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
+                <div className="bg-gradient-to-br from-yellow-500/10 to-red-500/5 border border-yellow-500/25 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
                   <div className="flex items-center gap-3 mb-6">
                     <span className="text-3xl">🇺🇬</span>
                     <div>
@@ -203,7 +203,7 @@ export default function Contact() {
 
               {/* UK Office */}
               <ScrollReveal delay={0.1}>
-                <div className="bg-gradient-to-br from-blue-500/10 to-red-500/5 border border-blue-500/25 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
+                <div className="bg-gradient-to-br from-blue-500/10 to-red-500/5 border border-blue-500/25 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
                   <div className="flex items-center gap-3 mb-6">
                     <span className="text-3xl">🇬🇧</span>
                     <div>
@@ -223,7 +223,7 @@ export default function Contact() {
                       <Mail className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                       <div>
                         <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider mb-1">Email</p>
-                        <a href="mailto:kisakyedhisayar@gmail.com" className="text-foreground hover:text-accent transition-colors text-sm">kisakyedhisayar@gmail.com</a>
+                        <a href="mailto:info@kitiibwasafaris.com" className="text-foreground hover:text-accent transition-colors text-sm">info@kitiibwasafaris.com</a>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -288,7 +288,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <p className="font-semibold text-primary text-sm">Email</p>
-                        <p className="text-muted-foreground text-xs">kisakyedhisayar@gmail.com</p>
+                        <p className="text-muted-foreground text-xs">info@kitiibwasafaris.com</p>
                       </div>
                     </div>
 
@@ -460,7 +460,7 @@ export default function Contact() {
                       </button>
 
                       <p className="text-center text-xs text-muted-foreground">
-                        Your message will be sent to <span className="text-primary font-semibold">kisakyedhisayar@gmail.com</span>. We respond within 24 hours.
+                        Your message will be sent to <span className="text-primary font-semibold">info@kitiibwasafaris.com</span>. We respond within 24 hours.
                       </p>
                     </form>
                   </div>

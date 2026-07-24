@@ -92,7 +92,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2 hover:translate-x-1 transition">
                 <Mail className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>dynamicyoo1@gmail.com</span>
+                <span>info@kitiibwasafaris.com</span>
               </li>
               <li className="flex items-start gap-2 hover:translate-x-1 transition">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
@@ -106,17 +106,14 @@ export default function Footer() {
         <div className="border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col items-center gap-6 mb-6">
             <div className="flex items-center gap-6">
-              <a href="https://facebook.com/kitiibwasafaris" target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition text-lg">
+              <a href="https://facebook.com/kitiibwasafaris" target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition text-lg" aria-label="Facebook">
                 f
               </a>
-              <a href="https://instagram.com/kitiibwasafaris" target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition text-lg">
+              <a href="https://instagram.com/kitiibwasafaris" target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition text-lg" aria-label="Instagram">
                 📷
               </a>
-              <a href="https://tiktok.com/@kitiibwasafaris" target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition text-lg">
+              <a href="https://tiktok.com/@kitiibwasafaris" target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition text-lg" aria-label="TikTok">
                 🎵
-              </a>
-              <a href="https://twitter.com/kitiibwasafaris" target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition text-lg">
-                𝕏
               </a>
             </div>
           </div>

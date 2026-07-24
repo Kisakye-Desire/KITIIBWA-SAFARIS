@@ -25,6 +25,9 @@ export default function Donations() {
   const [numChildren, setNumChildren] = useState(1)
   const [numTerms, setNumTerms] = useState(1)
 
+  // General donation custom amount
+  const [customAmount, setCustomAmount] = useState<string>('')
+
   // Payment state
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('mobileMoney')
   const [mobileNetwork, setMobileNetwork] = useState<MobileNetwork>('mtn')
@@ -40,10 +43,13 @@ export default function Donations() {
   // Calculated fees
   const termsCount = feesPackage === 'yearly' ? TERMS_PER_YEAR : Math.min(numTerms, TERMS_PER_YEAR)
   const totalFees = numChildren * termsCount * TERM_FEE
+  const displayAmount = donationType === 'general' && customAmount ? parseFloat(customAmount) : (donationType === 'school-fees' ? totalFees : 0)
   const amountLabel =
     donationType === 'school-fees'
       ? `$${totalFees} USD (${numChildren} child${numChildren > 1 ? 'ren' : ''} × ${termsCount} term${termsCount > 1 ? 's' : ''} × $${TERM_FEE})`
-      : 'Any amount is welcome'
+      : donationType === 'general' && customAmount
+      ? `$${displayAmount} USD`
+      : 'Enter your desired amount'
 
   const mobileMoneyDetails = {
     airtel: {
@@ -297,7 +303,7 @@ export default function Donations() {
                   </ScrollReveal>
                 )}
 
-                {/* General donation note */}
+                {/* General donation custom amount */}
                 {donationType === 'general' && (
                   <ScrollReveal>
                     <div className="bg-card rounded-2xl border border-border shadow-lg p-8 mb-8">
@@ -305,24 +311,52 @@ export default function Donations() {
                         <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
                           <HandHeart className="h-6 w-6 text-accent" />
                         </div>
-                        <div>
-                          <h3 className="font-bold text-primary text-xl mb-2">General Donation</h3>
-                          <p className="text-muted-foreground leading-relaxed text-sm">
-                            Would you like to support our conservation efforts, medical programs, or community development?
-                            Any amount — large or small — makes a real and lasting difference.
-                            Simply choose your preferred payment method on the next step and donate whatever feels right.
+                        <div className="flex-1">
+                          <h3 className="font-bold text-primary text-xl mb-4">Enter Your Donation Amount</h3>
+                          <p className="text-muted-foreground leading-relaxed text-sm mb-5">
+                            Support our conservation efforts, medical programs, or community development. Any amount — large or small — makes a real difference.
                           </p>
-                          <div className="mt-4 grid grid-cols-3 gap-3 text-center">
-                            {[
-                              { amount: '$10', label: 'School supplies for 1 child' },
-                              { amount: '$25', label: 'Medical care for a family' },
-                              { amount: '$50', label: 'Plant 20 trees for restoration' },
-                            ].map(({ amount, label }) => (
-                              <div key={amount} className="bg-background rounded-lg p-3 border border-border">
-                                <p className="font-bold text-accent text-lg">{amount}</p>
-                                <p className="text-xs text-muted-foreground mt-1">{label}</p>
-                              </div>
-                            ))}
+                          
+                          {/* Custom amount input */}
+                          <div className="mb-6">
+                            <label className="block text-sm font-semibold text-primary mb-3">Amount (USD)</label>
+                            <div className="flex items-center gap-3">
+                              <span className="text-lg font-semibold text-primary">$</span>
+                              <input
+                                type="number"
+                                value={customAmount}
+                                onChange={(e) => setCustomAmount(e.target.value)}
+                                placeholder="Enter amount..."
+                                className="flex-1 px-4 py-3 rounded-lg border-2 border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:border-accent transition-colors"
+                                min="0.01"
+                                step="0.01"
+                              />
+                            </div>
+                          </div>
+
+                          {/* Suggested amounts */}
+                          <div className="mt-5">
+                            <p className="text-xs font-semibold text-muted-foreground mb-3 uppercase tracking-wide">Suggested Amounts</p>
+                            <div className="grid grid-cols-3 gap-3">
+                              {[
+                                { amount: '10', label: 'School supplies' },
+                                { amount: '25', label: 'Medical care' },
+                                { amount: '50', label: 'Tree planting' },
+                              ].map(({ amount, label }) => (
+                                <button
+                                  key={amount}
+                                  onClick={() => setCustomAmount(amount)}
+                                  className={`p-3 rounded-lg border-2 transition-all text-center ${
+                                    customAmount === amount
+                                      ? 'border-accent bg-accent/10'
+                                      : 'border-border hover:border-accent/50'
+                                  }`}
+                                >
+                                  <p className="font-bold text-accent">${amount}</p>
+                                  <p className="text-xs text-muted-foreground mt-1">{label}</p>
+                                </button>
+                              ))}
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -331,7 +365,7 @@ export default function Donations() {
                 )}
 
                 {/* Proceed button */}
-                {donationType && (
+                {donationType && (donationType === 'school-fees' || (donationType === 'general' && customAmount)) && (
                   <ScrollReveal>
                     <button
                       onClick={() => setShowPayment(true)}

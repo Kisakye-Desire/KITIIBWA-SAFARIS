@@ -9,10 +9,10 @@ export default function EventAnnouncement() {
   const { title, eventName, host, description, highlights, icon } = currentAnnouncement
 
   return (
-    <section className="py-12 md:py-16 bg-gradient-to-r from-primary/20 via-accent/10 to-primary/20 relative overflow-hidden">
-      {/* Subtle background gradient effect */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{
-        backgroundImage: 'radial-gradient(circle at 50% 100%, #D4A574 0%, transparent 50%)',
+    <section className="py-12 md:py-20 bg-gradient-to-br from-gradient-safari via-primary/15 to-accent/20 relative overflow-hidden border-y-2 border-accent/30">
+      {/* Eye-catching background gradient effect */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none" style={{
+        backgroundImage: 'radial-gradient(circle at 30% 50%, #D4A574 0%, transparent 50%), radial-gradient(circle at 70% 100%, #2D5F3F 0%, transparent 60%)',
       }} />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
@@ -22,10 +22,10 @@ export default function EventAnnouncement() {
             <div className="inline-block mb-3">
               <span className="text-4xl md:text-5xl animate-bounce-subtle">{icon}</span>
             </div>
-            <h2 className="text-sm md:text-base font-semibold tracking-widest uppercase text-accent mb-2">
+            <h2 className="text-sm md:text-base font-bold tracking-widest uppercase text-accent mb-3 drop-shadow-lg">
               {title}
             </h2>
-            <h3 className="text-2xl md:text-4xl font-bold text-primary mb-2 text-balance">
+            <h3 className="text-3xl md:text-5xl font-bold text-primary mb-3 text-balance drop-shadow-md">
               {eventName}
             </h3>
             <p className="text-sm md:text-base text-muted-foreground font-semibold mb-4">
@@ -45,10 +45,10 @@ export default function EventAnnouncement() {
               {highlights.map((highlight, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-3 whitespace-nowrap px-6 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-accent/20 hover:border-accent/50 transition-all duration-300"
+                  className="flex items-center gap-3 whitespace-nowrap px-7 py-3 bg-gradient-to-r from-accent/30 to-accent/10 backdrop-blur-md rounded-full border-2 border-accent/60 hover:border-accent hover:shadow-xl transition-all duration-300 transform hover:scale-110"
                 >
-                  <span className="text-accent font-bold">✦</span>
-                  <span className="font-semibold text-foreground">{highlight}</span>
+                  <span className="text-accent font-bold text-lg">✦</span>
+                  <span className="font-bold text-foreground text-sm md:text-base">{highlight}</span>
                 </div>
               ))}
             </div>
@@ -60,10 +60,10 @@ export default function EventAnnouncement() {
               {[...highlights].reverse().map((highlight, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-3 whitespace-nowrap px-6 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-accent/20 hover:border-accent/50 transition-all duration-300"
+                  className="flex items-center gap-3 whitespace-nowrap px-7 py-3 bg-gradient-to-r from-accent/30 to-accent/10 backdrop-blur-md rounded-full border-2 border-accent/60 hover:border-accent hover:shadow-xl transition-all duration-300 transform hover:scale-110"
                 >
-                  <span className="text-accent font-bold">✦</span>
-                  <span className="font-semibold text-foreground">{highlight}</span>
+                  <span className="text-accent font-bold text-lg">✦</span>
+                  <span className="font-bold text-foreground text-sm md:text-base">{highlight}</span>
                 </div>
               ))}
             </div>

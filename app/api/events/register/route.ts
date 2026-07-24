@@ -97,7 +97,7 @@ export async function POST(request: NextRequest) {
 
           <p>We will send you more details about the event schedule, accommodation options, and payment information soon.</p>
 
-          <p>If you have any questions, please don't hesitate to contact us at <strong>kisakyedhisayar@gmail.com</strong> or WhatsApp us on <strong>+44 7884 181149</strong>.</p>
+          <p>If you have any questions, please don't hesitate to contact us at <strong>info@kitiibwasafaris.com</strong> or WhatsApp us on <strong>+44 7884 181149</strong>.</p>
 
           <p>We look forward to seeing you at the Safari & Chill Experience!</p>
 

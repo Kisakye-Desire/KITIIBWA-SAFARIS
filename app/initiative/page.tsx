@@ -257,40 +257,7 @@ export default function Initiative() {
           </div>
         </section>
 
-        {/* Success Stories */}
-        <section className="py-16 md:py-24 bg-gradient-to-b from-card to-background">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">Success Stories</h2>
-            </ScrollReveal>
-            <div className="grid md:grid-cols-2 gap-8">
-              <ScrollReveal delay={0} direction="left">
-                <div className="bg-gradient-to-br from-accent/10 to-secondary/5 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-border hover:border-accent/50 card-hover">
-                  <div className="h-12 w-12 bg-accent text-accent-foreground rounded-lg flex items-center justify-center mb-4 text-xl font-bold">
-                    👩‍💼
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mb-3">Kasuni Women's Cooperative</h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Through our women empowerment program, Kasuni and 49 other women learned tourism hospitality skills. Today, they run a successful cooperative providing services to lodges and earning sustainable income.
-                  </p>
-                  <p className="text-accent font-semibold text-sm">📈 Average income: 4x increase in 2 years</p>
-                </div>
-              </ScrollReveal>
-              <ScrollReveal delay={0.15} direction="right">
-                <div className="bg-gradient-to-br from-primary/10 to-accent/5 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-border hover:border-primary/50 card-hover">
-                  <div className="h-12 w-12 bg-primary text-primary-foreground rounded-lg flex items-center justify-center mb-4 text-xl font-bold">
-                    🎓
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mb-3">Bwindi School Scholarship Fund</h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    We've sponsored 200+ students through primary and secondary education in Bwindi communities. 85% of scholarship recipients complete secondary school and pursue higher education.
-                  </p>
-                  <p className="text-primary font-semibold text-sm">🎯 Next goal: 500 students by 2028</p>
-                </div>
-              </ScrollReveal>
-            </div>
-          </div>
-        </section>
+
       </main>
 
       <Footer />

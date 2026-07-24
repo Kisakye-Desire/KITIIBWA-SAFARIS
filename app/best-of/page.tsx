@@ -120,31 +120,7 @@ export default function BestOf() {
           </div>
         </section>
 
-        {/* Staff Picks */}
-        <section className="py-16 md:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">Staff Favorites</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-card p-8 rounded-lg">
-                <p className="text-2xl font-bold text-primary mb-2">"Gorilla Trek Magic"</p>
-                <p className="text-muted-foreground mb-4">
-                  "Nothing compares to looking into a gorilla's eyes. It's a profound moment that connects you to nature in ways
-                  you never expected. Our guides make the experience seamless and unforgettable."
-                </p>
-                <p className="font-semibold text-primary">— John Kisoro, Founder</p>
-              </div>
 
-              <div className="bg-card p-8 rounded-lg">
-                <p className="text-2xl font-bold text-primary mb-2">"Sunrise Over the Savanna"</p>
-                <p className="text-muted-foreground mb-4">
-                  "Watching the African sun rise over the savanna while giraffes and zebras emerge from the mist is pure poetry.
-                  These moments remind us why we do this work every day."
-                </p>
-                <p className="font-semibold text-primary">— Dr. Sarah Kamwesiga, Wildlife Biologist</p>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* CTA */}
         <section className="py-16 md:py-24 bg-primary text-primary-foreground">

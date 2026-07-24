@@ -236,28 +236,28 @@ export default function Uganda() {
             </ScrollReveal>
             <div className="grid md:grid-cols-3 gap-8">
               <ScrollReveal delay={0} direction="up">
-                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover group">
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover group h-full flex flex-col">
                   <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">✈️</div>
                   <h3 className="text-xl font-bold mb-3">Getting There</h3>
-                  <p className="opacity-90 leading-relaxed text-sm">
+                  <p className="opacity-90 leading-relaxed text-sm flex-1">
                     Entebbe International Airport is the main gateway. Most flights connect through Addis Ababa, Dubai, or Amsterdam. KITIIBWA can arrange airport transfers and visa assistance.
                   </p>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={100} direction="up">
-                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover group">
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover group h-full flex flex-col">
                   <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🌞</div>
                   <h3 className="text-xl font-bold mb-3">Best Time to Visit</h3>
-                  <p className="opacity-90 leading-relaxed text-sm">
+                  <p className="opacity-90 leading-relaxed text-sm flex-1">
                     June-August and December-February offer the best weather. However, Uganda is beautiful year-round. Rainy seasons bring lush landscapes and fewer tourists.
                   </p>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={200} direction="up">
-                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover group">
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 card-hover group h-full flex flex-col">
                   <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🎒</div>
                   <h3 className="text-xl font-bold mb-3">What to Pack</h3>
-                  <p className="opacity-90 leading-relaxed text-sm">
+                  <p className="opacity-90 leading-relaxed text-sm flex-1">
                     Binoculars, camera, insect repellent, sun protection, and layers for mountain regions. Our packing guide will be provided upon booking.
                   </p>
                 </div>

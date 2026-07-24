@@ -20,36 +20,10 @@ export default function About() {
     {
       name: 'Alizeyuna Henry',
       role: 'Founder & Managing Director',
-              bio: 'Alizeyuna Henry is the visionary founder and Managing Director of Kitiibwa Safaris. Headquartered in Mukono District, Alizeyuna established the company with a passion for sharing Uganda\'s breathtaking landscapes, diverse wildlife, and vibrant cultures with travelers worldwide. With hands-on experience exploring Uganda\'s national parks, Alizeyuna is committed to creating memorable safari experiences that combine adventure, conservation, and genuine local hospitality.',
-
-      image: '/images/team-member-1.png',
-      facebook: 'https://facebook.com',
+      bio: 'Alizeyuna Henry is the visionary founder and Managing Director of Kitiibwa Safaris. Headquartered in Mukono District, Alizeyuna established the company with a passion for sharing Uganda\'s breathtaking landscapes, diverse wildlife, and vibrant cultures with travelers worldwide. With hands-on experience exploring Uganda\'s national parks, Alizeyuna is committed to creating memorable safari experiences that combine adventure, conservation, and genuine local hospitality.',
+      image: '/images/ceo-profile.jpg',
+      facebook: 'https://facebook.com/alizeyunahenry',
       instagram: 'https://www.instagram.com/kitiibwa_safaris_?utm_source=qr',
-    },
-    {
-      name: 'Dr. Sarah Kamwesiga',
-      role: 'Wildlife Biologist & Lead Guide',
-      bio: 'Dr. Sarah holds a PhD in Conservation Biology from Makerere University. She leads our educational safari programs and has published research on East African primate behavior. Her expertise ensures every guest gains deep insights into wildlife ecology and gorilla conservation efforts.',
-      image: '/images/team-member-2.png',
-      facebook: 'https://facebook.com',
-      instagram: 'https://instagram.com',
-    },
-    {
-      name: 'Michael Okello',
-      role: 'Senior Naturalist Guide',
-      bio: 'Michael is an award-winning nature guide with intimate knowledge of Queen Elizabeth Park and Murchison Falls. His storytelling ability combined with ornithological expertise makes him a favorite among wildlife and bird watching enthusiasts seeking authentic safari experiences.',
-      image: '/images/team-member-1.png',
-      facebook: 'https://facebook.com',
-      instagram: 'https://instagram.com',
-      twitter: 'https://twitter.com',
-    },
-    {
-      name: 'Grace Namutebi',
-      role: 'Hospitality & Lodge Manager',
-      bio: 'Grace ensures every guest experiences genuine African hospitality. With 15 years in luxury lodge management, her attention to detail and warmth create unforgettable experiences both in the field and at our premium safari cottages throughout Uganda.',
-      image: '/images/team-member-2.png',
-      facebook: 'https://facebook.com',
-      instagram: 'https://instagram.com',
     },
   ]
 
@@ -116,7 +90,7 @@ export default function About() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <ScrollReveal direction="left">
                 <InteractiveImage
-                  src="/images/founder-profile.jpg"
+                  src="/images/ceo-profile.jpg"
                   alt="Alizeyuna Henry - Founder"
                   width={400}
                   height={500}
@@ -311,43 +285,7 @@ export default function About() {
           </div>
         </section>
 
-        {/* By The Numbers */}
-        <section className="py-16 md:py-24 bg-gradient-safari text-primary-foreground relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10 pointer-events-none" style={{
-            backgroundImage: 'radial-gradient(circle at 50% 50%, #D4A574 0%, transparent 70%)',
-          }} />
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-            <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center animate-fade-in-up">By The Numbers</h2>
-            </ScrollReveal>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <ScrollReveal delay={0} direction="up">
-                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 text-center card-hover">
-                  <div className="text-6xl md:text-7xl font-bold mb-3 text-accent animate-fade-in-up">100</div>
-                  <p className="opacity-95 font-medium">Happy Guests</p>
-                </div>
-              </ScrollReveal>
-              <ScrollReveal delay={0.1} direction="up">
-                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 text-center card-hover">
-                  <div className="text-6xl md:text-7xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.1s' }}>5</div>
-                  <p className="opacity-95 font-medium">Years of Experience</p>
-                </div>
-              </ScrollReveal>
-              <ScrollReveal delay={0.2} direction="up">
-                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 text-center card-hover">
-                  <div className="text-6xl md:text-7xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.2s' }}>10</div>
-                  <p className="opacity-95 font-medium">Professional Staff</p>
-                </div>
-              </ScrollReveal>
-              <ScrollReveal delay={0.3} direction="up">
-                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 text-center card-hover">
-                  <div className="text-6xl md:text-7xl font-bold mb-3 text-accent animate-fade-in-up" style={{ animationDelay: '0.3s' }}>10</div>
-                  <p className="opacity-95 font-medium">Destinations</p>
-                </div>
-              </ScrollReveal>
-            </div>
-          </div>
-        </section>
+
       </main>
 
       <Footer />

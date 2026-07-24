@@ -24,6 +24,9 @@ export async function POST(request: NextRequest) {
       partnership: 'Partnership Opportunity',
     }[contactPerson] || 'General Inquiry'
 
+    // Updated email configuration
+    const toEmail = 'info@kitiibwasafaris.com'
+
     const htmlBody = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff;">
         <div style="background: linear-gradient(135deg, #2D5F3F, #4a8f64); padding: 32px; text-align: center;">
@@ -76,7 +79,6 @@ export async function POST(request: NextRequest) {
     const resendApiKey = process.env.RESEND_API_KEY
     const gmailUser = process.env.EMAIL_USER
     const gmailPass = process.env.EMAIL_PASSWORD
-    const toEmail = 'kisakyedhisayar@gmail.com'
 
     if (resendApiKey) {
       // Use Resend

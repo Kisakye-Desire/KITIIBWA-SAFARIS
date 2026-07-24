@@ -28,9 +28,11 @@ export default function Home() {
             backgroundImage: 'radial-gradient(circle at 20% 50%, #2D5F3F 0%, transparent 50%), radial-gradient(circle at 80% 50%, #D4A574 0%, transparent 50%)',
           }} />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="max-w-4xl mx-auto text-center mb-16">
-              <div className="animate-fade-in-up mb-4">
-                <TextGradient className="text-sm font-semibold tracking-wider uppercase">Welcome Aboard</TextGradient>
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <div className="animate-fade-in-up mb-6">
+                <div className="inline-block">
+                  <TextGradient className="text-lg md:text-2xl font-bold tracking-tight">Welcome Aboard</TextGradient>
+                </div>
               </div>
               <SectionHeading animated>Kitiibwa Safaris - Adventure. Nature. Relaxation. All in One.</SectionHeading>
               <p className="text-lg text-muted-foreground mb-4 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
@@ -41,25 +43,7 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Stats Bar */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 bg-gradient-safari text-primary-foreground p-8 rounded-xl shadow-xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-              <div className="text-center animate-scale-in" style={{ animationDelay: '0.4s' }}>
-                <div className="text-2xl md:text-4xl font-bold mb-1 text-accent">5+</div>
-                <p className="text-sm opacity-95">Years of Service</p>
-              </div>
-              <div className="text-center animate-scale-in" style={{ animationDelay: '0.5s' }}>
-                <div className="text-2xl md:text-4xl font-bold mb-1 text-accent">10+</div>
-                <p className="text-sm opacity-95">Expert Staff</p>
-              </div>
-              <div className="text-center animate-scale-in" style={{ animationDelay: '0.6s' }}>
-                <div className="text-2xl md:text-4xl font-bold mb-1 text-accent">2,000+</div>
-                <p className="text-sm opacity-95">Happy Guests</p>
-              </div>
-              <div className="text-center animate-scale-in" style={{ animationDelay: '0.7s' }}>
-                <div className="text-2xl md:text-4xl font-bold mb-1 text-accent">5</div>
-                <p className="text-sm opacity-95">Prime Parks</p>
-              </div>
-            </div>
+
           </div>
         </section>
 
@@ -245,7 +229,7 @@ export default function Home() {
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
               <p className="text-sm opacity-90 mt-6 text-white animate-pulse-subtle">
-                💬 Need help? Chat with us on WhatsApp +44 7884 181149
+                �� Need help? Chat with us on WhatsApp +44 7884 181149
               </p>
             </ScrollReveal>
           </div>
