@@ -92,6 +92,12 @@ const galleryImages: GalleryImage[] = [
     activity: 'Children Bonding Moment',
     description: 'Joyful moments capturing the impact of our work'
   },
+  {
+    src: '/images/initiative-children.jpg',
+    alt: 'Children Smiling Together',
+    activity: 'Children Initiative & Smiles',
+    description: 'Three smiling children representing our community transformation journey'
+  },
   // Placeholder images for future content (12-51)
   ...Array.from({ length: 40 }, (_, idx) => ({
     src: `https://images.unsplash.com/photo-${1590080876402 + idx}?w=800&h=600&fit=crop&crop=faces&q=80`,

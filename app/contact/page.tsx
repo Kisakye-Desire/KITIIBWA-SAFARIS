@@ -74,10 +74,11 @@ export default function Contact() {
       phone: '+256 702 345273',
       whatsapp: '+256 702 345273',
       email: 'info@kitiibwasafaris.com',
-      address: 'Mukono Access Clinic, Mukono District, Uganda',
+      address: 'Mukono Town, Kampala Jinja Road, Opposite Harred Petrol Station, Uganda',
       hours: 'Mon–Fri: 8:00 AM – 6:00 PM EAT',
       color: 'from-yellow-500/20 to-red-500/10',
       border: 'border-yellow-500/30',
+      mapUrl: 'https://maps.app.goo.gl/Rj61wwRRMbw7RREW8',
     },
     uk: {
       label: 'UK Representative',
@@ -280,6 +281,26 @@ export default function Contact() {
                       <div>
                         <p className="font-semibold text-primary text-sm">Fastest Response</p>
                         <p className="text-muted-foreground text-xs">WhatsApp: +44 7884 181149</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4 p-4 bg-card rounded-xl border border-border">
+                      <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <MapPin className="h-5 w-5 text-accent" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-semibold text-primary text-sm mb-2">Location</p>
+                        <p className="text-muted-foreground text-xs mb-3">{officeInfo[country as keyof typeof officeInfo].address}</p>
+                        {officeInfo[country as keyof typeof officeInfo]?.mapUrl && (
+                          <a 
+                            href={officeInfo[country as keyof typeof officeInfo].mapUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-accent hover:text-accent/80 text-xs font-semibold transition-colors"
+                          >
+                            View on Google Maps →
+                          </a>
+                        )}
                       </div>
                     </div>
 

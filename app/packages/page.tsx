@@ -1,32 +1,34 @@
+'use client'
+
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import WhatsAppButton from '@/components/whatsapp-button'
 import Image from 'next/image'
-import { Check } from 'lucide-react'
+import { Check, ChevronDown } from 'lucide-react'
 import Link from 'next/link'
 import { TextGradient, AnimatedCard } from '@/components/ui/effects'
 import ScrollReveal from '@/components/scroll-reveal'
-
-export const metadata = {
-  title: 'Safari Packages | KITIIBWA SAFARIS',
-  description: 'Customize your perfect safari adventure with our curated packages',
-}
+import { useState } from 'react'
 
 export default function Packages() {
+  const [expandedPackage, setExpandedPackage] = useState<string | null>(null)
   const packages = [
     {
       name: 'Bwindi Gorilla Encounter',
       duration: '4 Days / 3 Nights',
       price: 1900,
-      image: '/images/hero-safari.png',
+      image: '/images/chimp-1.jpg',
       description: 'Unforgettable 4-day gorilla trekking adventure in Bwindi Impenetrable Forest with expert guides',
+      fullDescription: `Experience one of the world's most extraordinary wildlife adventures with an unforgettable 4-day journey into Uganda's breathtaking Bwindi Impenetrable Forest. Come face-to-face with a family of endangered mountain gorillas in their natural habitat—an encounter that will stay with you for a lifetime.\n\nThis carefully crafted safari combines thrilling gorilla trekking with stunning landscapes, rich cultural experiences, and the peaceful beauty of one of Africa's oldest rainforests.\n\nTravel through Uganda's picturesque rolling hills before entering the mist-covered forests of Bwindi, home to nearly half of the world's remaining mountain gorillas. Guided by experienced rangers, you'll trek through dense jungle in search of a habituated gorilla family, witnessing these magnificent creatures up close in an ethical and responsible way.`,
       included: [
-        'Gorilla trekking in Bwindi',
-        'Scenic forest walks',
-        'Cultural community experiences',
-        'Guided nature walks & birdwatching',
-        'Comfortable mid-range accommodation',
+        'Gorilla trekking in Bwindi Impenetrable Forest',
+        'Scenic road trip through southwestern Uganda',
+        'Authentic cultural experiences with local communities',
+        'Guided forest walks and exceptional birdwatching',
+        'Comfortable accommodation',
         'Full-board meals',
+        'Professional English-speaking guide',
+        'Park entrance fees',
       ],
       bestseller: true,
     },
@@ -34,15 +36,18 @@ export default function Packages() {
       name: '2-Day Queen Elizabeth Safari',
       duration: '2 Days / 1 Night',
       price: 650,
-      image: '/images/safari-landscape.png',
+      image: '/images/gallery-17.jpg',
       description: 'Game drive and scenic Kazinga Channel boat cruise in Uganda\'s most iconic park',
+      fullDescription: `Discover the untamed beauty of Queen Elizabeth National Park on this remarkable 2-day safari. Experience thrilling wildlife encounters, spectacular landscapes, and one of Africa's most iconic wildlife viewing destinations.\n\nYour adventure features exciting game drives across expansive savannahs, where you may encounter elephants, lions, giraffes, buffaloes, leopards, antelopes, and an abundance of birdlife. A scenic boat cruise along the Kazinga Channel showcases hippos, crocodiles, elephants along the shoreline, and countless water birds.\n\nThis perfect safari for travelers seeking Uganda's classic wildlife experience combines spectacular scenery, abundant wildlife, and unforgettable moments in nature.`,
       included: [
-        'Private 4x4 safari vehicle',
-        'Professional English-speaking guide',
-        'Game drive in Queen Elizabeth',
-        'Boat cruise on Kazinga Channel',
+        'Private 4x4 safari vehicle with pop-up roof',
+        'Professional English-speaking guide/driver',
+        'Game drive in Queen Elizabeth National Park',
+        'Boat cruise on the Kazinga Channel',
         'Mid-range lodge accommodation',
-        'Full meals included',
+        'Full-board meals (Breakfast, Lunch & Dinner)',
+        'Park entrance fees',
+        'Bottled drinking water',
       ],
       bestseller: false,
     },
@@ -50,31 +55,37 @@ export default function Packages() {
       name: 'Murchison Falls & Rhino Tracking',
       duration: '4 Days / 3 Nights',
       price: 1200,
-      image: '/images/safari-cottage.png',
+      image: '/images/gallery-1.jpg',
       description: 'Experience rhino tracking, game drives, and the spectacular Murchison Falls waterfall',
+      fullDescription: `Discover the untamed beauty of Murchison Falls National Park, Uganda's largest and oldest national park. This unforgettable 4-day safari combines thrilling wildlife encounters, spectacular landscapes, and one of Africa's most powerful natural wonders—the mighty Nile River dramatically forced through a narrow 7-metre gorge.\n\nYour adventure begins with an exciting on-foot rhino tracking experience at Ziwa Rhino Sanctuary, Uganda's only wild rhino sanctuary. Continue to Murchison Falls for unforgettable game drives across expansive savannahs, where you may encounter elephants, lions, giraffes, buffaloes, leopards, and antelopes.\n\nCruise along the Nile to the base of the magnificent falls, then hike to the top for breathtaking panoramic views and unforgettable moments.`,
       included: [
-        'Guided rhino tracking at Ziwa',
-        'Exciting game drives',
-        'Nile boat cruise to falls',
-        'Guided hike to top of falls',
-        'Opportunity to spot Big Five',
-        'Stunning savannah scenery',
+        'Guided rhino tracking at Ziwa Rhino Sanctuary (2-3 hours)',
+        'Exciting game drives in Murchison Falls National Park',
+        'Nile boat cruise to the base of Murchison Falls',
+        'Guided hike to the top of the falls',
+        'Opportunities to spot the Big Five',
+        'Stunning savannah scenery and exceptional wildlife viewing',
+        'Professional English-speaking guide',
+        'Accommodation and full meals',
       ],
       bestseller: false,
     },
     {
-      name: 'Mountain Adventure',
+      name: 'Rwenzori Mountain Adventure',
       duration: '5 Days / 4 Nights',
       price: 2950,
-      image: '/images/gallery-3.png',
-      description: 'Rwenzori Mountains trekking and alpine ecosystem exploration',
+      image: '/images/gallery-12.jpg',
+      description: 'Conquer the legendary Mountains of the Moon - Rwenzori Mountains trekking adventure',
+      fullDescription: `Experience Uganda's Wild Frontier with a trek through the legendary Rwenzori Mountains, known as the "Mountains of the Moon." This 5-day adventure offers spectacular hiking, dramatic landscapes, and unique alpine ecosystems.\n\nThe Rwenzori Mountains feature dramatic landscapes, vast savannahs, rugged mountains, and stunning natural beauty. This trek is famous for its exceptional scenery and opportunities to witness unique alpine environments.\n\nDuring your adventure, you'll trek through diverse ecosystems from lush forests to alpine meadows and glaciers, offering unforgettable views and the unique experience of conquering some of Africa's most spectacular peaks with expert guides.`,
       included: [
-        'Mountain guide & porters',
-        'Alpine hut accommodation',
+        'Mountain guide and experienced porters',
+        'Alpine hut accommodation throughout trek',
         'All meals on trek',
-        'Safety & rescue equipment',
-        'Training & orientation',
-        'Photography stops',
+        'Safety and rescue equipment',
+        'Professional training and orientation',
+        'Photography stops at scenic viewpoints',
+        'Transportation to/from trek starting point',
+        'All park permits and fees',
       ],
       bestseller: false,
     },
@@ -82,15 +93,18 @@ export default function Packages() {
       name: 'Chimpanzee Connection',
       duration: '3 Days / 2 Nights',
       price: 1900,
-      image: '/images/chimp-1.jpg',
+      image: '/images/chimp-3.jpg',
       description: 'Track wild chimpanzees in Kibale Forest and experience forest ecosystem',
+      fullDescription: `Track habituated chimpanzee families through the ancient rainforests of Kibale Forest National Park. This 3-day adventure combines thrilling primate encounters with immersion in one of Africa's most biodiverse ecosystems.\n\nKibale Forest is an ancient tropical rainforest home to chimpanzees, monkeys, and over 375 bird species. Perfect for forest walks and primate encounters, it offers a unique window into the lives of our closest living relatives in their natural habitat.\n\nGuided by experienced trackers, you'll move through dense forest in search of habituated chimp families, witnessing these remarkable creatures in their social groups and learning about their complex behaviors and conservation.`,
       included: [
-        'Chimp habituation experience',
-        'Forest walks & nature guides',
+        'Chimpanzee habituation and tracking experience',
+        'Forest walks and nature guides',
+        'Birdwatching and primate observation',
         'Eco-lodge accommodation',
         'All meals included',
         'Park entrance fees',
-        'Professional guide',
+        'Professional English-speaking guide',
+        'Photography opportunities',
       ],
       bestseller: true,
     },
@@ -98,32 +112,35 @@ export default function Packages() {
       name: 'Grand Uganda Safari',
       duration: '10 Days / 9 Nights',
       price: 6500,
-      image: '/images/safari-landscape.png',
+      image: '/images/gallery-18.jpg',
       description: 'The ultimate safari combining gorillas, wildlife, mountains, and culture',
+      fullDescription: `Experience the full spectrum of Uganda's natural wonders on this comprehensive 10-day Grand Uganda Safari. This ultimate adventure combines world-class gorilla trekking, exhilarating wildlife encounters, breathtaking mountain landscapes, and authentic cultural immersion.\n\nVisit multiple national parks including Bwindi for mountain gorillas, Queen Elizabeth for the Kazinga Channel, Murchison Falls for the mighty waterfall, and more. Experience diverse ecosystems from misty rainforests to expansive savannahs.\n\nThis luxury safari is designed for travelers seeking the complete Uganda experience with comfortable accommodations, expert guides, and unforgettable moments at every turn.`,
       included: [
-        'All transportation & transfers',
-        'Gorilla & chimp permits',
-        'All accommodations (luxury lodges)',
-        'All meals & premium drinks',
-        'All activities & excursions',
-        'Expert guides throughout',
-        'Photography tips & assistance',
-        'Cultural experiences',
+        'All transportation and airport transfers',
+        'Gorilla and chimpanzee trekking permits',
+        'All accommodations in luxury lodges',
+        'All meals and premium beverages',
+        'All activities and excursions',
+        'Expert guides throughout journey',
+        'Photography tips and professional assistance',
+        'Authentic cultural experiences',
+        'All park entrance fees',
       ],
       bestseller: false,
     },
     {
-      name: 'Source of the Nile Explorer: Raft, Fly & Discover',
+      name: 'Source of the Nile Explorer',
       duration: '6 Days / 5 Nights',
       price: 1250,
-      image: '/images/safari-landscape.png',
-      description: 'Experience the thrill of Uganda\'s adventure capital with white-water rafting and bungee jumping at the legendary Source of the Nile',
+      image: '/images/gallery-9.jpg',
+      description: 'Experience the thrill of white-water rafting and adventure at the legendary Source of the Nile in Jinja',
+      fullDescription: `Discover the birthplace of the world's longest river with an unforgettable 6-day adventure through Jinja. From heart-pounding thrills to peaceful natural escapes, this experience showcases the very best of eastern Uganda along the legendary Source of the Nile.\n\nChallenge yourself on the Nile's world-renowned Grade 5 white-water rapids, take the leap with an optional bungee jump over the river, or unwind on a scenic boat cruise to the Source of the Nile. Venture into lush forests for an exhilarating canopy zipline before immersing yourself in Jinja's vibrant history, culture, and local charm.\n\nWhether you're an adventure seeker, nature lover, or cultural explorer, this safari offers the perfect blend of excitement, relaxation, and authentic Ugandan experiences.`,
       included: [
-        'Visit the Source of the Nile',
+        'Visit the legendary Source of the Nile',
         'Grade V white-water rafting or scenic Nile boat cruise',
-        'Ziplining in Mabira Forest',
+        'Forest canopy ziplining adventure',
         'Guided Jinja town and cultural tour',
-        'Birdwatching and nature walks',
+        'Birdwatching and guided nature walks',
         'Mid-range accommodation',
         'Professional English-speaking guide',
         'Breakfast, selected lunches, and drinking water',
@@ -131,20 +148,21 @@ export default function Packages() {
       bestseller: false,
     },
     {
-      name: 'Uganda Birding Circuit: Shoebill to Bwindi',
+      name: 'Uganda Birding Circuit',
       duration: '7 Days / 6 Nights',
       price: 2200,
-      image: '/images/gallery-11.jpg',
+      image: '/images/bird-watching.png',
       description: 'Discover Uganda\'s incredible birdlife with over 1,060 species including the iconic Shoebill and Albertine Rift endemics',
+      fullDescription: `Experience Uganda's incredible birdlife on this 7-day birding safari through the country's most diverse ecosystems. Search for the iconic Shoebill, discover the rich forests of Kibale and Bwindi, and explore the bird-filled savannahs of Queen Elizabeth National Park with expert local birding guides.\n\nHome to over 1,060 bird species, Uganda is one of Africa's premier birdwatching destinations. This journey offers unforgettable sightings for both passionate birders and nature lovers, featuring endemic species found nowhere else on Earth.\n\nWith expert certified guides and carefully planned routes, you'll maximize your chances of spotting rare and elusive species while enjoying Uganda's stunning landscapes and natural beauty.`,
       included: [
         'Shoebill tracking in Mabamba Swamp',
         'Birding in Kibale Forest & Bigodi Wetland',
-        'Queen Elizabeth National Park birding',
+        'Queen Elizabeth National Park birding and boat cruise',
         'Albertine Rift endemic species in Bwindi',
         'Expert certified local birding guide',
         'Eco-lodge accommodation',
         'All meals included',
-        'Park entrance fees',
+        'Park entrance fees and binoculars',
       ],
       bestseller: true,
     },
@@ -219,7 +237,7 @@ export default function Packages() {
                       </div>
 
                       {/* Included */}
-                      <div className="mb-6 flex-grow">
+                      <div className="mb-4 flex-grow">
                         <p className="font-semibold text-primary text-xs mb-3 uppercase tracking-wider">Includes:</p>
                         <ul className="space-y-2">
                           {pkg.included.slice(0, 4).map((item) => (
@@ -234,15 +252,35 @@ export default function Packages() {
                         </ul>
                       </div>
 
-                      {/* Button */}
-                      <a
-                        href="https://wa.me/447884181149"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full bg-gradient-to-r from-primary to-primary/80 hover:to-accent hover:from-accent text-primary-foreground py-3 rounded-lg font-semibold transition-all transform hover:scale-105 duration-300 text-center shadow-md hover:shadow-lg"
-                      >
-                        Book Now
-                      </a>
+                      {/* Expandable Full Description */}
+                      {pkg.fullDescription && (
+                        <div className="mb-4">
+                          <button
+                            onClick={() => setExpandedPackage(expandedPackage === pkg.name ? null : pkg.name)}
+                            className="flex items-center gap-2 text-accent hover:text-accent/80 font-semibold text-sm transition-colors"
+                          >
+                            <span>{expandedPackage === pkg.name ? 'Hide' : 'Read'} Details</span>
+                            <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${expandedPackage === pkg.name ? 'rotate-180' : ''}`} />
+                          </button>
+                          {expandedPackage === pkg.name && (
+                            <div className="mt-3 pt-3 border-t border-border/50 text-xs text-muted-foreground leading-relaxed whitespace-pre-wrap">
+                              {pkg.fullDescription}
+                            </div>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Buttons */}
+                      <div className="flex gap-2">
+                        <a
+                          href="https://wa.me/447884181149"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 bg-gradient-to-r from-primary to-primary/80 hover:to-accent hover:from-accent text-primary-foreground py-3 rounded-lg font-semibold transition-all transform hover:scale-105 duration-300 text-center shadow-md hover:shadow-lg"
+                        >
+                          Book Now
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </ScrollReveal>

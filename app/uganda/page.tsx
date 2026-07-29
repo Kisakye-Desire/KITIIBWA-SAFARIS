@@ -40,7 +40,7 @@ export default function Uganda() {
       location: 'Western Uganda',
       bestSeason: 'June-August, December-January',
       highlights: 'Mountain trekking, scenic views, waterfalls',
-      image: '/images/gallery-3.png',
+      image: '/images/gallery-12.jpg',
     },
     {
       name: 'Kibale Forest National Park',
@@ -114,11 +114,13 @@ export default function Uganda() {
               </ScrollReveal>
               <ScrollReveal direction="right">
                 <div className="relative h-80 rounded-xl overflow-hidden shadow-2xl card-hover">
-                  <Image
-                    src="/images/safari-landscape.png"
-                    alt="Uganda Landscape"
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-500"
+                  <video
+                    src="/videos/uganda-experience.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                 </div>

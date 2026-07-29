@@ -41,7 +41,7 @@ export default function BestOf() {
     {
       name: 'Kazinga Channel Boat Cruise',
       description: 'Navigate waterways filled with hippos, crocodiles, and water birds',
-      image: '/images/safari-landscape.png',
+      image: '/images/gallery-14.jpg',
       rating: 4.8,
     },
     {
@@ -53,7 +53,7 @@ export default function BestOf() {
     {
       name: 'Rwenzori Mountain Hike',
       description: 'Conquer the legendary Mountains of the Moon with expert guides',
-      image: '/images/gallery-3.png',
+      image: '/images/gallery-12.jpg',
       rating: 4.9,
     },
   ]
