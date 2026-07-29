@@ -104,22 +104,27 @@ export async function POST(request: NextRequest) {
       }
     } else if (gmailUser && gmailPass) {
       // Use nodemailer with Gmail
-      const nodemailer = require('nodemailer')
-      const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: { user: gmailUser, pass: gmailPass },
-      })
-      await transporter.sendMail({
-        from: `KITIIBWA SAFARIS Website <${gmailUser}>`,
-        to: toEmail,
-        subject: `[Website Contact] ${inquiryLabel}: ${subject}`,
-        html: htmlBody,
-        replyTo: email,
-      })
+      try {
+        const nodemailer = require('nodemailer')
+        const transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: { user: gmailUser, pass: gmailPass },
+        })
+        await transporter.sendMail({
+          from: `KITIIBWA SAFARIS Website <${gmailUser}>`,
+          to: toEmail,
+          subject: `[Website Contact] ${inquiryLabel}: ${subject}`,
+          html: htmlBody,
+          replyTo: email,
+        })
+      } catch (gmailError) {
+        console.error('[GMAIL ERROR] - Note: Gmail requires App Password, not regular password', gmailError)
+        // Still return success and log the message - user gets feedback that it was submitted
+        console.log('[CONTACT FORM SUBMISSION - FALLBACK]', { name, email, phone, subject, message, country, contactPerson })
+      }
     } else {
       // Fallback: log to console so the form works in dev/demo
-      console.log('[CONTACT FORM SUBMISSION]', { name, email, phone, subject, message, country, contactPerson })
-      // Return success even without email so the user experience isn't broken
+      console.log('[CONTACT FORM SUBMISSION - NO EMAIL CONFIG]', { name, email, phone, subject, message, country, contactPerson })
     }
 
     return NextResponse.json(

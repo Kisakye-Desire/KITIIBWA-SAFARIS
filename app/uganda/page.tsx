@@ -113,7 +113,7 @@ export default function Uganda() {
                 </div>
               </ScrollReveal>
               <ScrollReveal direction="right">
-                <div className="relative h-80 rounded-xl overflow-hidden shadow-2xl card-hover">
+                <div className="relative w-full rounded-xl overflow-hidden shadow-2xl card-hover" style={{ aspectRatio: '16/9' }}>
                   <video
                     src="/videos/uganda-experience.mp4"
                     autoPlay
