@@ -290,10 +290,10 @@ export default function Contact() {
                       </div>
                       <div className="flex-1">
                         <p className="font-semibold text-primary text-sm mb-2">Location</p>
-                        <p className="text-muted-foreground text-xs mb-3">{officeInfo[country as keyof typeof officeInfo].address}</p>
-                        {officeInfo[country as keyof typeof officeInfo]?.mapUrl && (
+                        <p className="text-muted-foreground text-xs mb-3">{officeInfo[formData.country as keyof typeof officeInfo].address}</p>
+                        {officeInfo[formData.country as keyof typeof officeInfo]?.mapUrl && (
                           <a 
-                            href={officeInfo[country as keyof typeof officeInfo].mapUrl} 
+                            href={officeInfo[formData.country as keyof typeof officeInfo].mapUrl} 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 text-accent hover:text-accent/80 text-xs font-semibold transition-colors"
