@@ -105,8 +105,8 @@ export default function Initiative() {
               <ScrollReveal direction="right" delay={0.2}>
                 <div className="relative h-96 rounded-xl overflow-hidden shadow-2xl card-hover">
                   <Image
-                    src="/images/gallery-6.png"
-                    alt="Community Conservation Efforts"
+                    src="/images/initiative-children.jpg"
+                    alt="Kitiibwa Initiative - Children Impact"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
                   />

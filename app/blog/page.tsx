@@ -22,7 +22,7 @@ const blogPosts = [
       'Mountain gorilla trekking in Bwindi is more than just a wildlife activity—it\'s a spiritual journey into one of Earth\'s most pristine ecosystems. Learn everything you need to know to make the most of this unforgettable experience.',
     author: 'John Kisoro',
     date: '2024-01-15',
-    image: '/images/hero-safari.png',
+    image: '/images/chimp-1.jpg',
     slug: 'gorilla-trekking-guide',
   },
   {
@@ -34,7 +34,7 @@ const blogPosts = [
       'While many think of Kenya or Tanzania for safari, Uganda offers something special—fewer tourists, more intimate wildlife encounters, and a true connection to African wilderness.',
     author: 'Dr. Sarah Kamwesiga',
     date: '2024-01-10',
-    image: '/images/safari-landscape.png',
+    image: '/images/gallery-2.jpg',
     slug: 'uganda-safari-destination',
   },
   {
@@ -46,7 +46,7 @@ const blogPosts = [
       'Uganda\'s diverse habitats—from forests to wetlands—make it home to an astounding variety of bird species. Whether you\'re a seasoned birder or a casual enthusiast, Uganda will captivate you.',
     author: 'Michael Okello',
     date: '2024-01-05',
-    image: '/images/bird-watching.png',
+    image: '/images/gallery-7.jpg',
     slug: 'bird-watching-uganda',
   },
   {
@@ -58,7 +58,7 @@ const blogPosts = [
       'Every gorilla trek contributes directly to conservation. Learn how KITIIBWA and other responsible operators work to protect these magnificent creatures for future generations.',
     author: 'Grace Namutebi',
     date: '2023-12-28',
-    image: '/images/hero-safari.png',
+    image: '/images/gallery-8.jpg',
     slug: 'conservation-tourism',
   },
   {
@@ -70,7 +70,7 @@ const blogPosts = [
       'From camera settings to composition techniques, learn how to photograph wildlife like a pro. Our expert guides can help position you for the best shots.',
     author: 'John Kisoro',
     date: '2023-12-20',
-    image: '/images/safari-landscape.png',
+    image: '/images/gallery-9.jpg',
     slug: 'wildlife-photography-tips',
   },
   {
@@ -82,7 +82,7 @@ const blogPosts = [
       'Queen Elizabeth National Park is a biodiversity hotspot featuring everything from tree-climbing lions to hippo-filled channels. Discover what makes this park so special.',
     author: 'Dr. Sarah Kamwesiga',
     date: '2023-12-12',
-    image: '/images/gallery-1.png',
+    image: '/images/gallery-10.jpg',
     slug: 'queen-elizabeth-biodiversity',
   },
   {
@@ -94,7 +94,7 @@ const blogPosts = [
       'Watching wild chimpanzees in their natural habitat is an extraordinary experience. Learn about these intelligent primates and how to maximize your encounter.',
     author: 'Michael Okello',
     date: '2023-12-05',
-    image: '/images/bird-watching.png',
+    image: '/images/chimp-3.jpg',
     slug: 'chimp-trekking-kibale',
   },
 ]
