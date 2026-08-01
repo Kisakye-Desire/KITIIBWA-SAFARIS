@@ -1,8 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(request: NextRequest) {
+  console.log('[CONTACT API] Request received')
+  console.log('[ENV CHECK] RESEND_API_KEY:', process.env.RESEND_API_KEY ? 'Present' : 'Missing')
+  
   try {
     const body = await request.json()
+    console.log('[CONTACT API] Body parsed:', { name: body.name, email: body.email })
     const { name, email, phone, subject, message, country, contactPerson } = body
 
     // Basic validation
@@ -81,7 +85,7 @@ export async function POST(request: NextRequest) {
     const gmailPass = process.env.EMAIL_PASSWORD
 
     if (resendApiKey) {
-      // Use Resend
+      // Use Resend - start with onboarding domain for free tier
       const resendResponse = await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: {
@@ -100,8 +104,12 @@ export async function POST(request: NextRequest) {
       if (!resendResponse.ok) {
         const errData = await resendResponse.json()
         console.error('[CONTACT - RESEND ERROR]', errData)
-        throw new Error('Resend delivery failed')
+        console.error('[RESEND ERROR DETAILS]', JSON.stringify(errData, null, 2))
+        throw new Error(`Resend API error: ${errData.message || JSON.stringify(errData)}`)
       }
+
+      const resendData = await resendResponse.json()
+      console.log('[EMAIL SENT SUCCESSFULLY VIA RESEND]', { messageId: resendData.id, to: toEmail, from: email })
     } else if (gmailUser && gmailPass) {
       // Use nodemailer with Gmail
       const nodemailer = require('nodemailer')
@@ -133,6 +141,10 @@ export async function POST(request: NextRequest) {
     console.error('[CONTACT ERROR]', error)
     const errorMessage = error instanceof Error ? error.message : String(error)
     console.error('[ERROR DETAILS]', errorMessage)
+    console.error('[STACK]', error instanceof Error ? error.stack : 'No stack trace')
+    console.log('[DEBUG] RESEND_API_KEY present:', !!process.env.RESEND_API_KEY)
+    console.log('[DEBUG] EMAIL_USER present:', !!process.env.EMAIL_USER)
+    console.log('[DEBUG] EMAIL_PASSWORD present:', !!process.env.EMAIL_PASSWORD)
     return NextResponse.json({ error: 'Failed to send message. Please try WhatsApp or email us directly.' }, { status: 500 })
   }
 }
