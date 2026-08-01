@@ -1,12 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(request: NextRequest) {
-  console.log('[CONTACT API] Request received')
-  console.log('[ENV CHECK] RESEND_API_KEY:', process.env.RESEND_API_KEY ? 'Present' : 'Missing')
-  
   try {
     const body = await request.json()
-    console.log('[CONTACT API] Body parsed:', { name: body.name, email: body.email })
     const { name, email, phone, subject, message, country, contactPerson } = body
 
     // Basic validation
@@ -79,59 +75,30 @@ export async function POST(request: NextRequest) {
       </div>
     `
 
-    // Try Resend first (if API key available), then fallback to nodemailer
-    const resendApiKey = process.env.RESEND_API_KEY
+    // Use nodemailer with Gmail
     const gmailUser = process.env.EMAIL_USER
     const gmailPass = process.env.EMAIL_PASSWORD
 
-    if (resendApiKey) {
-      // Use Resend - start with onboarding domain for free tier
-      const resendResponse = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${resendApiKey}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          from: 'KITIIBWA SAFARIS <onboarding@resend.dev>',
-          to: toEmail,
-          subject: `[Website Contact] ${inquiryLabel}: ${subject}`,
-          html: htmlBody,
-          reply_to: email,
-        }),
-      })
-
-      if (!resendResponse.ok) {
-        const errData = await resendResponse.json()
-        console.error('[CONTACT - RESEND ERROR]', errData)
-        console.error('[RESEND ERROR DETAILS]', JSON.stringify(errData, null, 2))
-        throw new Error(`Resend API error: ${errData.message || JSON.stringify(errData)}`)
-      }
-
-      const resendData = await resendResponse.json()
-      console.log('[EMAIL SENT SUCCESSFULLY VIA RESEND]', { messageId: resendData.id, to: toEmail, from: email })
-    } else if (gmailUser && gmailPass) {
-      // Use nodemailer with Gmail
-      const nodemailer = require('nodemailer')
-      const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: { user: gmailUser, pass: gmailPass },
-      })
-      
-      const mailResult = await transporter.sendMail({
-        from: `KITIIBWA SAFARIS Website <${gmailUser}>`,
-        to: toEmail,
-        subject: `[Website Contact] ${inquiryLabel}: ${subject}`,
-        html: htmlBody,
-        replyTo: email,
-      })
-      
-      console.log('[EMAIL SENT SUCCESSFULLY]', { messageId: mailResult.messageId, to: toEmail, from: email })
-    } else {
-      // Fallback: log to console so the form works in dev/demo
-      console.log('[CONTACT FORM SUBMISSION - NO EMAIL CONFIG]', { name, email, phone, subject, message, country, contactPerson })
-      console.warn('[WARNING] EMAIL_USER or EMAIL_PASSWORD not configured. Messages are being logged but not sent.')
+    if (!gmailUser || !gmailPass) {
+      console.warn('[WARNING] EMAIL_USER or EMAIL_PASSWORD not configured')
+      throw new Error('Email credentials not configured on server')
     }
+
+    const nodemailer = require('nodemailer')
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: { user: gmailUser, pass: gmailPass },
+    })
+    
+    const mailResult = await transporter.sendMail({
+      from: `KITIIBWA SAFARIS Website <${gmailUser}>`,
+      to: toEmail,
+      subject: `[Website Contact] ${inquiryLabel}: ${subject}`,
+      html: htmlBody,
+      replyTo: email,
+    })
+    
+    console.log('[EMAIL SENT SUCCESSFULLY]', { messageId: mailResult.messageId, to: toEmail, from: email })
 
     return NextResponse.json(
       { success: true, message: 'Thank you! We will contact you within 24 hours.' },
@@ -141,10 +108,6 @@ export async function POST(request: NextRequest) {
     console.error('[CONTACT ERROR]', error)
     const errorMessage = error instanceof Error ? error.message : String(error)
     console.error('[ERROR DETAILS]', errorMessage)
-    console.error('[STACK]', error instanceof Error ? error.stack : 'No stack trace')
-    console.log('[DEBUG] RESEND_API_KEY present:', !!process.env.RESEND_API_KEY)
-    console.log('[DEBUG] EMAIL_USER present:', !!process.env.EMAIL_USER)
-    console.log('[DEBUG] EMAIL_PASSWORD present:', !!process.env.EMAIL_PASSWORD)
     return NextResponse.json({ error: 'Failed to send message. Please try WhatsApp or email us directly.' }, { status: 500 })
   }
 }
