@@ -104,27 +104,25 @@ export async function POST(request: NextRequest) {
       }
     } else if (gmailUser && gmailPass) {
       // Use nodemailer with Gmail
-      try {
-        const nodemailer = require('nodemailer')
-        const transporter = nodemailer.createTransport({
-          service: 'gmail',
-          auth: { user: gmailUser, pass: gmailPass },
-        })
-        await transporter.sendMail({
-          from: `KITIIBWA SAFARIS Website <${gmailUser}>`,
-          to: toEmail,
-          subject: `[Website Contact] ${inquiryLabel}: ${subject}`,
-          html: htmlBody,
-          replyTo: email,
-        })
-      } catch (gmailError) {
-        console.error('[GMAIL ERROR] - Note: Gmail requires App Password, not regular password', gmailError)
-        // Still return success and log the message - user gets feedback that it was submitted
-        console.log('[CONTACT FORM SUBMISSION - FALLBACK]', { name, email, phone, subject, message, country, contactPerson })
-      }
+      const nodemailer = require('nodemailer')
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: { user: gmailUser, pass: gmailPass },
+      })
+      
+      const mailResult = await transporter.sendMail({
+        from: `KITIIBWA SAFARIS Website <${gmailUser}>`,
+        to: toEmail,
+        subject: `[Website Contact] ${inquiryLabel}: ${subject}`,
+        html: htmlBody,
+        replyTo: email,
+      })
+      
+      console.log('[EMAIL SENT SUCCESSFULLY]', { messageId: mailResult.messageId, to: toEmail, from: email })
     } else {
       // Fallback: log to console so the form works in dev/demo
       console.log('[CONTACT FORM SUBMISSION - NO EMAIL CONFIG]', { name, email, phone, subject, message, country, contactPerson })
+      console.warn('[WARNING] EMAIL_USER or EMAIL_PASSWORD not configured. Messages are being logged but not sent.')
     }
 
     return NextResponse.json(
@@ -133,6 +131,8 @@ export async function POST(request: NextRequest) {
     )
   } catch (error) {
     console.error('[CONTACT ERROR]', error)
+    const errorMessage = error instanceof Error ? error.message : String(error)
+    console.error('[ERROR DETAILS]', errorMessage)
     return NextResponse.json({ error: 'Failed to send message. Please try WhatsApp or email us directly.' }, { status: 500 })
   }
 }
