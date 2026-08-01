@@ -17,7 +17,7 @@ export default function Packages() {
       name: 'Bwindi Gorilla Encounter',
       duration: '4 Days / 3 Nights',
       price: 1900,
-      image: '/images/chimp-1.jpg',
+      image: '/images/packages/bwindi-gorilla.webp',
       description: 'Unforgettable 4-day gorilla trekking adventure in Bwindi Impenetrable Forest with expert guides',
       fullDescription: `Experience one of the world's most extraordinary wildlife adventures with an unforgettable 4-day journey into Uganda's breathtaking Bwindi Impenetrable Forest. Come face-to-face with a family of endangered mountain gorillas in their natural habitat—an encounter that will stay with you for a lifetime.\n\nThis carefully crafted safari combines thrilling gorilla trekking with stunning landscapes, rich cultural experiences, and the peaceful beauty of one of Africa's oldest rainforests.\n\nTravel through Uganda's picturesque rolling hills before entering the mist-covered forests of Bwindi, home to nearly half of the world's remaining mountain gorillas. Guided by experienced rangers, you'll trek through dense jungle in search of a habituated gorilla family, witnessing these magnificent creatures up close in an ethical and responsible way.`,
       included: [
@@ -36,7 +36,7 @@ export default function Packages() {
       name: '2-Day Queen Elizabeth Safari',
       duration: '2 Days / 1 Night',
       price: 650,
-      image: '/images/gallery-17.jpg',
+      image: '/images/packages/queen-elizabeth.jpg',
       description: 'Game drive and scenic Kazinga Channel boat cruise in Uganda\'s most iconic park',
       fullDescription: `Discover the untamed beauty of Queen Elizabeth National Park on this remarkable 2-day safari. Experience thrilling wildlife encounters, spectacular landscapes, and one of Africa's most iconic wildlife viewing destinations.\n\nYour adventure features exciting game drives across expansive savannahs, where you may encounter elephants, lions, giraffes, buffaloes, leopards, antelopes, and an abundance of birdlife. A scenic boat cruise along the Kazinga Channel showcases hippos, crocodiles, elephants along the shoreline, and countless water birds.\n\nThis perfect safari for travelers seeking Uganda's classic wildlife experience combines spectacular scenery, abundant wildlife, and unforgettable moments in nature.`,
       included: [
@@ -55,7 +55,7 @@ export default function Packages() {
       name: 'Murchison Falls & Rhino Tracking',
       duration: '4 Days / 3 Nights',
       price: 1200,
-      image: '/images/gallery-1.jpg',
+      image: '/images/packages/murchison-falls.jpeg',
       description: 'Experience rhino tracking, game drives, and the spectacular Murchison Falls waterfall',
       fullDescription: `Discover the untamed beauty of Murchison Falls National Park, Uganda's largest and oldest national park. This unforgettable 4-day safari combines thrilling wildlife encounters, spectacular landscapes, and one of Africa's most powerful natural wonders—the mighty Nile River dramatically forced through a narrow 7-metre gorge.\n\nYour adventure begins with an exciting on-foot rhino tracking experience at Ziwa Rhino Sanctuary, Uganda's only wild rhino sanctuary. Continue to Murchison Falls for unforgettable game drives across expansive savannahs, where you may encounter elephants, lions, giraffes, buffaloes, leopards, and antelopes.\n\nCruise along the Nile to the base of the magnificent falls, then hike to the top for breathtaking panoramic views and unforgettable moments.`,
       included: [
@@ -74,7 +74,7 @@ export default function Packages() {
       name: 'Rwenzori Mountain Adventure',
       duration: '5 Days / 4 Nights',
       price: 2950,
-      image: '/images/gallery-12.jpg',
+      image: '/images/packages/rwenzori.jpg',
       description: 'Conquer the legendary Mountains of the Moon - Rwenzori Mountains trekking adventure',
       fullDescription: `Experience Uganda's Wild Frontier with a trek through the legendary Rwenzori Mountains, known as the "Mountains of the Moon." This 5-day adventure offers spectacular hiking, dramatic landscapes, and unique alpine ecosystems.\n\nThe Rwenzori Mountains feature dramatic landscapes, vast savannahs, rugged mountains, and stunning natural beauty. This trek is famous for its exceptional scenery and opportunities to witness unique alpine environments.\n\nDuring your adventure, you'll trek through diverse ecosystems from lush forests to alpine meadows and glaciers, offering unforgettable views and the unique experience of conquering some of Africa's most spectacular peaks with expert guides.`,
       included: [
@@ -93,7 +93,7 @@ export default function Packages() {
       name: 'Chimpanzee Connection',
       duration: '3 Days / 2 Nights',
       price: 1900,
-      image: '/images/chimp-3.jpg',
+      image: '/images/packages/chimpanzee.jpg',
       description: 'Track wild chimpanzees in Kibale Forest and experience forest ecosystem',
       fullDescription: `Track habituated chimpanzee families through the ancient rainforests of Kibale Forest National Park. This 3-day adventure combines thrilling primate encounters with immersion in one of Africa's most biodiverse ecosystems.\n\nKibale Forest is an ancient tropical rainforest home to chimpanzees, monkeys, and over 375 bird species. Perfect for forest walks and primate encounters, it offers a unique window into the lives of our closest living relatives in their natural habitat.\n\nGuided by experienced trackers, you'll move through dense forest in search of habituated chimp families, witnessing these remarkable creatures in their social groups and learning about their complex behaviors and conservation.`,
       included: [
@@ -112,7 +112,7 @@ export default function Packages() {
       name: 'Grand Uganda Safari',
       duration: '10 Days / 9 Nights',
       price: 6500,
-      image: '/images/gallery-18.jpg',
+      image: '/images/packages/grand-uganda.jpeg',
       description: 'The ultimate safari combining gorillas, wildlife, mountains, and culture',
       fullDescription: `Experience the full spectrum of Uganda's natural wonders on this comprehensive 10-day Grand Uganda Safari. This ultimate adventure combines world-class gorilla trekking, exhilarating wildlife encounters, breathtaking mountain landscapes, and authentic cultural immersion.\n\nVisit multiple national parks including Bwindi for mountain gorillas, Queen Elizabeth for the Kazinga Channel, Murchison Falls for the mighty waterfall, and more. Experience diverse ecosystems from misty rainforests to expansive savannahs.\n\nThis luxury safari is designed for travelers seeking the complete Uganda experience with comfortable accommodations, expert guides, and unforgettable moments at every turn.`,
       included: [
@@ -132,7 +132,7 @@ export default function Packages() {
       name: 'Source of the Nile Explorer',
       duration: '6 Days / 5 Nights',
       price: 1250,
-      image: '/images/gallery-9.jpg',
+      image: '/images/packages/river-nile.jpeg',
       description: 'Experience the thrill of white-water rafting and adventure at the legendary Source of the Nile in Jinja',
       fullDescription: `Discover the birthplace of the world's longest river with an unforgettable 6-day adventure through Jinja. From heart-pounding thrills to peaceful natural escapes, this experience showcases the very best of eastern Uganda along the legendary Source of the Nile.\n\nChallenge yourself on the Nile's world-renowned Grade 5 white-water rapids, take the leap with an optional bungee jump over the river, or unwind on a scenic boat cruise to the Source of the Nile. Venture into lush forests for an exhilarating canopy zipline before immersing yourself in Jinja's vibrant history, culture, and local charm.\n\nWhether you're an adventure seeker, nature lover, or cultural explorer, this safari offers the perfect blend of excitement, relaxation, and authentic Ugandan experiences.`,
       included: [
