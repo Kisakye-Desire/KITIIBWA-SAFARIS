@@ -57,7 +57,7 @@ export const contactInfo: ContactInfo = {
     uganda: '+256 702 345273',
     uk: '+44 7884 181149',
   },
-  address: 'Mukono Access Clinic, Mukono District, Uganda',
+  address: 'Mukono Town, Kampala Jinja Road, Opposite Harred Petrol Station, Uganda',
   whatsapp: 'https://wa.me/447884181149',
   operatingHours: {
     weekday: 'Monday - Friday: 8:00 AM - 6:00 PM EAT',

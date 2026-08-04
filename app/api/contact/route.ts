@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { sendEmail, escapeHtml } from '@/lib/email'
 
 export async function POST(request: NextRequest) {
   try {
@@ -24,7 +25,7 @@ export async function POST(request: NextRequest) {
       partnership: 'Partnership Opportunity',
     }[contactPerson] || 'General Inquiry'
 
-    // Updated email configuration
+    // Email to info@kitiibwasafaris.com
     const toEmail = 'info@kitiibwasafaris.com'
 
     const htmlBody = `
@@ -38,15 +39,15 @@ export async function POST(request: NextRequest) {
           <table style="width: 100%; border-collapse: collapse;">
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: bold; color: #2D5F3F; width: 140px;">From:</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #333;">${name}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #333;">${escapeHtml(name)}</td>
             </tr>
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: bold; color: #2D5F3F;">Email:</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid #eee;"><a href="mailto:${email}" style="color: #D4A574;">${email}</a></td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee;"><a href="mailto:${email}" style="color: #D4A574;">${escapeHtml(email)}</a></td>
             </tr>
             ${phone ? `<tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: bold; color: #2D5F3F;">Phone:</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #333;">${phone}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #333;">${escapeHtml(phone)}</td>
             </tr>` : ''}
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: bold; color: #2D5F3F;">Office:</td>
@@ -58,47 +59,40 @@ export async function POST(request: NextRequest) {
             </tr>
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: bold; color: #2D5F3F;">Subject:</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #333;">${subject}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #333;">${escapeHtml(subject)}</td>
             </tr>
           </table>
           
           <div style="margin-top: 24px; background: #fff; border-left: 4px solid #D4A574; padding: 16px 20px; border-radius: 0 8px 8px 0;">
             <p style="font-weight: bold; color: #2D5F3F; margin: 0 0 8px;">Message:</p>
-            <p style="white-space: pre-wrap; color: #333; margin: 0; line-height: 1.6;">${message}</p>
+            <p style="white-space: pre-wrap; color: #333; margin: 0; line-height: 1.6;">${escapeHtml(message)}</p>
           </div>
         </div>
         
         <div style="padding: 20px 32px; text-align: center; color: #999; font-size: 12px; background: #f0f0f0;">
           <p style="margin: 0;">This message was sent via the KITIIBWA SAFARIS website contact form.</p>
-          <p style="margin: 4px 0 0;">Reply directly to this email to respond to ${name}.</p>
+          <p style="margin: 4px 0 0;">Reply directly to this email to respond to ${escapeHtml(name)}.</p>
         </div>
       </div>
     `
 
-    // Use nodemailer with Gmail
-    const gmailUser = process.env.EMAIL_USER
-    const gmailPass = process.env.EMAIL_PASSWORD
-
-    if (!gmailUser || !gmailPass) {
-      console.warn('[WARNING] EMAIL_USER or EMAIL_PASSWORD not configured')
-      throw new Error('Email credentials not configured on server')
-    }
-
-    const nodemailer = require('nodemailer')
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: { user: gmailUser, pass: gmailPass },
-    })
-    
-    const mailResult = await transporter.sendMail({
-      from: `KITIIBWA SAFARIS Website <${gmailUser}>`,
+    // Send email using the configured email service
+    const result = await sendEmail({
       to: toEmail,
       subject: `[Website Contact] ${inquiryLabel}: ${subject}`,
       html: htmlBody,
       replyTo: email,
     })
-    
-    console.log('[EMAIL SENT SUCCESSFULLY]', { messageId: mailResult.messageId, to: toEmail, from: email })
+
+    if (!result.success) {
+      console.error('[CONTACT EMAIL FAILED]', result.error)
+      return NextResponse.json(
+        { error: 'Failed to send message. Please try WhatsApp or email us directly.' },
+        { status: 500 }
+      )
+    }
+
+    console.log('[EMAIL SENT SUCCESSFULLY]', { messageId: result.messageId, to: toEmail, from: email })
 
     return NextResponse.json(
       { success: true, message: 'Thank you! We will contact you within 24 hours.' },

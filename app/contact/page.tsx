@@ -177,7 +177,7 @@ export default function Contact() {
                       <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                       <div>
                         <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider mb-1">Address</p>
-                        <p className="text-foreground text-sm">Mukono Access Clinic, Mukono District, Uganda</p>
+                        <p className="text-foreground text-sm">Mukono Town, Kampala Jinja Road, Opposite Harred Petrol Station, Uganda</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -509,7 +509,7 @@ export default function Contact() {
               />
             </div>
             <p className="text-muted-foreground mt-4 text-sm">
-              Mukono Access Clinic, Mukono District, Uganda. Contact us on WhatsApp for exact directions.
+              Mukono Town, Kampala Jinja Road, Opposite Harred Petrol Station, Uganda. Contact us on WhatsApp for exact directions.
             </p>
           </div>
         </section>

@@ -96,7 +96,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2 hover:translate-x-1 transition">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>Mukono Access Clinic, Uganda</span>
+                <span>Mukono Town, Kampala Jinja Rd, Opposite Harred Petrol Station, Uganda</span>
               </li>
             </ul>
           </div>
