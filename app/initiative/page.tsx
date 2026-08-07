@@ -92,7 +92,7 @@ export default function Initiative() {
                 <div>
                   <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Our Mission</h2>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    At KITIIBWA SAFARIS, we believe responsible tourism goes beyond wildlife viewing. It means actively giving back to the communities and ecosystems that make these experiences possible.
+                    At Kitiibwa Children Initiative, we believe lasting change begins when children are safe, supported, and able to learn. We work with families and communities to make care and opportunity more accessible.
                   </p>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     Our initiatives focus on three pillars: protecting Uganda's natural heritage, empowering local communities, and preserving cultural traditions. Every safari booking contributes a portion of revenue toward these vital programs.

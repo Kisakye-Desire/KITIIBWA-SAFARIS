@@ -139,16 +139,13 @@ export default function About() {
               <div className="animate-fade-in-up">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Our Story</h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  KITIIBWA SAFARIS was born from a passion to share Uganda's untamed beauty responsibly. Our mission has always been to create transformative safari experiences that leave guests awestruck while supporting local communities and conservation efforts.
+                  Kitiibwa Children Initiative grew from a simple conviction: every child deserves the safety, encouragement, and opportunity to build a hopeful future.
                 </p>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  The word &quot;KITIIBWA&quot; means &quot;to be proud&quot; in Luganda, reflecting our pride in Uganda's
-                  natural heritage and our commitment to sustainable tourism practices.
+                  We work alongside families, schools, local leaders, and community partners across Uganda to make education and practical care more accessible to children who need support.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Today, we operate across Uganda's most pristine destinations, from the misty forests of Bwindi to the
-                  vast savannas of Queen Elizabeth, with a team of dedicated guides and hospitality professionals committed
-                  to excellence.
+                  Our approach is child-centered and community-led, connecting immediate help with the long-term relationships and skills that make change sustainable.
                 </p>
               </div>
               <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl animate-fade-in-up card-hover" style={{ animationDelay: '0.2s' }}>

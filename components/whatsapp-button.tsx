@@ -3,7 +3,7 @@
 export default function WhatsAppButton() {
   const whatsappNumber = '256702345273'
   const whatsappMessage = encodeURIComponent(
-    'Hello KITIIBWA SAFARIS,\n\nI came across your website and I am interested in learning more about your safari experiences in Uganda.\n\nCould you please provide more information?\n\nThank you.'
+    'Hello Kitiibwa Children Initiative,\n\nI would like to learn more about your work supporting children in Uganda.\n\nThank you.'
   )
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
 

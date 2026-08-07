@@ -465,7 +465,7 @@ export default function Donations() {
                           >
                             <div className="text-2xl mb-1">📶</div>
                             MTN Mobile Money
-                            <div className="text-xs mt-1 opacity-70">0763705967</div>
+                            <div className="text-xs mt-1 opacity-70">0773525452 · Muwaga Hannington</div>
                           </button>
                           <button
                             onClick={() => setMobileNetwork('airtel')}
@@ -477,7 +477,7 @@ export default function Donations() {
                           >
                             <div className="text-2xl mb-1">📡</div>
                             Airtel Money
-                            <div className="text-xs mt-1 opacity-70">0708898424</div>
+                            <div className="text-xs mt-1 opacity-70">0702345273 · Muwaga Hannington</div>
                           </button>
                         </div>
                       </div>

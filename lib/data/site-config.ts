@@ -57,7 +57,7 @@ export const contactInfo: ContactInfo = {
     uganda: '+256 702 345273',
     uk: '+44 7884 181149',
   },
-  address: 'Mukon Acess Clinic, Mukon Town, Kampala Jinja Rd, Opposite Harred Petrol Station, Uganda',
+  address: 'Mukon Access Clinic, Mukon Town, Kampala–Jinja Road, opposite Harred Petrol Station, Uganda',
   whatsapp: 'https://wa.me/256702345273',
   operatingHours: {
     weekday: 'Monday - Friday: 8:00 AM - 6:00 PM EAT',
@@ -86,8 +86,8 @@ export const bankTransferDetails = {
 }
 
 export const mobilePaymentMethods = {
-  mtn: '+256 773525452 (MTN Mobile Money) — Muwaga Hannington',
-  airtel: '+256 702345273 (Airtel Money) — Muwaga Hannington',
+  mtn: '0773525452 (MTN Mobile Money) — Muwaga Hannington',
+  airtel: '0702345273 (Airtel Money) — Muwaga Hannington',
   africell: 'Not currently available',
 }
 

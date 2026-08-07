@@ -74,7 +74,7 @@ export default function Contact() {
       phone: '+256 702 345273',
       whatsapp: '+256 702 345273',
       email: 'info@kitiibwasafaris.com',
-      address: 'Mukon Acess Clinic, Mukon Town, Kampala Jinja Rd, Opposite Harred Petrol Station, Uganda',
+      address: 'Mukon Access Clinic, Mukon Town, Kampala–Jinja Road, opposite Harred Petrol Station, Uganda',
       hours: 'Mon–Fri: 8:00 AM – 6:00 PM EAT',
       color: 'from-yellow-500/20 to-red-500/10',
       border: 'border-yellow-500/30',
@@ -177,7 +177,7 @@ export default function Contact() {
                       <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                       <div>
                         <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider mb-1">Address</p>
-                        <p className="text-foreground text-sm">Mukon Acess Clinic, Mukon Town, Kampala Jinja Rd, Opposite Harred Petrol Station, Uganda</p>
+                        <p className="text-foreground text-sm">Mukon Access Clinic, Mukon Town, Kampala–Jinja Road, opposite Harred Petrol Station, Uganda</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -496,7 +496,7 @@ export default function Contact() {
               />
             </div>
             <p className="text-muted-foreground mt-4 text-sm">
-              Mukon Acess Clinic, Mukon Town, Kampala Jinja Rd, Opposite Harred Petrol Station, Uganda. Contact us on WhatsApp for exact directions.
+              Mukon Access Clinic, Mukon Town, Kampala–Jinja Road, opposite Harred Petrol Station, Uganda. Contact us on WhatsApp for exact directions.
             </p>
           </div>
         </section>

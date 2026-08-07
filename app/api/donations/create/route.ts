@@ -9,9 +9,7 @@ const stripeKey = process.env.STRIPE_SECRET_KEY
 let stripe: Stripe | null = null
 
 if (stripeKey) {
-  stripe = new Stripe(stripeKey, {
-    apiVersion: '2024-12-18.acacia',
-  })
+  stripe = new Stripe(stripeKey)
 }
 
 export async function POST(request: NextRequest) {
@@ -81,8 +79,8 @@ export async function POST(request: NextRequest) {
           price_data: {
             currency: currency.toLowerCase(),
             product_data: {
-              name: 'Donation to KITIIBWA SAFARIS',
-              description: 'Support conservation and community development in Uganda',
+              name: 'Donation to Kitiibwa Children Initiative',
+              description: 'Support education, care, and brighter futures for children in Uganda',
             },
             unit_amount: Math.round(numAmount * 100),
           },
@@ -96,8 +94,6 @@ export async function POST(request: NextRequest) {
         message: message || '',
       },
     })
-
-    console.log('[DONATION] Stripe session created:', session.id)
 
     return NextResponse.json(
       {

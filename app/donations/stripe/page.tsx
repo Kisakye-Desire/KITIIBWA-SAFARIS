@@ -51,7 +51,7 @@ export default function StripeDonationPage() {
             <p className="mt-5 max-w-xl leading-relaxed text-muted-foreground">Your donation helps Kitiibwa Children Initiative provide education, care, school support, and opportunities for children in Uganda.</p>
             <div className="mt-8 rounded-2xl border border-accent/30 bg-accent/10 p-5 text-sm text-foreground">
               <p className="font-semibold">Prefer mobile money?</p>
-              <p className="mt-2 text-muted-foreground">Airtel Money: <strong>0702 345273</strong> · MTN Mobile Money: <strong>0773 525452</strong></p>
+              <p className="mt-2 text-muted-foreground">Airtel Money: <strong>0702 345273</strong> · MTN Mobile Money: <strong>0773525452</strong></p>
               <p className="mt-1 text-muted-foreground">Both are registered to Muwaga Hannington.</p>
             </div>
             <Link href="/donations" className="mt-6 inline-flex text-sm font-semibold text-primary underline underline-offset-4">Return to all donation methods</Link>
