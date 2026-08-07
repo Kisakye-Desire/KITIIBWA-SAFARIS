@@ -89,12 +89,12 @@ export default function Donations() {
   }
 
   const bankDetails = {
-    bank: 'Centenary Bank Uganda',
-    accountName: 'KITIIBWA SAFARIS',
-    accountNumber: '3204835515',
-    branch: 'Mukono Branch',
-    swiftCode: 'CENBUGKA',
-    currency: 'UGX / USD',
+    bank: 'Lloyds Bank',
+    accountName: 'Henry Alizeyuna',
+    sortCode: '30-98-79',
+    accountNumber: '56234168',
+    iban: 'GB38LOYD30987956234168',
+    bicSwift: 'LOYDGB21098',
   }
 
   const activeMobile = mobileMoneyDetails[mobileNetwork]
@@ -546,8 +546,9 @@ export default function Donations() {
                       <div className="p-6 bg-gradient-to-br from-blue-500/10 to-primary/5">
                         <h3 className="font-bold text-primary text-lg mb-6 flex items-center gap-2">
                           <span className="text-2xl">🏦</span>
-                          Centenary Bank Transfer
+                          UK Bank Transfer · Lloyds Bank
                         </h3>
+                        <p className="mb-5 text-sm text-muted-foreground">Use the UK details for UK transfers. For international transfers, use the IBAN and BIC / SWIFT shown below.</p>
 
                         {donationType === 'school-fees' && (
                           <div className="mb-5 bg-accent/10 border border-accent/20 rounded-xl p-4">
@@ -562,11 +563,11 @@ export default function Donations() {
                         <div className="space-y-3">
                           {[
                             { label: 'Bank Name', value: bankDetails.bank, copyKey: null },
-                            { label: 'Account Name', value: bankDetails.accountName, copyKey: 'accountName' },
+                            { label: 'Names on Account', value: bankDetails.accountName, copyKey: 'accountName' },
+                            { label: 'Sort Code', value: bankDetails.sortCode, copyKey: 'sortCode' },
                             { label: 'Account Number', value: bankDetails.accountNumber, copyKey: 'accountNumber' },
-                            { label: 'Branch', value: bankDetails.branch, copyKey: null },
-                            { label: 'Swift Code', value: bankDetails.swiftCode, copyKey: 'swift' },
-                            { label: 'Currency', value: bankDetails.currency, copyKey: null },
+                            { label: 'IBAN', value: bankDetails.iban, copyKey: 'iban' },
+                            { label: 'BIC / SWIFT', value: bankDetails.bicSwift, copyKey: 'swift' },
                           ].map(({ label, value, copyKey }) => (
                             <div key={label} className="bg-background rounded-xl p-4 border border-border flex items-center justify-between">
                               <div>

@@ -3,12 +3,14 @@
 import Link from 'next/link'
 import { Mail, Phone, MapPin } from 'lucide-react'
 import { contactInfo, siteMetadata, socialLinks } from '@/lib/data/site-config'
+import ContactStrip from '@/components/contact-strip'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
     <footer className="bg-gradient-safari text-primary-foreground mt-16 relative overflow-hidden">
+      <ContactStrip compact />
       {/* Watermark-style background effect */}
       <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
         backgroundImage: 'radial-gradient(circle at 20% 80%, rgba(212, 165, 116, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(245, 176, 65, 0.3) 0%, transparent 50%)',

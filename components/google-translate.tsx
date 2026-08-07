@@ -2,6 +2,18 @@
 
 import { useEffect } from 'react'
 
+const languages = [
+  { value: '', label: 'English' },
+  { value: 'fr', label: 'Français' },
+  { value: 'de', label: 'Deutsch' },
+  { value: 'es', label: 'Español' },
+  { value: 'it', label: 'Italiano' },
+  { value: 'pt', label: 'Português' },
+  { value: 'sw', label: 'Kiswahili' },
+  { value: 'ar', label: 'العربية' },
+  { value: 'zh-CN', label: '简体中文' },
+]
+
 export default function GoogleTranslate() {
   useEffect(() => {
     const existing = document.getElementById('google-translate-script')
@@ -23,11 +35,29 @@ export default function GoogleTranslate() {
     document.body.appendChild(script)
   }, [])
 
+  const changeLanguage = (language: string) => {
+    const googleSelect = document.querySelector<HTMLSelectElement>('.goog-te-combo')
+    if (!googleSelect) return
+    googleSelect.value = language
+    googleSelect.dispatchEvent(new Event('change'))
+  }
+
   return (
-    <div className="flex items-center gap-2 text-sm">
-      <span className="sr-only">Translate this website</span>
-      <span aria-hidden="true">Language</span>
-      <div id="google_translate_element" className="min-w-28" />
+    <div className="language-switcher flex items-center gap-2 rounded-full border border-border bg-background/80 px-2.5 py-1 text-xs font-semibold text-foreground shadow-sm">
+      <label htmlFor="site-language" className="whitespace-nowrap">Language</label>
+      <select
+        id="site-language"
+        defaultValue=""
+        onChange={(event) => changeLanguage(event.target.value)}
+        className="max-w-24 cursor-pointer truncate border-0 bg-transparent text-xs font-semibold outline-none"
+      >
+        {languages.map((language) => (
+          <option key={language.value || 'en'} value={language.value}>
+            {language.label}
+          </option>
+        ))}
+      </select>
+      <div id="google_translate_element" className="sr-only" aria-hidden="true" />
     </div>
   )
 }

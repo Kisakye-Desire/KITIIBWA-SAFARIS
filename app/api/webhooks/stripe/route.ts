@@ -11,7 +11,7 @@ const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || ''
 let stripe: Stripe | null = null
 if (stripeKey) {
   stripe = new Stripe(stripeKey, {
-    apiVersion: '2024-12-18.acacia',
+    apiVersion: '2026-06-24.dahlia',
   })
 }
 

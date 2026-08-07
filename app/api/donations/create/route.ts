@@ -44,11 +44,16 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Please wait before making another donation' }, { status: 429 })
     }
 
-    // Sanitize inputs
-    donorName = sanitizeInput(donorName)
-    donorEmail = donorEmail.toLowerCase().trim()
-    message = message ? sanitizeInput(message) : null
-    currency = currency || 'USD'
+    // Sanitize inputs and keep Stripe currency values predictable.
+    donorName = sanitizeInput(String(donorName))
+    donorEmail = String(donorEmail).toLowerCase().trim()
+    message = message ? sanitizeInput(String(message)) : null
+    const normalizedCurrency = String(currency || 'USD').toUpperCase()
+    const supportedCurrencies = new Set(['USD', 'GBP', 'EUR', 'UGX'])
+    if (!supportedCurrencies.has(normalizedCurrency)) {
+      return NextResponse.json({ error: 'This donation currency is not currently supported for card payments.' }, { status: 400 })
+    }
+    currency = normalizedCurrency
 
     // Get client IP
     const ip = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown'

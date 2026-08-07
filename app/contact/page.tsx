@@ -67,7 +67,18 @@ export default function Contact() {
     setIsSubmitting(false)
   }
 
-  const officeInfo = {
+  const officeInfo: Record<string, {
+    label: string
+    flag: string
+    phone: string
+    whatsapp: string
+    email: string
+    address: string
+    hours: string
+    color: string
+    border: string
+    mapUrl?: string
+  }> = {
     uganda: {
       label: 'Uganda Office',
       flag: '🇺🇬',
@@ -338,19 +349,15 @@ export default function Contact() {
                       <div>
                         <label className="block text-sm font-semibold text-primary mb-3">Which office would you like to contact? *</label>
                         <div className="grid grid-cols-2 gap-3">
-                          {['uganda', 'uk'].map((office) => (
-                      <button
-                        type="button"
-                        onClick={() => {
-                          const subject = formData.subject || 'Kitiibwa Children Initiative inquiry'
-                          const body = `Hello Kitiibwa Children Initiative,\n\nName: ${formData.name}\nPhone: ${formData.phone}\n\n${formData.message}`
-                          window.location.href = `mailto:info@kitiibwasafaris.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-                        }}
-                        className="w-full bg-gradient-to-r from-primary to-primary/80 hover:to-accent hover:from-accent text-primary-foreground py-3.5 rounded-xl font-bold text-base transition-all transform hover:scale-[1.02] hover:shadow-xl shadow-lg flex items-center justify-center gap-2"
-                      >
-                        <Send className="h-5 w-5" />
-                        Send Message by Email
-                      </button>
+                          {(['uganda', 'uk'] as const).map((office) => (
+                            <button
+                              key={office}
+                              type="button"
+                              onClick={() => setFormData((previous) => ({ ...previous, country: office }))}
+                              className={`rounded-xl border-2 p-3 text-sm font-semibold transition-all ${formData.country === office ? 'border-primary bg-primary/10 text-primary' : 'border-border text-muted-foreground hover:border-primary/40'}`}
+                            >
+                              {office === 'uganda' ? 'Uganda Office' : 'UK Representative'}
+                            </button>
                           ))}
                         </div>
                       </div>
@@ -460,7 +467,7 @@ export default function Contact() {
 
                       {/* Send Message */}
                       <a
-                        href="mailto:info@kitiibwasafaris.com?subject=KITIIBWA%20Children%20Initiative%20Inquiry"
+                        href={`mailto:info@kitiibwasafaris.com?subject=${encodeURIComponent(formData.subject || 'KITIIBWA SAFARIS inquiry')}&body=${encodeURIComponent(`Hello Kitiibwa Safaris,\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\n${formData.message}`)}`}
                         className="w-full bg-gradient-to-r from-primary to-primary/80 hover:to-accent hover:from-accent text-primary-foreground py-3.5 rounded-xl font-bold text-base transition-all transform hover:scale-[1.02] hover:shadow-xl shadow-lg flex items-center justify-center gap-2"
                         title="Open your email client and send to info@kitiibwasafaris.com"
                       >

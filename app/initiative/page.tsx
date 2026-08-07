@@ -10,6 +10,8 @@ import ScrollReveal from '@/components/scroll-reveal'
 import { TextGradient } from '@/components/ui/effects'
 import FeatureCard from '@/components/feature-card'
 import ImpactGallery from '@/components/impact-gallery'
+import SocialIcons from '@/components/social-icons'
+import { socialLinks } from '@/lib/data/site-config'
 
 export default function Initiative() {
   const programs = [
@@ -78,6 +80,16 @@ export default function Initiative() {
                 Creating lasting change by helping children access education, care, confidence, and opportunity while strengthening the families and communities that help them thrive across Uganda.
               </p>
             </ScrollReveal>
+            <div className="mt-7 flex flex-wrap items-center gap-4">
+              <span className="text-sm font-semibold text-primary">Follow the Children Initiative</span>
+              <SocialIcons
+                size="sm"
+                facebook={socialLinks.find((link) => link.name === 'Facebook')?.url}
+                instagram={socialLinks.find((link) => link.name === 'Instagram')?.url}
+                tiktok={socialLinks.find((link) => link.name === 'TikTok')?.url}
+                email="info@kitiibwasafaris.com"
+              />
+            </div>
           </div>
         </section>
 

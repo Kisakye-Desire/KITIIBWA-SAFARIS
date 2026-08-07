@@ -8,6 +8,7 @@ import { SectionHeading, AnimatedCard, InteractiveImage, TextGradient } from '@/
 import ScrollReveal from '@/components/scroll-reveal'
 import EventAnnouncement from '@/components/event-announcement'
 import PartnersSection from '@/components/partners'
+import PackageMarquee from '@/components/package-marquee'
 
 export const metadata = {
   title: 'Home | Kitiibwa Children Initiative',
@@ -23,15 +24,7 @@ export default function Home() {
         <HeroCarousel />
 
         {/* Package marquee */}
-        <section className="overflow-hidden border-y border-accent/30 bg-primary py-3 text-primary-foreground" aria-label="Featured packages">
-          <div className="flex min-w-max animate-marquee items-center gap-10 whitespace-nowrap">
-            {['Classic Uganda Safari · 5 days', 'Gorilla & Wildlife Adventure · 7 days', 'Luxury Uganda Escape · 8 days', 'Budget Explorer · 4 days', 'Family-friendly journeys with Kitiibwa'].map((packageName) => (
-              <Link key={packageName} href="/packages" className="text-sm font-semibold tracking-wide transition-colors hover:text-accent">
-                {packageName} <span className="ml-2 text-accent">Explore package →</span>
-              </Link>
-            ))}
-          </div>
-        </section>
+        <PackageMarquee />
 
 
         {/* Welcome Section */}
