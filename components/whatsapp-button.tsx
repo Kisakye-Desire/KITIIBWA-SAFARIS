@@ -1,7 +1,7 @@
 'use client'
 
 export default function WhatsAppButton() {
-  const whatsappNumber = '447884181149'
+  const whatsappNumber = '256702345273'
   const whatsappMessage = encodeURIComponent(
     'Hello KITIIBWA SAFARIS,\n\nI came across your website and I am interested in learning more about your safari experiences in Uganda.\n\nCould you please provide more information?\n\nThank you.'
   )

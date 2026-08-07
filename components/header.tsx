@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import GoogleTranslate from '@/components/google-translate'
+import { contactInfo, siteMetadata } from '@/lib/data/site-config'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -17,7 +18,7 @@ export default function Header() {
     { name: 'Safari & Chill', href: '/safari-chill-experience' },
     { name: 'Uganda', href: '/uganda' },
     { name: 'Blog', href: '/blog' },
-    { name: 'KITIIBWA Initiative', href: '/initiative' },
+    { name: 'Children Initiative', href: '/initiative' },
     { name: 'Best Of', href: '/best-of' },
     { name: 'Packages', href: '/packages' },
     { name: 'Contact', href: '/contact' },
@@ -28,9 +29,9 @@ export default function Header() {
       <div className="border-b border-border/70 bg-muted/40">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 text-xs text-muted-foreground sm:px-6 lg:px-8">
           <div className="hidden items-center gap-4 truncate sm:flex">
-            <span>Mukon Acess Clinic, Mukon Town, Kampala Jinja Rd, Opposite Harred Petrol Station, Uganda</span>
-            <a href="mailto:info@kitiibwasafaris.com" className="hover:text-primary">info@kitiibwasafaris.com</a>
-            <a href="tel:+256702345273" className="hover:text-primary">+256 702 345273</a>
+            <span>{contactInfo.address}</span>
+            <a href={`mailto:${contactInfo.email}`} className="hover:text-primary">{contactInfo.email}</a>
+            <a href="tel:+256702345273" className="hover:text-primary">{contactInfo.phone.uganda}</a>
           </div>
           <div className="ml-auto flex items-center gap-4">
             <div className="hidden items-center gap-3 sm:flex" aria-label="Social media links">
@@ -48,7 +49,7 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-2 hover:scale-110 transition-transform duration-300">
             <Image
               src="/logo.png"
-              alt="KITIIBWA SAFARIS"
+              alt={siteMetadata.title}
               width={120}
               height={120}
               className="h-16 w-auto animate-fade-in-down"

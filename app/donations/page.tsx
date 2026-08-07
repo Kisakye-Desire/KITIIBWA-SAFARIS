@@ -61,7 +61,7 @@ export default function Donations() {
       instructions: [
         'Dial *185# on your phone',
         'Select "Send Money"',
-        `Enter number: 0708898424`,
+        `Enter number: 0702 345273`,
         donationType === 'school-fees' ? `Enter amount: ${totalFees} USD equivalent in UGX` : 'Enter the amount you wish to donate',
         'Confirm with your PIN',
         'Screenshot the confirmation and send to us on WhatsApp',
@@ -77,7 +77,7 @@ export default function Donations() {
       instructions: [
         'Dial *165# on your phone',
         'Select "Transfer Money" then "To MTN Number"',
-        `Enter number: 0763705967`,
+        `Enter number: 0773 525452`,
         donationType === 'school-fees' ? `Enter amount: ${totalFees} USD equivalent in UGX` : 'Enter the amount you wish to donate',
         'Confirm with your PIN',
         'Screenshot the confirmation and send to us on WhatsApp',
@@ -118,7 +118,7 @@ export default function Donations() {
                 Support Our Mission
               </h1>
               <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
-                Your donation directly supports wildlife conservation, community education, children&apos;s school fees, healthcare initiatives, and sustainable livelihoods across Uganda&apos;s communities.
+                Your donation helps children in Uganda access education, school support, essential care, and the encouragement they need to grow into confident, hopeful adults.
               </p>
             </ScrollReveal>
           </div>
@@ -604,7 +604,7 @@ export default function Donations() {
                     <div className="bg-card rounded-2xl shadow-xl border border-border overflow-hidden">
                       <div className="p-8 text-center">
                         <div className="text-5xl mb-4">💳</div>
-                        <h3 className="font-bold text-primary text-xl mb-3">Card Payment via Stripe</h3>
+                        <h3 className="font-bold text-primary text-xl mb-3">Secure Card Payment via Stripe</h3>
                         <p className="text-muted-foreground mb-6 leading-relaxed">
                           Securely donate using your credit or debit card through Stripe. Accepts Visa, Mastercard, and American Express worldwide.
                         </p>

@@ -75,7 +75,7 @@ export default function Initiative() {
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
-                Creating positive impact through wildlife conservation, education, community empowerment, and sustainable development across Uganda's communities and ecosystems.
+                Creating lasting change by helping children access education, care, confidence, and opportunity while strengthening the families and communities that help them thrive across Uganda.
               </p>
             </ScrollReveal>
           </div>

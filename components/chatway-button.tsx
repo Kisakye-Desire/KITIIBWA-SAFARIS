@@ -19,7 +19,7 @@ export default function ChatwayButton() {
       </span>
       <span className="hidden sm:flex flex-col items-start gap-0.5 pr-2">
         <span className="flex items-center gap-1 text-sm font-semibold"><MessageCircle className="size-4 text-primary" /> Chat with us</span>
-        <span className="text-xs text-muted-foreground">We&apos;re here to help</span>
+        <span className="text-xs text-muted-foreground">Online · replies as soon as possible</span>
       </span>
     </a>
   )

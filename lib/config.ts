@@ -8,7 +8,7 @@
 export const BUSINESS_INFO = {
   name: 'Kitiibwa Children Initiative',
   tagline: 'Helping children in Uganda thrive',
-  description: 'Kitiibwa Children Initiative supports children through education, care, community empowerment, and sustainable opportunities across Uganda.',
+  description: 'Kitiibwa Children Initiative helps children in Uganda learn, grow, and thrive through education, practical care, family support, and pathways to a brighter future.',
   
   // Contact Information - UPDATE THESE
   email: process.env.BUSINESS_EMAIL || 'contact@kitiibwasafaris.com', // PLACEHOLDER - Update in .env
@@ -88,9 +88,9 @@ export const PAYMENT_CONFIG = {
   mobileMoney: {
     enabled: true,
     methods: {
-      mtn: '+256 708 898 424',
-      airtel: '+256 708 898 424',
-      africell: '+256 708 898 424',
+      mtn: '+256 773 525452',
+      airtel: '+256 702 345273',
+      africell: 'Not currently available',
     },
   },
 }

@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { Mail, Phone, MapPin } from 'lucide-react'
+import { contactInfo, siteMetadata, socialLinks } from '@/lib/data/site-config'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -21,7 +22,7 @@ export default function Footer() {
               Kitiibwa Children Initiative
             </h3>
             <p className="text-sm opacity-90">
-              Helping children in Uganda thrive through education, care, community support, and sustainable opportunities.
+              Helping children in Uganda learn, grow, and thrive through education, care, family support, and opportunity.
             </p>
           </div>
 
@@ -86,18 +87,18 @@ export default function Footer() {
               <li className="flex items-start gap-2 hover:translate-x-1 transition">
                 <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" />
                 <div className="flex flex-col gap-1">
-                  <span>Uganda: +256 702 345273</span>
-                  <span>UK: +44 7884 181149</span>
-                  <a href="mailto:info@kitiibwasafaris.com" className="hover:underline">info@kitiibwasafaris.com</a>
+                  <span>Uganda: {contactInfo.phone.uganda}</span>
+                  <span>UK: {contactInfo.phone.uk}</span>
+                  <a href={`mailto:${contactInfo.email}`} className="hover:underline">{contactInfo.email}</a>
                 </div>
               </li>
               <li className="flex items-start gap-2 hover:translate-x-1 transition">
                 <Mail className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>info@kitiibwasafaris.com</span>
+                <span>{contactInfo.email}</span>
               </li>
               <li className="flex items-start gap-2 hover:translate-x-1 transition">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>Mukon Acess Clinic, Mukon Town, Kampala Jinja Rd, Opposite Harred Petrol Station, Uganda</span>
+                <span>{contactInfo.address}</span>
               </li>
             </ul>
           </div>
@@ -107,19 +108,15 @@ export default function Footer() {
         <div className="border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col items-center gap-6 mb-6">
             <div className="flex items-center gap-6">
-              <a href="https://facebook.com/kitiibwasafaris" target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition text-lg" aria-label="Facebook">
-                f
-              </a>
-              <a href="https://instagram.com/kitiibwasafaris" target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition text-lg" aria-label="Instagram">
-                📷
-              </a>
-              <a href="https://tiktok.com/@kitiibwasafaris" target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition text-lg" aria-label="TikTok">
-                🎵
-              </a>
+              {socialLinks.slice(0, 3).map((social) => (
+                <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition text-sm font-semibold" aria-label={social.name}>
+                  {social.name}
+                </a>
+              ))}
             </div>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center text-sm opacity-75">
-            <p>&copy; {currentYear} KITIIBWA SAFARIS. All rights reserved.</p>
+            <p>&copy; {currentYear} {siteMetadata.title}. All rights reserved.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
               <Link href="/privacy" className="hover:opacity-100 transition">
                 Privacy Policy

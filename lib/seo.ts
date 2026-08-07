@@ -14,8 +14,8 @@ export interface SEOMetadata {
 }
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://kitiibwasafaris.com'
-const siteName = 'KITIIBWA SAFARIS'
-const siteDescription = 'Premium Uganda safari adventures focused on conservation, wildlife viewing, and community engagement'
+const siteName = 'Kitiibwa Children Initiative'
+const siteDescription = 'Helping children in Uganda thrive through education, care, family support, and opportunity.'
 
 // Default OG image
 const defaultOGImage = `${baseUrl}/images/og-default.jpg`
@@ -23,8 +23,8 @@ const defaultOGImage = `${baseUrl}/images/og-default.jpg`
 // Page metadata definitions
 export const pageMetadata: Record<string, SEOMetadata> = {
   home: {
-    title: 'KITIIBWA SAFARIS - Premium Uganda Safari Adventures & Conservation',
-    description: 'Experience authentic safari adventures in Uganda. Gorilla trekking, wildlife viewing, and community engagement. Expert-guided tours with conservation focus.',
+    title: 'Kitiibwa Children Initiative | Helping Children Thrive in Uganda',
+    description: 'Kitiibwa Children Initiative helps children in Uganda thrive through education, care, family support, and practical opportunity.',
     keywords: [
       'Uganda safari',
       'gorilla trekking',
@@ -39,8 +39,8 @@ export const pageMetadata: Record<string, SEOMetadata> = {
     type: 'website',
   },
   about: {
-    title: 'About KITIIBWA SAFARIS | Conservation-Focused Tourism',
-    description: 'Learn about KITIIBWA SAFARIS mission to combine authentic safari experiences with conservation and community development in Uganda.',
+    title: 'About Kitiibwa Children Initiative | Our Team and Mission',
+    description: 'Meet the team and learn how Kitiibwa Children Initiative supports children, families, and communities across Uganda.',
     keywords: [
       'about KITIIBWA',
       'conservation tourism',
@@ -78,8 +78,8 @@ export const pageMetadata: Record<string, SEOMetadata> = {
     url: `${baseUrl}/cottages`,
   },
   donations: {
-    title: 'Donate to KITIIBWA | Support Conservation & Community',
-    description: 'Support wildlife conservation, community development, and sustainable tourism in Uganda. 100% of donations go to programs.',
+    title: 'Donate to Kitiibwa Children Initiative | Support Children in Uganda',
+    description: 'Support education, school fees, essential care, and brighter futures for children across Uganda.',
     keywords: [
       'donate Uganda',
       'conservation donations',
@@ -91,8 +91,8 @@ export const pageMetadata: Record<string, SEOMetadata> = {
     url: `${baseUrl}/donations`,
   },
   contact: {
-    title: 'Contact KITIIBWA SAFARIS | Get in Touch',
-    description: 'Contact KITIIBWA SAFARIS for safari inquiries, bookings, or partnerships. We respond within 24 hours.',
+    title: 'Contact Kitiibwa Children Initiative | Get in Touch',
+    description: 'Contact Kitiibwa Children Initiative about children, family support, partnerships, and community programs.',
     keywords: ['contact', 'safari booking', 'inquiries', 'Uganda tourism'],
     image: `${baseUrl}/images/og-contact.jpg`,
     url: `${baseUrl}/contact`,

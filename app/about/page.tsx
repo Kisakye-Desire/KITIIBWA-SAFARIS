@@ -72,7 +72,7 @@ export default function About() {
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
-                Pioneering premium African safari experiences with a commitment to conservation, community empowerment, and authentic cultural connections that transform lives and protect our planet.
+                Kitiibwa Children Initiative works alongside children, families, and communities to make education, care, and opportunity more accessible across Uganda.
               </p>
             </ScrollReveal>
           </div>
@@ -85,7 +85,7 @@ export default function About() {
           }} />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
             <ScrollReveal className="mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center">Meet The Founder</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center">Meet Our Team</h2>
             </ScrollReveal>
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <ScrollReveal direction="left">
@@ -171,13 +171,13 @@ export default function About() {
               <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-8 rounded-lg">
                 <h3 className="text-2xl font-bold text-primary mb-4">Our Vision</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To be Africa's most respected safari company, recognized for creating transformative wildlife experiences that inspire conservation, empower communities, and foster a deep appreciation for the natural world. We envision a future where responsible tourism protects Uganda's magnificent ecosystems while connecting people across cultures through authentic adventure.
+                  To see children across Uganda grow up safe, supported, educated, and confident in their ability to shape their own futures.
                 </p>
               </div>
               <div className="bg-gradient-to-br from-secondary/5 to-accent/5 p-8 rounded-lg">
                 <h3 className="text-2xl font-bold text-primary mb-4">Our Mission</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To curate exceptional safari experiences that showcase Uganda's incredible wildlife and landscapes while supporting conservation efforts and uplifting local communities. We're committed to delivering personalized service, sustainable tourism practices, and unforgettable journeys that create lasting memories and positive impact on both our guests and the environments we operate in.
+                  To partner with communities to provide children with learning support, essential care, encouragement, and practical pathways to a brighter future—while strengthening the families and local leaders who make lasting change possible.
                 </p>
               </div>
             </div>

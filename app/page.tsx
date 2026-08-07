@@ -10,8 +10,8 @@ import EventAnnouncement from '@/components/event-announcement'
 import PartnersSection from '@/components/partners'
 
 export const metadata = {
-  title: 'Home | KITIIBWA SAFARIS',
-  description: 'Welcome to KITIIBWA SAFARIS - Premium African Safari Experiences in Uganda',
+  title: 'Home | Kitiibwa Children Initiative',
+  description: 'Kitiibwa Children Initiative helps children in Uganda thrive through education, care, and community support.',
 }
 
 export default function Home() {
@@ -21,6 +21,18 @@ export default function Home() {
       <main className="min-h-screen">
         {/* Hero Carousel Section */}
         <HeroCarousel />
+
+        {/* Package marquee */}
+        <section className="overflow-hidden border-y border-accent/30 bg-primary py-3 text-primary-foreground" aria-label="Featured packages">
+          <div className="flex min-w-max animate-marquee items-center gap-10 whitespace-nowrap">
+            {['Classic Uganda Safari · 5 days', 'Gorilla & Wildlife Adventure · 7 days', 'Luxury Uganda Escape · 8 days', 'Budget Explorer · 4 days', 'Family-friendly journeys with Kitiibwa'].map((packageName) => (
+              <Link key={packageName} href="/packages" className="text-sm font-semibold tracking-wide transition-colors hover:text-accent">
+                {packageName} <span className="ml-2 text-accent">Explore package →</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
 
         {/* Welcome Section */}
         <section className="py-16 md:py-24 bg-gradient-to-b from-background via-secondary/10 to-background relative overflow-hidden">
@@ -34,12 +46,12 @@ export default function Home() {
                   <TextGradient className="text-lg md:text-2xl font-bold tracking-tight">Welcome Aboard</TextGradient>
                 </div>
               </div>
-              <SectionHeading animated>Kitiibwa Safaris - Adventure. Nature. Relaxation. All in One.</SectionHeading>
+              <SectionHeading animated>Kitiibwa Children Initiative — Every Child Deserves a Chance to Thrive</SectionHeading>
               <p className="text-lg text-muted-foreground mb-4 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                Embark on the journey of a lifetime in the Pearl of Africa. KITIIBWA SAFARIS delivers authentic, transformative safari experiences that connect you with Uganda&apos;s breathtaking wildlife, stunning landscapes, and vibrant cultures. Since our founding, we have been committed to creating not just memorable holidays, but meaningful encounters with nature and genuine human connections.
+                Kitiibwa Children Initiative exists to help children in Uganda learn, grow, and step into hopeful futures. Through education support, practical care, family partnerships, and community-led programs, we turn compassion into opportunities that last.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                Every safari we arrange is carefully curated to showcase the best of Uganda&apos;s national parks while supporting conservation efforts and empowering local communities. Whether you seek the thrill of tracking mountain gorillas, the wonder of wildlife encounters, or the tranquility of pristine nature, KITIIBWA SAFARIS transforms your dreams into reality.
+                Our work is rooted in dignity, accountability, and the belief that children flourish when families and communities are supported together. Every contribution helps create safer learning environments, meet essential needs, and open doors to brighter possibilities.
               </p>
             </div>
 

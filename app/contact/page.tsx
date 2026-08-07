@@ -74,7 +74,7 @@ export default function Contact() {
       phone: '+256 702 345273',
       whatsapp: '+256 702 345273',
       email: 'info@kitiibwasafaris.com',
-      address: 'Mukono Town, Kampala Jinja Road, Opposite Harred Petrol Station, Uganda',
+      address: 'Mukon Acess Clinic, Mukon Town, Kampala Jinja Rd, Opposite Harred Petrol Station, Uganda',
       hours: 'Mon–Fri: 8:00 AM – 6:00 PM EAT',
       color: 'from-yellow-500/20 to-red-500/10',
       border: 'border-yellow-500/30',
@@ -94,7 +94,7 @@ export default function Contact() {
   }
 
   const activeOffice = officeInfo[formData.country as keyof typeof officeInfo] || officeInfo.uganda
-  const waNumber = formData.country === 'uk' ? '447884181149' : '447884181149'
+  const waNumber = formData.country === 'uk' ? '447884181149' : '256702345273'
   const waLink = `https://wa.me/${waNumber}?text=Hello%20KITIIBWA%20SAFARIS%2C%20I%20found%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20safari%20services.`
 
   return (
@@ -177,7 +177,7 @@ export default function Contact() {
                       <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                       <div>
                         <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider mb-1">Address</p>
-                        <p className="text-foreground text-sm">Mukono Access Clinic, Mukono District, Uganda</p>
+                        <p className="text-foreground text-sm">Mukon Acess Clinic, Mukon Town, Kampala Jinja Rd, Opposite Harred Petrol Station, Uganda</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -339,19 +339,18 @@ export default function Contact() {
                         <label className="block text-sm font-semibold text-primary mb-3">Which office would you like to contact? *</label>
                         <div className="grid grid-cols-2 gap-3">
                           {['uganda', 'uk'].map((office) => (
-                            <button
-                              key={office}
-                              type="button"
-                              onClick={() => setFormData(prev => ({ ...prev, country: office }))}
-                              className={`p-3 rounded-xl border-2 transition-all flex items-center gap-2 font-semibold text-sm ${
-                                formData.country === office
-                                  ? 'border-primary bg-primary/10 text-primary'
-                                  : 'border-border hover:border-primary/50 text-muted-foreground'
-                              }`}
-                            >
-                              <span>{office === 'uganda' ? '🇺🇬' : '🇬🇧'}</span>
-                              <span>{office === 'uganda' ? 'Uganda' : 'UK'}</span>
-                            </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const subject = formData.subject || 'Kitiibwa Children Initiative inquiry'
+                          const body = `Hello Kitiibwa Children Initiative,\n\nName: ${formData.name}\nPhone: ${formData.phone}\n\n${formData.message}`
+                          window.location.href = `mailto:info@kitiibwasafaris.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+                        }}
+                        className="w-full bg-gradient-to-r from-primary to-primary/80 hover:to-accent hover:from-accent text-primary-foreground py-3.5 rounded-xl font-bold text-base transition-all transform hover:scale-[1.02] hover:shadow-xl shadow-lg flex items-center justify-center gap-2"
+                      >
+                        <Send className="h-5 w-5" />
+                        Send Message by Email
+                      </button>
                           ))}
                         </div>
                       </div>
@@ -459,27 +458,15 @@ export default function Contact() {
                         </div>
                       )}
 
-                      {/* Submit Button */}
-                      <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="w-full bg-gradient-to-r from-primary to-primary/80 hover:to-accent hover:from-accent text-primary-foreground py-3.5 rounded-xl font-bold text-base transition-all transform hover:scale-[1.02] hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-lg flex items-center justify-center gap-2"
+                      {/* Send Message */}
+                      <a
+                        href="mailto:info@kitiibwasafaris.com?subject=KITIIBWA%20Children%20Initiative%20Inquiry"
+                        className="w-full bg-gradient-to-r from-primary to-primary/80 hover:to-accent hover:from-accent text-primary-foreground py-3.5 rounded-xl font-bold text-base transition-all transform hover:scale-[1.02] hover:shadow-xl shadow-lg flex items-center justify-center gap-2"
+                        title="Open your email client and send to info@kitiibwasafaris.com"
                       >
-                        {isSubmitting ? (
-                          <>
-                            <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
-                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                            </svg>
-                            Sending...
-                          </>
-                        ) : (
-                          <>
-                            <Send className="h-5 w-5" />
-                            Send Message
-                          </>
-                        )}
-                      </button>
+                        <Send className="h-5 w-5" />
+                        Send Message
+                      </a>
 
                       <p className="text-center text-xs text-muted-foreground">
                         Your message will be sent to <span className="text-primary font-semibold">info@kitiibwasafaris.com</span>. We respond within 24 hours.
@@ -509,7 +496,7 @@ export default function Contact() {
               />
             </div>
             <p className="text-muted-foreground mt-4 text-sm">
-              Mukono Access Clinic, Mukono District, Uganda. Contact us on WhatsApp for exact directions.
+              Mukon Acess Clinic, Mukon Town, Kampala Jinja Rd, Opposite Harred Petrol Station, Uganda. Contact us on WhatsApp for exact directions.
             </p>
           </div>
         </section>
