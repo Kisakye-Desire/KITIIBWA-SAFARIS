@@ -6,9 +6,9 @@
 
 // BUSINESS INFORMATION
 export const BUSINESS_INFO = {
-  name: 'KITIIBWA SAFARIS',
-  tagline: 'Premium African Safari Experiences',
-  description: 'Experience unforgettable wildlife adventures with KITIIBWA SAFARIS. Gorilla trekking, luxury accommodations, and guided tours in Uganda\'s most pristine destinations.',
+  name: 'Kitiibwa Children Initiative',
+  tagline: 'Helping children in Uganda thrive',
+  description: 'Kitiibwa Children Initiative supports children through education, care, community empowerment, and sustainable opportunities across Uganda.',
   
   // Contact Information - UPDATE THESE
   email: process.env.BUSINESS_EMAIL || 'contact@kitiibwasafaris.com', // PLACEHOLDER - Update in .env

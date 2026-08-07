@@ -52,13 +52,13 @@ export const socialLinks: SocialLink[] = [
 ]
 
 export const contactInfo: ContactInfo = {
-  email: 'kisakyedhisayar@gmail.com',
+  email: 'info@kitiibwasafaris.com',
   phone: {
     uganda: '+256 702 345273',
     uk: '+44 7884 181149',
   },
-  address: 'Mukono Access Clinic, Mukono District, Uganda',
-  whatsapp: 'https://wa.me/447884181149',
+  address: 'Mukon Acess Clinic, Mukon Town, Kampala Jinja Rd, Opposite Harred Petrol Station, Uganda',
+  whatsapp: 'https://wa.me/256702345273',
   operatingHours: {
     weekday: 'Monday - Friday: 8:00 AM - 6:00 PM EAT',
     saturday: 'Saturday: 9:00 AM - 4:00 PM EAT',
@@ -67,9 +67,9 @@ export const contactInfo: ContactInfo = {
 }
 
 export const siteMetadata: SiteMetadata = {
-  title: 'KITIIBWA SAFARIS - Premium Uganda Safari Adventures',
-  description: 'Experience authentic safari adventures in Uganda with conservation-focused tourism. Gorilla trekking, wildlife viewing, and community engagement.',
-  tagline: 'Adventure • Conservation • Community',
+  title: 'Kitiibwa Children Initiative',
+  description: 'Kitiibwa Children Initiative helps children in Uganda thrive through education, practical support, community care, and opportunities for a brighter future.',
+  tagline: 'Every child deserves a chance to thrive',
   domain: 'kitiibwasafaris.com',
   logo: '/images/logo.png',
   favicon: '/favicon.ico',
@@ -86,9 +86,9 @@ export const bankTransferDetails = {
 }
 
 export const mobilePaymentMethods = {
-  mtn: '+256 708898424 (MTN Mobile Money)',
-  airtel: '+256 708898424 (Airtel Money)',
-  africell: '+256 708898424 (Africell)',
+  mtn: '+256 773525452 (MTN Mobile Money) — Muwaga Hannington',
+  airtel: '+256 702345273 (Airtel Money) — Muwaga Hannington',
+  africell: 'Not currently available',
 }
 
 // Helper functions

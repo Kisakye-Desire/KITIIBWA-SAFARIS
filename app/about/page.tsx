@@ -11,8 +11,8 @@ import FeatureCard from '@/components/feature-card'
 
 
 export const metadata = {
-  title: 'About Us | KITIIBWA SAFARIS',
-  description: 'Learn about KITIIBWA SAFARIS - Our mission, values, and expert team',
+  title: 'About Us | Kitiibwa Children Initiative',
+  description: 'Meet the people behind Kitiibwa Children Initiative and our commitment to helping children thrive.',
 }
 
 export default function About() {
@@ -68,7 +68,7 @@ export default function About() {
               <div className="mb-4">
                 <TextGradient className="text-sm font-semibold tracking-wider uppercase">Our Journey</TextGradient>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-balance">About KITIIBWA SAFARIS</h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-balance">About Kitiibwa Children Initiative</h1>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
@@ -234,8 +234,31 @@ export default function About() {
         </section>
 
 
-
-
+        {/* Initiative Team */}
+        <section className="bg-card py-16 md:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <ScrollReveal className="mb-12 text-center">
+              <TextGradient className="text-sm font-semibold uppercase tracking-wider">The people behind the work</TextGradient>
+              <h2 className="mt-3 text-3xl font-bold text-primary md:text-4xl">Our Initiative Team</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">Together, we turn compassion into practical support that helps children learn, grow, and build hopeful futures.</p>
+            </ScrollReveal>
+            <div className="grid gap-6 md:grid-cols-2">
+              {[
+                { name: 'Grace Mwole', role: 'Team Leader', image: '/images/team/grace-mwole.jpeg', bio: 'Grace leads our people-first work, keeping every program centered on the dignity, safety, and potential of each child.' },
+                { name: 'Muwaga Hannington', role: 'Head of Operation', image: '/images/team/muwaga-hannington.jpeg', bio: 'Hannington coordinates our day-to-day operations so support reaches children, families, and partner communities with care and accountability.' },
+              ].map((member) => (
+                <article key={member.name} className="flex flex-col gap-5 rounded-2xl border border-border bg-background p-5 shadow-sm sm:flex-row sm:items-center">
+                  <Image src={member.image} alt={`${member.name}, ${member.role}`} width={220} height={260} className="h-56 w-full rounded-xl object-cover sm:w-44" />
+                  <div>
+                    <h3 className="text-2xl font-bold text-primary">{member.name}</h3>
+                    <p className="mt-1 font-semibold text-accent">{member.role}</p>
+                    <p className="mt-4 leading-relaxed text-muted-foreground">{member.bio}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

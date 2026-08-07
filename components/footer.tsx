@@ -18,10 +18,10 @@ export default function Footer() {
           <div className="animate-fade-in-up" style={{ animationDelay: '0ms' }}>
             <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
               <div className="h-6 w-6 bg-secondary rounded animate-scale-pulse" />
-              KITIIBWA
+              Kitiibwa Children Initiative
             </h3>
             <p className="text-sm opacity-90">
-              Premium African safari experiences showcasing the beauty of Uganda's wildlife and natural wonders.
+              Helping children in Uganda thrive through education, care, community support, and sustainable opportunities.
             </p>
           </div>
 
@@ -73,7 +73,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/initiative" className="hover:opacity-75 transition hover:translate-x-1 inline-block">
-                  KITIIBWA Initiative
+                  Kitiibwa Children Initiative
                 </Link>
               </li>
             </ul>
@@ -88,6 +88,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-1">
                   <span>Uganda: +256 702 345273</span>
                   <span>UK: +44 7884 181149</span>
+                  <a href="mailto:info@kitiibwasafaris.com" className="hover:underline">info@kitiibwasafaris.com</a>
                 </div>
               </li>
               <li className="flex items-start gap-2 hover:translate-x-1 transition">
@@ -96,7 +97,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2 hover:translate-x-1 transition">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>Mukono Access Clinic, Uganda</span>
+                <span>Mukon Acess Clinic, Mukon Town, Kampala Jinja Rd, Opposite Harred Petrol Station, Uganda</span>
               </li>
             </ul>
           </div>

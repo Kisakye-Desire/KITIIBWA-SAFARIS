@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import GoogleTranslate from '@/components/google-translate'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -24,6 +25,23 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-card shadow-lg">
+      <div className="border-b border-border/70 bg-muted/40">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 text-xs text-muted-foreground sm:px-6 lg:px-8">
+          <div className="hidden items-center gap-4 truncate sm:flex">
+            <span>Mukon Acess Clinic, Mukon Town, Kampala Jinja Rd, Opposite Harred Petrol Station, Uganda</span>
+            <a href="mailto:info@kitiibwasafaris.com" className="hover:text-primary">info@kitiibwasafaris.com</a>
+            <a href="tel:+256702345273" className="hover:text-primary">+256 702 345273</a>
+          </div>
+          <div className="ml-auto flex items-center gap-4">
+            <div className="hidden items-center gap-3 sm:flex" aria-label="Social media links">
+              <a href="https://facebook.com/kitiibwasafaris" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Facebook</a>
+              <a href="https://instagram.com/kitiibwasafaris" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Instagram</a>
+              <a href="https://tiktok.com/@kitiibwasafaris" target="_blank" rel="noopener noreferrer" className="hover:text-primary">TikTok</a>
+            </div>
+            <GoogleTranslate />
+          </div>
+        </div>
+      </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}

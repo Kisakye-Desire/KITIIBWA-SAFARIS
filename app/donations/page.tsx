@@ -56,8 +56,8 @@ export default function Donations() {
   const mobileMoneyDetails = {
     airtel: {
       name: 'Airtel Money',
-      number: '0708898424',
-      accountName: 'KITIIBWA SAFARIS',
+      number: '0702345273',
+      accountName: 'Muwaga Hannington',
       instructions: [
         'Dial *185# on your phone',
         'Select "Send Money"',
@@ -72,8 +72,8 @@ export default function Donations() {
     },
     mtn: {
       name: 'MTN Mobile Money',
-      number: '0763705967',
-      accountName: 'KITIIBWA SAFARIS',
+      number: '0773525452',
+      accountName: 'Muwaga Hannington',
       instructions: [
         'Dial *165# on your phone',
         'Select "Transfer Money" then "To MTN Number"',
