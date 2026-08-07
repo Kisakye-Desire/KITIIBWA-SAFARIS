@@ -170,12 +170,12 @@ export const ANALYTICS_CONFIG = {
 
 // FEATURE FLAGS
 export const FEATURES = {
-  enableBookings: process.env.ENABLE_BOOKINGS === 'true' ?? true,
-  enableDonations: process.env.ENABLE_DONATIONS === 'true' ?? true,
-  enableEvents: process.env.ENABLE_EVENTS === 'true' ?? true,
-  enableNewsletter: process.env.ENABLE_NEWSLETTER === 'true' ?? true,
-  enableGallery: process.env.ENABLE_GALLERY === 'true' ?? true,
-  enableBlog: process.env.ENABLE_BLOG === 'true' ?? false, // Coming soon
+  enableBookings: process.env.ENABLE_BOOKINGS !== 'false',
+  enableDonations: process.env.ENABLE_DONATIONS !== 'false',
+  enableEvents: process.env.ENABLE_EVENTS !== 'false',
+  enableNewsletter: process.env.ENABLE_NEWSLETTER !== 'false',
+  enableGallery: process.env.ENABLE_GALLERY !== 'false',
+  enableBlog: process.env.ENABLE_BLOG === 'true', // Coming soon
 }
 
 // RATE LIMITING

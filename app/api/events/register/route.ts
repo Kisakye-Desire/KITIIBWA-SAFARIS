@@ -3,6 +3,7 @@ import { db } from '@/lib/db'
 import { event_registration } from '@/lib/db/schema'
 import { sendEmail } from '@/lib/email'
 import { validateEmail, validatePhone, sanitizeInput, checkSpam, validateGuestCount } from '@/lib/validation'
+import { eq } from 'drizzle-orm'
 
 export async function POST(request: NextRequest) {
   try {
@@ -136,7 +137,7 @@ export async function POST(request: NextRequest) {
       await db
         .update(event_registration)
         .set({ confirmation_sent: true, updatedAt: new Date() })
-        .where(evt => evt.id === result[0].id)
+        .where(eq(event_registration.id, result[0].id))
     }
 
     return NextResponse.json(

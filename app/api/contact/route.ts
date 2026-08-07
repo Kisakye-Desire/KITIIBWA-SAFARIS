@@ -17,12 +17,13 @@ export async function POST(request: NextRequest) {
     }
 
     const officeLabel = country === 'uk' ? 'UK Office' : 'Uganda Office'
-    const inquiryLabel = {
+    const inquiryLabels: Record<string, string> = {
       general: 'General Inquiry',
       safari: 'Safari Booking',
       donation: 'Donation/Support',
       partnership: 'Partnership Opportunity',
-    }[contactPerson] || 'General Inquiry'
+    }
+    const inquiryLabel = inquiryLabels[String(contactPerson)] || 'General Inquiry'
 
     // Updated email configuration
     const toEmail = 'info@kitiibwasafaris.com'

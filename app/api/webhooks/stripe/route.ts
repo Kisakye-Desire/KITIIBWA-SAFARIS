@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
             .update(donation)
             .set({
               status: 'completed',
-              stripe_payment_id: session.payment_intent as string,
+              stripe_payment_id: typeof session.payment_intent === 'string' ? session.payment_intent : null,
               updatedAt: new Date(),
             })
             .where(eq(donation.id, donationId))
@@ -67,7 +67,7 @@ export async function POST(request: NextRequest) {
               html: getDonationConfirmationHTML({
                 name: donorRecord.donor_name,
                 amount: donorRecord.amount,
-                currency: donorRecord.currency,
+                currency: donorRecord.currency || 'USD',
                 message: donorRecord.message || undefined,
               }),
             })
@@ -82,7 +82,7 @@ export async function POST(request: NextRequest) {
                   <p><strong>Donor:</strong> ${donorRecord.donor_name}</p>
                   <p><strong>Email:</strong> ${donorRecord.donor_email}</p>
                   <p><strong>Amount:</strong> ${donorRecord.currency} ${donorRecord.amount}</p>
-                  <p><strong>Stripe Payment ID:</strong> ${session.payment_intent}</p>
+                  <p><strong>Stripe Payment ID:</strong> ${typeof session.payment_intent === 'string' ? session.payment_intent : 'Unavailable'}</p>
                   ${donorRecord.message ? `<p><strong>Message:</strong> ${donorRecord.message}</p>` : ''}
                 </div>
               `,

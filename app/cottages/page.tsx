@@ -107,7 +107,12 @@ const galleryImages = [
 export default function SinguraCottages() {
   const [displayedCount, setDisplayedCount] = useState(IMAGES_PER_PAGE)
   const [isLoading, setIsLoading] = useState(false)
-  const [selectedImage, setSelectedImage] = useState(null)
+  const [selectedImage, setSelectedImage] = useState<{
+    src: string
+    alt: string
+    title: string
+    description: string
+  } | null>(null)
 
   const displayedImages = galleryImages.slice(0, displayedCount)
   const hasMore = displayedCount < galleryImages.length

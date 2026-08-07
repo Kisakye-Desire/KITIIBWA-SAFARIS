@@ -122,7 +122,7 @@ export const pageMetadata: Record<string, SEOMetadata> = {
     ],
     image: `${baseUrl}/images/og-safari-chill.jpg`,
     url: `${baseUrl}/safari-chill-experience`,
-    type: 'event',
+    type: 'article',
   },
 }
 
