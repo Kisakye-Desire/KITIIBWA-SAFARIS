@@ -39,12 +39,12 @@ export default function Home() {
                   <TextGradient className="text-lg md:text-2xl font-bold tracking-tight">Welcome Aboard</TextGradient>
                 </div>
               </div>
-              <SectionHeading animated>Kitiibwa Children Initiative — Every Child Deserves a Chance to Thrive</SectionHeading>
+              <SectionHeading animated>Kitiibwa Safaris — Go Further, Feel More</SectionHeading>
               <p className="text-lg text-muted-foreground mb-4 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                Kitiibwa Children Initiative exists to help children in Uganda learn, grow, and step into hopeful futures. Through education support, practical care, family partnerships, and community-led programs, we turn compassion into opportunities that last.
+                Kitiibwa Safaris connects you with Uganda&apos;s wild places, welcoming communities, and unforgettable moments. From gorilla trekking and classic game drives to peaceful lakeside escapes, every journey is planned with care and local insight.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                Our work is rooted in dignity, accountability, and the belief that children flourish when families and communities are supported together. Every contribution helps create safer learning environments, meet essential needs, and open doors to brighter possibilities.
+                Travel confidently with a team that values thoughtful service, responsible tourism, and authentic experiences. Tell us what inspires you and we&apos;ll shape a safari that feels personal from the first welcome to the final sunset.
               </p>
             </div>
 

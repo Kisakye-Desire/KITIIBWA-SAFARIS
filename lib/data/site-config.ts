@@ -31,23 +31,18 @@ export interface SiteMetadata {
 export const socialLinks: SocialLink[] = [
   {
     name: 'Facebook',
-    url: 'https://facebook.com/kitiibwasafaris',
+    url: 'https://facebook.com/share/199L8Q9cKo/?mibextid=wwXIfr',
     icon: 'facebook',
   },
   {
     name: 'Instagram',
-    url: 'https://instagram.com/kitiibwasafaris',
+    url: 'https://instagram.com/kitiibwa_safaris_?igsh=MXRnNnZ3bTNkaGZubg%3D%3D&utm_source=qr',
     icon: 'instagram',
   },
   {
     name: 'TikTok',
-    url: 'https://tiktok.com/@kitiibwasafaris',
+    url: 'https://tiktok.com/@ksafarisuganda?_r=1&_t=ZN-9887Oyz1BLC',
     icon: 'tiktok',
-  },
-  {
-    name: 'Twitter',
-    url: 'https://twitter.com/kitiibwasafaris',
-    icon: 'twitter',
   },
 ]
 

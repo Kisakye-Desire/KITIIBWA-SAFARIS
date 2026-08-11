@@ -11,7 +11,6 @@ import { TextGradient } from '@/components/ui/effects'
 import FeatureCard from '@/components/feature-card'
 import ImpactGallery from '@/components/impact-gallery'
 import SocialIcons from '@/components/social-icons'
-import { socialLinks } from '@/lib/data/site-config'
 
 export default function Initiative() {
   const programs = [
@@ -84,9 +83,8 @@ export default function Initiative() {
               <span className="text-sm font-semibold text-primary">Follow the Children Initiative</span>
               <SocialIcons
                 size="sm"
-                facebook={socialLinks.find((link) => link.name === 'Facebook')?.url}
-                instagram={socialLinks.find((link) => link.name === 'Instagram')?.url}
-                tiktok={socialLinks.find((link) => link.name === 'TikTok')?.url}
+                facebook="https://facebook.com/share/1BxvubE73m/?mibextid=wwXIfr"
+                instagram="https://instagram.com/kitiibwa.childrens.initiatives?igsh=MTk3Z3ZlZHpzd3gwbA=="
                 email="info@kitiibwasafaris.com"
               />
             </div>

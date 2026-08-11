@@ -20,9 +20,13 @@ export default function ContactStrip({ compact = false }: ContactStripProps) {
           </a>
           <a href={`tel:${contactInfo.phone.uganda.replace(/\s/g, '')}`} className="inline-flex items-center gap-1.5 transition-colors hover:text-primary">
             <Phone className="size-3.5" aria-hidden="true" />
-            {contactInfo.phone.uganda}
+            <span className="hidden sm:inline">Uganda </span>{contactInfo.phone.uganda}
           </a>
-          <span className="hidden items-center gap-1.5 lg:inline-flex">
+          <a href={`tel:${contactInfo.phone.uk.replace(/\s/g, '')}`} className="inline-flex items-center gap-1.5 transition-colors hover:text-primary">
+            <Phone className="size-3.5" aria-hidden="true" />
+            <span className="hidden sm:inline">UK </span>{contactInfo.phone.uk}
+          </a>
+          <span className="hidden items-center gap-1.5 xl:inline-flex">
             <MapPin className="size-3.5" aria-hidden="true" />
             Uganda · UK representative
           </span>
