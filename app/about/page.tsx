@@ -1,6 +1,5 @@
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import WhatsAppButton from '@/components/whatsapp-button'
 import SocialIcons from '@/components/social-icons'
 import Image from 'next/image'
 import { SectionHeading, AnimatedCard, TextGradient } from '@/components/ui/effects'
@@ -11,8 +10,8 @@ import FeatureCard from '@/components/feature-card'
 
 
 export const metadata = {
-  title: 'About Us | Kitiibwa Children Initiative',
-  description: 'Meet the people behind Kitiibwa Children Initiative and our commitment to helping children thrive.',
+  title: 'About Kitiibwa Safaris',
+  description: 'Discover Kitiibwa Safaris, a Uganda-based tour operator creating authentic wildlife, gorilla, cultural, and tailor-made journeys across East Africa.',
 }
 
 export default function About() {
@@ -66,14 +65,20 @@ export default function About() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
             <ScrollReveal>
               <div className="mb-4">
-                <TextGradient className="text-sm font-semibold tracking-wider uppercase">Our Journey</TextGradient>
+                <TextGradient className="text-sm font-semibold tracking-wider uppercase">Explore. Experience. Discover.</TextGradient>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-balance">About Kitiibwa Children Initiative</h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-balance">About Kitiibwa Safaris</h1>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
-              <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
-                Kitiibwa Children Initiative works alongside children, families, and communities to make education, care, and opportunity more accessible across Uganda.
-              </p>
+              <div className="max-w-3xl space-y-4 text-lg leading-relaxed text-muted-foreground">
+                <p>
+                  Kitiibwa Safaris is a premier Uganda-based tour operator dedicated to creating unforgettable travel experiences across Uganda and East Africa. We specialize in wildlife safaris, gorilla and chimpanzee trekking, birdwatching, cultural tours, mountain adventures, and tailor-made holiday packages.
+                </p>
+                <p>
+                  Driven by a passion for Africa&apos;s natural beauty and rich heritage, we combine local expertise, professional guides, and exceptional service to deliver authentic, safe, and memorable journeys. Whether you&apos;re seeking a luxury escape, a family holiday, or an adventurous expedition, Kitiibwa Safaris is your trusted partner for discovering the Pearl of Africa.
+                </p>
+                <p className="font-semibold text-primary">Explore. Experience. Discover with Kitiibwa Safaris.</p>
+              </div>
             </ScrollReveal>
           </div>
         </section>
@@ -85,7 +90,7 @@ export default function About() {
           }} />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
             <ScrollReveal className="mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center">Meet Our Team</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center">Meet Our Safari Team</h2>
             </ScrollReveal>
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <ScrollReveal direction="left">
@@ -103,8 +108,8 @@ export default function About() {
                     <TextReveal className="text-2xl font-bold text-primary mb-2">Alizeyuna Henry</TextReveal>
                     <p className="text-accent font-semibold text-lg">Founder & Managing Director</p>
                   </div>
-                  <TextReveal delay={0.1} stagger>
-                    Alizeyuna Henry is the visionary founder and Managing Director of Kitiibwa Safaris, a Uganda-based tour company headquartered in Mukono District. Inspired by Uganda's breathtaking landscapes, diverse wildlife, and vibrant cultures, Henry established Kitiibwa Safaris with a vision of sharing authentic African adventures with travellers from around the world.
+                    <TextReveal delay={0.1} stagger>
+                    Alizeyuna Henry is the visionary founder and Managing Director of Kitiibwa Safaris, a Uganda-based tour company headquartered in Mukono District. Inspired by Uganda&apos;s breathtaking landscapes, diverse wildlife, and vibrant cultures, Henry established Kitiibwa Safaris with a vision of sharing authentic African adventures with travellers from around the world.
                   </TextReveal>
                   <TextReveal delay={0.2} stagger>
                     With hands-on experience exploring Uganda's national parks and natural attractions, Henry is passionate about creating memorable safari experiences that combine adventure, conservation, and genuine local hospitality. His commitment to quality service and personalized travel ensures that every journey reflects the beauty and spirit of the Pearl of Africa.
@@ -139,13 +144,13 @@ export default function About() {
               <div className="animate-fade-in-up">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Our Story</h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  Kitiibwa Children Initiative grew from a simple conviction: every child deserves the safety, encouragement, and opportunity to build a hopeful future.
+                  Kitiibwa Safaris was founded from a deep love for Uganda&apos;s landscapes, wildlife, cultures, and the warm welcome of its people. We create journeys that reveal the country&apos;s extraordinary variety, from misty mountain forests and gorilla encounters to open savannahs, lakes, and living cultural traditions.
                 </p>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  We work alongside families, schools, local leaders, and community partners across Uganda to make education and practical care more accessible to children who need support.
+                  Our local knowledge, trusted guides, and careful planning help every traveller experience Uganda with confidence and comfort. We listen closely to what matters to you, then shape a safari that balances meaningful discovery, responsible travel, and memorable moments.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Our approach is child-centered and community-led, connecting immediate help with the long-term relationships and skills that make change sustainable.
+                  From a first visit to a return adventure, our goal is simple: to make your time in the Pearl of Africa personal, seamless, and worth remembering long after you leave.
                 </p>
               </div>
               <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl animate-fade-in-up card-hover" style={{ animationDelay: '0.2s' }}>
@@ -168,13 +173,13 @@ export default function About() {
               <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-8 rounded-lg">
                 <h3 className="text-2xl font-bold text-primary mb-4">Our Vision</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To see children across Uganda grow up safe, supported, educated, and confident in their ability to shape their own futures.
+                  To be a trusted gateway to Uganda and East Africa, creating journeys that connect travellers with extraordinary nature, culture, and people.
                 </p>
               </div>
               <div className="bg-gradient-to-br from-secondary/5 to-accent/5 p-8 rounded-lg">
                 <h3 className="text-2xl font-bold text-primary mb-4">Our Mission</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To partner with communities to provide children with learning support, essential care, encouragement, and practical pathways to a brighter future—while strengthening the families and local leaders who make lasting change possible.
+                  To deliver safe, authentic, and thoughtfully designed safaris through local expertise, professional guiding, exceptional service, and responsible tourism.
                 </p>
               </div>
             </div>
@@ -231,13 +236,13 @@ export default function About() {
         </section>
 
 
-        {/* Initiative Team */}
+        {/* Safaris Team */}
         <section className="bg-card py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <ScrollReveal className="mb-12 text-center">
-              <TextGradient className="text-sm font-semibold uppercase tracking-wider">The people behind the work</TextGradient>
-              <h2 className="mt-3 text-3xl font-bold text-primary md:text-4xl">Our Initiative Team</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">Together, we turn compassion into practical support that helps children learn, grow, and build hopeful futures.</p>
+              <TextGradient className="text-sm font-semibold uppercase tracking-wider">The people behind your journey</TextGradient>
+              <h2 className="mt-3 text-3xl font-bold text-primary md:text-4xl">Meet the Kitiibwa Safaris Team</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">Our team combines local knowledge, thoughtful planning, and warm hospitality to help you discover Uganda with confidence.</p>
             </ScrollReveal>
             <div className="grid gap-6 md:grid-cols-2">
               {[
@@ -259,7 +264,6 @@ export default function About() {
       </main>
 
       <Footer />
-      <WhatsAppButton />
     </>
   )
 }
