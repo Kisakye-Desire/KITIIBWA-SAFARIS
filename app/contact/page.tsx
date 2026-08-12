@@ -8,6 +8,7 @@ import { useState } from 'react'
 import { TextGradient, SectionHeading } from '@/components/ui/effects'
 import ScrollReveal from '@/components/scroll-reveal'
 import Link from 'next/link'
+import { composeEmailUrl } from '@/lib/mail'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -146,9 +147,11 @@ export default function Contact() {
                   WhatsApp Us
                 </a>
                 <a
-                  href="mailto:info@kitiibwasafaris.com?subject=KITIIBWA%20SAFARIS%20Inquiry"
+                  href={composeEmailUrl({ subject: 'Kitiibwa Safaris Inquiry' })}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-accent to-accent/90 hover:from-accent/90 hover:to-accent text-accent-foreground rounded-full font-bold text-sm transition-all duration-300 transform hover:scale-110 shadow-lg active:scale-95"
-                  title="Click to open your email client and send to info@kitiibwasafaris.com"
+                  title="Opens a new email to info@kitiibwasafaris.com"
                 >
                   <Mail className="h-5 w-5" />
                   Email Us Directly
@@ -200,7 +203,7 @@ export default function Contact() {
                       </div>
                     </div>
                     <a
-                      href="https://wa.me/447884181149?text=Hello%20KITIIBWA%20SAFARIS%20Uganda%20office%2C%20I%20would%20like%20to%20inquire%20about%20a%20safari."
+                      href="https://wa.me/256702345273?text=Hello%20Kitiibwa%20Safaris%20Uganda%20office%2C%20I%20would%20like%20to%20inquire%20about%20a%20safari."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 mt-2 px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg text-sm font-semibold transition-all"
@@ -467,9 +470,14 @@ export default function Contact() {
 
                       {/* Send Message */}
                       <a
-                        href={`mailto:info@kitiibwasafaris.com?subject=${encodeURIComponent(formData.subject || 'KITIIBWA SAFARIS inquiry')}&body=${encodeURIComponent(`Hello Kitiibwa Safaris,\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\n${formData.message}`)}`}
+                        href={composeEmailUrl({
+                          subject: formData.subject || 'Kitiibwa Safaris inquiry',
+                          body: `Hello Kitiibwa Safaris,\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\n${formData.message}`,
+                        })}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="w-full bg-gradient-to-r from-primary to-primary/80 hover:to-accent hover:from-accent text-primary-foreground py-3.5 rounded-xl font-bold text-base transition-all transform hover:scale-[1.02] hover:shadow-xl shadow-lg flex items-center justify-center gap-2"
-                        title="Open your email client and send to info@kitiibwasafaris.com"
+                        title="Opens a new email to info@kitiibwasafaris.com"
                       >
                         <Send className="h-5 w-5" />
                         Send Message

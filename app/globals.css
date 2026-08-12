@@ -60,6 +60,12 @@
   display: none !important;
 }
 
+/* Hide Chatway's default floating launcher — we drive the widget from our own
+   custom launcher on the left (see components/chatway-button.tsx). */
+.chatway--container .chatway--trigger-container {
+  display: none !important;
+}
+
 body {
   top: 0 !important;
 }

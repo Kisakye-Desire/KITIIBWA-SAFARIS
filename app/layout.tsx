@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import './globals.css'
 import BackToTop from '@/components/back-to-top'
+import ChatwayButton from '@/components/chatway-button'
 import { generateMetadata, pageMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = {
@@ -45,6 +46,7 @@ export default function RootLayout({
       <body className="antialiased bg-background text-foreground">
         {children}
         <BackToTop />
+        <ChatwayButton />
         <Script id="chatway" src="https://cdn.chatway.app/widget.js?id=xihrzO9SFpyq" strategy="afterInteractive" />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

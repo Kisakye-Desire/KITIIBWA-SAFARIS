@@ -48,7 +48,7 @@ export default function StripeDonationPage() {
           <section>
             <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-accent">Secure card donation</p>
             <h1 className="text-4xl font-bold text-primary md:text-5xl">Support children through Stripe</h1>
-            <p className="mt-5 max-w-xl leading-relaxed text-muted-foreground">Your donation helps Kitiibwa Children Initiative provide education, care, school support, and opportunities for children in Uganda.</p>
+            <p className="mt-5 max-w-xl leading-relaxed text-muted-foreground">Your donation helps Kitiibwa Safaris provide education, care, school support, and opportunities for children in Uganda.</p>
             <div className="mt-8 rounded-2xl border border-accent/30 bg-accent/10 p-5 text-sm text-foreground">
               <p className="font-semibold">Prefer mobile money?</p>
               <p className="mt-2 text-muted-foreground">Airtel Money: <strong>0702 345273</strong> · MTN Mobile Money: <strong>0773525452</strong></p>

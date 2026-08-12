@@ -58,33 +58,42 @@ export async function POST(request: NextRequest) {
     // Get client IP
     const ip = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown'
 
-    // Insert initial donation record
-    const donationRecord = await db
-      .insert(donation)
-      .values({
-        donor_name: donorName,
-        donor_email: donorEmail,
-        amount: numAmount.toString(),
-        currency,
-        message: message || null,
-        anonymous: anonymous || false,
-        status: 'pending',
-        ip_address: ip,
-      })
-      .returning()
+    // Insert initial donation record. This is best-effort: if the database is
+    // not configured or unreachable, we still let the Stripe checkout proceed so
+    // the donor is never blocked from paying. The Stripe webhook remains the
+    // source of truth for a completed donation.
+    let donationId: string | null = null
+    try {
+      const donationRecord = await db
+        .insert(donation)
+        .values({
+          donor_name: donorName,
+          donor_email: donorEmail,
+          amount: numAmount.toString(),
+          currency,
+          message: message || null,
+          anonymous: anonymous || false,
+          status: 'pending',
+          ip_address: ip,
+        })
+        .returning()
+      donationId = donationRecord[0]?.id?.toString() ?? null
+    } catch (dbError) {
+      console.error('[DONATION DB WARNING] Could not persist donation, continuing to Stripe checkout:', dbError)
+    }
 
     // Create Stripe checkout session
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       mode: 'payment',
       customer_email: donorEmail,
-      client_reference_id: `donation-${donationRecord[0].id}`,
+      client_reference_id: donationId ? `donation-${donationId}` : `donation-${Date.now()}`,
       line_items: [
         {
           price_data: {
             currency: currency.toLowerCase(),
             product_data: {
-              name: 'Donation to Kitiibwa Children Initiative',
+              name: 'Donation to Kitiibwa Safaris',
               description: 'Support education, care, and brighter futures for children in Uganda',
             },
             unit_amount: Math.round(numAmount * 100),
@@ -95,7 +104,7 @@ export async function POST(request: NextRequest) {
       success_url: successUrl || `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/donations?status=success&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: cancelUrl || `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/donations?status=cancelled`,
       metadata: {
-        donationId: donationRecord[0].id.toString(),
+        donationId: donationId || '',
         message: message || '',
       },
     })

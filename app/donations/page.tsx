@@ -528,10 +528,17 @@ export default function Donations() {
                           ))}
                         </div>
 
-                        <div className="mt-6 p-4 bg-green-500/10 border border-green-500/20 rounded-xl">
-                          <p className="text-sm text-green-700 dark:text-green-300 font-semibold">
-                            After sending, please WhatsApp us the confirmation screenshot at{' '}
-                            <a href="https://wa.me/447884181149" className="underline" target="_blank" rel="noopener noreferrer">+44 7884 181149</a>
+                        <div className="mt-6 rounded-xl bg-primary p-5 border-2 border-accent shadow-lg">
+                          <p className="text-base font-bold text-primary-foreground leading-relaxed">
+                            After sending on <span className="underline decoration-accent decoration-2">both Airtel and MTN</span>, please WhatsApp us the confirmation screenshot at{' '}
+                            <a
+                              href="https://wa.me/447884181149"
+                              className="inline-flex items-center gap-1 rounded-md bg-accent px-2 py-0.5 text-accent-foreground underline underline-offset-2 hover:opacity-90"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              +44 7884 181149
+                            </a>
                           </p>
                         </div>
                       </div>

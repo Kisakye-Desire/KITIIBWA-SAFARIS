@@ -164,7 +164,9 @@ export default function SinguraCottages() {
                     Stay in comfortable cottages surrounded by thriving organic farms, banana plantations, and natural gardens. Participate in workshops, meet local artisans, enjoy farm-fresh meals, and connect with the vibrant community that makes Singura special.
                   </p>
                   <a
-                    href="https://wa.me/447884181149"
+                    href={`https://wa.me/447884181149?text=${encodeURIComponent(
+                      'Hello Kitiibwa Safaris,\n\nI would like to book a stay at Singura Homesteads (Safari Cottages). Please share availability, rates, and how to reserve.\n\nThank you.'
+                    )}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block bg-primary hover:bg-accent text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"

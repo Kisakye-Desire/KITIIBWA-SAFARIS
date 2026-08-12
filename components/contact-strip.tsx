@@ -4,6 +4,7 @@ import { Mail, MapPin, Phone } from 'lucide-react'
 import GoogleTranslate from '@/components/google-translate'
 import SocialIcons from '@/components/social-icons'
 import { contactInfo, socialLinks } from '@/lib/data/site-config'
+import { composeEmailUrl } from '@/lib/mail'
 
 interface ContactStripProps {
   compact?: boolean
@@ -14,7 +15,7 @@ export default function ContactStrip({ compact = false }: ContactStripProps) {
     <div className="border-b border-border/70 bg-muted/40">
       <div className={`mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-5 gap-y-2 px-4 text-xs text-muted-foreground sm:px-6 lg:px-8 ${compact ? 'py-3' : 'py-2'}`}>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2" aria-label="Kitiibwa Safaris contact details">
-          <a href={`mailto:${contactInfo.email}`} className="inline-flex items-center gap-1.5 transition-colors hover:text-primary">
+          <a href={composeEmailUrl({ subject: 'Kitiibwa Safaris Inquiry' })} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 transition-colors hover:text-primary">
             <Mail className="size-3.5" aria-hidden="true" />
             {contactInfo.email}
           </a>

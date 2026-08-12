@@ -1,9 +1,9 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const languages = [
-  { value: '', label: 'English' },
+  { value: 'en', label: 'English' },
   { value: 'fr', label: 'Français' },
   { value: 'de', label: 'Deutsch' },
   { value: 'es', label: 'Español' },
@@ -14,8 +14,48 @@ const languages = [
   { value: 'zh-CN', label: '简体中文' },
 ]
 
+function readGoogtransCookie(): string {
+  if (typeof document === 'undefined') return 'en'
+  const match = document.cookie.match(/(?:^|;\s*)googtrans=([^;]+)/)
+  if (!match) return 'en'
+  // Cookie format is "/en/<target>"
+  const parts = decodeURIComponent(match[1]).split('/')
+  return parts[2] || 'en'
+}
+
+function setGoogtransCookie(target: string) {
+  const value = `/en/${target}`
+  const host = window.location.hostname
+  // Set the cookie for every host/domain variant so Google's script picks it up.
+  const variants = [
+    `googtrans=${value};path=/`,
+    `googtrans=${value};path=/;domain=${host}`,
+    `googtrans=${value};path=/;domain=.${host}`,
+  ]
+  variants.forEach((cookie) => {
+    document.cookie = cookie
+  })
+}
+
+function clearGoogtransCookie() {
+  const host = window.location.hostname
+  const expired = 'Thu, 01 Jan 1970 00:00:00 UTC'
+  const variants = [
+    `googtrans=;expires=${expired};path=/`,
+    `googtrans=;expires=${expired};path=/;domain=${host}`,
+    `googtrans=;expires=${expired};path=/;domain=.${host}`,
+  ]
+  variants.forEach((cookie) => {
+    document.cookie = cookie
+  })
+}
+
 export default function GoogleTranslate() {
+  const [current, setCurrent] = useState('en')
+
   useEffect(() => {
+    setCurrent(readGoogtransCookie())
+
     const existing = document.getElementById('google-translate-script')
     if (existing) return
 
@@ -36,10 +76,23 @@ export default function GoogleTranslate() {
   }, [])
 
   const changeLanguage = (language: string) => {
+    setCurrent(language)
+
+    // Try the in-page combo first for an instant switch without a reload.
     const googleSelect = document.querySelector<HTMLSelectElement>('.goog-te-combo')
-    if (!googleSelect) return
-    googleSelect.value = language
-    googleSelect.dispatchEvent(new Event('change'))
+    if (googleSelect) {
+      googleSelect.value = language === 'en' ? '' : language
+      googleSelect.dispatchEvent(new Event('change'))
+    }
+
+    // Persist the choice via Google's cookie and reload so the whole page is
+    // translated reliably (the combo alone is inconsistent across browsers).
+    if (language === 'en') {
+      clearGoogtransCookie()
+    } else {
+      setGoogtransCookie(language)
+    }
+    window.location.reload()
   }
 
   return (
@@ -47,12 +100,12 @@ export default function GoogleTranslate() {
       <label htmlFor="site-language" className="whitespace-nowrap">Language</label>
       <select
         id="site-language"
-        defaultValue=""
+        value={current}
         onChange={(event) => changeLanguage(event.target.value)}
         className="max-w-24 cursor-pointer truncate border-0 bg-transparent text-xs font-semibold outline-none"
       >
         {languages.map((language) => (
-          <option key={language.value || 'en'} value={language.value}>
+          <option key={language.value} value={language.value}>
             {language.label}
           </option>
         ))}
