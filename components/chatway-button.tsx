@@ -38,9 +38,10 @@ export default function ChatwayButton() {
     <button
       type="button"
       onClick={openChatway}
-      className="fixed bottom-6 left-6 z-40 flex items-center gap-3 rounded-full border border-border bg-card px-3 py-2 text-foreground shadow-xl transition-transform hover:scale-105"
+      className="fixed bottom-6 left-4 z-40 flex items-center gap-3 rounded-full border border-border bg-card px-3 py-2 text-foreground shadow-xl transition-transform hover:scale-105 sm:left-6"
       aria-label="Open live chat with Kitiibwa Safaris"
       title="Chat with Kitiibwa Safaris"
+      data-chatway-replies="disabled-in-chatway-dashboard"
     >
       <span className="relative shrink-0">
         <Image

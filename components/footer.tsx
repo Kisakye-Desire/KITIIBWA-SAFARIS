@@ -21,10 +21,10 @@ export default function Footer() {
           <div className="animate-fade-in-up" style={{ animationDelay: '0ms' }}>
             <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
               <div className="h-6 w-6 bg-secondary rounded animate-scale-pulse" />
-              Kitiibwa Children Initiative
+                  Kitiibwa Safaris
             </h3>
             <p className="text-sm opacity-90">
-              Helping children in Uganda learn, grow, and thrive through education, care, family support, and opportunity.
+              Creating meaningful Uganda safari journeys through expert planning, local knowledge, and unforgettable experiences.
             </p>
           </div>
 
@@ -76,7 +76,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/initiative" className="hover:opacity-75 transition hover:translate-x-1 inline-block">
-                  Kitiibwa Children Initiative
+              Kitiibwa Safaris
                 </Link>
               </li>
             </ul>

@@ -62,8 +62,8 @@ export const contactInfo: ContactInfo = {
 }
 
 export const siteMetadata: SiteMetadata = {
-  title: 'Kitiibwa Children Initiative',
-  description: 'Kitiibwa Children Initiative helps children in Uganda thrive through education, practical support, community care, and opportunities for a brighter future.',
+  title: 'Kitiibwa Safaris',
+  description: 'Kitiibwa Safaris creates unforgettable Uganda safari journeys through expert planning, local knowledge, and meaningful travel experiences.',
   tagline: 'Every child deserves a chance to thrive',
   domain: 'kitiibwasafaris.com',
   logo: '/images/logo.png',

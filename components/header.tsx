@@ -18,7 +18,7 @@ export default function Header() {
     { name: 'Safari & Chill', href: '/safari-chill-experience' },
     { name: 'Uganda', href: '/uganda' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Children Initiative', href: '/initiative' },
+    { name: 'Our Initiative', href: '/initiative' },
     { name: 'Best Of', href: '/best-of' },
     { name: 'Packages', href: '/packages' },
     { name: 'Contact', href: '/contact' },

@@ -43,22 +43,14 @@ export default function Contact() {
         return
       }
 
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+      const gmailUrl = composeEmailUrl({
+        subject: formData.subject || 'Kitiibwa Safaris inquiry',
+        body: `Hello Kitiibwa Safaris,\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nOffice: ${formData.country}\nInquiry type: ${formData.contactPerson}\n\n${formData.message}`,
       })
-
-      const data = await response.json()
-
-      if (response.ok) {
-        setSubmitStatus('success')
-        setSubmitMessage("Thank you! Your message has been sent. We'll get back to you within 24 hours.")
-        setFormData({ name: '', email: '', phone: '', country: 'uganda', contactPerson: 'general', subject: '', message: '' })
-      } else {
-        setSubmitStatus('error')
-        setSubmitMessage(data.error || 'Error sending message. Please try contacting us on WhatsApp.')
-      }
+      window.open(gmailUrl, '_blank', 'noopener,noreferrer')
+      setSubmitStatus('success')
+      setSubmitMessage('Gmail has opened with your message addressed to info@kitiibwasafaris.com. Please review and send it.')
+      setFormData({ name: '', email: '', phone: '', country: 'uganda', contactPerson: 'general', subject: '', message: '' })
     } catch (error) {
       console.error('[Contact Form Error]', error)
       setSubmitStatus('error')
@@ -469,19 +461,15 @@ export default function Contact() {
                       )}
 
                       {/* Send Message */}
-                      <a
-                        href={composeEmailUrl({
-                          subject: formData.subject || 'Kitiibwa Safaris inquiry',
-                          body: `Hello Kitiibwa Safaris,\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\n${formData.message}`,
-                        })}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full bg-gradient-to-r from-primary to-primary/80 hover:to-accent hover:from-accent text-primary-foreground py-3.5 rounded-xl font-bold text-base transition-all transform hover:scale-[1.02] hover:shadow-xl shadow-lg flex items-center justify-center gap-2"
-                        title="Opens a new email to info@kitiibwasafaris.com"
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full bg-gradient-to-r from-primary to-primary/80 hover:to-accent hover:from-accent text-primary-foreground py-3.5 rounded-xl font-bold text-base transition-all transform hover:scale-[1.02] hover:shadow-xl shadow-lg flex items-center justify-center gap-2 disabled:cursor-not-allowed disabled:opacity-60"
+                        title="Opens Gmail with a message addressed to info@kitiibwasafaris.com"
                       >
                         <Send className="h-5 w-5" />
-                        Send Message
-                      </a>
+                        {isSubmitting ? 'Opening Gmail…' : 'Send Message'}
+                      </button>
 
                       <p className="text-center text-xs text-muted-foreground">
                         Your message will be sent to <span className="text-primary font-semibold">info@kitiibwasafaris.com</span>. We respond within 24 hours.
