@@ -48,7 +48,7 @@ export default function StripeDonationPage() {
           <section>
             <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-accent">Secure card donation</p>
             <h1 className="text-4xl font-bold text-primary md:text-5xl">Support children through Stripe</h1>
-            <p className="mt-5 max-w-xl leading-relaxed text-muted-foreground">Your donation helps Kitiibwa Children Initiative provide education, care, school support, and opportunities for children in Uganda.</p>
+            <p className="mt-5 max-w-xl leading-relaxed text-muted-foreground">Your donation helps Kitiibwa Safaris provide education, care, school support, and opportunities for children in Uganda.</p>
             <div className="mt-8 rounded-2xl border border-accent/30 bg-accent/10 p-5 text-sm text-foreground">
               <p className="font-semibold">Prefer mobile money?</p>
               <p className="mt-2 text-muted-foreground">Airtel Money: <strong>0702 345273</strong> · MTN Mobile Money: <strong>0773525452</strong></p>
@@ -65,9 +65,9 @@ export default function StripeDonationPage() {
               <label className="flex flex-col gap-2 text-sm font-semibold text-foreground">Message (optional)<textarea name="message" rows={3} className="rounded-lg border border-border bg-background px-3 py-3 font-normal outline-none ring-primary focus:ring-2" /></label>
               {status === 'error' && (
                 <div role="alert" className="rounded-lg border border-accent/30 bg-accent/10 p-4 text-sm text-foreground">
-                  <p className="font-semibold">Card payment is unavailable right now.</p>
-                  <p className="mt-1 text-muted-foreground">{error}</p>
-                  <p className="mt-3">No broken checkout page: card payments are unavailable right now, but you can still donate via Airtel Money <strong>0702 345273</strong> or MTN Mobile Money <strong>0773 525452</strong>, both registered to Muwaga Hannington.</p>
+                  <p className="font-semibold">We couldn&apos;t start the card payment.</p>
+                  <p className="mt-1 text-muted-foreground">{error} Please check your details and try again.</p>
+                  <p className="mt-3">You can also donate via Airtel Money <strong>0702 345273</strong> or MTN Mobile Money <strong>0773 525452</strong>, both registered to Muwaga Hannington.</p>
                 </div>
               )}
               <button type="submit" disabled={status === 'loading'} className="rounded-lg bg-primary px-5 py-3 font-bold text-primary-foreground transition hover:bg-accent disabled:cursor-not-allowed disabled:opacity-60">{status === 'loading' ? 'Connecting to Stripe…' : 'Continue to secure payment'}</button>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const languages = [
   { value: '', label: 'English' },
@@ -14,8 +14,42 @@ const languages = [
   { value: 'zh-CN', label: '简体中文' },
 ]
 
+const COOKIE_NAME = 'googtrans'
+
+// Read the currently-active translation language from the googtrans cookie
+// so the dropdown reflects the real page state after a reload.
+function readActiveLanguage(): string {
+  if (typeof document === 'undefined') return ''
+  const match = document.cookie.split('; ').find((row) => row.startsWith(`${COOKIE_NAME}=`))
+  if (!match) return ''
+  const value = decodeURIComponent(match.split('=')[1] || '')
+  const parts = value.split('/') // format: /en/<lang>
+  const lang = parts[2] || ''
+  return lang === 'en' ? '' : lang
+}
+
+// Google Translate applies translation on page load by reading the googtrans
+// cookie. Setting it (for every host variant) and reloading is far more
+// reliable than dispatching a change event on the hidden widget's <select>.
+function setTranslationCookie(language: string) {
+  const value = language ? `/en/${language}` : '/en/en'
+  const host = window.location.hostname
+  const cookies = [
+    `${COOKIE_NAME}=${value};path=/`,
+    `${COOKIE_NAME}=${value};path=/;domain=${host}`,
+    `${COOKIE_NAME}=${value};path=/;domain=.${host}`,
+  ]
+  cookies.forEach((cookie) => {
+    document.cookie = cookie
+  })
+}
+
 export default function GoogleTranslate() {
+  const [selected, setSelected] = useState('')
+
   useEffect(() => {
+    setSelected(readActiveLanguage())
+
     const existing = document.getElementById('google-translate-script')
     if (existing) return
 
@@ -36,10 +70,11 @@ export default function GoogleTranslate() {
   }, [])
 
   const changeLanguage = (language: string) => {
-    const googleSelect = document.querySelector<HTMLSelectElement>('.goog-te-combo')
-    if (!googleSelect) return
-    googleSelect.value = language
-    googleSelect.dispatchEvent(new Event('change'))
+    setSelected(language)
+    setTranslationCookie(language)
+    // Reload so Google Translate re-initialises and applies the selected
+    // language across the whole page (English clears the translation).
+    window.location.reload()
   }
 
   return (
@@ -47,7 +82,7 @@ export default function GoogleTranslate() {
       <label htmlFor="site-language" className="whitespace-nowrap">Language</label>
       <select
         id="site-language"
-        defaultValue=""
+        value={selected}
         onChange={(event) => changeLanguage(event.target.value)}
         className="max-w-24 cursor-pointer truncate border-0 bg-transparent text-xs font-semibold outline-none"
       >

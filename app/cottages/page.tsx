@@ -164,7 +164,7 @@ export default function SinguraCottages() {
                     Stay in comfortable cottages surrounded by thriving organic farms, banana plantations, and natural gardens. Participate in workshops, meet local artisans, enjoy farm-fresh meals, and connect with the vibrant community that makes Singura special.
                   </p>
                   <a
-                    href="https://wa.me/447884181149"
+                    href="https://wa.me/447884181149?text=Hello%20Kitiibwa%20Safaris%2C%20I%20would%20like%20to%20book%20a%20stay%20at%20Singura%20Homesteads%20(Safari%20Cottages).%20Please%20share%20availability%2C%20rates%2C%20and%20how%20to%20reserve.%20Thank%20you."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block bg-primary hover:bg-accent text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
@@ -401,7 +401,7 @@ export default function SinguraCottages() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="https://wa.me/447884181149"
+                  href="https://wa.me/447884181149?text=Hello%20Kitiibwa%20Safaris%2C%20I%20would%20like%20to%20book%20a%20stay%20at%20Singura%20Homesteads%20(Safari%20Cottages).%20Please%20share%20availability%2C%20rates%2C%20and%20how%20to%20reserve.%20Thank%20you."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-8 py-3 bg-primary hover:bg-accent text-primary-foreground font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"

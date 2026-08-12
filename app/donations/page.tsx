@@ -528,10 +528,23 @@ export default function Donations() {
                           ))}
                         </div>
 
-                        <div className="mt-6 p-4 bg-green-500/10 border border-green-500/20 rounded-xl">
-                          <p className="text-sm text-green-700 dark:text-green-300 font-semibold">
-                            After sending, please WhatsApp us the confirmation screenshot at{' '}
-                            <a href="https://wa.me/447884181149" className="underline" target="_blank" rel="noopener noreferrer">+44 7884 181149</a>
+                        <div className="mt-6 rounded-xl bg-green-600 p-5 shadow-lg ring-2 ring-green-700/40">
+                          <p className="flex items-center gap-2 text-base font-extrabold uppercase tracking-wide text-white">
+                            <CheckCircle2 className="h-5 w-5 flex-shrink-0" />
+                            Important — Confirm Your Payment
+                          </p>
+                          <p className="mt-2 text-sm font-semibold leading-relaxed text-white">
+                            After sending on either Airtel Money or MTN Mobile Money, please WhatsApp us the
+                            confirmation screenshot at{' '}
+                            <a
+                              href="https://wa.me/447884181149?text=Hello%20Kitiibwa%20Safaris%2C%20here%20is%20my%20donation%20payment%20confirmation%20screenshot."
+                              className="font-extrabold text-white underline underline-offset-2 hover:text-green-100"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              +44 7884 181149
+                            </a>{' '}
+                            so we can verify and thank you.
                           </p>
                         </div>
                       </div>
