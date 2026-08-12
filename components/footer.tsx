@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Mail, Phone, MapPin } from 'lucide-react'
 import { contactInfo, siteMetadata, socialLinks } from '@/lib/data/site-config'
 import ContactStrip from '@/components/contact-strip'
+import { composeEmailUrl } from '@/lib/mail'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -91,7 +92,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-1">
                   <span>Uganda: {contactInfo.phone.uganda}</span>
                   <span>UK: {contactInfo.phone.uk}</span>
-                  <a href={`mailto:${contactInfo.email}`} className="hover:underline">{contactInfo.email}</a>
+                  <a href={composeEmailUrl({ subject: 'Kitiibwa Safaris Inquiry' })} target="_blank" rel="noopener noreferrer" className="hover:underline">{contactInfo.email}</a>
                 </div>
               </li>
               <li className="flex items-start gap-2 hover:translate-x-1 transition">

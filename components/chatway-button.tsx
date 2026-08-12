@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import { Grid2X2, Maximize2, MessageCircle, Plane, Send, X, CircleHelp } from 'lucide-react'
+import { composeEmailUrl } from '@/lib/mail'
 
 declare global {
   interface Window {
@@ -19,6 +20,8 @@ export default function ChatwayButton() {
   const [activeTab, setActiveTab] = useState<'chat' | 'faq' | 'channels'>('chat')
 
   function openChatway() {
+    // Close the custom welcome panel first so Chatway is the only visible chat surface.
+    setIsOpen(false)
     const chatway = typeof window !== 'undefined' ? window.$chatway : undefined
     if (chatway?.openChatwayWidget) {
       chatway.openChatwayWidget()
@@ -88,7 +91,15 @@ export default function ChatwayButton() {
             <div className="flex flex-1 items-center justify-center px-5 text-center text-sm leading-6 text-muted-foreground">
               {activeTab === 'chat' && 'Our safari team can help with destinations, lodges, itineraries, and travel questions.'}
               {activeTab === 'faq' && 'Find quick answers about booking, payments, airport transfers, and safari planning.'}
-              {activeTab === 'channels' && 'Chat with us here or reach our team directly by email at info@kitiibwasafaris.com.'}
+              {activeTab === 'channels' && (
+                <span>
+                  Chat with us here or{' '}
+                  <a className="font-semibold text-primary underline-offset-4 hover:underline" href={composeEmailUrl({ subject: 'Kitiibwa Safaris Inquiry' })} target="_blank" rel="noopener noreferrer">
+                    email our team
+                  </a>
+                  .
+                </span>
+              )}
             </div>
           </div>
 

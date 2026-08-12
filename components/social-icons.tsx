@@ -1,5 +1,7 @@
 'use client'
 
+import { composeEmailUrl } from '@/lib/mail'
+
 interface SocialIconsProps {
   facebook?: string
   linkedin?: string
@@ -105,7 +107,7 @@ export default function SocialIcons({
       )}
       {email && (
         <a
-          href={`mailto:${email}`}
+          href={composeEmailUrl({ subject: 'Kitiibwa Safaris Inquiry' })} target="_blank" rel="noopener noreferrer"
           className={`inline-flex items-center justify-center ${containerSize[size]} rounded-full bg-primary text-primary-foreground hover:bg-accent hover:scale-110 transition-all duration-200 shadow-sm`}
           aria-label="Email"
         >

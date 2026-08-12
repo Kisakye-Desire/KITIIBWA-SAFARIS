@@ -231,7 +231,7 @@ export default function Contact() {
                       <Mail className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                       <div>
                         <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider mb-1">Email</p>
-                        <a href="mailto:info@kitiibwasafaris.com" className="text-foreground hover:text-accent transition-colors text-sm">info@kitiibwasafaris.com</a>
+                        <a href={composeEmailUrl({ subject: 'Kitiibwa Safaris Inquiry' })} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent transition-colors text-sm">info@kitiibwasafaris.com</a>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
