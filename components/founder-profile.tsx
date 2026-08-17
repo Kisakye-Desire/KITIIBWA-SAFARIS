@@ -47,10 +47,10 @@ export default function FounderProfile() {
             <div className="flex items-center gap-4">
               <p className="font-semibold text-primary">Connect:</p>
               <SocialIcons
-                facebook="https://facebook.com/alizeyunahenry"
-                instagram="https://instagram.com/alizeyunahenry"
+                facebook="https://www.facebook.com/henry.dynami?mibextid=wwXIfr&rdid=I5nMfetPo4Ej47Me&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1HU9meBi5p%2F%3Fmibextid%3DwwXIfr#"
+                instagram="https://www.instagram.com/kitiibwa.henry?igsh=MW55aGRnMTc3bHVqbg%3D%3D&igsi=MW55aGRnMTc3bHVqbg%3D%3D&utm_source=qr"
                 linkedin="https://linkedin.com/in/alizeyunahenry"
-                twitter="https://twitter.com/alizeyunahenry"
+                twitter="https://x.com/rastakitiibwa?s=11"
                 size="md"
               />
             </div>

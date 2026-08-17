@@ -123,9 +123,9 @@ export default function About() {
                     </p>
                   </div>
                   <SocialIcons
-                    facebook="https://facebook.com/alizeyunahenry"
-                    instagram="https://www.instagram.com/kitiibwa_safaris_?utm_source=qr"
-                    twitter="https://twitter.com/kitiibwasafaris"
+                    facebook="https://www.facebook.com/share/1HU9meBi5p/?mibextid=wwXIfr"
+                    instagram="https://www.instagram.com/kitiibwa.henry?igsh=MW55aGRnMTc3bHVqbg%3D%3D&igsi=MW55aGRnMTc3bHVqbg%3D%3D&utm_source=qr"
+                    twitter="https://x.com/rastakitiibwa?s=11"
                     size="lg"
                   />
                 </div>
