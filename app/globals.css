@@ -68,6 +68,14 @@
 
 body {
   top: 0 !important;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+@media (max-width: 767px) {
+  html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+  img, video, iframe { max-width: 100%; }
+  .language-switcher { width: auto; max-width: none; overflow: visible; }
 }
 
 @theme {

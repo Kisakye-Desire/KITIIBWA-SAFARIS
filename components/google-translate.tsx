@@ -1,6 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { Globe, Check } from 'lucide-react'
 
 const languages = [
   { value: 'en', label: 'English' },
@@ -52,6 +53,8 @@ function clearGoogtransCookie() {
 
 export default function GoogleTranslate() {
   const [current, setCurrent] = useState('en')
+  const [isOpen, setIsOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     setCurrent(readGoogtransCookie())
@@ -96,20 +99,20 @@ export default function GoogleTranslate() {
   }
 
   return (
-    <div className="language-switcher flex items-center gap-2 rounded-full border border-border bg-background/80 px-2.5 py-1 text-xs font-semibold text-foreground shadow-sm">
-      <label htmlFor="site-language" className="whitespace-nowrap">Language</label>
-      <select
-        id="site-language"
-        value={current}
-        onChange={(event) => changeLanguage(event.target.value)}
-        className="max-w-24 cursor-pointer truncate border-0 bg-transparent text-xs font-semibold outline-none"
-      >
-        {languages.map((language) => (
-          <option key={language.value} value={language.value}>
-            {language.label}
-          </option>
-        ))}
-      </select>
+    <div ref={menuRef} className="language-switcher relative">
+      <button type="button" onClick={() => setIsOpen((open) => !open)} className="inline-flex items-center justify-center rounded-full border border-border bg-background/80 p-2 text-foreground shadow-sm transition-colors hover:bg-muted" aria-label="Choose language" aria-expanded={isOpen}>
+        <Globe className="size-4" aria-hidden="true" />
+      </button>
+      {isOpen && (
+        <div className="absolute right-0 top-full z-50 mt-2 min-w-44 rounded-xl border border-border bg-card p-1.5 text-foreground shadow-xl" role="menu" aria-label="Available languages">
+          {languages.map((language) => (
+            <button key={language.value} type="button" onClick={() => { changeLanguage(language.value); setIsOpen(false) }} className="flex w-full items-center justify-between gap-4 rounded-lg px-3 py-2 text-left text-sm hover:bg-muted" role="menuitem">
+              {language.label}
+              {current === language.value && <Check className="size-4 text-primary" aria-hidden="true" />}
+            </button>
+          ))}
+        </div>
+      )}
       <div id="google_translate_element" className="sr-only" aria-hidden="true" />
     </div>
   )

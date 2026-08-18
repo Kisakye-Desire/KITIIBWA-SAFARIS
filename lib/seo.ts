@@ -14,7 +14,7 @@ export interface SEOMetadata {
 }
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://kitiibwasafaris.com'
-const siteName = 'Kitiibwa Children Initiative'
+const siteName = 'Kitiibwa Safaris'
 const siteDescription = 'Helping children in Uganda thrive through education, care, family support, and opportunity.'
 
 // Default OG image
@@ -23,7 +23,7 @@ const defaultOGImage = `${baseUrl}/images/og-default.jpg`
 // Page metadata definitions
 export const pageMetadata: Record<string, SEOMetadata> = {
   home: {
-    title: 'Kitiibwa Children Initiative | Helping Children Thrive in Uganda',
+    title: 'Kitiibwa Safaris',
     description: 'Kitiibwa Children Initiative helps children in Uganda thrive through education, care, family support, and practical opportunity.',
     keywords: [
       'Uganda safari',

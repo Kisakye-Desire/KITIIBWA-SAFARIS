@@ -1,12 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { Resend } from 'resend'
+
+function escapeHtml(value: string) {
+  return value.replace(/[&<>'\"]/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '\"': '&quot;' })[character] || character)
+}
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { name, email, phone, subject, message, country, contactPerson } = body
+    const { name, email, phone = '', subject, message, country = 'uganda', contactPerson = 'general' } = body
+    const safeName = String(name).trim().slice(0, 120)
+    const safeEmail = String(email).trim().slice(0, 254)
+    const safePhone = String(phone).trim().slice(0, 40)
+    const safeSubject = String(subject).trim().slice(0, 200)
+    const safeMessage = String(message).trim().slice(0, 5000)
 
     // Basic validation
-    if (!name || !email || !subject || !message) {
+    if (!safeName || !safeEmail || !safeSubject || !safeMessage) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
@@ -39,15 +49,15 @@ export async function POST(request: NextRequest) {
           <table style="width: 100%; border-collapse: collapse;">
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: bold; color: #2D5F3F; width: 140px;">From:</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #333;">${name}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #333;">${escapeHtml(safeName)}</td>
             </tr>
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: bold; color: #2D5F3F;">Email:</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid #eee;"><a href="mailto:${email}" style="color: #D4A574;">${email}</a></td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee;"><a href="mailto:${escapeHtml(safeEmail)}" style="color: #D4A574;">${escapeHtml(safeEmail)}</a></td>
             </tr>
             ${phone ? `<tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: bold; color: #2D5F3F;">Phone:</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #333;">${phone}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #333;">${escapeHtml(safePhone)}</td>
             </tr>` : ''}
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: bold; color: #2D5F3F;">Office:</td>
@@ -59,31 +69,39 @@ export async function POST(request: NextRequest) {
             </tr>
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: bold; color: #2D5F3F;">Subject:</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #333;">${subject}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #333;">${escapeHtml(safeSubject)}</td>
             </tr>
           </table>
           
           <div style="margin-top: 24px; background: #fff; border-left: 4px solid #D4A574; padding: 16px 20px; border-radius: 0 8px 8px 0;">
             <p style="font-weight: bold; color: #2D5F3F; margin: 0 0 8px;">Message:</p>
-            <p style="white-space: pre-wrap; color: #333; margin: 0; line-height: 1.6;">${message}</p>
+            <p style="white-space: pre-wrap; color: #333; margin: 0; line-height: 1.6;">${escapeHtml(safeMessage)}</p>
           </div>
         </div>
         
         <div style="padding: 20px 32px; text-align: center; color: #999; font-size: 12px; background: #f0f0f0;">
           <p style="margin: 0;">This message was sent via the KITIIBWA SAFARIS website contact form.</p>
-          <p style="margin: 4px 0 0;">Reply directly to this email to respond to ${name}.</p>
+          <p style="margin: 4px 0 0;">Reply directly to this email to respond to ${escapeHtml(safeName)}.</p>
         </div>
       </div>
     `
 
-    // Use nodemailer with Gmail
+    if (process.env.RESEND_API_KEY) {
+      const resend = new Resend(process.env.RESEND_API_KEY)
+      const result = await resend.emails.send({
+        from: 'Kitiibwa Safaris Website <onboarding@resend.dev>',
+        to: toEmail,
+        replyTo: safeEmail,
+        subject: `[Website Contact] ${inquiryLabel}: ${safeSubject}`,
+        html: htmlBody,
+      })
+      if (result.error) throw new Error(result.error.message)
+      return NextResponse.json({ success: true, message: 'Thank you! Your message has been sent to info@kitiibwasafaris.com.' })
+    }
+
     const gmailUser = process.env.EMAIL_USER
     const gmailPass = process.env.EMAIL_PASSWORD
-
-    if (!gmailUser || !gmailPass) {
-      console.warn('[WARNING] EMAIL_USER or EMAIL_PASSWORD not configured')
-      throw new Error('Email credentials not configured on server')
-    }
+    if (!gmailUser || !gmailPass) throw new Error('Email credentials not configured on server')
 
     const nodemailer = require('nodemailer')
     const transporter = nodemailer.createTransport({
@@ -94,7 +112,7 @@ export async function POST(request: NextRequest) {
     const mailResult = await transporter.sendMail({
       from: `KITIIBWA SAFARIS Website <${gmailUser}>`,
       to: toEmail,
-      subject: `[Website Contact] ${inquiryLabel}: ${subject}`,
+      subject: `[Website Contact] ${inquiryLabel}: ${escapeHtml(safeSubject)}`,
       html: htmlBody,
       replyTo: email,
     })

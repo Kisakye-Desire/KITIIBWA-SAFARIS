@@ -56,7 +56,7 @@ export default function ChatwayButton() {
             <span className="absolute -bottom-0.5 -left-0.5 size-3 rounded-full border-2 border-card bg-green-500" aria-hidden="true" />
           </span>
           <span className="hidden flex-col items-start gap-0.5 pr-2 sm:flex">
-            <span className="text-sm font-semibold">Chat with us</span>
+            <span className="text-sm font-semibold">Chat with Kitiibwa</span>
             <span className="text-xs text-muted-foreground">We&apos;re online now</span>
           </span>
         </button>
@@ -79,7 +79,7 @@ export default function ChatwayButton() {
           <div className="flex min-h-0 flex-1 flex-col bg-muted/30 px-4 pb-4 pt-0">
             <div className="-mt-5 rounded-3xl bg-card p-5 shadow-lg">
               <div className="flex items-center justify-between gap-3">
-                <span className="text-sm font-medium text-muted-foreground">Kitiibwa Safaris team</span>
+                <span className="text-sm font-medium text-muted-foreground">Kitiibwa</span>
                 <span className="flex items-center gap-1.5 rounded-full bg-secondary px-3 py-1.5 text-xs font-semibold text-secondary-foreground"><span className="size-2.5 rounded-full bg-green-500" /> ONLINE</span>
               </div>
               <p className="mt-6 text-xl font-medium text-card-foreground">Hi, how can we help?</p>
@@ -93,7 +93,7 @@ export default function ChatwayButton() {
               {activeTab === 'faq' && 'Find quick answers about booking, payments, airport transfers, and safari planning.'}
               {activeTab === 'channels' && (
                 <span>
-                  Chat with us here or{' '}
+                  Chat with Kitiibwa here or{' '}
                   <a className="font-semibold text-primary underline-offset-4 hover:underline" href={composeEmailUrl({ subject: 'Kitiibwa Safaris Inquiry' })} target="_blank" rel="noopener noreferrer">
                     email our team
                   </a>

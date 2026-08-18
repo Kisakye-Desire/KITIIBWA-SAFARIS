@@ -11,8 +11,8 @@ import PartnersSection from '@/components/partners'
 import PackageMarquee from '@/components/package-marquee'
 
 export const metadata = {
-  title: 'Home | Kitiibwa Children Initiative',
-  description: 'Kitiibwa Children Initiative helps children in Uganda thrive through education, care, and community support.',
+  title: 'Kitiibwa Safaris',
+  description: 'Kitiibwa Safaris creates memorable Uganda safari experiences through adventure, conservation, and genuine local hospitality.',
 }
 
 export default function Home() {

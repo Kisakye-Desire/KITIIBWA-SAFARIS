@@ -43,13 +43,15 @@ export default function Contact() {
         return
       }
 
-      const gmailUrl = composeEmailUrl({
-        subject: formData.subject || 'Kitiibwa Safaris inquiry',
-        body: `Hello Kitiibwa Safaris,\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nOffice: ${formData.country}\nInquiry type: ${formData.contactPerson}\n\n${formData.message}`,
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       })
-      window.open(gmailUrl, '_blank', 'noopener,noreferrer')
+      const result = await response.json()
+      if (!response.ok) throw new Error(result.error || 'Failed to send message')
       setSubmitStatus('success')
-      setSubmitMessage('Gmail has opened with your message addressed to info@kitiibwasafaris.com. Please review and send it.')
+      setSubmitMessage(result.message || 'Thank you! Your message has been sent to info@kitiibwasafaris.com.')
       setFormData({ name: '', email: '', phone: '', country: 'uganda', contactPerson: 'general', subject: '', message: '' })
     } catch (error) {
       console.error('[Contact Form Error]', error)
@@ -78,7 +80,7 @@ export default function Contact() {
       phone: '+256 702 345273',
       whatsapp: '+256 702 345273',
       email: 'info@kitiibwasafaris.com',
-      address: 'Mukon Access Clinic, Mukon Town, Kampala–Jinja Road, opposite Harred Petrol Station, Uganda',
+      address: 'P.O BOX 154602 Mukono, Mukono Access Clinic, Mukono Town, Kampala–Jinja Road, opposite Harred Petrol Station, Uganda',
       hours: 'Mon–Fri: 8:00 AM – 6:00 PM EAT',
       color: 'from-yellow-500/20 to-red-500/10',
       border: 'border-yellow-500/30',
@@ -183,7 +185,7 @@ export default function Contact() {
                       <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                       <div>
                         <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider mb-1">Address</p>
-                        <p className="text-foreground text-sm">Mukon Access Clinic, Mukon Town, Kampala–Jinja Road, opposite Harred Petrol Station, Uganda</p>
+                        <p className="text-foreground text-sm">Mukono Access Clinic, Mukono Town, Kampala–Jinja Road, opposite Harred Petrol Station, Uganda</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -468,7 +470,7 @@ export default function Contact() {
                         title="Opens Gmail with a message addressed to info@kitiibwasafaris.com"
                       >
                         <Send className="h-5 w-5" />
-                        {isSubmitting ? 'Opening Gmail…' : 'Send Message'}
+                        {isSubmitting ? 'Sending…' : 'Send Message'}
                       </button>
 
                       <p className="text-center text-xs text-muted-foreground">
@@ -495,11 +497,11 @@ export default function Contact() {
                 style={{ border: 0 }}
                 loading="lazy"
                 allowFullScreen
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8215387865253!2d32.5500359!3d0.3334357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177db8a5d1234567%3A0x1234567890abcdef!2sMukono%20Access%20Clinic!5e0!3m2!1sen!2sug!4v1234567890123"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8215387865253!2d32.5500359!3d0.3334357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177db8a5d1234567%3A0x1234567890abcdef!2sMukonoo%20Access%20Clinic!5e0!3m2!1sen!2sug!4v1234567890123"
               />
             </div>
             <p className="text-muted-foreground mt-4 text-sm">
-              Mukon Access Clinic, Mukon Town, Kampala–Jinja Road, opposite Harred Petrol Station, Uganda. Contact us on WhatsApp for exact directions.
+              Mukono Access Clinic, Mukono Town, Kampala–Jinja Road, opposite Harred Petrol Station, Uganda. Contact us on WhatsApp for exact directions.
             </p>
           </div>
         </section>

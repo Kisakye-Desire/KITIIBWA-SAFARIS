@@ -52,7 +52,7 @@ export const contactInfo: ContactInfo = {
     uganda: '+256 702 345273',
     uk: '+44 7884 181149',
   },
-  address: 'Mukon Access Clinic, Mukon Town, Kampala–Jinja Road, opposite Harred Petrol Station, Uganda',
+  address: 'P.O BOX 154602 Mukono, Mukono Access Clinic, Mukono Town, Kampala–Jinja Road, opposite Harred Petrol Station, Uganda',
   whatsapp: 'https://wa.me/256702345273',
   operatingHours: {
     weekday: 'Monday - Friday: 8:00 AM - 6:00 PM EAT',
