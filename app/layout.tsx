@@ -39,7 +39,7 @@ export default function RootLayout({
         {children}
         <BackToTop />
         <ChatwayButton />
-        <Script id="chatway" src="https://cdn.chatway.app/widget.js?id=xihrzO9SFpyq" strategy="afterInteractive" />
+        <Script id="chatway" src="https://cdn.chatway.app/widget.js?id=Rv2T5A9P0559" strategy="afterInteractive" />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

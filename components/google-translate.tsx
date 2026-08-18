@@ -119,7 +119,7 @@ export default function GoogleTranslate() {
           ))}
         </div>
       )}
-      <div id="google_translate_element" className="sr-only" aria-hidden="true" />
+      <div id="google_translate_element" className="absolute -left-[9999px] top-0 h-px w-px overflow-hidden" aria-hidden="true" />
     </div>
   )
 }
