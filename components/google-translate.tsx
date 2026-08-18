@@ -59,16 +59,19 @@ export default function GoogleTranslate() {
   useEffect(() => {
     setCurrent(readGoogtransCookie())
 
-    const existing = document.getElementById('google-translate-script')
-    if (existing) return
-
     window.googleTranslateElementInit = () => {
-      if (window.google?.translate?.TranslateElement) {
+      if (window.google?.translate?.TranslateElement && !document.querySelector('.goog-te-combo')) {
         new window.google.translate.TranslateElement(
           { pageLanguage: 'en', autoDisplay: false },
           'google_translate_element',
         )
       }
+    }
+
+    const existing = document.getElementById('google-translate-script')
+    if (existing) {
+      window.googleTranslateElementInit()
+      return
     }
 
     const script = document.createElement('script')
@@ -81,21 +84,24 @@ export default function GoogleTranslate() {
   const changeLanguage = (language: string) => {
     setCurrent(language)
 
-    // Try the in-page combo first for an instant switch without a reload.
-    const googleSelect = document.querySelector<HTMLSelectElement>('.goog-te-combo')
-    if (googleSelect) {
-      googleSelect.value = language === 'en' ? '' : language
-      googleSelect.dispatchEvent(new Event('change'))
-    }
-
-    // Persist the choice via Google's cookie and reload so the whole page is
-    // translated reliably (the combo alone is inconsistent across browsers).
     if (language === 'en') {
       clearGoogtransCookie()
     } else {
       setGoogtransCookie(language)
     }
-    window.location.reload()
+
+    let attempts = 0
+    const applyLanguage = window.setInterval(() => {
+      const googleSelect = document.querySelector<HTMLSelectElement>('.goog-te-combo')
+      if (googleSelect) {
+        googleSelect.value = language === 'en' ? '' : language
+        googleSelect.dispatchEvent(new Event('change', { bubbles: true }))
+        window.clearInterval(applyLanguage)
+      } else if (++attempts > 30) {
+        window.clearInterval(applyLanguage)
+        window.location.reload()
+      }
+    }, 100)
   }
 
   return (
