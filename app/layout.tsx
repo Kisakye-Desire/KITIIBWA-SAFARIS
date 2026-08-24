@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   ...generateMetadata(pageMetadata.home),
   icons: {
     icon: '/favicon.ico',
-    apple: '/apple-icon.png',
   },
   generator: 'Next.js',
 }
