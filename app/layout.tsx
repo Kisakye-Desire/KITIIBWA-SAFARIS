@@ -9,13 +9,7 @@ import { generateMetadata, generateStructuredData, pageMetadata } from '@/lib/se
 export const metadata: Metadata = {
   ...generateMetadata(pageMetadata.home),
   icons: {
-    icon: [
-      {
-        url: '/logo.png',
-        type: 'image/png',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/favicon.ico',
   },
   generator: 'Next.js',
 }
